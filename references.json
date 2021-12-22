@@ -1,260 +1,531 @@
 [
   {
     "type": "article-journal",
-    "id": "PZMP42Ak",
+    "id": "s8orJ7KE",
     "author": [
       {
-        "family": "Ching",
-        "given": "Travers"
+        "family": "Koslicki",
+        "given": "David"
       },
       {
-        "family": "Himmelstein",
-        "given": "Daniel S."
-      },
-      {
-        "family": "Beaulieu-Jones",
-        "given": "Brett K."
-      },
-      {
-        "family": "Kalinin",
-        "given": "Alexandr A."
-      },
-      {
-        "family": "Do",
-        "given": "Brian T."
-      },
-      {
-        "family": "Way",
-        "given": "Gregory P."
-      },
-      {
-        "family": "Ferrero",
-        "given": "Enrico"
-      },
-      {
-        "family": "Agapow",
-        "given": "Paul-Michael"
-      },
-      {
-        "family": "Zietz",
-        "given": "Michael"
-      },
-      {
-        "family": "Hoffman",
-        "given": "Michael M."
-      },
-      {
-        "family": "Xie",
-        "given": "Wei"
-      },
-      {
-        "family": "Rosen",
-        "given": "Gail L."
-      },
-      {
-        "family": "Lengerich",
-        "given": "Benjamin J."
-      },
-      {
-        "family": "Israeli",
-        "given": "Johnny"
-      },
-      {
-        "family": "Lanchantin",
-        "given": "Jack"
-      },
-      {
-        "family": "Woloszynek",
-        "given": "Stephen"
-      },
-      {
-        "family": "Carpenter",
-        "given": "Anne E."
-      },
-      {
-        "family": "Shrikumar",
-        "given": "Avanti"
-      },
-      {
-        "family": "Xu",
-        "given": "Jinbo"
-      },
-      {
-        "family": "Cofer",
-        "given": "Evan M."
-      },
-      {
-        "family": "Lavender",
-        "given": "Christopher A."
-      },
-      {
-        "family": "Turaga",
-        "given": "Srinivas C."
-      },
-      {
-        "family": "Alexandari",
-        "given": "Amr M."
-      },
-      {
-        "family": "Lu",
-        "given": "Zhiyong"
-      },
-      {
-        "family": "Harris",
-        "given": "David J."
-      },
-      {
-        "family": "DeCaprio",
-        "given": "Dave"
-      },
-      {
-        "family": "Qi",
-        "given": "Yanjun"
-      },
-      {
-        "family": "Kundaje",
-        "given": "Anshul"
-      },
-      {
-        "family": "Peng",
-        "given": "Yifan"
-      },
-      {
-        "family": "Wiley",
-        "given": "Laura K."
-      },
-      {
-        "family": "Segler",
-        "given": "Marwin H. S."
-      },
-      {
-        "family": "Boca",
-        "given": "Simina M."
-      },
-      {
-        "family": "Swamidass",
-        "given": "S. Joshua"
-      },
-      {
-        "family": "Huang",
-        "given": "Austin"
-      },
-      {
-        "family": "Gitter",
-        "given": "Anthony"
-      },
-      {
-        "family": "Greene",
-        "given": "Casey S."
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2018,
-          4,
-          4
-        ]
-      ]
-    },
-    "abstract": "Deep learning describes a class of machine learning algorithms that are capable of combining raw inputs into layers of intermediate features. These algorithms have recently shown impressive results across a variety of domains. Biology and medicine are data-rich disciplines, but the data are complex and often ill-understood. Hence, deep learning techniques may be particularly well suited to solve problems of these fields. We examine applications of deep learning to a variety of biomedical problems—patient classification, fundamental biological processes and treatment of patients—and discuss whether deep learning will be able to transform these tasks or if the biomedical sphere poses unique challenges. Following from an extensive literature review, we find that deep learning has yet to revolutionize biomedicine or definitively resolve any of the most pressing challenges in the field, but promising advances have been made on the prior state of the art. Even though improvements over previous baselines have been modest in general, the recent progress indicates that deep learning methods will provide valuable means for speeding up or aiding human investigation. Though progress has been made linking a specific neural network's prediction to input features, understanding how users should interpret these models to make testable hypotheses about the system under study remains an open challenge. Furthermore, the limited amount of labelled data for training presents problems in some domains, as do legal and privacy constraints on work with sensitive health records. Nonetheless, we foresee deep learning enabling changes at both bench and bedside with the potential to transform several areas of biology and medicine.",
-    "container-title": "Journal of The Royal Society Interface",
-    "DOI": "10.1098/rsif.2017.0387",
-    "volume": "15",
-    "issue": "141",
-    "page": "20170387",
-    "publisher": "The Royal Society",
-    "title": "Opportunities and obstacles for deep learning in biology and medicine",
-    "URL": "https://doi.org/gddkhn",
-    "PMCID": "PMC5938574",
-    "PMID": "29618526",
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1098/rsif.2017.0387"
-  },
-  {
-    "type": "article-journal",
-    "id": "YuJbg3zO",
-    "author": [
-      {
-        "family": "Himmelstein",
-        "given": "Daniel S."
-      },
-      {
-        "family": "Rubinetti",
-        "given": "Vincent"
-      },
-      {
-        "family": "Slochower",
-        "given": "David R."
-      },
-      {
-        "family": "Hu",
-        "given": "Dongbo"
-      },
-      {
-        "family": "Malladi",
-        "given": "Venkat S."
-      },
-      {
-        "family": "Greene",
-        "given": "Casey S."
-      },
-      {
-        "family": "Gitter",
-        "given": "Anthony"
+        "family": "Zabeti",
+        "given": "Hooman"
       }
     ],
     "issued": {
       "date-parts": [
         [
           2019,
-          6,
-          24
+          8
         ]
       ]
     },
-    "container-title": "PLOS Computational Biology",
-    "DOI": "10.1371/journal.pcbi.1007128",
-    "volume": "15",
-    "issue": "6",
-    "page": "e1007128",
-    "publisher": "Public Library of Science (PLoS)",
-    "title": "Open collaborative writing with Manubot",
-    "URL": "https://doi.org/c7np",
-    "PMCID": "PMC6611653",
-    "PMID": "31233491",
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1371/journal.pcbi.1007128"
+    "container-title": "Applied Mathematics and Computation",
+    "DOI": "10.1016/j.amc.2019.02.018",
+    "volume": "354",
+    "page": "206-215",
+    "publisher": "Elsevier BV",
+    "title": "Improving MinHash via the containment index with applications to metagenomic analysis",
+    "URL": "https://doi.org/ghtqrv",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1016/j.amc.2019.02.018"
   },
   {
     "type": "article-journal",
-    "id": "IhliSZDo",
+    "id": "3z6VIhcE",
     "author": [
       {
-        "family": "Himmelstein",
-        "given": "Daniel S"
+        "family": "Konstantinidis",
+        "given": "Konstantinos T"
       },
       {
-        "family": "Romero",
-        "given": "Ariel Rodriguez"
+        "family": "Tiedje",
+        "given": "James M"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2007,
+          10
+        ]
+      ]
+    },
+    "container-title": "Current Opinion in Microbiology",
+    "DOI": "10.1016/j.mib.2007.08.006",
+    "volume": "10",
+    "issue": "5",
+    "page": "504-509",
+    "publisher": "Elsevier BV",
+    "title": "Prokaryotic taxonomy and phylogeny in the genomic era: advancements and challenges ahead",
+    "URL": "https://doi.org/b2q3jd",
+    "PMID": "17923431",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1016/j.mib.2007.08.006"
+  },
+  {
+    "type": "article-journal",
+    "id": "16tNERpVv",
+    "author": [
+      {
+        "family": "Konstantinidis",
+        "given": "Konstantinos T"
       },
       {
-        "family": "Levernier",
-        "given": "Jacob G"
+        "family": "Rosselló-Móra",
+        "given": "Ramon"
       },
       {
-        "family": "Munro",
-        "given": "Thomas Anthony"
+        "family": "Amann",
+        "given": "Rudolf"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          7,
+          21
+        ]
+      ]
+    },
+    "container-title": "The ISME Journal",
+    "DOI": "10.1038/ismej.2017.113",
+    "volume": "11",
+    "issue": "11",
+    "page": "2399-2406",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "Uncultivated microbes in need of their own taxonomy",
+    "URL": "https://doi.org/gbprgw",
+    "PMCID": "PMC5649169",
+    "PMID": "28731467",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1038/ismej.2017.113"
+  },
+  {
+    "type": "article-journal",
+    "id": "P2zJQDwU",
+    "author": [
+      {
+        "family": "Menzel",
+        "given": "Peter"
       },
       {
-        "family": "McLaughlin",
-        "given": "Stephen Reid"
+        "family": "Ng",
+        "given": "Kim Lee"
       },
       {
-        "family": "Greshake Tzovaras",
-        "given": "Bastian"
+        "family": "Krogh",
+        "given": "Anders"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          4,
+          13
+        ]
+      ]
+    },
+    "container-title": "Nature Communications",
+    "DOI": "10.1038/ncomms11257",
+    "volume": "7",
+    "issue": "1",
+    "page": "11257",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "Fast and sensitive taxonomic classification for metagenomics with Kaiju",
+    "URL": "https://doi.org/f8h4b6",
+    "PMCID": "PMC4833860",
+    "PMID": "27071849",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1038/ncomms11257"
+  },
+  {
+    "type": "article-journal",
+    "id": "4R96QRcV",
+    "author": [
+      {
+        "family": "Buchfink",
+        "given": "Benjamin"
       },
       {
-        "family": "Greene",
-        "given": "Casey S"
+        "family": "Xie",
+        "given": "Chao"
+      },
+      {
+        "family": "Huson",
+        "given": "Daniel H"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          11,
+          17
+        ]
+      ]
+    },
+    "container-title": "Nature Methods",
+    "DOI": "10.1038/nmeth.3176",
+    "volume": "12",
+    "issue": "1",
+    "page": "59-60",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "Fast and sensitive protein alignment using DIAMOND",
+    "URL": "https://doi.org/gftzcs",
+    "PMID": "25402007",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1038/nmeth.3176"
+  },
+  {
+    "type": "article-journal",
+    "id": "12fAf7MKk",
+    "author": [
+      {
+        "family": "Jain",
+        "given": "Chirag"
+      },
+      {
+        "family": "Rodriguez-R",
+        "given": "Luis M."
+      },
+      {
+        "family": "Phillippy",
+        "given": "Adam M."
+      },
+      {
+        "family": "Konstantinidis",
+        "given": "Konstantinos T."
+      },
+      {
+        "family": "Aluru",
+        "given": "Srinivas"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          11,
+          30
+        ]
+      ]
+    },
+    "abstract": "A fundamental question in microbiology is whether there is continuum of genetic diversity among genomes, or clear species boundaries prevail instead. Whole-genome similarity metrics such as Average Nucleotide Identity (ANI) help address this question by facilitating high resolution taxonomic analysis of thousands of genomes from diverse phylogenetic lineages. To scale to available genomes and beyond, we present FastANI, a new method to estimate ANI using alignment-free approximate sequence mapping. FastANI is accurate for both finished and draft genomes, and is up to three orders of magnitude faster compared to alignment-based approaches. We leverage FastANI to compute pairwise ANI values among all prokaryotic genomes available in the NCBI database. Our results reveal clear genetic discontinuity, with 99.8% of the total 8 billion genome pairs analyzed conforming to &gt;95% intra-species and &lt;83% inter-species ANI values. This discontinuity is manifested with or without the most frequently sequenced species, and is robust to historic additions in the genome databases.",
+    "container-title": "Nature Communications",
+    "DOI": "10.1038/s41467-018-07641-9",
+    "volume": "9",
+    "issue": "1",
+    "page": "5114",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries",
+    "URL": "https://doi.org/gfknmg",
+    "PMCID": "PMC6269478",
+    "PMID": "30504855",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1038/s41467-018-07641-9"
+  },
+  {
+    "type": "article-journal",
+    "id": "cN1LdTev",
+    "author": [
+      {
+        "family": "Parks",
+        "given": "Donovan H."
+      },
+      {
+        "family": "Chuvochina",
+        "given": "Maria"
+      },
+      {
+        "family": "Chaumeil",
+        "given": "Pierre-Alain"
+      },
+      {
+        "family": "Rinke",
+        "given": "Christian"
+      },
+      {
+        "family": "Mussig",
+        "given": "Aaron J."
+      },
+      {
+        "family": "Hugenholtz",
+        "given": "Philip"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          4,
+          27
+        ]
+      ]
+    },
+    "container-title": "Nature Biotechnology",
+    "DOI": "10.1038/s41587-020-0501-8",
+    "volume": "38",
+    "issue": "9",
+    "page": "1079-1086",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "A complete domain-to-species taxonomy for Bacteria and Archaea",
+    "URL": "https://doi.org/ggtbk2",
+    "PMID": "32341564",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1038/s41587-020-0501-8"
+  },
+  {
+    "type": "article-journal",
+    "id": "16RrZPOGJ",
+    "author": [
+      {
+        "family": "Richter",
+        "given": "Michael"
+      },
+      {
+        "family": "Rosselló-Móra",
+        "given": "Ramon"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          11,
+          10
+        ]
+      ]
+    },
+    "container-title": "Proceedings of the National Academy of Sciences",
+    "DOI": "10.1073/pnas.0906412106",
+    "volume": "106",
+    "issue": "45",
+    "page": "19126-19131",
+    "publisher": "Proceedings of the National Academy of Sciences",
+    "title": "Shifting the genomic gold standard for the prokaryotic species definition",
+    "URL": "https://doi.org/dvchzz",
+    "PMCID": "PMC2776425",
+    "PMID": "19855009",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1073/pnas.0906412106"
+  },
+  {
+    "type": "article-journal",
+    "id": "1Drcez76Y",
+    "author": [
+      {
+        "family": "Salvatore",
+        "given": "Stefania"
+      },
+      {
+        "family": "Dagestad Rand",
+        "given": "Knut"
+      },
+      {
+        "family": "Grytten",
+        "given": "Ivar"
+      },
+      {
+        "family": "Ferkingstad",
+        "given": "Egil"
+      },
+      {
+        "family": "Domanska",
+        "given": "Diana"
+      },
+      {
+        "family": "Holden",
+        "given": "Lars"
+      },
+      {
+        "family": "Gheorghe",
+        "given": "Marius"
+      },
+      {
+        "family": "Mathelier",
+        "given": "Anthony"
+      },
+      {
+        "family": "Glad",
+        "given": "Ingrid"
+      },
+      {
+        "family": "Kjetil Sandve",
+        "given": "Geir"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          9
+        ]
+      ]
+    },
+    "container-title": "Briefings in Bioinformatics",
+    "DOI": "10.1093/bib/bbz083",
+    "volume": "21",
+    "issue": "5",
+    "page": "1523-1530",
+    "publisher": "Oxford University Press (OUP)",
+    "title": "Beware the Jaccard: the choice of <b>similarity measure</b> is important and non-trivial in genomic colocalisation analysis",
+    "URL": "https://doi.org/gjnvx4",
+    "PMID": "31624847",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1093/bib/bbz083"
+  },
+  {
+    "type": "article-journal",
+    "id": "q9c75jWY",
+    "author": [
+      {
+        "family": "Reiter",
+        "given": "Taylor"
+      },
+      {
+        "family": "Brooks†",
+        "given": "Phillip T"
+      },
+      {
+        "family": "Irber†",
+        "given": "Luiz"
+      },
+      {
+        "family": "Joslin†",
+        "given": "Shannon E K"
+      },
+      {
+        "family": "Reid†",
+        "given": "Charles M"
+      },
+      {
+        "family": "Scott†",
+        "given": "Camille"
+      },
+      {
+        "family": "Brown",
+        "given": "C Titus"
+      },
+      {
+        "family": "Pierce-Ward",
+        "given": "N Tessa"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          13
+        ]
+      ]
+    },
+    "abstract": "As the scale of biological data generation has increased, the bottleneck of research has shifted from data generation to analysis. Researchers commonly need to build computational workflows that include multiple analytic tools and require incremental development as experimental insights demand tool and parameter modifications. These workflows can produce hundreds to thousands of intermediate files and results that must be integrated for biological insight. Data-centric workflow systems that internally manage computational resources, software, and conditional execution of analysis steps are reshaping the landscape of biological data analysis and empowering researchers to conduct reproducible analyses at scale. Adoption of these tools can facilitate and expedite robust data analysis, but knowledge of these techniques is still lacking. Here, we provide a series of strategies for leveraging workflow systems with structured project, data, and resource management to streamline large-scale biological analysis. We present these practices in the context of high-throughput sequencing data analysis, but the principles are broadly applicable to biologists working beyond this field.",
+    "container-title": "GigaScience",
+    "DOI": "10.1093/gigascience/giaa140",
+    "volume": "10",
+    "issue": "1",
+    "page": "giaa140",
+    "publisher": "Oxford University Press (OUP)",
+    "title": "Streamlining data-intensive biology with workflow systems",
+    "URL": "https://doi.org/gjfk22",
+    "PMCID": "PMC8631065",
+    "PMID": "33438730",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1093/gigascience/giaa140"
+  },
+  {
+    "type": "article-journal",
+    "id": "xnsBJDFT",
+    "author": [
+      {
+        "family": "Murray",
+        "given": "Connor S."
+      },
+      {
+        "family": "Gao",
+        "given": "Yingnan"
+      },
+      {
+        "family": "Wu",
+        "given": "Martin"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          8,
+          1
+        ]
+      ]
+    },
+    "abstract": "A fundamental question in studying microbial diversity is whether there is a species boundary and if the boundary can be delineated by a universal genetic discontinuity. To address this question, Jain et al. computed the pairwise average nucleotide identity (ANI) of 91,761 microbial (bacterial and archaeal) genomes (the 90K genome dataset) and found that the ANI values from the 8 billion comparisons follow a strong bimodal distribution . The authors concluded that a clear genetic discontinuum and species boundary were evident from the unprecedented large-scale ANI analysis. As a result, the researchers advocated that an ANI of 95% can be used to accurately demarcate all currently named microbial species. While the FastANI program described in the paper is useful, we argue that the paper’s conclusion of a universal genetic boundary is questionable and resulted from the substantial biased sampling in genome sequencing. We also caution against being overly confident in using 95% ANI for microbial species delineation as the high benchmarks reported in the paper were inflated by using highly redundant genomes.",
+    "container-title": "Cold Spring Harbor Laboratory",
+    "DOI": "10.1101/2020.07.27.223511",
+    "publisher": "Cold Spring Harbor Laboratory",
+    "title": "There is no evidence of a universal genetic boundary among microbial species",
+    "URL": "https://doi.org/ghtrdw",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1101/2020.07.27.223511"
+  },
+  {
+    "type": "article-journal",
+    "id": "cMPL2ulo",
+    "author": [
+      {
+        "family": "Blanca",
+        "given": "Antonio"
+      },
+      {
+        "family": "Harris",
+        "given": "Robert S."
+      },
+      {
+        "family": "Koslicki",
+        "given": "David"
+      },
+      {
+        "family": "Medvedev",
+        "given": "Paul"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          9
+        ]
+      ]
+    },
+    "abstract": "K-mer-based methods are widely used in bioinformatics, but there are many gaps in our understanding of their statistical properties. Here, we consider the simple model where a sequence S (e.g. a genome or a read) undergoes a simple mutation process whereby each nucleotide is mutated independently with some probability r, under the assumption that there are no spurious k-mer matches. How does this process affect the k-mers of S? We derive the expectation and variance of the number of mutated k-mers and of the number of islands (a maximal interval of mutated k-mers) and oceans (a maximal interval of non-mutated k-mers). We then derive hypothesis tests and confidence intervals for r given an observed number of mutated k-mers, or, alternatively, given the Jaccard similarity (with or without minhash). We demonstrate the usefulness of our results using a few select applications: obtaining a confidence interval to supplement the Mash distance point estimate, filtering out reads during alignment by Minimap2, and rating long read alignments to a de Bruijn graph by Jabba.",
+    "container-title": "Cold Spring Harbor Laboratory",
+    "DOI": "10.1101/2021.01.15.426881",
+    "publisher": "Cold Spring Harbor Laboratory",
+    "title": "The statistics of <i>k</i> -mers from a sequence undergoing a simple mutation process without spurious matches",
+    "URL": "https://doi.org/fq3g",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1101/2021.01.15.426881"
+  },
+  {
+    "type": "article-journal",
+    "id": "17Pgcb9TD",
+    "author": [
+      {
+        "family": "Rodriguez-R",
+        "given": "Luis M."
+      },
+      {
+        "family": "Castro",
+        "given": "Juan C."
+      },
+      {
+        "family": "Kyrpides",
+        "given": "Nikos C."
+      },
+      {
+        "family": "Cole",
+        "given": "James R."
+      },
+      {
+        "family": "Tiedje",
+        "given": "James M."
+      },
+      {
+        "family": "Konstantinidis",
+        "given": "Konstantinos T."
       }
     ],
     "issued": {
@@ -262,158 +533,696 @@
         [
           2018,
           3,
-          1
+          15
         ]
       ]
     },
-    "abstract": "The website Sci-Hub enables users to download PDF versions of scholarly articles, including many articles that are paywalled at their journal’s site. Sci-Hub has grown rapidly since its creation in 2011, but the extent of its coverage has been unclear. Here we report that, as of March 2017, Sci-Hub’s database contains 68.9% of the 81.6 million scholarly articles registered with Crossref and 85.1% of articles published in toll access journals. We find that coverage varies by discipline and publisher, and that Sci-Hub preferentially covers popular, paywalled content. For toll access articles, we find that Sci-Hub provides greater coverage than the University of Pennsylvania, a major research university in the United States. Green open access to toll access articles via licit services, on the other hand, remains quite limited. Our interactive browser at https://greenelab.github.io/scihub allows users to explore these findings in more detail. For the first time, nearly all scholarly literature is available gratis to anyone with an Internet connection, suggesting the toll access business model may become unsustainable.",
-    "container-title": "eLife",
-    "DOI": "10.7554/elife.32822",
-    "volume": "7",
-    "page": "e32822",
-    "publisher": "eLife Sciences Publications, Ltd",
-    "title": "Sci-Hub provides access to nearly all scholarly literature",
-    "URL": "https://doi.org/ckcj",
-    "PMCID": "PMC5832410",
-    "PMID": "29424689",
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.7554/elife.32822"
+    "container-title": "Applied and Environmental Microbiology",
+    "DOI": "10.1128/aem.00014-18",
+    "volume": "84",
+    "issue": "6",
+    "publisher": "American Society for Microbiology",
+    "title": "How Much Do rRNA Gene Surveys Underestimate Extant Bacterial Diversity?",
+    "URL": "https://doi.org/ghtrdq",
+    "PMCID": "PMC5835724",
+    "PMID": "29305502",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1128/aem.00014-18"
   },
   {
-    "id": "zBPP9YKu",
-    "type": "book",
-    "call-number": "Z286.O63 S83 2012",
-    "collection-title": "MIT Press essential knowledge series",
-    "event-place": "Cambridge, Mass",
-    "ISBN": "9780262517638",
-    "note": "OCLC: ocn754518563\nThis CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: isbn:9780262517638",
-    "number-of-pages": "242",
-    "publisher": "MIT Press",
-    "publisher-place": "Cambridge, Mass",
-    "source": "Library of Congress ISBN",
-    "title": "Open access",
+    "type": "article-journal",
+    "id": "1FgetXOee",
     "author": [
       {
-        "family": "Suber",
-        "given": "Peter"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          "2012"
-        ]
-      ]
-    }
-  },
-  {
-    "source": "PubMed",
-    "accessed": {
-      "date-parts": [
-        [
-          2021,
-          12,
-          14
-        ]
-      ]
-    },
-    "id": "mSMVRkoc",
-    "title": "Reproducibility of computational workflows is automated using continuous analysis",
-    "author": [
-      {
-        "family": "Beaulieu-Jones",
-        "given": "Brett K"
+        "family": "Konstantinidis",
+        "given": "Konstantinos T."
       },
       {
-        "family": "Greene",
-        "given": "Casey S"
+        "family": "Ramette",
+        "given": "Alban"
+      },
+      {
+        "family": "Tiedje",
+        "given": "James M."
       }
     ],
-    "container-title-short": "Nat Biotechnol",
-    "container-title": "Nature biotechnology",
-    "ISSN": "1087-0156",
     "issued": {
       "date-parts": [
         [
-          2017,
-          4
+          2006,
+          11
         ]
       ]
     },
-    "page": "342-346",
-    "volume": "35",
-    "issue": "4",
-    "PMID": "28288103",
-    "PMCID": "PMC6103790",
-    "DOI": "10.1038/nbt.3780",
-    "type": "article-journal",
-    "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6103790/",
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: pmc:PMC6103790"
+    "abstract": "Phylogenetic sequence analysis of single or multiple genes has dominated the study and census of the genetic diversity among closely related bacteria. It remains unclear, however, how the results based on a few genes in the genome correlate with whole-genome-based relatedness and what genes (if any) best reflect whole-genome-level relatedness and hence should be preferentially used to economize on cost and to improve accuracy. We show here that phylogenies of closely related organisms based on the average nucleotide identity (ANI) of their shared genes correspond accurately to phylogenies based on state-of-the-art analysis of their whole-genome sequences. We use ANI to evaluate the phylogenetic robustness of every gene in the genome and show that almost all core genes, regardless of their functions and positions in the genome, offer robust phylogenetic reconstruction among strains that show 80 to 95% ANI (16S rRNA identity, &gt;98.5%). Lack of elapsed time and, to a lesser extent, horizontal transfer and recombination make the selection of genes more critical for applications that target the intraspecies level, i.e., strains that show &gt;95% ANI according to current standards. A much more accurate phylogeny for the group was obtained based on just three best-performing genes according to our analysis compared to the concatenated alignment of eight genes that are commonly employed for phylogenetic purposes in this group. Our results are reproducible within the , , and groups and therefore are expected to have general applicability for microevolution studies, including metagenomic surveys.",
+    "container-title": "Applied and Environmental Microbiology",
+    "DOI": "10.1128/aem.01398-06",
+    "volume": "72",
+    "issue": "11",
+    "page": "7286-7293",
+    "publisher": "American Society for Microbiology",
+    "title": "Toward a More Robust Assessment of IntraspeciesDiversity, Using Fewer GeneticMarkers",
+    "URL": "https://doi.org/dcmw9q",
+    "PMCID": "PMC1636164",
+    "PMID": "16980418",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1128/aem.01398-06"
   },
   {
-    "title": "Bitcoin for the biological literature.",
-    "volume": "566",
-    "issue": "7742",
-    "page": "141-142",
-    "container-title": "Nature",
-    "container-title-short": "Nature",
-    "ISSN": "1476-4687",
+    "type": "article-journal",
+    "id": "15zxN1L1C",
+    "author": [
+      {
+        "family": "Olm",
+        "given": "Matthew R."
+      },
+      {
+        "family": "Crits-Christoph",
+        "given": "Alexander"
+      },
+      {
+        "family": "Diamond",
+        "given": "Spencer"
+      },
+      {
+        "family": "Lavy",
+        "given": "Adi"
+      },
+      {
+        "family": "Matheus Carnevali",
+        "given": "Paula B."
+      },
+      {
+        "family": "Banfield",
+        "given": "Jillian F."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          2,
+          11
+        ]
+      ]
+    },
+    "abstract": "There is controversy about whether bacterial diversity is clustered into distinct species groups or exists as a continuum. To address this issue, we analyzed bacterial genome databases and reports from several previous large-scale environment studies and identified clear discrete groups of species-level bacterial diversity in all cases. Genetic analysis further revealed that quasi-sexual reproduction via horizontal gene transfer is likely a key evolutionary force that maintains bacterial species integrity. We next benchmarked over 100 metrics to distinguish these bacterial species from each other and identified several genes encoding ribosomal proteins with high species discrimination power. Overall, the results from this study provide best practices for bacterial species delineation based on genome content and insight into the nature of bacterial species population genetics.",
+    "container-title": "mSystems",
+    "DOI": "10.1128/msystems.00731-19",
+    "volume": "5",
+    "issue": "1",
+    "publisher": "American Society for Microbiology",
+    "title": "Consistent Metagenome-Derived Metrics Verify and Delineate Bacterial Species Boundaries",
+    "URL": "https://doi.org/ggwqh6",
+    "PMCID": "PMC6967389",
+    "PMID": "31937678",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1128/msystems.00731-19"
+  },
+  {
+    "type": "article-journal",
+    "id": "lX665mdh",
+    "author": [
+      {
+        "family": "Hyatt",
+        "given": "Doug"
+      },
+      {
+        "family": "Chen",
+        "given": "Gwo-Liang"
+      },
+      {
+        "family": "LoCascio",
+        "given": "Philip F"
+      },
+      {
+        "family": "Land",
+        "given": "Miriam L"
+      },
+      {
+        "family": "Larimer",
+        "given": "Frank W"
+      },
+      {
+        "family": "Hauser",
+        "given": "Loren J"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          3,
+          8
+        ]
+      ]
+    },
+    "container-title": "BMC Bioinformatics",
+    "DOI": "10.1186/1471-2105-11-119",
+    "volume": "11",
+    "issue": "1",
+    "page": "119",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "Prodigal: prokaryotic gene recognition and translation initiation site identification",
+    "URL": "https://doi.org/cktxnm",
+    "PMCID": "PMC2848648",
+    "PMID": "20211023",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1186/1471-2105-11-119"
+  },
+  {
+    "type": "article-journal",
+    "id": "mSNjcw0J",
+    "author": [
+      {
+        "family": "Wood",
+        "given": "Derrick E"
+      },
+      {
+        "family": "Salzberg",
+        "given": "Steven L"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "container-title": "Genome Biology",
+    "DOI": "10.1186/gb-2014-15-3-r46",
+    "volume": "15",
+    "issue": "3",
+    "page": "R46",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "Kraken: ultrafast metagenomic sequence classification using exact alignments",
+    "URL": "https://doi.org/gfkndk",
+    "PMCID": "PMC4053813",
+    "PMID": "24580807",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1186/gb-2014-15-3-r46"
+  },
+  {
+    "type": "article-journal",
+    "id": "mH9pzoIn",
+    "author": [
+      {
+        "family": "Ondov",
+        "given": "Brian D."
+      },
+      {
+        "family": "Treangen",
+        "given": "Todd J."
+      },
+      {
+        "family": "Melsted",
+        "given": "Páll"
+      },
+      {
+        "family": "Mallonee",
+        "given": "Adam B."
+      },
+      {
+        "family": "Bergman",
+        "given": "Nicholas H."
+      },
+      {
+        "family": "Koren",
+        "given": "Sergey"
+      },
+      {
+        "family": "Phillippy",
+        "given": "Adam M."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          6,
+          20
+        ]
+      ]
+    },
+    "container-title": "Genome Biology",
+    "DOI": "10.1186/s13059-016-0997-x",
+    "volume": "17",
+    "issue": "1",
+    "page": "132",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "Mash: fast genome and metagenome distance estimation using MinHash",
+    "URL": "https://doi.org/gfx74q",
+    "PMCID": "PMC4915045",
+    "PMID": "27323842",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1186/s13059-016-0997-x"
+  },
+  {
+    "type": "article-journal",
+    "id": "j7nehrZT",
+    "author": [
+      {
+        "family": "Nasko",
+        "given": "Daniel J."
+      },
+      {
+        "family": "Koren",
+        "given": "Sergey"
+      },
+      {
+        "family": "Phillippy",
+        "given": "Adam M."
+      },
+      {
+        "family": "Treangen",
+        "given": "Todd J."
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          10,
+          30
+        ]
+      ]
+    },
+    "container-title": "Genome Biology",
+    "DOI": "10.1186/s13059-018-1554-6",
+    "volume": "19",
+    "issue": "1",
+    "page": "165",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "RefSeq database growth influences the accuracy of k-mer-based lowest common ancestor species identification",
+    "URL": "https://doi.org/ggc9db",
+    "PMCID": "PMC6206640",
+    "PMID": "30373669",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1186/s13059-018-1554-6"
+  },
+  {
+    "type": "article-journal",
+    "id": "19AP1jyqE",
+    "author": [
+      {
+        "family": "Ondov",
+        "given": "Brian D."
+      },
+      {
+        "family": "Starrett",
+        "given": "Gabriel J."
+      },
+      {
+        "family": "Sappington",
+        "given": "Anna"
+      },
+      {
+        "family": "Kostic",
+        "given": "Aleksandra"
+      },
+      {
+        "family": "Koren",
+        "given": "Sergey"
+      },
+      {
+        "family": "Buck",
+        "given": "Christopher B."
+      },
+      {
+        "family": "Phillippy",
+        "given": "Adam M."
+      }
+    ],
     "issued": {
       "date-parts": [
         [
           2019,
-          2
+          11,
+          5
+        ]
+      ]
+    },
+    "abstract": "The MinHash algorithm has proven effective for rapidly estimating the resemblance of two genomes or metagenomes. However, this method cannot reliably estimate the containment of a genome within a metagenome. Here, we describe an online algorithm capable of measuring the containment of genomes and proteomes within either assembled or unassembled sequencing read sets. We describe several use cases, including contamination screening and retrospective analysis of metagenomes for novel genome discovery. Using this tool, we provide containment estimates for every NCBI RefSeq genome within every SRA metagenome and demonstrate the identification of a novel polyomavirus species from a public metagenome.",
+    "container-title": "Genome Biology",
+    "DOI": "10.1186/s13059-019-1841-x",
+    "volume": "20",
+    "issue": "1",
+    "page": "232",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "Mash Screen: high-throughput sequence containment estimation for genome discovery",
+    "URL": "https://doi.org/ghtqmb",
+    "PMCID": "PMC6833257",
+    "PMID": "31690338",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1186/s13059-019-1841-x"
+  },
+  {
+    "type": "article-journal",
+    "id": "10ppWuOJ6",
+    "author": [
+      {
+        "family": "Baker",
+        "given": "Daniel N."
+      },
+      {
+        "family": "Langmead",
+        "given": "Ben"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          12,
+          4
+        ]
+      ]
+    },
+    "abstract": "Dashing is a fast and accurate software tool for estimating similarities of genomes or sequencing datasets. It uses the HyperLogLog sketch together with cardinality estimation methods that are specialized for set unions and intersections. Dashing summarizes genomes more rapidly than previous MinHash-based methods while providing greater accuracy across a wide range of input sizes and sketch sizes. It can sketch and calculate pairwise distances for over 87K genomes in 6 minutes. Dashing is open source and available at .",
+    "container-title": "Genome Biology",
+    "DOI": "10.1186/s13059-019-1875-0",
+    "volume": "20",
+    "issue": "1",
+    "page": "265",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "Dashing: fast and accurate genomic distances with HyperLogLog",
+    "URL": "https://doi.org/ggkmjc",
+    "PMCID": "PMC6892282",
+    "PMID": "31801633",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1186/s13059-019-1875-0"
+  },
+  {
+    "type": "article-journal",
+    "id": "K0EdTIg5",
+    "author": [
+      {
+        "family": "LaPierre",
+        "given": "Nathan"
+      },
+      {
+        "family": "Alser",
+        "given": "Mohammed"
+      },
+      {
+        "family": "Eskin",
+        "given": "Eleazar"
+      },
+      {
+        "family": "Koslicki",
+        "given": "David"
+      },
+      {
+        "family": "Mangul",
+        "given": "Serghei"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          9,
+          10
+        ]
+      ]
+    },
+    "abstract": "Metagenomic profiling, predicting the presence and relative abundances of microbes in a sample, is a critical first step in microbiome analysis. Alignment-based approaches are often considered accurate yet computationally infeasible. Here, we present a novel method, Metalign, that performs efficient and accurate alignment-based metagenomic profiling. We use a novel containment min hash approach to pre-filter the reference database prior to alignment and then process both uniquely aligned and multi-aligned reads to produce accurate abundance estimates. In performance evaluations on both real and simulated datasets, Metalign is the only method evaluated that maintained high performance and competitive running time across all datasets.",
+    "container-title": "Genome Biology",
+    "DOI": "10.1186/s13059-020-02159-0",
+    "volume": "21",
+    "issue": "1",
+    "page": "242",
+    "publisher": "Springer Science and Business Media LLC",
+    "title": "Metalign: efficient alignment-based metagenomic profiling via containment min hash",
+    "URL": "https://doi.org/ghtqrz",
+    "PMCID": "PMC7488264",
+    "PMID": "32912225",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1186/s13059-020-02159-0"
+  },
+  {
+    "type": "article-journal",
+    "id": "ART4gJKs",
+    "author": [
+      {
+        "family": "Pierce",
+        "given": "N. Tessa"
+      },
+      {
+        "family": "Irber",
+        "given": "Luiz"
+      },
+      {
+        "family": "Reiter",
+        "given": "Taylor"
+      },
+      {
+        "family": "Brooks",
+        "given": "Phillip"
+      },
+      {
+        "family": "Brown",
+        "given": "C. Titus"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          7,
+          4
+        ]
+      ]
+    },
+    "abstract": "The sourmash software package uses MinHash-based sketching to create “signatures”, compressed representations of DNA, RNA, and protein sequences, that can be stored, searched, explored, and taxonomically annotated. sourmash signatures can be used to estimate sequence similarity between very large data sets quickly and in low memory, and can be used to search large databases of genomes for matches to query genomes and metagenomes. sourmash is implemented in C++, Rust, and Python, and is freely available under the BSD license at http://github.com/dib-lab/sourmash.",
+    "container-title": "F1000Research",
+    "DOI": "10.12688/f1000research.19675.1",
+    "volume": "8",
+    "page": "1006",
+    "publisher": "F1000 Research Ltd",
+    "title": "Large-scale sequence comparisons with sourmash",
+    "URL": "https://doi.org/gf9v84",
+    "PMCID": "PMC6720031",
+    "PMID": "31508216",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.12688/f1000research.19675.1"
+  },
+  {
+    "type": "article-journal",
+    "id": "TL0yBnjt",
+    "author": [
+      {
+        "family": "Criscuolo",
+        "given": "Alexis"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          11,
+          10
+        ]
+      ]
+    },
+    "abstract": "Recently developed MinHash-based techniques were proven successful in quickly estimating the level of similarity between large nucleotide sequences. This article discusses their usage and limitations in practice to approximating uncorrected distances between genomes, and transforming these pairwise dissimilarities into proper evolutionary distances. It is notably shown that complex distance measures can be easily approximated using simple transformation formulae based on few parameters. MinHash-based techniques can therefore be very useful for implementing fast yet accurate alignment-free phylogenetic reconstruction procedures from large sets of genomes. This last point of view is assessed with a simulation study using a dedicated bioinformatics tool.",
+    "container-title": "F1000Research",
+    "DOI": "10.12688/f1000research.26930.1",
+    "volume": "9",
+    "page": "1309",
+    "publisher": "F1000 Research Ltd",
+    "title": "On the transformation of MinHash-based uncorrected distances into proper evolutionary distances for phylogenetic inference",
+    "URL": "https://doi.org/gjn4jw",
+    "PMCID": "PMC7713896",
+    "PMID": "33335719",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.12688/f1000research.26930.1"
+  },
+  {
+    "type": "article-journal",
+    "id": "fVLvtRTc",
+    "author": [
+      {
+        "family": "Mölder",
+        "given": "Felix"
+      },
+      {
+        "family": "Jablonski",
+        "given": "Kim Philipp"
+      },
+      {
+        "family": "Letcher",
+        "given": "Brice"
+      },
+      {
+        "family": "Hall",
+        "given": "Michael B."
+      },
+      {
+        "family": "Tomkins-Tinch",
+        "given": "Christopher H."
+      },
+      {
+        "family": "Sochat",
+        "given": "Vanessa"
+      },
+      {
+        "family": "Forster",
+        "given": "Jan"
+      },
+      {
+        "family": "Lee",
+        "given": "Soohyun"
+      },
+      {
+        "family": "Twardziok",
+        "given": "Sven O."
+      },
+      {
+        "family": "Kanitz",
+        "given": "Alexander"
+      },
+      {
+        "family": "Wilm",
+        "given": "Andreas"
+      },
+      {
+        "family": "Holtgrewe",
+        "given": "Manuel"
+      },
+      {
+        "family": "Rahmann",
+        "given": "Sven"
+      },
+      {
+        "family": "Nahnsen",
+        "given": "Sven"
+      },
+      {
+        "family": "Köster",
+        "given": "Johannes"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          18
+        ]
+      ]
+    },
+    "container-title": "F1000Research",
+    "DOI": "10.12688/f1000research.29032.1",
+    "volume": "10",
+    "page": "33",
+    "publisher": "F1000 Research Ltd",
+    "title": "Sustainable data analysis with Snakemake",
+    "URL": "https://doi.org/gjjkwv",
+    "PMCID": "PMC8114187",
+    "PMID": "34035898",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.12688/f1000research.29032.1"
+  },
+  {
+    "type": "article-journal",
+    "id": "ExvjTLL3",
+    "author": [
+      {
+        "family": "Titus Brown",
+        "given": "C."
+      },
+      {
+        "family": "Irber",
+        "given": "Luiz"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          9,
+          14
+        ]
+      ]
+    },
+    "container-title": "The Journal of Open Source Software",
+    "DOI": "10.21105/joss.00027",
+    "volume": "1",
+    "issue": "5",
+    "page": "27",
+    "publisher": "The Open Journal",
+    "title": "sourmash: a library for MinHash sketching of DNA",
+    "URL": "https://doi.org/ghdrk5",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.21105/joss.00027"
+  },
+  {
+    "title": "Basic local alignment search tool.",
+    "volume": "215",
+    "issue": "3",
+    "page": "403-10",
+    "container-title": "Journal of molecular biology",
+    "container-title-short": "J Mol Biol",
+    "ISSN": "0022-2836",
+    "issued": {
+      "date-parts": [
+        [
+          1990,
+          10,
+          5
         ]
       ]
     },
     "author": [
       {
-        "given": "Douglas",
-        "family": "Heaven"
+        "given": "S F",
+        "family": "Altschul"
+      },
+      {
+        "given": "W",
+        "family": "Gish"
+      },
+      {
+        "given": "W",
+        "family": "Miller"
+      },
+      {
+        "given": "E W",
+        "family": "Myers"
+      },
+      {
+        "given": "D J",
+        "family": "Lipman"
       }
     ],
-    "PMID": "30718888",
-    "DOI": "10.1038/d41586-019-00447-9",
-    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/30718888",
+    "PMID": "2231712",
+    "DOI": "10.1016/s0022-2836(05)80360-2",
+    "abstract": "A new approach to rapid sequence comparison, basic local alignment search tool (BLAST), directly approximates alignments that optimize a measure of local similarity, the maximal segment pair (MSP) score. Recent mathematical results on the stochastic properties of MSP scores allow an analysis of the performance of this method as well as the statistical significance of alignments it generates. The basic algorithm is simple and robust; it can be implemented in a number of ways and applied in a variety of contexts including straightforward DNA and protein sequence database searches, motif searches, gene identification searches, and in the analysis of multiple regions of similarity in long DNA sequences. In addition to its flexibility and tractability to mathematical analysis, BLAST is an order of magnitude faster than existing sequence comparison tools of comparable sensitivity.",
+    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/2231712",
     "type": "article-journal",
-    "id": "126Wi5Us4",
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: pubmed:30718888"
+    "id": "jcOtxABy",
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: pubmed:2231712"
   },
   {
-    "id": "1GGGHdsew",
+    "id": "XwgHsst",
     "type": "report",
     "language": "en-US",
     "publisher": "Manubot",
-    "source": "greenelab.github.io",
-    "title": "Open collaborative writing with Manubot",
-    "URL": "https://greenelab.github.io/meta-review/",
+    "source": "dib-lab.github.io",
+    "title": "Lightweight compositional analysis of metagenomes with sourmash gather",
+    "URL": "https://dib-lab.github.io/2020-paper-sourmash-gather/",
     "author": [
       {
-        "family": "Himmelstein",
-        "given": "Daniel S."
+        "family": "Irber",
+        "given": "Luiz"
       },
       {
-        "family": "Rubinetti",
-        "given": "Vincent"
+        "family": "Brooks",
+        "given": "Phillip T."
       },
       {
-        "family": "Slochower",
-        "given": "David R."
+        "family": "Reiter",
+        "given": "Taylor"
       },
       {
-        "family": "Hu",
-        "given": "Dongbo"
+        "family": "Pierce",
+        "given": "N. Tessa"
       },
       {
-        "family": "Malladi",
-        "given": "Venkat S."
+        "family": "Koslicki",
+        "given": "David"
       },
       {
-        "family": "Greene",
-        "given": "Casey S."
-      },
-      {
-        "family": "Gitter",
-        "given": "Anthony"
+        "family": "Brown",
+        "given": "C. Titus"
       }
     ],
     "accessed": {
@@ -421,43 +1230,97 @@
         [
           "2021",
           12,
-          14
+          21
         ]
       ]
     },
     "issued": {
       "date-parts": [
         [
-          "2020",
-          5,
-          25
+          "2021",
+          12,
+          21
         ]
       ]
     },
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://greenelab.github.io/meta-review/"
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://dib-lab.github.io/2020-paper-sourmash-gather"
   },
   {
-    "id": "QhC8yJ7V",
-    "type": "article",
-    "note": "QID: Q56458321\nThis CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: wikidata:Q56458321",
-    "source": "Wikidata",
-    "title": "Plan S: Accelerating the transition to full and immediate Open Access to scientific publications",
-    "title-short": "Plan S",
-    "author": [
-      {
-        "family": "S",
-        "given": "cOAlition"
-      }
-    ],
-    "issued": {
+    "id": "wSmua5pQ",
+    "type": "webpage",
+    "abstract": "This software calculates a confidence interval for the mutation rate from a set of observed containment indices under a simple nucleotide mutation process. - GitHub - KoslickiLab/mutation-rate-ci-c...",
+    "container-title": "GitHub",
+    "language": "en",
+    "title": "GitHub - KoslickiLab/mutation-rate-ci-calculator: This software calculates a confidence interval for the mutation rate from a set of observed containment indices under a simple nucleotide mutation process.",
+    "title-short": "GitHub - KoslickiLab/mutation-rate-ci-calculator",
+    "URL": "https://github.com/KoslickiLab/mutation-rate-ci-calculator",
+    "accessed": {
       "date-parts": [
         [
-          "2018",
-          9,
-          4
+          "2021",
+          12,
+          21
         ]
       ]
     },
-    "URL": "https://www.wikidata.org/wiki/Q56458321"
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/KoslickiLab/mutation-rate-ci-calculator"
+  },
+  {
+    "id": "w83JJrdM",
+    "type": "webpage",
+    "abstract": "The idea of this PR is to estimate the cardinality of the original dataset using the scaled minhash as a proxy\n(the scaled minhash has a reduced resolution HLL equivalent to full resolution HLL fro...",
+    "container-title": "GitHub",
+    "language": "en",
+    "title": "[WIP] Ertl estimators for scaled minhash by luizirber · Pull Request #1270 · sourmash-bio/sourmash",
+    "URL": "https://github.com/sourmash-bio/sourmash/pull/1270",
+    "accessed": {
+      "date-parts": [
+        [
+          "2021",
+          12,
+          21
+        ]
+      ]
+    },
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/dib-lab/sourmash/pull/1270"
+  },
+  {
+    "id": "auqG5mhy",
+    "type": "webpage",
+    "abstract": "A toolbox for comparative genomics. Contribute to dparks1134/CompareM development by creating an account on GitHub.",
+    "container-title": "GitHub",
+    "language": "en",
+    "title": "GitHub - dparks1134/CompareM: A toolbox for comparative genomics.",
+    "title-short": "GitHub - dparks1134/CompareM",
+    "URL": "https://github.com/dparks1134/CompareM",
+    "accessed": {
+      "date-parts": [
+        [
+          "2021",
+          12,
+          21
+        ]
+      ]
+    },
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/dparks1134/CompareM"
+  },
+  {
+    "id": "18uVBOfA0",
+    "type": "webpage",
+    "abstract": "Estimating Average Amino Acid Identity (AAI) with BLAST and Diamond.",
+    "container-title": "LM Rodriguez-R",
+    "title": "AAI: BLAST vs Diamond",
+    "title-short": "AAI",
+    "URL": "https://rodriguez-r.com/blog/aai-blast-vs-diamond/",
+    "accessed": {
+      "date-parts": [
+        [
+          "2021",
+          12,
+          21
+        ]
+      ]
+    },
+    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://rodriguez-r.com/blog/aai-blast-vs-diamond"
   }
 ]
