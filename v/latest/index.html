@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="N. Tessa Pierce-Ward" />
   <meta name="author" content="C. Titus Brown" />
-  <meta name="dcterms.date" content="2021-12-26" />
+  <meta name="dcterms.date" content="2022-02-19" />
   <meta name="keywords" content="metagenomics, AAI, Alignment-free, Assembly-free, MinHash, FracMinHash, Containment" />
   <title>Protein k-mer analyses for assembly- and alignment-free sequence analysis</title>
   <style>
@@ -48,8 +48,8 @@
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2021-12-26" />
-  <meta name="citation_publication_date" content="2021-12-26" />
+  <meta name="dc.date" content="2022-02-19" />
+  <meta name="citation_publication_date" content="2022-02-19" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -70,9 +70,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/51e22610144d9a9c1d74e5a27d0915d6089d309f/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/51e22610144d9a9c1d74e5a27d0915d6089d309f/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/51e22610144d9a9c1d74e5a27d0915d6089d309f/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -86,10 +86,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2021-paper-protein-kmers/v/51e22610144d9a9c1d74e5a27d0915d6089d309f/">permalink</a>)
+(<a href="https://bluegenes.github.io/2021-paper-protein-kmers/v/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2021-paper-protein-kmers/tree/51e22610144d9a9c1d74e5a27d0915d6089d309f">bluegenes/2021-paper-protein-kmers@51e2261</a>
-on December 26, 2021.
+from <a href="https://github.com/bluegenes/2021-paper-protein-kmers/tree/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73">bluegenes/2021-paper-protein-kmers@7421f9b</a>
+on February 19, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -150,96 +150,131 @@ Here, we demonstrate that the utility of Scaled MinHash protein containment, bot
 </ul>
 <h2 id="results">Results</h2>
 <p>K-mer analysis methods enable similarity detection as low as a single shared k-mer between divergent genomes.
-As a result, exact matching long nucleotide k-mers can be used for taxonomic classification between closely related genomes, including at the strain, species, and genus level (k-mer lengths 51, 31, and 21, respectively).
+As a result, exact matching long nucleotide k-mers can be used for taxonomic classification and similarity detection between closely related genomes, including strain-level, species-level, and genus-level comparisons (often using k-mer lengths 51, 31, and 21, respectively).
 At larger evolutionary distances, accumulated nucleotide divergence limits the utility of exact nucleotide k-mer matching.
-As protein sequences are more conserved than their corresponding nucleotide sequences, exact matching of protein k-mers can enable similarity analysis across larger evolutionary distances.
-To start, we choose protein k-mer sizes that correspond to known informative DNA ksizes, 21 (protein k-mer length: 7) and 31 (closest protein k-mer length: 10).</p>
-<!---
-NOTE: worth looking at k=17 /51???.
---->
-<h3 id="protein-k-mers-enable-alignment-free-comparisons-at-increased-evolutionary-distances">Protein k-mers enable alignment-free comparisons at increased evolutionary distances</h3>
-<!---
-** gtdb evolpaths (all k-mers)**
-As the number of genomes per taxon varies widely across GTDB, comparisons across the entire GTDB database may be impacted by the particular genomes included in the database.
-To minimize any database biases, we developed a randomized subset of the GTDB database to assess the utility of protein k-mers across a wide range of evolutionary distances.
-
-[GTDB] This database provides a wide array of genomes for assessing the utility of protein k-mers for bacterial and archaeal similarity estimation and taxonomic classification.
-
-_OR SPECIES VERSION:
-This "evolutionary path" consists of eight genomes: an anchor genome, a genome matching anchor taxonomy down to the species level, one matching anchor taxonomy to the genus level, one matching to the family level, and so on.
-This creates a gradient of similarity, where comparisons to the anchor genome range from species-level to superkingdom-level._
-
-
-Path selection using the representative genomes in **GTDB release 95** resulted in 2957 paths comprised of 6690 unique genomes (6543 Bacteria, 237 Archaea).
-These paths include genome comparisons across 33 phyla (29 Bacteria, 4 Archaea), covering roughly a quarter of the 129 phyla (111 Bacteria, 18 Archaea) in GTDB release 95.
-While paths are limited to taxonomies with at least two GTDB representative genomes for each taxonomic rank, these paths provide a rich resource for comparisons at increasing evolutionary distances. 
---->
+Protein sequences, which are more conserved than their corresponding nucleotide sequences, are the gold standard for comparisons at larger evolutionary distances.
+Here, we evaluate the utility of amino acid k-mers for a wide range of genomic and metagenomic applications, including sequence distance estimation, taxonomic classification, and metagenome breakdown.</p>
+<h3 id="amino-acid-k-mer-length-selection">Amino Acid K-mer length selection</h3>
 <p>The Genome Taxonomy Database (GTDB) provides a genome-based taxonomy for bacterial and archaeal genomes <span class="citation" data-cites="cN1LdTev">[<a href="#ref-cN1LdTev" role="doc-biblioref">20</a>]</span>.
-To assess the utility of protein k-mers for comparisons at an array of evolutionary distances, we selected a subset of these genomes that would allow standardized comparisons across taxonomic ranks.
-For each genus with at least two species clusters in GTDB, one representative genome was randomly selected as an “anchor” genome.
-Then, one additional genome was selected from the GTDB representative genomes matching the anchor’s taxonomy at each higher taxonomic rank.
-This “evolutionary path” consists of seven genomes: an anchor genome, a genome matching anchor taxonomy down to the genus level, one matching anchor taxonomy to the family level, one matching to the order level, and so on.
-This creates a gradient of similarity, where comparisons to the anchor genome range from genus-level to superkingdom-level.</p>
-<p>Path selection using the representative genomes in GTDB rs202 resulted in 4095 paths comprised of 9213 unique genomes (8790 Bacteria, 333 Archaea).
-<em>These paths include genome comparisons across 33 phyla (29 Bacteria, 4 Archaea), covering roughly a quarter of the 129 phyla (111 Bacteria, 18 Archaea) in GTDB release 95.</em>
-While paths are limited to taxonomies with at least two GTDB representative genomes for each taxonomic rank, these paths provide a rich resource for comparisons at increasing evolutionary distances.</p>
-<p><strong><em>to do: gtdb rs202 version</em></strong></p>
-<p><strong>WHY no multi-species representatives?</strong>
-<img src="images/pseudomonas_jaccard_vs_containment_prot10.png" alt="More protein k-mers are shared at genus level CAPTION" /></p>
-<figure>
-<img src="images/anchor-containment.nucl-prot.png" alt="Protein k-mers are shared at higher taxonomic ranks CAPTION" /><figcaption aria-hidden="true"><strong>Protein k-mers are shared at higher taxonomic ranks</strong> CAPTION</figcaption>
-</figure>
-<p><strong>genomes in same genus, fraction of k-mers in common at each ksize? ALL THE K-MERS</strong></p>
-<h3 id="accurate-distance-estimation-from-k-mer-containment">Accurate distance estimation from k-mer containment</h3>
-<p>Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. To begin with, we can apply the same equations to protein k-mer comparison statistics to obtain an estimate of Amino Acid Identity.</p>
-<p>[Koslicki jaccard k-mer stats paper] showed how to properly transform Jaccard –&gt; ANI assuming a simple mutational model. For protein k-mers, Jaccard/Containment can be transformed into Amino Acid Identity (AAI).</p>
-<p>We can apply this same equation to protein k-mers</p>
-<p><strong><strong>to do: A. redo with MRCC estimate; use only best graph (or maybe two ksizes)</strong></strong>
-<img src="images/gtdb95-evolpaths.AAI-concordance.png" id="fig:evolpathsAAIvsCompareM" style="height:2in" alt="Scaled MinHash AAI vs CompareM GTDB Evolpaths dataset" /></p>
-<p>** talk with david: max containment? avg conainment?</p>
-<h3 id="anchor-containment-enables-comparisons-directly-from-dna-sequence"><strong>Anchor containment</strong> enables comparisons directly from DNA sequence</h3>
-<p>In most cases, novel queries are DNA sequences</p>
-<p>For protein k-mer comparisons to be useful, DNA queries must be translated into protein sequence, either via assembly and translation or direct 6-frame translation. While assembly-based methods are more accurate, they often only work for a fraction of the available data. In contrast, uninformated 6-frame translation can utilize the entire dataset, but generates a larger set of k-mers, only 1/6th of which are true protein k-mers. Here, the containment index is especially useful: by using only the containment estimate relative to the trusted reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence. We term this “anchor” containment, where the trusted genome is the “anchor” upon which we base the comparison.</p>
-<p>** figure: AAI from translated nucleotide –&gt; reference protein**</p>
-<p>[reproduce equation? Scaled MinHash Koslicki]
-** all k-mers; scaled minhash version <strong>
-</strong>[to do: run evolpaths with SCALED!]**</p>
-<h3 id="robust-taxonomic-classification-from-protein-k-mer-containment">Robust Taxonomic classification from protein k-mer containment</h3>
-<p>Anchor containment can also be used to enable robust taxonomic classification from either protein or 6-frame translated DNA queries.</p>
-<ul>
-<li>talk about full gtdb databases here?</li>
-<li>not sure if need them above so can do the rankinfo assessment?</li>
-</ul>
-<h3 id="metagenome-breakdown-using-protein-k-mers">Metagenome breakdown using protein k-mers</h3>
-<p>Anchor containment also enables metagenome breakdown via min-set-cov.</p>
-<p>Metagenome sequences can also be translated in 6-frames, and then the anchor containment can be assessed relative to proteomes in a reference database.</p>
-<p>*** use a mock metagenome, then a evolutionarily distant metagenome. compare the % of genome recovred with DNA, protein at diff ksizes. Genome grist it, basically.</p>
-<p>THIS USES BOTH THE 6-FRAME translation and sourmash tax!!! containment improtant, etc. I think this is the way to go.</p>
-<p><em>not exactly sure where to put this section</em></p>
-<h3 id="gtdb-databases">GTDB databases</h3>
-<p>To enable similarity estimation and taxonomic classification.</p>
-<p>The most recent GTDB release, <code>rs202</code>, encompasses 258,407 genomes from 47,895 species.
-To make analyses at this scale tractable, we downsample k-mers using <code>sourmash</code> Scaled MinHash sketches, with a scaling factor of 1000 for nucleotide k-mers (keep ~1/1000 k-mers) and 100 for protein k-mers (keep ~1/100 protein k-mers).
-For most genomes, both genomic and protein fastas were available for download from NCBI. In remaining cases (n=36,632), genome fastas were translated into protein sequence via PRODIGAL (CITE) prior to sketching.</p>
-<p>We built <code>sourmash</code> databases for GTDB, <code>rs202</code> version, both for the species-representatives subset, and for all genomes.
-These are available as part of the <code>Prepared Databases</code> section of the <code>sourmash</code> documentation, and archived on OSF [https://osf.io/t3fqa/] /Zenodo???.</p>
-<h3 id="different-k-mer-lengths-provide-resolution-at-different-taxonomic-ranks">Different k-mer lengths provide resolution at different taxonomic ranks</h3>
-<p><code>sourmash lca rankinfo</code>.</p>
-<p>For each database and k-mer type, we first assessed the number of k-mers specific to each taxonomic rank: k-mers specific to a geonome were only present in one genome in the entire database, k-mers specific to a species were found in at least two genomes of the same species, etc. K-mers specific to a “superkingdom” were found in genomes spanning at least two phyla. While these characterizations are greatly impacted by the genomes included in the database, the differences observed between k-mer types and sizes suggests that different k-mer sizes may provide resolution at different taxonomic ranks.</p>
-<!---
-note 31, 51 --- maybe partially a result of database issues, e.g. not all species have multiple members; sometimes all members are closely related.
---->
-<p>For all DNA k-mer sizes, the majority of k-mers are present in only a single species, with only a few k-mers shared across genera.
-Long nucleotide k-mers have already been shown to be useful for comparing genomes within the same genus or species.
-Only at a dna k-mer size of 21 are a significant fraction of k-mers present in genomes shared across different families or even phyla.
-In contrast, all protein k-mer sizes contain a portion of k-mers that are shared across genera and above.
-At a protein k-mer size of 7, over 80% of k-mers are present in genomes found in more than one phylum, while at a protein k-size of 10, the number of genome-specific k-mers is more similar to that observed for nucleotide k-mers.</p>
+We begin by assessing the prevalance of amino acid k-mers of different k-mer lengths within genomes (proteomes) selected for inclusion within GTDB.
+The most recent GTDB release, <code>rs202</code>, encompasses 258,407 genomes from 47,895 species.</p>
+<p>To make analyses at this scale tractable, we built <code>sourmash</code> FracMinHash sketches, with a scaling factor of 1000 for nucleotide k-mers (keep ~1/1000 k-mers) and 200 for amino acid k-mers (keep ~1/200 protein k-mers) <span class="citation" data-cites="IadOz4ol">[<a href="#ref-IadOz4ol" role="doc-biblioref">21</a>]</span>.
+For most genomes, both genomic and protein fastas were available for download from NCBI.
+In remaining cases (n=36,632), genome fastas were translated into protein sequence via Prodigal <span class="citation" data-cites="lX665mdh">[<a href="#ref-lX665mdh" role="doc-biblioref">22</a>]</span> prior to sketching.
+We indexed these sketches into <code>sourmash</code> databases, which we have made available as part of the <code>Prepared Databases</code> section of the <code>sourmash</code> documentation, and archived on OSF [https://osf.io/t3fqa/] /Zenodo???.</p>
 <div id="fig:gtdb-kmers" class="fignos">
 <figure>
 <img src="images/gtdb-rs202.lca_f_aggregated_kmers.png" style="height:2in" alt="Figure 1: Fraction of k-mers specific to taxonomic rank For the GTDB-RS202 database, the majority of nucleotide k-mers are specific to (unique at) a specific genome, species, or genus. Few k-mers are shared across superkingdoms, though these do exist at k=21. K-mers shared at such a high level are indicative of high k-mer homoplasy: the presence of k-mers that are identical by chance rather than evolutionary descent." /><figcaption aria-hidden="true"><span>Figure 1:</span> <strong>Fraction of k-mers specific to taxonomic rank</strong>
 For the GTDB-RS202 database, the majority of nucleotide k-mers are specific to (unique at) a specific genome, species, or genus. Few k-mers are shared across superkingdoms, though these do exist at k=21. K-mers shared at such a high level are indicative of high k-mer homoplasy: the presence of k-mers that are identical by chance rather than evolutionary descent.</figcaption>
 </figure>
 </div>
+<p>For both nucleotide and amino acid k-mers, we first assessed the number of k-mers specific to each taxonomic rank: k-mers specific to a genome were only present in one genome in the entire database, k-mers specific to a species were found in at least two genomes of the same species, etc. K-mers specific to a “superkingdom” were found in genomes spanning at least two phyla. We assessed k-mer lengths ranging between k=7 and k=11, which roughly correspond to nucleotide k-mer lengths 21-31.</p>
+<p>For all DNA k-mer sizes, the majority of k-mers are present in only a single species, with only a few k-mers shared across genera.
+Long nucleotide k-mers have already been shown to be useful for comparing genomes within the same genus or species.
+Only at a dna k-mer size of 21 are a significant fraction of k-mers present in genomes shared across different families or even phyla.
+In contrast, all protein k-mer sizes contain a portion of k-mers that are shared across genera and above.
+At a protein k-mer size of 7, over 80% of k-mers are present in genomes found in more than one phylum, while at a protein k-size of 10, the number of genome-specific k-mers is more similar to that observed for nucleotide k-mers.</p>
+<p>Given the difference in k-mers found across taxonomic ranks, we decided to focus on amino acid k-mer lengths 7 and 10 for our primary analyses.
+<!---
+NOTE: worth looking at k=17 /51???.
+--->
+<!---
+**We chose to assess k=10 and k=7, because these ksies mostly closely correspond to nucleotide k-mer 21, 31. k7 has also been previously used for database lookup (find paper + reference), but we didn't want to exclusively use it because so many 7-mers are shared across phyla. ** 
+
+FOR DISCUSSION re: kmer length selection / GTDB rankinfo
+The differences observed between nucleotide and amino acid k-mers, as well as across different k-mer lengths suggests that these different k-mer sizes may provide resolution at different taxonomic ranks. The exact characterization here is of course impacted by which are genomes included in the database, but we are confident that the 258k genomes included within GTDB provide a good testing ground for this assessment.
+
+note 31, 51 --- maybe partially a result of database issues, e.g. not all species have multiple members; sometimes all members are closely related.
+
+---></p>
+<h3 id="abridged-gtdb-test-dataset">Abridged GTDB Test Dataset</h3>
+<p>While the GTDB database contains 258k genomes, many of these genomes are found within the same genus (e.g. 55k E coli genomes).
+To assess the utility of protein k-mers for comparisons at an array of evolutionary distances, we selected a subset of GTDB genomes that would allow standardized comparisons across taxonomic ranks, focusing on comparisons at the genus-level and above.
+For each genus with at least two species clusters in GTDB, one representative genome was randomly selected as an “anchor” genome.
+Then, one additional genome was selected from the GTDB representative genomes matching the anchor’s taxonomy at each higher taxonomic rank.
+This “evolutionary path” consists of seven genomes: an anchor genome, a genome matching anchor taxonomy down to the genus level, one matching anchor taxonomy to the family level, one matching to the order level, and so on.
+This creates a gradient of similarity, where comparisons to the anchor genome range from genus-level to superkingdom-level.</p>
+<p>Path selection using the representative genomes in GTDB rs202 resulted in 4095 paths comprised of 9213 unique genomes (8790 Bacteria, 333 Archaea).
+These paths include genome comparisons across 40 phyla (36 Bacteria, 4 Archaea), covering roughly a quarter of the 169 phyla (149 Bacteria, 20 Archaea) in GTDB release rs202.
+While paths are limited to taxonomies with at least two GTDB representative genomes for each taxonomic rank, these paths provide a rich resource for comparisons at increasing evolutionary distances.</p>
+<h3 id="protein-k-mers-facilitate-alignment-free-comparisons-at-increased-evolutionary-distances">Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances</h3>
+<p>** FIGURE: containment/jaccard for evolpaths, DNA vs PROT
+THEN –&gt; distance estimation?</p>
+<!---
+**WHY no multi-species representatives?**
+![**More protein k-mers are shared at genus level** CAPTION](images/pseudomonas_jaccard_vs_containment_prot10.png)
+
+![**Protein k-mers are shared at higher taxonomic ranks** CAPTION](images/anchor-containment.nucl-prot.png)
+--->
+<p><strong>genomes in same genus, fraction of k-mers in common at each ksize? ALL THE K-MERS</strong></p>
+<h3 id="accurate-distance-estimation-from-k-mer-containment">Accurate distance estimation from k-mer containment</h3>
+<p><em>all k-mers + scaled</em></p>
+<p>Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. To begin with, we can apply the same equations to protein k-mer comparison statistics to obtain an estimate of Amino Acid Identity.</p>
+<p><span class="citation" data-cites="fCWtHkDP">[Koslicki jaccard k-mer stats paper <a href="#ref-fCWtHkDP" role="doc-biblioref">23</a>]</span> showed how to properly transform Jaccard –&gt; ANI assuming a simple mutational model. For protein k-mers, Jaccard/Containment can be transformed into Amino Acid Identity (AAI).</p>
+<p>We can apply this same equation to protein k-mers</p>
+<p><strong><strong>to do: A. redo with MRCC estimate; use only best graph (or maybe two ksizes)</strong></strong>
+<img src="images/gtdb95-evolpaths.AAI-concordance.png" id="fig:evolpathsAAIvsCompareM" style="height:2in" alt="Scaled MinHash AAI vs CompareM GTDB Evolpaths dataset" /></p>
+<p><strong>talk with david: max containment? avg conainment? max containment? evolpaths = avg containment, whereas reference comparisonss –&gt; avg containment</strong></p>
+<h3 id="containment-enables-comparison-directly-from-dna-sequence"><strong>Containment</strong> enables comparison directly from DNA sequence</h3>
+<p>For protein k-mer comparisons to be useful, any DNA queries must be translated into protein sequence, either via assembly and translation or direct 6-frame translation. While assembly-based methods are more accurate, they often only work for a fraction of the available data. In contrast, 6-frame translation uses the entire dataset but generates a larger set of k-mers, only 1/6th of which are true protein k-mers. Here, the containment index is especially useful: by using only the containment estimate relative to the trusted reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence. We term this “anchor” containment, where the trusted genome is the “anchor” upon which we base the comparison.</p>
+<ol type="1">
+<li>genome –&gt; proteome (should be 100%, so not sure if worth?)</li>
+<li>dataset a genome came from vs. that genome</li>
+<li>sequencing from</li>
+</ol>
+<p>** figure: AAI from translated nucleotide –&gt; reference protein**</p>
+<p>[reproduce equation? Scaled MinHash Koslicki]
+** all k-mers; scaled minhash version <strong>
+</strong>[to do: run evolpaths with SCALED!]**</p>
+<h3 id="robust-taxonomic-classification-from-protein-k-mer-containment">Robust Taxonomic classification from protein k-mer containment</h3>
+<p>Anchor containment can also be used to enable robust taxonomic classification from either protein or 6-frame translated DNA queries.</p>
+<p>With experimental genomes where no reference taxonomic lineage is available, we assessed our annotation relative to <code>gtdb-tk</code> classification <span class="citation" data-cites="13saJolbd">[<a href="#ref-13saJolbd" role="doc-biblioref">24</a>]</span>.</p>
+<p>Taxonomic utilities are implemented in the <code>sourmash taxonomy</code> module.</p>
+<ul>
+<li>talk about full gtdb databases here?</li>
+<li>not sure if need them above so can do the rankinfo assessment?</li>
+</ul>
+<!---
+THIS USES BOTH THE 6-FRAME translation and sourmash tax!!! containment important, etc. I think this is the way to go.
+--->
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dataset</th>
+<th style="text-align: right;">Exact Match</th>
+<th style="text-align: right;">Higher Rank</th>
+<th style="text-align: right;">Unclassified (sourmash)</th>
+<th style="text-align: right;">Unclassified (GTDB-Tk)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MGNify-1000</td>
+<td style="text-align: right;">95.7%</td>
+<td style="text-align: right;">4.3%</td>
+<td style="text-align: right;">N/A</td>
+<td style="text-align: right;">N/A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Delmont-886</td>
+<td style="text-align: right;">73.5%</td>
+<td style="text-align: right;">26.5%</td>
+<td style="text-align: right;">1 (0.1%)</td>
+<td style="text-align: right;">15 (1.7%)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metagenome-breakdown-using-protein-k-mers">Metagenome breakdown using protein k-mers</h3>
+<p>Anchor containment also enables metagenome breakdown via min-set-cov.</p>
+<p>Metagenome sequences can also be translated in 6-frames, and then the anchor containment can be assessed relative to proteomes in a reference database.</p>
+<p>*** use a mock metagenome, then a evolutionarily distant metagenome. compare the % of genome recovred with DNA, protein at diff ksizes. Genome grist it, basically.</p>
 <!---
 GTDB rankinfo: 
 
@@ -280,6 +315,17 @@ This provides some advantages: in cases where one set is more highly trusted to 
 
 --->
 <!---
+** gtdb evolpaths (all k-mers)**
+As the number of genomes per taxon varies widely across GTDB, comparisons across the entire GTDB database may be impacted by the particular genomes included in the database.
+To minimize any database biases, we developed a randomized subset of the GTDB database to assess the utility of protein k-mers across a wide range of evolutionary distances.
+
+[GTDB] This database provides a wide array of genomes for assessing the utility of protein k-mers for bacterial and archaeal similarity estimation and taxonomic classification.
+
+_OR SPECIES VERSION:
+This "evolutionary path" consists of eight genomes: an anchor genome, a genome matching anchor taxonomy down to the species level, one matching anchor taxonomy to the genus level, one matching to the family level, and so on.
+This creates a gradient of similarity, where comparisons to the anchor genome range from species-level to superkingdom-level._
+--->
+<!---
 ### Lost Bits
 
 
@@ -296,7 +342,7 @@ GTDB Evolpaths dataset](images/anchor-mcANI-AAI.boxen.protnucl.png){#fig:evolpat
 <h2 id="discussion">Discussion</h2>
 <p>K-mer based estimation of sequence identity has been limited to nucleotide sequences of similar size with high sequence identity (&gt;80%),outside of which MinHash Jaccard is less well correlated with sequence identity <span class="citation" data-cites="mH9pzoIn 12fAf7MKk">[<a href="#ref-mH9pzoIn" role="doc-biblioref">1</a>,<a href="#ref-12fAf7MKk" role="doc-biblioref">15</a>]</span>.</p>
 <p>By leveraging the Containment Index of Scaled MinHash sketches with both nucleotide and protein k-mers, we can extend accurate k-mer sequence identity to sequences of different sizes and to &gt;50% Amino Acid Identity.</p>
-<p>Cricuolo <span class="citation" data-cites="TL0yBnjt">[<a href="#ref-TL0yBnjt" role="doc-biblioref">21</a>]</span> (suggests w/ appropriate correction, nucl MinHash Jaccard can be used up to &gt;65% ANI??)</p>
+<p>Cricuolo <span class="citation" data-cites="TL0yBnjt">[<a href="#ref-TL0yBnjt" role="doc-biblioref">25</a>]</span> (suggests w/ appropriate correction, nucl MinHash Jaccard can be used up to &gt;65% ANI??)</p>
 <p>Here, we utilize Scaled MinHash sketches with Containment to overcome size differences between sequences being compared.</p>
 <p>To accurately estimate sequence identity from sequence files of different sizes(genomes, metagenomes, etc), we employ Scaled Minhash sketches, which enables estimation of the Containment Index.</p>
 <p>A number of methods have used discriminatory k-mer analysis for taxonomic classification. However, most rely upon first developing a reference of discriminatory k-mers, e.g. k-mers unique to / diagnostic of a taxonomic group.
@@ -316,7 +362,7 @@ After finding the best match, all matched k-mers are removed for the query in or
 <p>Containment-based pairwise distance estimation via Scaled Minhash enables accurate assembly-free and alignment-free phylogenomic reconstruction and taxonomic classification across a wide range of evolutionary distances.</p>
 <h2 id="methods">Methods</h2>
 <h3 id="scaled-minhash-sketching-with-sourmash">Scaled MinHash Sketching with Sourmash</h3>
-<p>As implemented in sourmash <span class="citation" data-cites="XwgHsst ART4gJKs ExvjTLL3">[<a href="#ref-XwgHsst" role="doc-biblioref">8</a>,<a href="#ref-ART4gJKs" role="doc-biblioref">22</a>,<a href="#ref-ExvjTLL3" role="doc-biblioref">23</a>]</span>, Scaled MinHash is a MinHash variant that uses a scaling factor to subsample the unique k-mers in the dataset to the chosen proportion (1/<code>scaled</code>).
+<p>As implemented in sourmash <span class="citation" data-cites="XwgHsst ART4gJKs ExvjTLL3">[<a href="#ref-XwgHsst" role="doc-biblioref">8</a>,<a href="#ref-ART4gJKs" role="doc-biblioref">26</a>,<a href="#ref-ExvjTLL3" role="doc-biblioref">27</a>]</span>, Scaled MinHash is a MinHash variant that uses a scaling factor to subsample the unique k-mers in the dataset to the chosen proportion (1/<code>scaled</code>).
 As k-mers are randomized prior to systematic subsampling, Scaled MinHash sketches are representative subsets that can be used for comparisons, as long as the k-mer size and chosen scaled value remain consistent.
 Unlike traditional MinHash sketches, Scaled MinHash sketches enable similarity estimation with containment, which permits more accurate estimation of genomic distance when genomes or datasets differ in size <span class="citation" data-cites="s8orJ7KE 10ppWuOJ6">[<a href="#ref-s8orJ7KE" role="doc-biblioref">9</a>,<a href="#ref-10ppWuOJ6" role="doc-biblioref">10</a>]</span>.</p>
 <p>Sourmash v4.x supports sketching from either nucleotide or protein input sequence.
@@ -335,7 +381,7 @@ MinHash Sketch Jaccard has been shown to correlate well with ANI at high sequenc
 <p><strong>Mash Distance from Scaled MinHash Jaccard</strong></p>
 <p><em>TBD</em></p>
 <p><strong>Estimating Sequence Similarity from Containment</strong>
-As the Jaccard Index utilizes the union of all k-mers in a dataset, it is greatly affected by differences in dataset size <span class="citation" data-cites="1Drcez76Y">[<a href="#ref-1Drcez76Y" role="doc-biblioref">24</a>]</span>.
+As the Jaccard Index utilizes the union of all k-mers in a dataset, it is greatly affected by differences in dataset size <span class="citation" data-cites="1Drcez76Y">[<a href="#ref-1Drcez76Y" role="doc-biblioref">28</a>]</span>.
 The Containment Index instead represents the percent of a genome found in the comparison genome.
 Containment is directional: while the number of shared k-mers is fixed for a pairwise comparison, the Containment of each dataset will depend on the unique k-mers found in that particular dataset. Containment for genomeA will be (intersection/genomeA), while Containment for genomeB will be (intersection/genomeB).</p>
 <p>Alignment-based ANI represents the sequence similarity of the alignable fraction of two genomes. In this way, ANI only compares the shared sequences, and discounts/ignores all other sequence present in either genome.
@@ -348,16 +394,16 @@ We can take advantage of directional Containment by calculating the Containment 
 We have already shown the utility of Containment for metagenome classification <span class="citation" data-cites="XwgHsst">[<a href="#ref-XwgHsst" role="doc-biblioref">8</a>]</span>, but now we can report estimated average sequence identity between the matching sequence regions and the reference genome.</p>
 <p><strong>Estimating Sequence Identity from Scaled MinHash</strong></p>
 <p><strong><em>TBD</em></strong></p>
-<p>Blanca et al, 2021 <span class="citation" data-cites="cMPL2ulo">[<a href="#ref-cMPL2ulo" role="doc-biblioref">19</a>]</span> presented a method to estimate the mutation rate between MinHash sketches while accounting for the non-independence of mutated k-mers. Using <span class="citation" data-cites="wSmua5pQ">[<a href="#ref-wSmua5pQ" role="doc-biblioref">25</a>]</span>, we estimate Sequence Identity from Scaled MinHash Containment.</p>
-<p>Estimating sequence similarity from Scaled MinHash requires a good estimate of the number of unique k-mers in the sketched sequencing dataset <span class="citation" data-cites="w83JJrdM">[<a href="#ref-w83JJrdM" role="doc-biblioref">26</a>]</span>…</p>
+<p>Blanca et al, 2021 <span class="citation" data-cites="cMPL2ulo">[<a href="#ref-cMPL2ulo" role="doc-biblioref">19</a>]</span> presented a method to estimate the mutation rate between MinHash sketches while accounting for the non-independence of mutated k-mers. Using <span class="citation" data-cites="wSmua5pQ">[<a href="#ref-wSmua5pQ" role="doc-biblioref">29</a>]</span>, we estimate Sequence Identity from Scaled MinHash Containment.</p>
+<p>Estimating sequence similarity from Scaled MinHash requires a good estimate of the number of unique k-mers in the sketched sequencing dataset <span class="citation" data-cites="w83JJrdM">[<a href="#ref-w83JJrdM" role="doc-biblioref">30</a>]</span>…</p>
 <h3 id="scaled-minhash-distance-correlates-with-standard-methods">Scaled MinHash Distance Correlates with Standard Methods</h3>
 <p>FastANI v1.32 (<span class="citation" data-cites="12fAf7MKk">[<a href="#ref-12fAf7MKk" role="doc-biblioref">15</a>]</span>; run with default parameters) was used to obtain Average Nucleotide Identity between the anchor genome and each additional genome in its evolutionary path.
 FastANI is targeted at ANI values between 80%-100%, so only values in this range are considered “trusted” and used in **assessing the correlation between Scaled MinHash estimates and FastANI._(TBD)_**</p>
-<p>CompareM v0.1.2 (<span class="citation" data-cites="auqG5mhy">[<a href="#ref-auqG5mhy" role="doc-biblioref">27</a>]</span>; run with <code>--sensitive</code> parameter for DIAMOND mapping) was used to obtain Average Amino Acid Identity between the anchor proteome and each additional proteome in its evolutionary path.
+<p>CompareM v0.1.2 (<span class="citation" data-cites="auqG5mhy">[<a href="#ref-auqG5mhy" role="doc-biblioref">31</a>]</span>; run with <code>--sensitive</code> parameter for DIAMOND mapping) was used to obtain Average Amino Acid Identity between the anchor proteome and each additional proteome in its evolutionary path.
 CompareM reports the mean and standard deviation of AAI, as well as the fraction of orthologous genes upon which this estimate is based.
-Briefly, CompareM calls genes for each genome or proteome using PRODIGAL <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span> and conducts reciprocal best-hit mapping via DIAMOND <span class="citation" data-cites="lX665mdh">[<a href="#ref-lX665mdh" role="doc-biblioref">28</a>]</span>.
+Briefly, CompareM calls genes for each genome or proteome using PRODIGAL <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span> and conducts reciprocal best-hit mapping via DIAMOND <span class="citation" data-cites="lX665mdh">[<a href="#ref-lX665mdh" role="doc-biblioref">22</a>]</span>.
 By default, CompareM requires at least 30% percent sequence identity and 70% percent alignment length to identify orthologous genes.
-As DIAMOND alignment-based homology identification may correlate less well with BLAST-based homology under 60% sequence identity <span class="citation" data-cites="18uVBOfA0">[<a href="#ref-18uVBOfA0" role="doc-biblioref">29</a>/]</span>, <strong>we also ran compareM with a percent sequence identity threshold of 60% to obtain a set of high-confidence orthologous genes for AAI estimation. We report correlation between Scaled MinHash AAI estimation and each of these compareM parameter sets in XX <em>(TBD)</em></strong>. <em>CompareM was also used to obtain AAI values directly from each genome, using PRODIGAL to translate sequences prior to gene calling. These results [were not significantly different from proteome-based AAI estimation??] (Supplemental XX).</em></p>
+As DIAMOND alignment-based homology identification may correlate less well with BLAST-based homology under 60% sequence identity <span class="citation" data-cites="18uVBOfA0">[<a href="#ref-18uVBOfA0" role="doc-biblioref">32</a>/]</span>, <strong>we also ran compareM with a percent sequence identity threshold of 60% to obtain a set of high-confidence orthologous genes for AAI estimation. We report correlation between Scaled MinHash AAI estimation and each of these compareM parameter sets in XX <em>(TBD)</em></strong>. <em>CompareM was also used to obtain AAI values directly from each genome, using PRODIGAL to translate sequences prior to gene calling. These results [were not significantly different from proteome-based AAI estimation??] (Supplemental XX).</em></p>
 <h3 id="taxonomic-classification-with-sourmash-gather-and-taxonomy">Taxonomic Classification with Sourmash <code>Gather</code> and <code>Taxonomy</code></h3>
 <p>To take advantage of the increased evolutionary distance comparisons offered by protein k-mers, we apply compositional analysis with sourmash gather <span class="citation" data-cites="XwgHsst">[<a href="#ref-XwgHsst" role="doc-biblioref">8</a>]</span> to protein sequences (amino acid input and 6-frame translation from nucleotides).
 Sourmash gather is conducted in two parts:
@@ -367,14 +413,14 @@ In this way, gather reports the minimal list of reference genomes that contain a
 <p>For reference matches with high sequence identity (ANI) to the query, we classify the query sequence as a member of the reference taxonomic group, as in <span class="citation" data-cites="XwgHsst">[<a href="#ref-XwgHsst" role="doc-biblioref">8</a>]</span>.
 <strong>However, when ANI between the query and the top reference match exceeds the taxonomic rank threshold (e.g. species default 95%), we use a least/lowest common ancestor (LCA) approach to report likely taxonomy at a higher taxonomic rank <em>(TBD)</em></strong>.
 Briefly, as gather reports non-overlapping genome matches, we can sum the k-mer matches for all genomes with shared taxonomies at the next higher taxonomic rank to report the best query containment at that rank.
-As this gather-LCA approach first uniquely assigns k-mers to their best reference genome, it bypasses the impact of increasing database size on taxonomic assignment observed for other LCA-based k-mer classification approaches <span class="citation" data-cites="j7nehrZT">[<a href="#ref-j7nehrZT" role="doc-biblioref">30</a>]</span>.</p>
+As this gather-LCA approach first uniquely assigns k-mers to their best reference genome, it bypasses the impact of increasing database size on taxonomic assignment observed for other LCA-based k-mer classification approaches <span class="citation" data-cites="j7nehrZT">[<a href="#ref-j7nehrZT" role="doc-biblioref">33</a>]</span>.</p>
 <h3 id="workflows-and-computing-resources">Workflows and Computing Resources</h3>
-<p>Reproducible workflows associated with this paper are available at XX (gh link + doi for release), with datasets available at OSF (XX). All workflows were executed using snakemake &gt;= 5.26 <span class="citation" data-cites="fVLvtRTc">[<a href="#ref-fVLvtRTc" role="doc-biblioref">31</a>)]</span> on the FARM cluster at UC Davis, using practices outlined in <span class="citation" data-cites="q9c75jWY">[<a href="#ref-q9c75jWY" role="doc-biblioref">32</a>]</span>.</p>
+<p>Reproducible workflows associated with this paper are available at XX (gh link + doi for release), with datasets available at OSF (XX). All workflows were executed using snakemake &gt;= 5.26 <span class="citation" data-cites="fVLvtRTc">[<a href="#ref-fVLvtRTc" role="doc-biblioref">34</a>)]</span> on the FARM cluster at UC Davis, using practices outlined in <span class="citation" data-cites="q9c75jWY">[<a href="#ref-q9c75jWY" role="doc-biblioref">35</a>]</span>.</p>
 <h2 class="page_break_before" id="references">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs" class="references csl-bib-body" role="doc-bibliography">
 <div id="ref-mH9pzoIn" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline"><strong>Mash: fast genome and metagenome distance estimation using MinHash</strong> <div class="csl-block">Brian D Ondov, Todd J Treangen, Páll Melsted, Adam B Mallonee, Nicholas H Bergman, Sergey Koren, Adam M Phillippy</div> <em>Genome Biology</em> (2016-06-20) <a href="https://doi.org/gfx74q">https://doi.org/gfx74q</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-016-0997-x">10.1186/s13059-016-0997-x</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27323842">27323842</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4915045">PMC4915045</a></div></div>
+<div class="csl-left-margin">1. </div><div class="csl-right-inline"><strong>Mash: fast genome and metagenome distance estimation using MinHash</strong> <div class="csl-block">Brian D Ondov, Todd J Treangen, Páll Melsted, Adam B Mallonee, Nicholas H Bergman, Sergey Koren, Adam M Phillippy</div> <em>Genome Biology</em> (2016-12) <a href="https://doi.org/gfx74q">https://doi.org/gfx74q</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-016-0997-x">10.1186/s13059-016-0997-x</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27323842">27323842</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4915045">PMC4915045</a></div></div>
 </div>
 <div id="ref-mSNjcw0J" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline"><strong>Kraken: ultrafast metagenomic sequence classification using exact alignments</strong> <div class="csl-block">Derrick E Wood, Steven L Salzberg</div> <em>Genome Biology</em> (2014) <a href="https://doi.org/gfkndk">https://doi.org/gfkndk</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/gb-2014-15-3-r46">10.1186/gb-2014-15-3-r46</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/24580807">24580807</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4053813">PMC4053813</a></div></div>
@@ -386,88 +432,97 @@ As this gather-LCA approach first uniquely assigns k-mers to their best referenc
 <div class="csl-left-margin">4. </div><div class="csl-right-inline"><strong>Basic local alignment search tool.</strong> <div class="csl-block">SF Altschul, W Gish, W Miller, EW Myers, DJ Lipman</div> <em>Journal of molecular biology</em> (1990-10-05) <a href="https://www.ncbi.nlm.nih.gov/pubmed/2231712">https://www.ncbi.nlm.nih.gov/pubmed/2231712</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/s0022-2836(05)80360-2">10.1016/s0022-2836(05)80360-2</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/2231712">2231712</a></div></div>
 </div>
 <div id="ref-4R96QRcV" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">5. </div><div class="csl-right-inline"><strong>Fast and sensitive protein alignment using DIAMOND</strong> <div class="csl-block">Benjamin Buchfink, Chao Xie, Daniel H Huson</div> <em>Nature Methods</em> (2014-11-17) <a href="https://doi.org/gftzcs">https://doi.org/gftzcs</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/nmeth.3176">10.1038/nmeth.3176</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25402007">25402007</a></div></div>
+<div class="csl-left-margin">5. </div><div class="csl-right-inline"><strong>Fast and sensitive protein alignment using DIAMOND</strong> <div class="csl-block">Benjamin Buchfink, Chao Xie, Daniel H Huson</div> <em>Nature Methods</em> (2015-01) <a href="https://doi.org/gftzcs">https://doi.org/gftzcs</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/nmeth.3176">10.1038/nmeth.3176</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/25402007">25402007</a></div></div>
 </div>
 <div id="ref-P2zJQDwU" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">6. </div><div class="csl-right-inline"><strong>Fast and sensitive taxonomic classification for metagenomics with Kaiju</strong> <div class="csl-block">Peter Menzel, Kim Lee Ng, Anders Krogh</div> <em>Nature Communications</em> (2016-04-13) <a href="https://doi.org/f8h4b6">https://doi.org/f8h4b6</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/ncomms11257">10.1038/ncomms11257</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27071849">27071849</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4833860">PMC4833860</a></div></div>
+<div class="csl-left-margin">6. </div><div class="csl-right-inline"><strong>Fast and sensitive taxonomic classification for metagenomics with Kaiju</strong> <div class="csl-block">Peter Menzel, Kim Lee Ng, Anders Krogh</div> <em>Nature Communications</em> (2016-09) <a href="https://doi.org/f8h4b6">https://doi.org/f8h4b6</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/ncomms11257">10.1038/ncomms11257</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/27071849">27071849</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4833860">PMC4833860</a></div></div>
 </div>
 <div id="ref-19AP1jyqE" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">7. </div><div class="csl-right-inline"><strong>Mash Screen: high-throughput sequence containment estimation for genome discovery</strong> <div class="csl-block">Brian D Ondov, Gabriel J Starrett, Anna Sappington, Aleksandra Kostic, Sergey Koren, Christopher B Buck, Adam M Phillippy</div> <em>Genome Biology</em> (2019-11-05) <a href="https://doi.org/ghtqmb">https://doi.org/ghtqmb</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-019-1841-x">10.1186/s13059-019-1841-x</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31690338">31690338</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6833257">PMC6833257</a></div></div>
+<div class="csl-left-margin">7. </div><div class="csl-right-inline"><strong>Mash Screen: high-throughput sequence containment estimation for genome discovery</strong> <div class="csl-block">Brian D Ondov, Gabriel J Starrett, Anna Sappington, Aleksandra Kostic, Sergey Koren, Christopher B Buck, Adam M Phillippy</div> <em>Genome Biology</em> (2019-12) <a href="https://doi.org/ghtqmb">https://doi.org/ghtqmb</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-019-1841-x">10.1186/s13059-019-1841-x</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31690338">31690338</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6833257">PMC6833257</a></div></div>
 </div>
 <div id="ref-XwgHsst" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">8. </div><div class="csl-right-inline"><strong>Lightweight compositional analysis of metagenomes with sourmash gather</strong> <div class="csl-block">Luiz Irber, Phillip T Brooks, Taylor Reiter, NTessa Pierce, David Koslicki, CTitus Brown</div> <em>Manubot</em> (2021-12-21) <a href="https://dib-lab.github.io/2020-paper-sourmash-gather/">https://dib-lab.github.io/2020-paper-sourmash-gather/</a></div>
+<div class="csl-left-margin">8. </div><div class="csl-right-inline"><strong>Lightweight compositional analysis of metagenomes with FracMinHash and minimum metagenome covers</strong> <div class="csl-block">Luiz Irber, Phillip T Brooks, Taylor Reiter, NTessa Pierce-Ward, Mahmudur Rahman Hera, David Koslicki, CTitus Brown</div> <em>Manubot</em> (2022-01-17) <a href="https://dib-lab.github.io/2020-paper-sourmash-gather/">https://dib-lab.github.io/2020-paper-sourmash-gather/</a></div>
 </div>
 <div id="ref-s8orJ7KE" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">9. </div><div class="csl-right-inline"><strong>Improving MinHash via the containment index with applications to metagenomic analysis</strong> <div class="csl-block">David Koslicki, Hooman Zabeti</div> <em>Applied Mathematics and Computation</em> (2019-08) <a href="https://doi.org/ghtqrv">https://doi.org/ghtqrv</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/j.amc.2019.02.018">10.1016/j.amc.2019.02.018</a></div></div>
 </div>
 <div id="ref-10ppWuOJ6" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">10. </div><div class="csl-right-inline"><strong>Dashing: fast and accurate genomic distances with HyperLogLog</strong> <div class="csl-block">Daniel N Baker, Ben Langmead</div> <em>Genome Biology</em> (2019-12-04) <a href="https://doi.org/ggkmjc">https://doi.org/ggkmjc</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-019-1875-0">10.1186/s13059-019-1875-0</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31801633">31801633</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6892282">PMC6892282</a></div></div>
+<div class="csl-left-margin">10. </div><div class="csl-right-inline"><strong>Dashing: fast and accurate genomic distances with HyperLogLog</strong> <div class="csl-block">Daniel N Baker, Ben Langmead</div> <em>Genome Biology</em> (2019-12) <a href="https://doi.org/ggkmjc">https://doi.org/ggkmjc</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-019-1875-0">10.1186/s13059-019-1875-0</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31801633">31801633</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6892282">PMC6892282</a></div></div>
 </div>
 <div id="ref-K0EdTIg5" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">11. </div><div class="csl-right-inline"><strong>Metalign: efficient alignment-based metagenomic profiling via containment min hash</strong> <div class="csl-block">Nathan LaPierre, Mohammed Alser, Eleazar Eskin, David Koslicki, Serghei Mangul</div> <em>Genome Biology</em> (2020-09-10) <a href="https://doi.org/ghtqrz">https://doi.org/ghtqrz</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-020-02159-0">10.1186/s13059-020-02159-0</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/32912225">32912225</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7488264">PMC7488264</a></div></div>
+<div class="csl-left-margin">11. </div><div class="csl-right-inline"><strong>Metalign: efficient alignment-based metagenomic profiling via containment min hash</strong> <div class="csl-block">Nathan LaPierre, Mohammed Alser, Eleazar Eskin, David Koslicki, Serghei Mangul</div> <em>Genome Biology</em> (2020-12) <a href="https://doi.org/ghtqrz">https://doi.org/ghtqrz</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-020-02159-0">10.1186/s13059-020-02159-0</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/32912225">32912225</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7488264">PMC7488264</a></div></div>
 </div>
 <div id="ref-1FgetXOee" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">12. </div><div class="csl-right-inline"><strong>Toward a More Robust Assessment of IntraspeciesDiversity, Using Fewer GeneticMarkers</strong> <div class="csl-block">Konstantinos T Konstantinidis, Alban Ramette, James M Tiedje</div> <em>Applied and Environmental Microbiology</em> (2006-11) <a href="https://doi.org/dcmw9q">https://doi.org/dcmw9q</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1128/aem.01398-06">10.1128/aem.01398-06</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/16980418">16980418</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1636164">PMC1636164</a></div></div>
 </div>
 <div id="ref-16tNERpVv" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">13. </div><div class="csl-right-inline"><strong>Uncultivated microbes in need of their own taxonomy</strong> <div class="csl-block">Konstantinos T Konstantinidis, Ramon Rosselló-Móra, Rudolf Amann</div> <em>The ISME Journal</em> (2017-07-21) <a href="https://doi.org/gbprgw">https://doi.org/gbprgw</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/ismej.2017.113">10.1038/ismej.2017.113</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28731467">28731467</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5649169">PMC5649169</a></div></div>
+<div class="csl-left-margin">13. </div><div class="csl-right-inline"><strong>Uncultivated microbes in need of their own taxonomy</strong> <div class="csl-block">Konstantinos T Konstantinidis, Ramon Rosselló-Móra, Rudolf Amann</div> <em>The ISME Journal</em> (2017-11) <a href="https://doi.org/gbprgw">https://doi.org/gbprgw</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/ismej.2017.113">10.1038/ismej.2017.113</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28731467">28731467</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5649169">PMC5649169</a></div></div>
 </div>
 <div id="ref-16RrZPOGJ" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">14. </div><div class="csl-right-inline"><strong>Shifting the genomic gold standard for the prokaryotic species definition</strong> <div class="csl-block">Michael Richter, Ramon Rosselló-Móra</div> <em>Proceedings of the National Academy of Sciences</em> (2009-11-10) <a href="https://doi.org/dvchzz">https://doi.org/dvchzz</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1073/pnas.0906412106">10.1073/pnas.0906412106</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/19855009">19855009</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2776425">PMC2776425</a></div></div>
 </div>
 <div id="ref-12fAf7MKk" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">15. </div><div class="csl-right-inline"><strong>High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries</strong> <div class="csl-block">Chirag Jain, Luis M Rodriguez-R, Adam M Phillippy, Konstantinos T Konstantinidis, Srinivas Aluru</div> <em>Nature Communications</em> (2018-11-30) <a href="https://doi.org/gfknmg">https://doi.org/gfknmg</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/s41467-018-07641-9">10.1038/s41467-018-07641-9</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30504855">30504855</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6269478">PMC6269478</a></div></div>
+<div class="csl-left-margin">15. </div><div class="csl-right-inline"><strong>High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries</strong> <div class="csl-block">Chirag Jain, Luis M Rodriguez-R, Adam M Phillippy, Konstantinos T Konstantinidis, Srinivas Aluru</div> <em>Nature Communications</em> (2018-12) <a href="https://doi.org/gfknmg">https://doi.org/gfknmg</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/s41467-018-07641-9">10.1038/s41467-018-07641-9</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30504855">30504855</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6269478">PMC6269478</a></div></div>
 </div>
 <div id="ref-15zxN1L1C" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">16. </div><div class="csl-right-inline"><strong>Consistent Metagenome-Derived Metrics Verify and Delineate Bacterial Species Boundaries</strong> <div class="csl-block">Matthew R Olm, Alexander Crits-Christoph, Spencer Diamond, Adi Lavy, Paula B Matheus Carnevali, Jillian F Banfield</div> <em>mSystems</em> (2020-02-11) <a href="https://doi.org/ggwqh6">https://doi.org/ggwqh6</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1128/msystems.00731-19">10.1128/msystems.00731-19</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31937678">31937678</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6967389">PMC6967389</a></div></div>
 </div>
 <div id="ref-xnsBJDFT" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">17. </div><div class="csl-right-inline"><strong>There is no evidence of a universal genetic boundary among microbial species</strong> <div class="csl-block">Connor S Murray, Yingnan Gao, Martin Wu</div> <em>Cold Spring Harbor Laboratory</em> (2020-08-01) <a href="https://doi.org/ghtrdw">https://doi.org/ghtrdw</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2020.07.27.223511">10.1101/2020.07.27.223511</a></div></div>
+<div class="csl-left-margin">17. </div><div class="csl-right-inline"><strong>There is no evidence of a universal genetic boundary among microbial species</strong> <div class="csl-block">Connor S Murray, Yingnan Gao, Martin Wu</div> <em>Microbiology</em> (2020-07-27) <a href="https://doi.org/ghtrdw">https://doi.org/ghtrdw</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2020.07.27.223511">10.1101/2020.07.27.223511</a></div></div>
 </div>
 <div id="ref-3z6VIhcE" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">18. </div><div class="csl-right-inline"><strong>Prokaryotic taxonomy and phylogeny in the genomic era: advancements and challenges ahead</strong> <div class="csl-block">Konstantinos T Konstantinidis, James M Tiedje</div> <em>Current Opinion in Microbiology</em> (2007-10) <a href="https://doi.org/b2q3jd">https://doi.org/b2q3jd</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1016/j.mib.2007.08.006">10.1016/j.mib.2007.08.006</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/17923431">17923431</a></div></div>
 </div>
 <div id="ref-cMPL2ulo" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">19. </div><div class="csl-right-inline"><strong>The statistics of &lt;i&gt;k&lt;/i&gt; -mers from a sequence undergoing a simple mutation process without spurious matches</strong> <div class="csl-block">Antonio Blanca, Robert S Harris, David Koslicki, Paul Medvedev</div> <em>Cold Spring Harbor Laboratory</em> (2021-02-09) <a href="https://doi.org/fq3g">https://doi.org/fq3g</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2021.01.15.426881">10.1101/2021.01.15.426881</a></div></div>
+<div class="csl-left-margin">19. </div><div class="csl-right-inline"><strong>The statistics of &lt;i&gt;k&lt;/i&gt; -mers from a sequence undergoing a simple mutation process without spurious matches</strong> <div class="csl-block">Antonio Blanca, Robert S Harris, David Koslicki, Paul Medvedev</div> <em>Bioinformatics</em> (2021-01-17) <a href="https://doi.org/fq3g">https://doi.org/fq3g</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2021.01.15.426881">10.1101/2021.01.15.426881</a></div></div>
 </div>
 <div id="ref-cN1LdTev" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">20. </div><div class="csl-right-inline"><strong>A complete domain-to-species taxonomy for Bacteria and Archaea</strong> <div class="csl-block">Donovan H Parks, Maria Chuvochina, Pierre-Alain Chaumeil, Christian Rinke, Aaron J Mussig, Philip Hugenholtz</div> <em>Nature Biotechnology</em> (2020-04-27) <a href="https://doi.org/ggtbk2">https://doi.org/ggtbk2</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/s41587-020-0501-8">10.1038/s41587-020-0501-8</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/32341564">32341564</a></div></div>
+<div class="csl-left-margin">20. </div><div class="csl-right-inline"><strong>A complete domain-to-species taxonomy for Bacteria and Archaea</strong> <div class="csl-block">Donovan H Parks, Maria Chuvochina, Pierre-Alain Chaumeil, Christian Rinke, Aaron J Mussig, Philip Hugenholtz</div> <em>Nature Biotechnology</em> (2020-09-01) <a href="https://doi.org/ggtbk2">https://doi.org/ggtbk2</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/s41587-020-0501-8">10.1038/s41587-020-0501-8</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/32341564">32341564</a></div></div>
 </div>
-<div id="ref-TL0yBnjt" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">21. </div><div class="csl-right-inline"><strong>On the transformation of MinHash-based uncorrected distances into proper evolutionary distances for phylogenetic inference</strong> <div class="csl-block">Alexis Criscuolo</div> <em>F1000Research</em> (2020-11-10) <a href="https://doi.org/gjn4jw">https://doi.org/gjn4jw</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.26930.1">10.12688/f1000research.26930.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/33335719">33335719</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7713896">PMC7713896</a></div></div>
-</div>
-<div id="ref-ART4gJKs" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">22. </div><div class="csl-right-inline"><strong>Large-scale sequence comparisons with sourmash</strong> <div class="csl-block">NTessa Pierce, Luiz Irber, Taylor Reiter, Phillip Brooks, CTitus Brown</div> <em>F1000Research</em> (2019-07-04) <a href="https://doi.org/gf9v84">https://doi.org/gf9v84</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.19675.1">10.12688/f1000research.19675.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31508216">31508216</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6720031">PMC6720031</a></div></div>
-</div>
-<div id="ref-ExvjTLL3" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">23. </div><div class="csl-right-inline"><strong>sourmash: a library for MinHash sketching of DNA</strong> <div class="csl-block">C Titus Brown, Luiz Irber</div> <em>The Journal of Open Source Software</em> (2016-09-14) <a href="https://doi.org/ghdrk5">https://doi.org/ghdrk5</a> <div class="csl-block">DOI: <a href="https://doi.org/10.21105/joss.00027">10.21105/joss.00027</a></div></div>
-</div>
-<div id="ref-1Drcez76Y" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">24. </div><div class="csl-right-inline"><strong>Beware the Jaccard: the choice of &lt;b&gt;similarity measure&lt;/b&gt; is important and non-trivial in genomic colocalisation analysis</strong> <div class="csl-block">Stefania Salvatore, Knut Dagestad Rand, Ivar Grytten, Egil Ferkingstad, Diana Domanska, Lars Holden, Marius Gheorghe, Anthony Mathelier, Ingrid Glad, Geir Kjetil Sandve</div> <em>Briefings in Bioinformatics</em> (2020-09) <a href="https://doi.org/gjnvx4">https://doi.org/gjnvx4</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/bib/bbz083">10.1093/bib/bbz083</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31624847">31624847</a></div></div>
-</div>
-<div id="ref-wSmua5pQ" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">25. </div><div class="csl-right-inline"><strong>GitHub - KoslickiLab/mutation-rate-ci-calculator: This software calculates a confidence interval for the mutation rate from a set of observed containment indices under a simple nucleotide mutation process.</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/KoslickiLab/mutation-rate-ci-calculator">https://github.com/KoslickiLab/mutation-rate-ci-calculator</a></div>
-</div>
-<div id="ref-w83JJrdM" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">26. </div><div class="csl-right-inline"><strong>[WIP] Ertl estimators for scaled minhash by luizirber · Pull Request #1270 · sourmash-bio/sourmash</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/sourmash-bio/sourmash/pull/1270">https://github.com/sourmash-bio/sourmash/pull/1270</a></div>
-</div>
-<div id="ref-auqG5mhy" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">27. </div><div class="csl-right-inline"><strong>GitHub - dparks1134/CompareM: A toolbox for comparative genomics.</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/dparks1134/CompareM">https://github.com/dparks1134/CompareM</a></div>
+<div id="ref-IadOz4ol" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline"><strong>Lightweight compositional analysis of metagenomes with FracMinHash and minimum metagenome covers</strong> <div class="csl-block">Luiz Irber, Phillip T Brooks, Taylor Reiter, NTessa Pierce-Ward, Mahmudur Rahman Hera, David Koslicki, CTitus Brown</div> <em>Bioinformatics</em> (2022-01-12) <a href="https://doi.org/gn34zt">https://doi.org/gn34zt</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2022.01.11.475838">10.1101/2022.01.11.475838</a></div></div>
 </div>
 <div id="ref-lX665mdh" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">28. </div><div class="csl-right-inline"><strong>Prodigal: prokaryotic gene recognition and translation initiation site identification</strong> <div class="csl-block">Doug Hyatt, Gwo-Liang Chen, Philip F LoCascio, Miriam L Land, Frank W Larimer, Loren J Hauser</div> <em>BMC Bioinformatics</em> (2010-03-08) <a href="https://doi.org/cktxnm">https://doi.org/cktxnm</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/1471-2105-11-119">10.1186/1471-2105-11-119</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/20211023">20211023</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2848648">PMC2848648</a></div></div>
+<div class="csl-left-margin">22. </div><div class="csl-right-inline"><strong>Prodigal: prokaryotic gene recognition and translation initiation site identification</strong> <div class="csl-block">Doug Hyatt, Gwo-Liang Chen, Philip F LoCascio, Miriam L Land, Frank W Larimer, Loren J Hauser</div> <em>BMC Bioinformatics</em> (2010-12) <a href="https://doi.org/cktxnm">https://doi.org/cktxnm</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/1471-2105-11-119">10.1186/1471-2105-11-119</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/20211023">20211023</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2848648">PMC2848648</a></div></div>
+</div>
+<div id="ref-fCWtHkDP" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline"><strong>Debiasing FracMinHash and deriving confidence intervals for mutation rates across a wide range of evolutionary distances</strong> <div class="csl-block">Mahmudur Rahman Hera, NTessa Pierce-Ward, David Koslicki</div> <em>Bioinformatics</em> (2022-01-12) <a href="https://doi.org/gn342h">https://doi.org/gn342h</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2022.01.11.475870">10.1101/2022.01.11.475870</a></div></div>
+</div>
+<div id="ref-13saJolbd" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline"><strong>GTDB-Tk: a toolkit to classify genomes with the Genome Taxonomy Database</strong> <div class="csl-block">Pierre-Alain Chaumeil, Aaron J Mussig, Philip Hugenholtz, Donovan H Parks</div> <em>Bioinformatics</em> (2019-11-15) <a href="https://doi.org/ggc9dd">https://doi.org/ggc9dd</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/bioinformatics/btz848">10.1093/bioinformatics/btz848</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31730192">31730192</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7703759">PMC7703759</a></div></div>
+</div>
+<div id="ref-TL0yBnjt" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline"><strong>On the transformation of MinHash-based uncorrected distances into proper evolutionary distances for phylogenetic inference</strong> <div class="csl-block">Alexis Criscuolo</div> <em>F1000Research</em> (2020-11-10) <a href="https://doi.org/gjn4jw">https://doi.org/gjn4jw</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.26930.1">10.12688/f1000research.26930.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/33335719">33335719</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7713896">PMC7713896</a></div></div>
+</div>
+<div id="ref-ART4gJKs" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline"><strong>Large-scale sequence comparisons with sourmash</strong> <div class="csl-block">NTessa Pierce, Luiz Irber, Taylor Reiter, Phillip Brooks, CTitus Brown</div> <em>F1000Research</em> (2019-07-04) <a href="https://doi.org/gf9v84">https://doi.org/gf9v84</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.19675.1">10.12688/f1000research.19675.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31508216">31508216</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6720031">PMC6720031</a></div></div>
+</div>
+<div id="ref-ExvjTLL3" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline"><strong>sourmash: a library for MinHash sketching of DNA</strong> <div class="csl-block">C Titus Brown, Luiz Irber</div> <em>The Journal of Open Source Software</em> (2016-09-14) <a href="https://doi.org/ghdrk5">https://doi.org/ghdrk5</a> <div class="csl-block">DOI: <a href="https://doi.org/10.21105/joss.00027">10.21105/joss.00027</a></div></div>
+</div>
+<div id="ref-1Drcez76Y" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline"><strong>Beware the Jaccard: the choice of &lt;b&gt;similarity measure&lt;/b&gt; is important and non-trivial in genomic colocalisation analysis</strong> <div class="csl-block">Stefania Salvatore, Knut Dagestad Rand, Ivar Grytten, Egil Ferkingstad, Diana Domanska, Lars Holden, Marius Gheorghe, Anthony Mathelier, Ingrid Glad, Geir Kjetil Sandve</div> <em>Briefings in Bioinformatics</em> (2020-09-25) <a href="https://doi.org/gjnvx4">https://doi.org/gjnvx4</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/bib/bbz083">10.1093/bib/bbz083</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31624847">31624847</a></div></div>
+</div>
+<div id="ref-wSmua5pQ" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline"><strong>GitHub - KoslickiLab/mutation-rate-ci-calculator: This software calculates a confidence interval for the mutation rate from a set of observed containment indices under a simple nucleotide mutation process.</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/KoslickiLab/mutation-rate-ci-calculator">https://github.com/KoslickiLab/mutation-rate-ci-calculator</a></div>
+</div>
+<div id="ref-w83JJrdM" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">30. </div><div class="csl-right-inline"><strong>[WIP] Ertl estimators for scaled minhash by luizirber · Pull Request #1270 · sourmash-bio/sourmash</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/sourmash-bio/sourmash/pull/1270">https://github.com/sourmash-bio/sourmash/pull/1270</a></div>
+</div>
+<div id="ref-auqG5mhy" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>GitHub - dparks1134/CompareM: A toolbox for comparative genomics.</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/dparks1134/CompareM">https://github.com/dparks1134/CompareM</a></div>
 </div>
 <div id="ref-18uVBOfA0" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">29. </div><div class="csl-right-inline"><strong>AAI: BLAST vs Diamond</strong> <div class="csl-block">LM Rodriguez-R</div> <a href="https://rodriguez-r.com/blog/aai-blast-vs-diamond/">https://rodriguez-r.com/blog/aai-blast-vs-diamond/</a></div>
+<div class="csl-left-margin">32. </div><div class="csl-right-inline"><strong>AAI: BLAST vs Diamond</strong> <div class="csl-block">LM Rodriguez-R</div> <a href="https://rodriguez-r.com/blog/aai-blast-vs-diamond/">https://rodriguez-r.com/blog/aai-blast-vs-diamond/</a></div>
 </div>
 <div id="ref-j7nehrZT" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">30. </div><div class="csl-right-inline"><strong>RefSeq database growth influences the accuracy of k-mer-based lowest common ancestor species identification</strong> <div class="csl-block">Daniel J Nasko, Sergey Koren, Adam M Phillippy, Todd J Treangen</div> <em>Genome Biology</em> (2018-10-30) <a href="https://doi.org/ggc9db">https://doi.org/ggc9db</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-018-1554-6">10.1186/s13059-018-1554-6</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30373669">30373669</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6206640">PMC6206640</a></div></div>
+<div class="csl-left-margin">33. </div><div class="csl-right-inline"><strong>RefSeq database growth influences the accuracy of k-mer-based lowest common ancestor species identification</strong> <div class="csl-block">Daniel J Nasko, Sergey Koren, Adam M Phillippy, Todd J Treangen</div> <em>Genome Biology</em> (2018-12) <a href="https://doi.org/ggc9db">https://doi.org/ggc9db</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-018-1554-6">10.1186/s13059-018-1554-6</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30373669">30373669</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6206640">PMC6206640</a></div></div>
 </div>
 <div id="ref-fVLvtRTc" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>Sustainable data analysis with Snakemake</strong> <div class="csl-block">Felix Mölder, Kim Philipp Jablonski, Brice Letcher, Michael B Hall, Christopher H Tomkins-Tinch, Vanessa Sochat, Jan Forster, Soohyun Lee, Sven O Twardziok, Alexander Kanitz, … Johannes Köster</div> <em>F1000Research</em> (2021-01-18) <a href="https://doi.org/gjjkwv">https://doi.org/gjjkwv</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.29032.1">10.12688/f1000research.29032.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/34035898">34035898</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8114187">PMC8114187</a></div></div>
+<div class="csl-left-margin">34. </div><div class="csl-right-inline"><strong>Sustainable data analysis with Snakemake</strong> <div class="csl-block">Felix Mölder, Kim Philipp Jablonski, Brice Letcher, Michael B Hall, Christopher H Tomkins-Tinch, Vanessa Sochat, Jan Forster, Soohyun Lee, Sven O Twardziok, Alexander Kanitz, … Johannes Köster</div> <em>F1000Research</em> (2021-01-18) <a href="https://doi.org/gjjkwv">https://doi.org/gjjkwv</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.29032.1">10.12688/f1000research.29032.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/34035898">34035898</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8114187">PMC8114187</a></div></div>
 </div>
 <div id="ref-q9c75jWY" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">32. </div><div class="csl-right-inline"><strong>Streamlining data-intensive biology with workflow systems</strong> <div class="csl-block">Taylor Reiter, Phillip T Brooks†, Luiz Irber†, Shannon EK Joslin†, Charles M Reid†, Camille Scott†, CTitus Brown, NTessa Pierce-Ward</div> <em>GigaScience</em> (2021-01-13) <a href="https://doi.org/gjfk22">https://doi.org/gjfk22</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/gigascience/giaa140">10.1093/gigascience/giaa140</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/33438730">33438730</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8631065">PMC8631065</a></div></div>
+<div class="csl-left-margin">35. </div><div class="csl-right-inline"><strong>Streamlining data-intensive biology with workflow systems</strong> <div class="csl-block">Taylor Reiter, Phillip T Brooks†, Luiz Irber†, Shannon EK Joslin†, Charles M Reid†, Camille Scott†, CTitus Brown, NTessa Pierce-Ward</div> <em>GigaScience</em> (2021-01-13) <a href="https://doi.org/gjfk22">https://doi.org/gjfk22</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/gigascience/giaa140">10.1093/gigascience/giaa140</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/33438730">33438730</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8631065">PMC8631065</a></div></div>
 </div>
 </div>
 <!-- default theme -->
