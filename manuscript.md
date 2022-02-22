@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-02-19'
+date-meta: '2022-02-22'
 author-meta:
 - N. Tessa Pierce-Ward
 - C. Titus Brown
@@ -23,8 +23,8 @@ header-includes: |-
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-02-19" />
-  <meta name="citation_publication_date" content="2022-02-19" />
+  <meta name="dc.date" content="2022-02-22" />
+  <meta name="citation_publication_date" content="2022-02-22" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/fb598db4b7273a81c7394368719fb70f9908ca40/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/fb598db4b7273a81c7394368719fb70f9908ca40/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/fb598db4b7273a81c7394368719fb70f9908ca40/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,10 +69,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73/))
+([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/fb598db4b7273a81c7394368719fb70f9908ca40/))
 was automatically generated
-from [bluegenes/2021-paper-protein-kmers@7421f9b](https://github.com/bluegenes/2021-paper-protein-kmers/tree/7421f9bcaabbeabe98aeacca662cdebbb6f9ab73)
-on February 19, 2022.
+from [bluegenes/2021-paper-protein-kmers@fb598db](https://github.com/bluegenes/2021-paper-protein-kmers/tree/fb598db4b7273a81c7394368719fb70f9908ca40)
+on February 22, 2022.
 </em></small>
 
 ## Authors
@@ -113,7 +113,7 @@ on February 19, 2022.
 ## Background
 
 As the scale of genomic sequencing continues to grow, alignment-free methods for estimating sequence similarity have become critical for conducting tasks ranging from taxonomic classification to phylogenetic analysis on large-scale datasets [@doi:10.1186/s13059-016-0997-x; @doi:10.1186/gb-2014-15-3-r46].
-The majority of alignment-free methods rely upon exact matching of k-mers: subsequences of length k, that can be counted and compared across datasets, with or without use of subsampling methods such as MinHash.
+The majority of alignment-free methods rely upon exact matching of k-mers: subsequences of length k, that can be counted and compared across datasets, with or without use of subsampling methods such as MinHash [] and derivates such as FracMinHash [@doi:10.1101/2022.01.11.475838].
 As k-mer based methods rely on exact sequence matches, they can suffer from limited sensitivity when comparing highly polymorphic sequences or classifying organisms from groups that are not well represented in reference databases.
 
 Current best practices methods can still only categorize a fraction of the metagenomic and metatranscriptomic data, especially for understudied and/or diverse habitats (xx% recovery for soil, xx% recovery ocean metagenomes, etc).
@@ -124,10 +124,10 @@ play a role in disease.[from RO1]". This phenomenon is not restricted to metagen
 To increase sensitivity of alignment-free methods, modified k-mer approaches have been introduced, including spaced seeds /split k-mers, which accommodate polymorphic sites in highly similar genomes (CITE).
 For larger evolutionary distances, protein-based comparisons have long been the gold-standard approach for taxonomic and functional annotation, as protein sequence is more conserved than the underlying DNA sequence [@pubmed:2231712; @doi:10.1038/nmeth.3176].
 As microbial and viral genomes are gene-dense, [MinHash-based] alignment-free comparisons of translated protein sequence have been shown to increase sensitivity for taxonomic classification and genome discovery [@doi:10.1038/ncomms11257; @doi:10.1186/s13059-019-1841-x].
-Here, we demonstrate the utility of protein k-mer comparisons for phylogenomic reconstruction and taxonomic classification at larger evolutionary distances and across both gene-rich and [gene-sparse] sequences.
-We use Scaled Minhash subsampling to facilitate conducting these comparisons at scale [Irber et al., 2021; @https://dib-lab.github.io/2020-paper-sourmash-gather/].
+Here, we demonstrate the utility of protein k-mer comparisons for phylogenomic reconstruction and taxonomic classification at larger evolutionary distances.
+We use FracMinhash subsampling to facilitate conducting these comparisons at scale [@doi:10.1101/2022.01.11.475838].
 
-Scaled Minhash is a MinHash variant for selecting and hashing a set of representative k-mers from a sequence dataset [@https://dib-lab.github.io/2020-paper-sourmash-gather/]. Unlike traditional MinHash, Scaled MinHash sketches scale with the size of the dataset, meaning each sketch is comprised of the chosen proportion of k-mers in the input dataset, rather than a chosen number of k-mers.
+FracMinHash is a MinHash variant for selecting and hashing a set of representative k-mers from a sequence dataset [@doi:10.1101/2022.01.11.475838]. Unlike traditional MinHash, FracMinHash sketches scale with the size of the dataset, meaning each sketch is comprised of the chosen proportion of k-mers in the input dataset, rather than a chosen number of k-mers.
 Downsampling sequencing datasets in this way enables estimation of containment, which has been shown to permit more accurate estimation of genomic distance, particularly for genomes of very different lengths [@doi:10.1016/j.amc.2019.02.018; @doi:10.1186/s13059-019-1875-0].
 Streaming containment estimates have been shown to facilitate genome discovery and correlate with Mash Distance, a proxy for Average Nucleotide Identity (ANI) [@doi:10.1186/s13059-019-1841-x; @doi:10.1186/s13059-020-02159-0].
 
@@ -139,10 +139,11 @@ Recent research appears to confirm 95% ANI species threshold for prokaryotic spe
 AAI thresholds have been proposed for higher taxonomic ranks, <45%, 45-65% and 65-95% for family, genus, and species [@doi:10.1016/j.mib.2007.08.006; @doi:10.1038/ismej.2017.113].
 While traditional alignment-based estimation of ANI and AAI are computationally intensive, sketching-based estimates and sketching-facilitated estimates have permitted ANI calculations at the scale of whole-databases [@doi:10.1186/s13059-016-0997-x; @doi:10.1186/s13059-019-1841-x; @doi:10.1038/s41467-018-07641-9].
 
-[Pierce-Ward et al., 2021 (tbd technical paper)] showed that Scaled MinHash containment estimates can be used to approximate both ANI (nucleotide k-mers) and Average Amino Acid Identity (AAI; protein k-mers), while accounting for the non-independence of mutated k-mers [@doi:10.1101/2021.01.15.426881].
-Furthermore, Scaled MinHash containment estimates work well for genome pairs of varying lengths and for compositional analysis of metagenome samples.
+Rahman Hera et. al (2022) [@doi:10.1101/2022.01.11.475870] introduced accurate nucleotide sequence distance estimation from FracMinHash containment estimates, while accounting for the non-independence of mutated k-mers [@doi:10.1101/2021.01.15.426881].
+Here, we extend that distance estimation to protein k-mers and demonstrate distance estimation across related genomes using the GTDB taxonomy.
+Furthermore, FracMinHash containment estimates work well for genome pairs of varying lengths and for compositional analysis of metagenome samples.
 Taken together, these properties enable robust assembly and alignment-free pairwise relatedness estimation that can be used on sequences separated by a wide range of evolutionary distances.
-Here, we demonstrate that the utility of Scaled MinHash protein containment, both used directly and a an approximation of ANI and AAI, for taxonomic classification and phylogenomic reconstruction for species across the tree of life.
+Here, we demonstrate that the utility of FracMinHash protein containment, both used directly and a an approximation of ANI and AAI, for taxonomic classification and phylogenomic reconstruction for species across the tree of life.
 
 
 #### Notes
@@ -160,52 +161,45 @@ Here, we demonstrate that the utility of Scaled MinHash protein containment, bot
 
 
 K-mer analysis methods enable similarity detection as low as a single shared k-mer between divergent genomes.
-As a result, exact matching long nucleotide k-mers can be used for taxonomic classification and similarity detection between closely related genomes, including strain-level, species-level, and genus-level comparisons (often using k-mer lengths 51, 31, and 21, respectively).
+As a result, exact matching of long nucleotide k-mers can be used for taxonomic classification and similarity detection between closely related genomes, including strain-level, species-level, and genus-level comparisons (often using k-mer lengths 51, 31, and 21, respectively).
 At larger evolutionary distances, accumulated nucleotide divergence limits the utility of exact nucleotide k-mer matching.
 Protein sequences, which are more conserved than their corresponding nucleotide sequences, are the gold standard for comparisons at larger evolutionary distances.
 Here, we evaluate the utility of amino acid k-mers for a wide range of genomic and metagenomic applications, including sequence distance estimation, taxonomic classification, and metagenome breakdown.
 
-### Amino Acid K-mer length selection 
+### Amino Acid k-mer length selection 
 
 The Genome Taxonomy Database (GTDB) provides a genome-based taxonomy for bacterial and archaeal genomes [@doi:10.1038/s41587-020-0501-8]. 
-We begin by assessing the prevalance of amino acid k-mers of different k-mer lengths within genomes (proteomes) selected for inclusion within GTDB.
+We begin by assessing the prevalance of nucleotide amino acid k-mers of different k-mer lengths within genomes (/proteomes) selected for inclusion within GTDB.
 The most recent GTDB release, `rs202`, encompasses 258,407 genomes from 47,895 species.
 
 To make analyses at this scale tractable, we built `sourmash` FracMinHash sketches, with a scaling factor of 1000 for nucleotide k-mers (keep ~1/1000 k-mers) and 200 for amino acid k-mers (keep ~1/200 protein k-mers) [@doi:10.1101/2022.01.11.475838].
+DNA FracMinHash sketches have been shown to accurately subsample genome datasets [@doi:10.1101/2022.01.11.475838].
 For most genomes, both genomic and protein fastas were available for download from NCBI.
 In remaining cases (n=36,632), genome fastas were translated into protein sequence via Prodigal [@doi:10.1186/1471-2105-11-119] prior to sketching.
 We indexed these sketches into `sourmash` databases, which we have made available as part of the `Prepared Databases` section of the `sourmash` documentation, and archived on OSF [https://osf.io/t3fqa/] /Zenodo???.
 
 
-![**Fraction of k-mers specific to taxonomic rank**
-For the GTDB-RS202 database, the majority of nucleotide k-mers are specific to (unique at) a specific genome, species, or genus. Few k-mers are shared across superkingdoms, though these do exist at k=21. K-mers shared at such a high level are indicative of high k-mer homoplasy: the presence of k-mers that are identical by chance rather than evolutionary descent. ](images/gtdb-rs202.lca_f_aggregated_kmers.png){#fig:gtdb-kmers height=2in}
+For a range of nucleotide and amino acid k-mers lengths, we assessed the fraction of k-mers specific to each taxonomic rank.
+For nucleotide k-mers, we used lengths of 21, 31, and 51, which are commonly used for analyses at the genus, species, and strain level, respectively. For amino acid k-mers, we focused on k-mer lengths ranging between k=7 and k=11, which roughly correspond to nucleotide k-mer lengths 21-31.
+K-mers specific to a genome were only present in a single genome in the database; k-mers specific to a species were found in at least two genomes of the same species, etc. K-mers specific to a "superkingdom" were found in genomes from at least two phyla. 
 
-For both nucleotide and amino acid k-mers, we first assessed the number of k-mers specific to each taxonomic rank: k-mers specific to a genome were only present in one genome in the entire database, k-mers specific to a species were found in at least two genomes of the same species, etc. K-mers specific to a "superkingdom" were found in genomes spanning at least two phyla. We assessed k-mer lengths ranging between k=7 and k=11, which roughly correspond to nucleotide k-mer lengths 21-31. 
+![**Fraction of k-mers specific to taxonomic rank**](images/gtdb-rs202.lca_f_aggregated_kmers.png)
 
-For all DNA k-mer sizes, the majority of k-mers are present in only a single species, with only a few k-mers shared across genera.
-Long nucleotide k-mers have already been shown to be useful for comparing genomes within the same genus or species.
-Only at a dna k-mer size of 21 are a significant fraction of k-mers present in genomes shared across different families or even phyla.
+For the GTDB-RS202 database, the majority of nucleotide k-mers are specific to (unique at) a specific genome, species, or genus. Few k-mers are shared across superkingdoms, though these do exist at a k-mer length of 21.
 In contrast, all protein k-mer sizes contain a portion of k-mers that are shared across genera and above.
-At a protein k-mer size of 7, over 80% of k-mers are present in genomes found in more than one phylum, while at a protein k-size of 10, the number of genome-specific k-mers is more similar to that observed for nucleotide k-mers. 
-
+At a protein k-mer size of 7, over 80% of k-mers are present in genomes found in more than one phylum, while at a protein k-size of 10, the number of genome-specific k-mers is closer to that observed for nucleotide k-mers.
 Given the difference in k-mers found across taxonomic ranks, we decided to focus on amino acid k-mer lengths 7 and 10 for our primary analyses.
+
+This shared k-mers analysis is limited by the genomes included within GTDB. While some genera contain many thousands of genomes (e.g. 55k _Escherichia_ genomes), many others are limited to a single genome or pair of genomes. Thus here we do not consider the absolute numbers of shared k-mers, but rather the proportional differences between k-mer lengths.
+
 <!---
 NOTE: worth looking at k=17 /51???.
---->
-<!---
-**We chose to assess k=10 and k=7, because these ksies mostly closely correspond to nucleotide k-mer 21, 31. k7 has also been previously used for database lookup (find paper + reference), but we didn't want to exclusively use it because so many 7-mers are shared across phyla. ** 
-
-FOR DISCUSSION re: kmer length selection / GTDB rankinfo
-The differences observed between nucleotide and amino acid k-mers, as well as across different k-mer lengths suggests that these different k-mer sizes may provide resolution at different taxonomic ranks. The exact characterization here is of course impacted by which are genomes included in the database, but we are confident that the 258k genomes included within GTDB provide a good testing ground for this assessment.
-
-note 31, 51 --- maybe partially a result of database issues, e.g. not all species have multiple members; sometimes all members are closely related.
-
 --->
 
 ### Abridged GTDB Test Dataset
 
-While the GTDB database contains 258k genomes, many of these genomes are found within the same genus (e.g. 55k E coli genomes).
-To assess the utility of protein k-mers for comparisons at an array of evolutionary distances, we selected a subset of GTDB genomes that would allow standardized comparisons across taxonomic ranks, focusing on comparisons at the genus-level and above.
+To rigorously assess the utility of protein k-mers for comparisons at an array of evolutionary distances, we selected a subset of GTDB genomes that would allow standardized comparisons across taxonomic ranks and overcome the database-inclusion limitations mentioned above.
+
 For each genus with at least two species clusters in GTDB, one representative genome was randomly selected as an "anchor" genome.
 Then, one additional genome was selected from the GTDB representative genomes matching the anchor's taxonomy at each higher taxonomic rank.
 This "evolutionary path" consists of seven genomes: an anchor genome, a genome matching anchor taxonomy down to the genus level, one matching anchor taxonomy to the family level, one matching to the order level, and so on.
@@ -215,7 +209,9 @@ Path selection using the representative genomes in GTDB rs202 resulted in 4095 p
 These paths include genome comparisons across 40 phyla (36 Bacteria, 4 Archaea), covering roughly a quarter of the 169 phyla (149 Bacteria, 20 Archaea) in GTDB release rs202.
 While paths are limited to taxonomies with at least two GTDB representative genomes for each taxonomic rank, these paths provide a rich resource for comparisons at increasing evolutionary distances.
 
+
 ### Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances
+
 
 ** FIGURE: containment/jaccard for evolpaths, DNA vs PROT
  THEN --> distance estimation?
@@ -225,6 +221,7 @@ While paths are limited to taxonomies with at least two GTDB representative geno
 ![**More protein k-mers are shared at genus level** CAPTION](images/pseudomonas_jaccard_vs_containment_prot10.png)
 
 ![**Protein k-mers are shared at higher taxonomic ranks** CAPTION](images/anchor-containment.nucl-prot.png)
+
 --->
 
 **genomes in same genus, fraction of k-mers in common at each ksize? ALL THE K-MERS**
@@ -367,6 +364,10 @@ This creates a gradient of similarity, where comparisons to the anchor genome ra
 Long dna k-mers ~~ short protein k-mers
 
 while shorter dna k-mers might be shared across more sequence, you increase the risk for result in"shared, non-homologous k-mers" (k-mer homoplasy). A protein k-mer of length `10` coverse 30 base pairs in nuof nucleotide sequence 
+Long nucleotide k-mers have already been shown to be useful for comparing genomes within the same genus or species.
+For all DNA k-mer sizes, the majority of k-mers are present in only a single species, with only a few k-mers shared across genera.
+Only at a dna k-mer size of 21 are a significant fraction of k-mers present in genomes shared across different families or even phyla.
+
 
 ### Phylogenetic Reconstruction from k-mer Amino Acid identity
 NO, just leave this out
@@ -379,6 +380,20 @@ GTDB Evolpaths dataset](images/anchor-mcANI-AAI.boxen.protnucl.png){#fig:evolpat
 ## Discussion
 
 K-mer based estimation of sequence identity has been limited to nucleotide sequences of similar size with high sequence identity (>80%),outside of which MinHash Jaccard is less well correlated with sequence identity [@doi:10.1186/s13059-016-0997-x; @doi:10.1038/s41467-018-07641-9].
+
+
+### Shared k-mers
+
+ K-mers shared at such a high level may be indicative of true shared biological sequence, contamination, or k-mer homoplasy: the presence of k-mers that are identical by chance rather than evolutionary descent. ](images/gtdb-rs202.lca_f_aggregated_kmers.png){#fig:gtdb-kmers height=2in}
+
+The differences observed between nucleotide and amino acid k-mers, as well as across different k-mer lengths suggests that these different k-mer sizes may provide resolution at different taxonomic ranks. The exact characterization here is of course impacted by which are genomes included in the database, but we are confident that the 258k genomes included within GTDB provide a good testing ground for this assessment.
+
+<!---
+**We chose to assess k=10 and k=7, because these ksies mostly closely correspond to nucleotide k-mer 21, 31. k7 has also been previously used for database lookup (find paper + reference), but we didn't want to exclusively use it because so many 7-mers are shared across phyla. ** 
+
+note 31, 51 --- maybe partially a result of database issues, e.g. not all species have multiple members; sometimes all members are closely related.
+
+--->
 
 By leveraging the Containment Index of Scaled MinHash sketches with both nucleotide and protein k-mers, we can extend accurate k-mer sequence identity to sequences of different sizes and to >50% Amino Acid Identity.
 
