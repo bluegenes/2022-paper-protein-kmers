@@ -45,9 +45,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/fb598db4b7273a81c7394368719fb70f9908ca40/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/fb598db4b7273a81c7394368719fb70f9908ca40/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/fb598db4b7273a81c7394368719fb70f9908ca40/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/5d3d24a3250586bccdc37dc6003226a265d7742a/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/5d3d24a3250586bccdc37dc6003226a265d7742a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/5d3d24a3250586bccdc37dc6003226a265d7742a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/fb598db4b7273a81c7394368719fb70f9908ca40/))
+([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/5d3d24a3250586bccdc37dc6003226a265d7742a/))
 was automatically generated
-from [bluegenes/2021-paper-protein-kmers@fb598db](https://github.com/bluegenes/2021-paper-protein-kmers/tree/fb598db4b7273a81c7394368719fb70f9908ca40)
+from [bluegenes/2021-paper-protein-kmers@5d3d24a](https://github.com/bluegenes/2021-paper-protein-kmers/tree/5d3d24a3250586bccdc37dc6003226a265d7742a)
 on February 22, 2022.
 </em></small>
 
@@ -196,7 +196,7 @@ This shared k-mers analysis is limited by the genomes included within GTDB. Whil
 NOTE: worth looking at k=17 /51???.
 --->
 
-### Abridged GTDB Test Dataset
+### Abridged GTDB Benchmarking Dataset
 
 To rigorously assess the utility of protein k-mers for comparisons at an array of evolutionary distances, we selected a subset of GTDB genomes that would allow standardized comparisons across taxonomic ranks and overcome the database-inclusion limitations mentioned above.
 
@@ -213,24 +213,22 @@ While paths are limited to taxonomies with at least two GTDB representative geno
 ### Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances
 
 
-** FIGURE: containment/jaccard for evolpaths, DNA vs PROT
- THEN --> distance estimation?
 
-<!---
-**WHY no multi-species representatives?**
-![**More protein k-mers are shared at genus level** CAPTION](images/pseudomonas_jaccard_vs_containment_prot10.png)
+We begin by assessing standard k-mer comparisons across the 6 comparisons (each genome compared with the anchor genome) within each of 4095 evolutionary paths.
+We estimate Jaccard Index (number of k-mers shared between two samples divided by the total number of k-mers across both samples) from FracMinHash sketches.
+When plotted by the rank of the lowest common ancestor, the dynamic range of Jaccard values is clearly much larger for protein k-mer comparisons. 
+While DNA k-mers can provide resolution at the genus level, log-transformed jaccard values for protein k-mers continue to decrease, providing resolution for comparisons even between genome in different phyla. We obtained similar results when comparing all dataset k-mers, suggesting FracMinHash sketching does not greatly impact these results (_Supplemental Figure XX_).
 
-![**Protein k-mers are shared at higher taxonomic ranks** CAPTION](images/anchor-containment.nucl-prot.png)
+![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.jaccard.logscale.boxenplot.png)
 
---->
-
-**genomes in same genus, fraction of k-mers in common at each ksize? ALL THE K-MERS**
-
+[**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.saccard.logscale.boxenplot.png)
 
 ### Accurate distance estimation from k-mer containment
-*all k-mers + scaled*
 
-Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. To begin with, we can apply the same equations to protein k-mer comparison statistics to obtain an estimate of Amino Acid Identity.
+
+
+
+Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. Here we can apply the same equations to protein k-mer comparisons to obtain an alignment-free estimate of Amino Acid Identity.
 
 [Koslicki jaccard k-mer stats paper @doi:10.1101/2022.01.11.475870] showed how to properly transform Jaccard --> ANI assuming a simple mutational model. For protein k-mers, Jaccard/Containment can be transformed into Amino Acid Identity (AAI).
 
@@ -253,7 +251,18 @@ For protein k-mer comparisons to be useful, any DNA queries must be translated i
 
 ** figure: AAI from translated nucleotide --> reference protein**
 
+<!---
 
+The containment index enables accurate sequence distance estimation between datasets of different sizes, which here provides an added benefit: given a set of trusted proteins (e.g. known proteome), 6-frame translation of DNA query sequences can be used for accurate distance estimation compared with the known/trusted proteome. 
+
+Unlike Jaccard comparisons, which estimate the similarity between sets, containment estimates are relative to each individual set. 
+When one set is highly trusted, such as a reference genome or proteome, the containment relative to that set may be most informative.
+In these cases, we can consider the trusted genome as an "anchor" upon which we are basing our comparison, and the containment relative to this set as "anchor containment."
+
+This property enables containment comparisons to provide more informative comparisons between sets of different sizes. In cases where one set is more highly trusted to contain accurate k-mers, the containment relative to that set can be more informative. 
+
+This provides some advantages: in cases where one set is more highly trusted to contain accurate k-mers, the containment relative to that set will provide a better estimate than the 
+--->
 
 [reproduce equation? Scaled MinHash Koslicki]
 ** all k-mers; scaled minhash version **
@@ -321,15 +330,7 @@ containent = % of a genome's k-mers that are shared
 ![**Protein k-mer containment facilitates genus-level comparisons**
 10k pseudomonas genome sequences, median containment at each alphabet](images/pseudomonas_jaccard_vs_containment_prot10.png){#fig:evolpathsContain}
 
-The containment index enables accurate sequence distance estimation between datasets of different sizes, which here provides an added benefit: given a set of trusted proteins (e.g. known proteome), 6-frame translation of DNA query sequences can be used for accurate distance estimation compared with the known/trusted proteome. 
 
-Unlike Jaccard comparisons, which estimate the similarity between sets, containment estimates are relative to each individual set. 
-When one set is highly trusted, such as a reference genome or proteome, the containment relative to that set may be most informative.
-In these cases, we can consider the trusted genome as an "anchor" upon which we are basing our comparison, and the containment relative to this set as "anchor containment."
-
-This property enables containment comparisons to provide more informative comparisons between sets of different sizes. In cases where one set is more highly trusted to contain accurate k-mers, the containment relative to that set can be more informative. 
-
-This provides some advantages: in cases where one set is more highly trusted to contain accurate k-mers, the containment relative to that set will provide a better estimate than the 
 
 --->
 
@@ -374,6 +375,13 @@ NO, just leave this out
 
 ![**K-mer Based Sequence Identity by Lowest Common Taxon**
 GTDB Evolpaths dataset](images/anchor-mcANI-AAI.boxen.protnucl.png){#fig:evolpathsANIAAI}
+
+<!---
+**For Evolpaths: WHY no multi-species representatives?**
+![**More protein k-mers are shared at genus level** CAPTION](images/pseudomonas_jaccard_vs_containment_prot10.png)
+
+![**Protein k-mers are shared at higher taxonomic ranks** CAPTION](images/anchor-containment.nucl-prot.png)
+--->
 --->
 
 
@@ -533,6 +541,12 @@ Reproducible workflows associated with this paper are available at XX (gh link +
 
 
 
+
+
+## Supplemental
+
+### Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances
+![**Protein k-mers are shared at higher taxonomic ranks: ALL KMERS**](images/gtdb-rs202.evolpaths.alphacompare.scaled1.jaccard.logscale.boxenplot.png)
 
 
 ## References {.page_break_before}

@@ -4,8 +4,9 @@ amplicon
 ANI
 Archaea
 archaeal
+Benchmarking
 bluegenes
-compareM
+CompareM
 comparisonss
 compositional
 conainment
@@ -13,13 +14,13 @@ cov
 Cricuolo
 ctb
 ctitusbrown
-Dataset
+dataset
 datasets
 Delmont
 derivates
 downsampled
 Downsampling
-evolpaths
+Evolpaths
 evolutionarily
 FastANI
 fastas
@@ -36,8 +37,8 @@ iHMP
 iteratively
 Jaccard
 kaa
+KMERS
 Koslicki
-ksize
 ksizes
 LCA
 mer
@@ -61,7 +62,6 @@ phylogenomic
 plasmids
 preselection
 prevalance
-PROT
 proteome
 proteomes
 Rahman
@@ -71,7 +71,7 @@ RO
 rRNA
 saltyscientist
 snakemake
-Sourmash
+sourmash
 subsample
 subsampling
 subsequences
