@@ -1,5 +1,4 @@
 AAI
-AAI’s
 aligment
 alignable
 amplicon
@@ -20,8 +19,6 @@ Delmont
 derivates
 downsampled
 Downsampling
-evolpaths
-evolutionarily
 EzAAIb
 EzAAIm
 FastANI
@@ -41,7 +38,6 @@ Jaccard
 kaa
 KMERS
 Koslicki
-ksizes
 LCA
 mer
 mers
@@ -66,12 +62,9 @@ phylogenomic
 plasmids
 preselection
 prevalance
-prot
 proteome
 proteomes
 Rahman
-rankinfo
-recovred
 RO
 rRNA
 saltyscientist
