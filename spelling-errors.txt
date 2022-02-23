@@ -1,5 +1,5 @@
 AAI
-aligment
+AAI’s
 alignable
 amplicon
 ANI
@@ -19,6 +19,7 @@ Delmont
 derivates
 downsampled
 Downsampling
+eukaryotic
 EzAAIb
 EzAAIm
 FastANI
@@ -31,8 +32,10 @@ genomeB
 genomic
 gh
 GTDB
+heatmaps
 homoplasy
 iHMP
+Irber
 iteratively
 Jaccard
 kaa
@@ -41,7 +44,7 @@ Koslicki
 LCA
 mer
 mers
-Metagenome
+metagenome
 metagenomes
 metagenomic
 metatranscriptomic
@@ -62,6 +65,7 @@ phylogenomic
 plasmids
 preselection
 prevalance
+prot
 proteome
 proteomes
 Rahman
@@ -69,14 +73,17 @@ RO
 rRNA
 saltyscientist
 snakemake
-sourmash
+Sourmash
 subsample
 subsampling
 subsequences
+summarization
 superkingdom
 superkingdoms
+taxnonomic
 TBD
 Tk
 UC
+unassembled
 uncharacterized
 Zenodo

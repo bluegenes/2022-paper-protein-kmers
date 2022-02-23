@@ -45,9 +45,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/b33a77112ceff0c13477cc8932a8f39c9778fbcb/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/b33a77112ceff0c13477cc8932a8f39c9778fbcb/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/b33a77112ceff0c13477cc8932a8f39c9778fbcb/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/ab679508668e2c4849d727131c9f85b74dc3921d/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/ab679508668e2c4849d727131c9f85b74dc3921d/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/ab679508668e2c4849d727131c9f85b74dc3921d/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/b33a77112ceff0c13477cc8932a8f39c9778fbcb/))
+([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/ab679508668e2c4849d727131c9f85b74dc3921d/))
 was automatically generated
-from [bluegenes/2021-paper-protein-kmers@b33a771](https://github.com/bluegenes/2021-paper-protein-kmers/tree/b33a77112ceff0c13477cc8932a8f39c9778fbcb)
+from [bluegenes/2021-paper-protein-kmers@ab67950](https://github.com/bluegenes/2021-paper-protein-kmers/tree/ab679508668e2c4849d727131c9f85b74dc3921d)
 on February 23, 2022.
 </em></small>
 
@@ -211,21 +211,22 @@ Path selection using the representative genomes in GTDB rs202 resulted in 4095 p
 These paths include genome comparisons across 40 phyla (36 Bacteria, 4 Archaea), covering roughly a quarter of the 169 phyla (149 Bacteria, 20 Archaea) in GTDB release rs202.
 While paths are limited to taxonomies with at least two GTDB representative genomes for each taxonomic rank, these paths provide a rich resource for comparisons at increasing evolutionary distances.
 
-
 ### Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances
 
 We begin by assessing standard k-mer comparisons across the 6 comparisons (each genome compared with the anchor genome) within each of 4095 evolutionary paths.
 We estimate Jaccard Index (number of k-mers shared between two samples divided by the total number of k-mers across both samples) from FracMinHash sketches.
-When plotted by the rank of the lowest common ancestor, the dynamic range of Jaccard values is clearly much larger for protein k-mer comparisons. 
-While DNA k-mers can provide resolution at the genus level, log-transformed jaccard values for protein k-mers continue to decrease, providing resolution for comparisons even between genome in different phyla. We obtained similar results when comparing all dataset k-mers, suggesting FracMinHash sketching does not greatly impact these results (_Supplemental Figure XX_).
+When plotted by the rank of the lowest common ancestor, the dynamic range of Jaccard values is much larger for protein k-mer comparisons. 
+While DNA k-mers can provide resolution at the genus level, log-transformed jaccard values for protein k-mers continue to decrease, providing resolution for comparisons even between genomes in different phyla. We obtained similar results when comparing all available k-mers, suggesting FracMinHash sketching does not impact these results (_Supplemental Figure XX_).
 
 ![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.jaccard.logscale.boxenplot.png)
 
+**Question: Would a pair of heatmaps be better here? Or is there a better way to visualize this?**
 
 ### Distance estimation from FracMinHash sketch comparisons
 
-Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. Recently, equations have been developed for FracMinHash that account for the nonindependence of mutated k-mers [@doi:10.1101/2022.01.11.475870]. Here we apply the FracMinHash distance estimation to protein k-mer comparisons to obtain an alignment-free estimate of Amino Acid Identity [@doi:10.1101/2022.01.11.475870]. In addition to k-mer based FracMinHash AAI, we also conducted alignment-based AAI methods for each comparison.
-_We focus on AAI programs that can be run via the command line, and include  CompareM (DIAMOND), EzAAIm (MMSeqs2), and EzAAIb (BLAST), each of which use a different aligment algorithm, DIAMOND, MMSeqs2, and BLAST respectively. As BLAST-based is the gold-standard method, we compare all AAI values the BLAST AAI values._ Note that FracMinHash sketches enable estimation of the Containment Index in addition to the more commonly used Jaccard Index. Unlike Jaccard comparisons, which estimate the similarity between sets, Containment estimates are relative to each individual set. When one set is highly trusted, such as a reference genome or proteome, the containment relative to that set may be most informative. When both proteomes are equally trusted, the directional containment can be averaged, as done for BLAST-based AAI(CITE?), which often differ depending on mapping direction. FracMinHash AAI values produced by Jaccard and Containment (here, average containment) methods are very similar.
+Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. Recently, equations have been developed for FracMinHash that account for the nonindependence of mutated k-mers [@doi:10.1101/2022.01.11.475870]. Here we apply the FracMinHash distance estimation to protein k-mer comparisons to obtain an alignment-free estimate of Amino Acid Identity [@doi:10.1101/2022.01.11.475870]. We conduct these with all k-mers and using FracMinHash sketches using a default fractional scaling of 1/200 k-mers. In addition to these k-mer based AAI estimates, we also conducted alignment-based AAI methods for each comparison.
+We include alignment comparisons with methods that leverage three different homology detection and alignment algorithms: _EzAAIb (BLAST)_, EzAAIm (MMSeqs2), and CompareM (DIAMOND). _As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values._ 
+Note that FracMinHash sketches enable estimation of the Containment Index in addition to the more commonly used Jaccard Index. Unlike Jaccard comparisons, which estimate the similarity between sets, containment estimates are relative to each individual set. When both proteomes are equally trusted, the directional containment can be averaged, as done for BLAST-based AAI's(CITE?), which can differ depending on the direction of alignment. In contrast, when one set is highly trusted, such as a reference genome or proteome, the containment relative to that set may be most informative. FracMinHash AAI values produced by Jaccard and Containment (here, average containment) methods are very similar.
 
 ![**FracMinHash AAI vs CompareM** Scaled 200](images/gtdb-rs202.evolpaths.AAIcompare-compareM.scaled200.k7.jac.png){#fig:evolpathsAAIvsCompareM height=4in}
 
@@ -234,19 +235,19 @@ To do:
 - finish ezAAI 1. mmseqs2 (running); 2. blast if possible!
 - plot vs blast AAI (replace CompareM plot)
 - better colors now that mc is gone
+- plot scaled =1 ("jaccard," "avg containment") on same plot!?
 --->
 
-### FracMinHash **Containment** enables comparison directly from DNA sequence
+### Containment enables comparison directly from DNA sequence
 
 For protein k-mer comparisons to be useful, any DNA queries must be translated into protein sequence. Often this limits amino acid comparisons to assembly-based workflows, as assemblies can be reliably translated into predicted Open Reading Frames (ORFs).
-
-Here we can utilize direct 6-frame translation, which is assembly-free but does not attempt to find the correct open reading frame.
-Assuming a single open reading frame, only 1/6th of the k-mers generated by 6-frame translation will belong to the correct ORFs.
-These erroneous k-mers greatly impact the Jaccard Index when comparing samples.
-However, the containment index, which enables k-mer comparisons between datasets of different sizes, here provides an added benefit: by using only the FracMinHash containment estimate relative to reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence. We term this "anchor" containment, where the trusted genome is the "anchor" upon which we base the comparison.
-
-_We have generalized this type of comparison as the "maximum containment", which is the containment relative to the smaller set of k-mers. Since 6-frame translation should always yield excess k-mers relative to genomes of similar size max containment should always provide AAI comparisons of 6-frame translated k-mers to reference proteomes._
-
+With k-mer methods, we can utilize direct 6-frame translation, which is assembly-free but does not attempt to find the correct open reading frame.
+Assuming a single open reading frame, only ~1/6th of the k-mers generated by 6-frame translation will belong to true ORFs.
+The remaining erroneous k-mers greatly impact the Jaccard Index (set similarity) when comparing samples.
+However, these k-mers only impact the containment index in one direction (relative to the set with erroneous k-mers)
+By using only the FracMinHash containment estimate relative to reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence.
+_We term this "anchor" containment, where the trusted genome is the "anchor" upon which we base the comparison._
+Since 6-frame translation should always yield excess k-mers relative to genomes of similar size, this desired containment will generally be the larger of the two containment values (maximum containment).
 Note that comparing two 6-frame translated datasets is not recommended, as there is no mechanism to exclude erroneous k-mers introduced during translation.
 
 **figure: AAI from translated nucleotide --> reference protein**
@@ -257,34 +258,26 @@ to do, evolpaths:
   - sketch translate comparison genome
   - compare to anchor prot sketch
 --->
+### Protein k-mer containment can be used for taxonomic classification
 
-### Robust Taxonomic classification from protein k-mer containment
+Given that protein k-mers facilitate similarity estimation across these larger evolutionary distances, we next assess the utility of protein k-mers for taxonomic assignment, both for metagenome breakdown/classification and for assembled genomes.
 
-Anchor containment can also be used to enable robust taxonomic classification from either assembled proteomes or 6-frame translated DNA queries. 
+#### Metagenome breakdown using protein k-mers
 
-With experimental genomes where no reference taxonomic lineage is available, we assessed our annotation relative to `gtdb-tk` classification [@doi:10.1093/bioinformatics/btz848].
+As developed in Irber et al., 2022 [@doi:10.1101/2022.01.11.475838], minimum set cover of nucleotide k-mers can be used to find the set of genomes that cover all known k-mers in your metagenome.
+This approach, implemented in `sourmash gather`, works by using k-mer containment relative to reference genomes ("anchor containment", as above) and "assigning" metagenome k-mers iteratively to the reference genome with highest containment.
+Anchor containment is then re-estimated using the remaining unassigned query k-mers until all known k-mers have been assigned.
+This step provides us with an ordered list of reference genomes, each of which represent a non-overlapping portion of the metagenome.
+The taxonomy of these matched reference genomes thus represents the closest match for each of these non-overlapping portions of the metagenome.
+In addition to reporting these exact matches, we can aggregate these taxonomic assignments of these  matches to obtain taxonomic summarization at each rank.
 
-Taxonomic utilities are implemented in the `sourmash taxonomy` module.
+Here, we assess the utility of protein k-mers for this application using the same metagenome samples described in Irber et al., 2022 [@doi:10.1101/2022.01.11.475838].
+As metagenome samples are unassembled, we use the 6-frame translation approach described above to obtain protein k-mers for comparison.
+No modification to the min-set-cov approach is required, as it already relies upon anchor containment to the reference genomes.
 
-| Dataset  | Exact Match | Higher Rank| Unclassified (sourmash) | Unclassified (GTDB-Tk) |
-|:-----------|------:|-------:|----------:|----------:|
-| MGNify-1000| 95.7% | 4.3%   | N/A  | N/A |
-| Delmont-886    | 73.5% | 26.5%  | 1 (0.1%) | 15 (1.7%) |
+**figure: genome-grist mg breakdown, nucl k-mers, prot k-mers, nucl mapping**
 
-
-<!---
-THIS USES BOTH THE 6-FRAME translation and sourmash tax!!! containment important, etc. I think this is the way to go.
-to do:
-- finish gather for MGNify, Delmont sets
-- comparisons, k7, k10 vs gtdb-classify
-- gtdb-all vs gtdb-reps
---->
-
-### Metagenome breakdown using protein k-mers
-
-Anchor containment also enables metagenome breakdown via min-set-cov.
-
-Metagenome sequences can also be translated in 6-frames, and then the anchor containment can be assessed relative to proteomes in a reference database.
+_do we need an additional metagenome w/more divergent genomes, to show advantage of protein methods?_
 
 <!---
 to do:
@@ -297,8 +290,39 @@ to do:
   - compare the % of genome recovered with DNA, protein at diff ksizes.
   - DNA mapping vs prot k-mers
   - prot mapping vs prot k-mers
+  - alt figure: genome-grist mg breakdown, prot k-mers, prot mapping
+
 --->
 
+#### Robust Taxonomic classification from protein k-mers
+
+We use a similar approach for taxonomic classification of assembled genomes from protein k-mer containment. 
+We apply the same minimum set cover approach to find the set of reference genomes that cover all known k-mers in our sample (in this case, a genome itself rather than a metagenome).
+If the most contained reference genome is sufficiently similar (passes default or user-defined threshold) to our query, we can annotate the query with taxonomic information from this reference genome. 
+If not, we can use the genome-based lowest common ancestor approach to classify the query genome to the taxonomic rank where it contains sufficient similarity to matched reference genome sequence. 
+
+We select two sets of genomes: first, a set of 1000 genomes from the MGNify project ("MGNify-1000"), which are assembled from human gut and likely to be well-represented in existing databases.
+We next choose a set of 885 microbial ("Delmont-885"; 820 _Bacteria_, 65 _Archaea_) metagenome-assembled genomes (MAGs) assembled from TARA Oceans metagenomes [@doi:10.1038/s41564-018-0176-9].
+As the marine environment is understudied relative to human gut, these genomes are more challenging for classifiers as they are less likely to have close relatives available in reference databases.
+
+To assess the utility of protein k-mers for genome classification, we conduct this classification using three k-mer approaches: direct nucleotide k-mers, 6-frame translated protein k-mers, and direct protein k-mers from prodigal-translated proteomes. Where reference taxnonomic lineages were available (MGNify-1000), we compared our results directly to these annotations. With experimental genomes where no reference taxonomic lineage is available, we assessed our annotation relative to `gtdb-tk` classification [@doi:10.1093/bioinformatics/btz848].
+
+
+| Dataset  | Exact Match | Higher Rank| Unclassified (sourmash) | Unclassified (GTDB-Tk) |
+|:-----------|------:|-------:|----------:|----------:|
+| MGNify-1000| 95.7% | 4.3%   | N/A  | N/A |
+| Delmont-885    | 73.5% | 26.5%  | 1 (0.1%) | 15 (1.7%) |
+
+
+<!---
+THIS USES BOTH THE 6-FRAME translation and sourmash tax!!! containment important, etc. I think this is the way to go.
+to do:
+- finish gather for MGNify, Delmont sets
+- comparisons, k7, k10 vs gtdb-classify
+- gtdb-all vs gtdb-reps (time, accuracy)
+- add results for nucl vs 6-frame vs direct protein!
+- text: explain min-set-cov <-> containment
+--->
 
 <!--compare heatmap w/ max containment for subset of gtdb data?-->
 <!---
@@ -314,18 +338,13 @@ containent = % of a genome's k-mers that are shared
 
 
 <!---
+### Lost Bits
+
 ** gtdb evolpaths (all k-mers)**
 As the number of genomes per taxon varies widely across GTDB, comparisons across the entire GTDB database may be impacted by the particular genomes included in the database.
 To minimize any database biases, we developed a randomized subset of the GTDB database to assess the utility of protein k-mers across a wide range of evolutionary distances.
 
 [GTDB] This database provides a wide array of genomes for assessing the utility of protein k-mers for bacterial and archaeal similarity estimation and taxonomic classification.
---->
-
-
-<!---
-### Lost Bits
-
-
 Long dna k-mers ~~ short protein k-mers
 
 while shorter dna k-mers might be shared across more sequence, you increase the risk for result in"shared, non-homologous k-mers" (k-mer homoplasy). A protein k-mer of length `10` coverse 30 base pairs in of nucleotide sequence 
@@ -344,6 +363,14 @@ GTDB Evolpaths dataset](images/anchor-mcANI-AAI.boxen.protnucl.png){#fig:evolpat
 
 ![**Scaled MinHash AAI vs CompareM**
 GTDB Evolpaths dataset](images/gtdb95-evolpaths.AAI-concordance.png){#fig:evolpathsAAIvsCompareM height=2in}
+
+
+_We have generalized this type of comparison as the "maximum containment", which is the containment relative to the smaller set of k-mers. Since 6-frame translation should always yield excess k-mers relative to genomes of similar size, max containment will generally provide AAI comparisons of 6-frame translated k-mers to reference proteomes._
+Since 6-frame translation should always yield excess k-mers relative to genomes of similar size, max containment will generally provide AAI comparisons of 6-frame translated k-mers to reference proteomes._
+
+Anchor containment can also be used to enable robust taxonomic classification from either assembled proteomes or 6-frame translated DNA queries.
+
+As implemented in `sourmash gather` [@doi:10.1101/2022.01.11.475838], this step provides us with a list of reference genomes in order of highest k-mer containment by our query.
 --->
 
 
@@ -402,6 +429,12 @@ Unlike Jaccard comparisons, which estimate the similarity between sets, containm
 When one set is highly trusted, such as a reference genome or proteome, the containment relative to that set may be most informative.
 In these cases, we can consider the trusted genome as an "anchor" upon which we are basing our comparison, and the containment relative to this set as "anchor containment."
 
+### Maximum Containment
+
+For both 6-frame translation and metagenome breakdown comparisons, the most informative containment value will be relative to the smaller set of k-mers (typically reference proteomes), rather than relative to all metagenome k-mers or all 6-frame translated genome or metagenome k-mers. As such, we have implemented "maximum containment," a shorthand method to always select the greater of the two containment values for AAI estimation. Maximum containment method may also provide advantages for genomes with potential contamination, as containment will always be relative to the smaller, and presumably less contaminated, genome. However, highly incomplete genomes may overestimate AAI with this method, so we suggest using containment relative to the more trusted sample if known, or using average containment AAI or jaccard AAI when comparing two genomes of approximately equal quality.
+
+
+**While eukaryotic datasets are out of scope of this paper, these methods should work fine -- discuss or do some analyses!**
 
 ## Conclusions
 
@@ -493,6 +526,9 @@ For reference matches with high sequence identity (ANI) to the query, we classif
 **However, when ANI between the query and the top reference match exceeds the taxonomic rank threshold (e.g. species default 95%), we use a least/lowest common ancestor (LCA) approach to report likely taxonomy at a higher taxonomic rank _(TBD)_**.
 Briefly, as gather reports non-overlapping genome matches, we can sum the k-mer matches for all genomes with shared taxonomies at the next higher taxonomic rank to report the best query containment at that rank.
 As this gather-LCA approach first uniquely assigns k-mers to their best reference genome, it bypasses the impact of increasing database size on taxonomic assignment observed for other LCA-based k-mer classification approaches [@doi:10.1186/s13059-018-1554-6].
+
+Taxonomic utilities are implemented in the `sourmash taxonomy` module.
+
 
 
 ### Workflows and Computing Resources
