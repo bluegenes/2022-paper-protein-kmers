@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-02-22'
+date-meta: '2022-02-23'
 author-meta:
 - N. Tessa Pierce-Ward
 - C. Titus Brown
@@ -23,8 +23,8 @@ header-includes: |-
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-02-22" />
-  <meta name="citation_publication_date" content="2022-02-22" />
+  <meta name="dc.date" content="2022-02-23" />
+  <meta name="citation_publication_date" content="2022-02-23" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -45,9 +45,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/5d3d24a3250586bccdc37dc6003226a265d7742a/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/5d3d24a3250586bccdc37dc6003226a265d7742a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/5d3d24a3250586bccdc37dc6003226a265d7742a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/2c126f8371a6122926e9f206ddf11de37cd44ed3/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/2c126f8371a6122926e9f206ddf11de37cd44ed3/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/2c126f8371a6122926e9f206ddf11de37cd44ed3/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,10 +69,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/5d3d24a3250586bccdc37dc6003226a265d7742a/))
+([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/2c126f8371a6122926e9f206ddf11de37cd44ed3/))
 was automatically generated
-from [bluegenes/2021-paper-protein-kmers@5d3d24a](https://github.com/bluegenes/2021-paper-protein-kmers/tree/5d3d24a3250586bccdc37dc6003226a265d7742a)
-on February 22, 2022.
+from [bluegenes/2021-paper-protein-kmers@2c126f8](https://github.com/bluegenes/2021-paper-protein-kmers/tree/2c126f8371a6122926e9f206ddf11de37cd44ed3)
+on February 23, 2022.
 </em></small>
 
 ## Authors
@@ -194,6 +194,8 @@ This shared k-mers analysis is limited by the genomes included within GTDB. Whil
 
 <!---
 NOTE: worth looking at k=17 /51???.
+Also, go look at what ksizes are used in Mash Screen paper!!!
+k=7 used by that db lookup paper (find)
 --->
 
 ### Abridged GTDB Benchmarking Dataset
@@ -212,8 +214,6 @@ While paths are limited to taxonomies with at least two GTDB representative geno
 
 ### Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances
 
-
-
 We begin by assessing standard k-mer comparisons across the 6 comparisons (each genome compared with the anchor genome) within each of 4095 evolutionary paths.
 We estimate Jaccard Index (number of k-mers shared between two samples divided by the total number of k-mers across both samples) from FracMinHash sketches.
 When plotted by the rank of the lowest common ancestor, the dynamic range of Jaccard values is clearly much larger for protein k-mer comparisons. 
@@ -221,27 +221,18 @@ While DNA k-mers can provide resolution at the genus level, log-transformed jacc
 
 ![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.jaccard.logscale.boxenplot.png)
 
-[**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.saccard.logscale.boxenplot.png)
 
 ### Accurate distance estimation from k-mer containment
 
+Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. Here we apply the FracMinHash distance estimation to protein k-mer comparisons to obtain an alignment-free estimate of Amino Acid Identity [@doi:10.1101/2022.01.11.475870]. In addition to k-mer based FracMinHash AAI, we also conducted alignment-based AAI methods for each comparison. We focus on AAI programs that can be run via the command line, and include  CompareM (DIAMOND), EzAAIm (MMSeqs2), and EzAAIb (BLAST), each of which use a different aligment algorithm, DIAMOND, MMSeqs2, and BLAST respectively. As BLAST-based is the gold-standard method, we compare all AAI values the BLAST AAI values.
 
-
-
-Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. Here we can apply the same equations to protein k-mer comparisons to obtain an alignment-free estimate of Amino Acid Identity.
-
-[Koslicki jaccard k-mer stats paper @doi:10.1101/2022.01.11.475870] showed how to properly transform Jaccard --> ANI assuming a simple mutational model. For protein k-mers, Jaccard/Containment can be transformed into Amino Acid Identity (AAI).
-
-We can apply this same equation to protein k-mers 
-
-**__to do: A. redo with MRCC estimate; use only best graph (or maybe two ksizes)__**
-![**Scaled MinHash AAI vs CompareM**
-GTDB Evolpaths dataset](images/gtdb95-evolpaths.AAI-concordance.png){#fig:evolpathsAAIvsCompareM height=2in}
-
-**talk with david: max containment? avg conainment? max containment? evolpaths = avg containment, whereas reference comparisonss --> avg containment**
+![**FracMinHash AAI vs CompareM**
+Scaled 1](images/gtdb-rs202.evolpaths.AAIcompare-compareM.scaled1.png){#fig:evolpathsAAIvsCompareM height=2in}
 
 
 ### **Containment** enables comparison directly from DNA sequence
+
+FracMinHash sketches enable AAI estimation from Jaccard Index or Containment Index. 
 
 For protein k-mer comparisons to be useful, any DNA queries must be translated into protein sequence, either via assembly and translation or direct 6-frame translation. While assembly-based methods are more accurate, they often only work for a fraction of the available data. In contrast, 6-frame translation uses the entire dataset but generates a larger set of k-mers, only 1/6th of which are true protein k-mers. Here, the containment index is especially useful: by using only the containment estimate relative to the trusted reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence. We term this "anchor" containment, where the trusted genome is the "anchor" upon which we base the comparison.
 
@@ -381,7 +372,10 @@ GTDB Evolpaths dataset](images/anchor-mcANI-AAI.boxen.protnucl.png){#fig:evolpat
 ![**More protein k-mers are shared at genus level** CAPTION](images/pseudomonas_jaccard_vs_containment_prot10.png)
 
 ![**Protein k-mers are shared at higher taxonomic ranks** CAPTION](images/anchor-containment.nucl-prot.png)
---->
+
+![**Scaled MinHash AAI vs CompareM**
+GTDB Evolpaths dataset](images/gtdb95-evolpaths.AAI-concordance.png){#fig:evolpathsAAIvsCompareM height=2in}
+
 --->
 
 
