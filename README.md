@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/bluegenes/2021-paper-protein-kmers/tree/gh-pages) branch hosts the contents of this directory at <https://bluegenes.github.io/2021-paper-protein-kmers/>.
-The permalink for this webpage version is <https://bluegenes.github.io/2021-paper-protein-kmers/v/d9f82c94992c2feb35bcdb8c87fe8a1c2eb8f791/>.
+The permalink for this webpage version is <https://bluegenes.github.io/2021-paper-protein-kmers/v/b8e8161bd08775695f809e8ad64efc1c7f7cd089/>.
 To redirect to the permalink for the latest manuscript version at anytime, use the link <https://bluegenes.github.io/2021-paper-protein-kmers/v/freeze/>.
 
 ## Files
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`d9f82c94992c2feb35bcdb8c87fe8a1c2eb8f791`](https://github.com/bluegenes/2021-paper-protein-kmers/commit/d9f82c94992c2feb35bcdb8c87fe8a1c2eb8f791).
+[`b8e8161bd08775695f809e8ad64efc1c7f7cd089`](https://github.com/bluegenes/2021-paper-protein-kmers/commit/b8e8161bd08775695f809e8ad64efc1c7f7cd089).
