@@ -70,9 +70,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/2c126f8371a6122926e9f206ddf11de37cd44ed3/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/2c126f8371a6122926e9f206ddf11de37cd44ed3/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/2c126f8371a6122926e9f206ddf11de37cd44ed3/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/d9f82c94992c2feb35bcdb8c87fe8a1c2eb8f791/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/d9f82c94992c2feb35bcdb8c87fe8a1c2eb8f791/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/d9f82c94992c2feb35bcdb8c87fe8a1c2eb8f791/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -86,9 +86,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2021-paper-protein-kmers/v/2c126f8371a6122926e9f206ddf11de37cd44ed3/">permalink</a>)
+(<a href="https://bluegenes.github.io/2021-paper-protein-kmers/v/d9f82c94992c2feb35bcdb8c87fe8a1c2eb8f791/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2021-paper-protein-kmers/tree/2c126f8371a6122926e9f206ddf11de37cd44ed3">bluegenes/2021-paper-protein-kmers@2c126f8</a>
+from <a href="https://github.com/bluegenes/2021-paper-protein-kmers/tree/d9f82c94992c2feb35bcdb8c87fe8a1c2eb8f791">bluegenes/2021-paper-protein-kmers@d9f82c9</a>
 on February 23, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -199,12 +199,13 @@ While DNA k-mers can provide resolution at the genus level, log-transformed jacc
 </figure>
 <h3 id="accurate-distance-estimation-from-k-mer-containment">Accurate distance estimation from k-mer containment</h3>
 <p>Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. Here we apply the FracMinHash distance estimation to protein k-mer comparisons to obtain an alignment-free estimate of Amino Acid Identity <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">19</a>]</span>. In addition to k-mer based FracMinHash AAI, we also conducted alignment-based AAI methods for each comparison. We focus on AAI programs that can be run via the command line, and include CompareM (DIAMOND), EzAAIm (MMSeqs2), and EzAAIb (BLAST), each of which use a different aligment algorithm, DIAMOND, MMSeqs2, and BLAST respectively. As BLAST-based is the gold-standard method, we compare all AAI values the BLAST AAI values.</p>
-<div id="fig:evolpathsAAIvsCompareM" class="fignos">
-<figure>
-<img src="images/gtdb-rs202.evolpaths.AAIcompare-compareM.scaled1.png" style="height:2in" alt="Figure 1: FracMinHash AAI vs CompareM Scaled 1" /><figcaption aria-hidden="true"><span>Figure 1:</span> <strong>FracMinHash AAI vs CompareM</strong>
-Scaled 1</figcaption>
-</figure>
-</div>
+<p><img src="images/gtdb-rs202.evolpaths.AAIcompare-compareM.scaled200.k7.png" id="fig:evolpathsAAIvsCompareM" style="height:2in" alt="FracMinHash AAI vs CompareM Scaled 200" />
+<!---
+To do: 
+- finish ezAAI 1. mmseqs2; 2. blast if possible!
+- plot vs blast AAI
+- diff scaled vals?
+---></p>
 <h3 id="containment-enables-comparison-directly-from-dna-sequence"><strong>Containment</strong> enables comparison directly from DNA sequence</h3>
 <p>FracMinHash sketches enable AAI estimation from Jaccard Index or Containment Index.</p>
 <p>For protein k-mer comparisons to be useful, any DNA queries must be translated into protein sequence, either via assembly and translation or direct 6-frame translation. While assembly-based methods are more accurate, they often only work for a fraction of the available data. In contrast, 6-frame translation uses the entire dataset but generates a larger set of k-mers, only 1/6th of which are true protein k-mers. Here, the containment index is especially useful: by using only the containment estimate relative to the trusted reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence. We term this “anchor” containment, where the trusted genome is the “anchor” upon which we base the comparison.</p>
@@ -439,6 +440,11 @@ As this gather-LCA approach first uniquely assigns k-mers to their best referenc
 <figure>
 <img src="images/gtdb-rs202.evolpaths.alphacompare.scaled1.jaccard.logscale.boxenplot.png" alt="Protein k-mers are shared at higher taxonomic ranks: ALL KMERS" /><figcaption aria-hidden="true"><strong>Protein k-mers are shared at higher taxonomic ranks: ALL KMERS</strong></figcaption>
 </figure>
+<div id="fig:evolpathsAAIvsCompareM" class="fignos">
+<figure>
+<img src="images/gtdb-rs202.evolpaths.AAIcompare-compareM.scaled200.k7.png" style="height:2in" alt="Figure 1: FracMinHash AAI vs CompareM Scaled 1" /><figcaption aria-hidden="true"><span>Figure 1:</span> <strong>FracMinHash AAI vs CompareM</strong> Scaled 1</figcaption>
+</figure>
+</div>
 <h2 class="page_break_before" id="references">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs" class="references csl-bib-body" role="doc-bibliography">
