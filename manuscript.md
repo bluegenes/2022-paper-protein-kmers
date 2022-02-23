@@ -45,9 +45,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2021-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/4097fc8459f48386a289fba33d05a2fb05fc4661/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/4097fc8459f48386a289fba33d05a2fb05fc4661/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/4097fc8459f48386a289fba33d05a2fb05fc4661/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2021-paper-protein-kmers/v/b33a77112ceff0c13477cc8932a8f39c9778fbcb/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/b33a77112ceff0c13477cc8932a8f39c9778fbcb/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2021-paper-protein-kmers/v/b33a77112ceff0c13477cc8932a8f39c9778fbcb/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/4097fc8459f48386a289fba33d05a2fb05fc4661/))
+([permalink](https://bluegenes.github.io/2021-paper-protein-kmers/v/b33a77112ceff0c13477cc8932a8f39c9778fbcb/))
 was automatically generated
-from [bluegenes/2021-paper-protein-kmers@4097fc8](https://github.com/bluegenes/2021-paper-protein-kmers/tree/4097fc8459f48386a289fba33d05a2fb05fc4661)
+from [bluegenes/2021-paper-protein-kmers@b33a771](https://github.com/bluegenes/2021-paper-protein-kmers/tree/b33a77112ceff0c13477cc8932a8f39c9778fbcb)
 on February 23, 2022.
 </em></small>
 
@@ -227,7 +227,7 @@ While DNA k-mers can provide resolution at the genus level, log-transformed jacc
 Jaccard and Containment of DNA k-mers can be transformed into an estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, koslicki scaled mh paper]. Recently, equations have been developed for FracMinHash that account for the nonindependence of mutated k-mers [@doi:10.1101/2022.01.11.475870]. Here we apply the FracMinHash distance estimation to protein k-mer comparisons to obtain an alignment-free estimate of Amino Acid Identity [@doi:10.1101/2022.01.11.475870]. In addition to k-mer based FracMinHash AAI, we also conducted alignment-based AAI methods for each comparison.
 _We focus on AAI programs that can be run via the command line, and include  CompareM (DIAMOND), EzAAIm (MMSeqs2), and EzAAIb (BLAST), each of which use a different aligment algorithm, DIAMOND, MMSeqs2, and BLAST respectively. As BLAST-based is the gold-standard method, we compare all AAI values the BLAST AAI values._ Note that FracMinHash sketches enable estimation of the Containment Index in addition to the more commonly used Jaccard Index. Unlike Jaccard comparisons, which estimate the similarity between sets, Containment estimates are relative to each individual set. When one set is highly trusted, such as a reference genome or proteome, the containment relative to that set may be most informative. When both proteomes are equally trusted, the directional containment can be averaged, as done for BLAST-based AAI(CITE?), which often differ depending on mapping direction. FracMinHash AAI values produced by Jaccard and Containment (here, average containment) methods are very similar.
 
-![**FracMinHash AAI vs CompareM** Scaled 200](images/gtdb-rs202.evolpaths.AAIcompare-compareM.scaled200.k7.jac.png){#fig:evolpathsAAIvsCompareM height=2in}
+![**FracMinHash AAI vs CompareM** Scaled 200](images/gtdb-rs202.evolpaths.AAIcompare-compareM.scaled200.k7.jac.png){#fig:evolpathsAAIvsCompareM height=4in}
 
 <!---
 To do: 

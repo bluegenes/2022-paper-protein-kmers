@@ -7,7 +7,7 @@ Archaea
 archaeal
 Benchmarking
 bluegenes
-CompareM
+compareM
 compositional
 cov
 Cricuolo
@@ -47,7 +47,7 @@ metagenomic
 metatranscriptomic
 MGNify
 mh
-Minhash
+MinHash
 MMSeqs
 NCBI
 nonindependence
