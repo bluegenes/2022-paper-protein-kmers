@@ -2,7 +2,6 @@ input_id	dealiased_id	standard_id	short_id
 doi:10.1186/s13059-016-0997-x	doi:10.1186/s13059-016-0997-x	doi:10.1186/s13059-016-0997-x	mH9pzoIn
 doi:10.1186/gb-2014-15-3-r46	doi:10.1186/gb-2014-15-3-r46	doi:10.1186/gb-2014-15-3-r46	mSNjcw0J
 doi:10.1101/2022.01.11.475838	doi:10.1101/2022.01.11.475838	doi:10.1101/2022.01.11.475838	IadOz4ol
-doi:10.1128/AEM.00014-18	doi:10.1128/AEM.00014-18	doi:10.1128/aem.00014-18	17Pgcb9TD
 pubmed:2231712	pubmed:2231712	pubmed:2231712	jcOtxABy
 doi:10.1038/nmeth.3176	doi:10.1038/nmeth.3176	doi:10.1038/nmeth.3176	4R96QRcV
 doi:10.1038/ncomms11257	doi:10.1038/ncomms11257	doi:10.1038/ncomms11257	P2zJQDwU
@@ -24,12 +23,11 @@ doi:10.1186/1471-2105-11-119	doi:10.1186/1471-2105-11-119	doi:10.1186/1471-2105-
 doi:10.1038/s41564-018-0176-9	doi:10.1038/s41564-018-0176-9	doi:10.1038/s41564-018-0176-9	Pu1oJjHQ
 doi:10.1093/bioinformatics/btz848	doi:10.1093/bioinformatics/btz848	doi:10.1093/bioinformatics/btz848	13saJolbd
 doi:10.12688/f1000research.26930.1	doi:10.12688/f1000research.26930.1	doi:10.12688/f1000research.26930.1	TL0yBnjt
-https://dib-lab.github.io/2020-paper-sourmash-gather	https://dib-lab.github.io/2020-paper-sourmash-gather	url:https://dib-lab.github.io/2020-paper-sourmash-gather	XwgHsst
 doi:10.12688/f1000research.19675.1	doi:10.12688/f1000research.19675.1	doi:10.12688/f1000research.19675.1	ART4gJKs
 doi:10.21105/joss.00027	doi:10.21105/joss.00027	doi:10.21105/joss.00027	ExvjTLL3
 doi:10.1093/bib/bbz083	doi:10.1093/bib/bbz083	doi:10.1093/bib/bbz083	1Drcez76Y
+https://dib-lab.github.io/2020-paper-sourmash-gather	https://dib-lab.github.io/2020-paper-sourmash-gather	url:https://dib-lab.github.io/2020-paper-sourmash-gather	XwgHsst
 https://github.com/KoslickiLab/mutation-rate-ci-calculator	https://github.com/KoslickiLab/mutation-rate-ci-calculator	url:https://github.com/KoslickiLab/mutation-rate-ci-calculator	wSmua5pQ
-https://github.com/dib-lab/sourmash/pull/1270	https://github.com/dib-lab/sourmash/pull/1270	url:https://github.com/dib-lab/sourmash/pull/1270	w83JJrdM
 url:https://github.com/dparks1134/CompareM	url:https://github.com/dparks1134/CompareM	url:https://github.com/dparks1134/CompareM	auqG5mhy
 url:https://rodriguez-r.com/blog/aai-blast-vs-diamond	url:https://rodriguez-r.com/blog/aai-blast-vs-diamond	url:https://rodriguez-r.com/blog/aai-blast-vs-diamond	18uVBOfA0
 doi:10.1186/s13059-018-1554-6	doi:10.1186/s13059-018-1554-6	doi:10.1186/s13059-018-1554-6	j7nehrZT

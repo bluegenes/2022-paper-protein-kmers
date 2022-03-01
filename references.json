@@ -27,7 +27,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -71,7 +71,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -119,7 +119,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -168,7 +168,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -217,7 +217,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -274,7 +274,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -347,7 +347,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -408,7 +408,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -453,7 +453,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -532,7 +532,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -590,7 +590,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -660,7 +660,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -707,7 +707,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -756,7 +756,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -817,7 +817,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -862,7 +862,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -876,75 +876,6 @@
       ]
     },
     "DOI": "10.1101/2022.01.11.475870"
-  },
-  {
-    "id": "17Pgcb9TD",
-    "type": "article-journal",
-    "abstract": "ABSTRACT\r\n            \r\n              The most common practice in studying and cataloguing prokaryotic diversity involves the grouping of sequences into operational taxonomic units (OTUs) at the 97% 16S rRNA gene sequence identity level, often using partial gene sequences, such as PCR-generated amplicons. Due to the high sequence conservation of rRNA genes, organisms belonging to closely related yet distinct species may be grouped under the same OTU. However, it remains unclear how much diversity has been underestimated by this practice. To address this question, we compared the OTUs of genomes defined at the 97% or 98.5% 16S rRNA gene identity level against OTUs of the same genomes defined at the 95% whole-genome average nucleotide identity (ANI), which is a much more accurate proxy for species. Our results show that OTUs resulting from a 98.5% 16S rRNA gene identity cutoff are more accurate than 97% compared to 95% ANI (90.5% versus 89.9% accuracy) but indistinguishable from any other threshold in the 98.29 to 98.78% range. Even with the more stringent thresholds, however, the 16S rRNA gene-based approach commonly underestimates the number of OTUs by ∼12%, on average, compared to the ANI-based approach (∼14% underestimation when using the 97% identity threshold). More importantly, the degree of underestimation can become 50% or more for certain taxa, such as the genera\r\n              Pseudomonas\r\n              ,\r\n              Burkholderia\r\n              ,\r\n              Escherichia\r\n              ,\r\n              Campylobacter\r\n              , and\r\n              Citrobacter\r\n              . These results provide a quantitative view of the degree of underestimation of extant prokaryotic diversity by 16S rRNA gene-defined OTUs and suggest that genomic resolution is often necessary.\r\n            \r\n            \r\n              IMPORTANCE\r\n              Species diversity is one of the most fundamental pieces of information for community ecology and conservational biology. Therefore, employing accurate proxies for what a species or the unit of diversity is are cornerstones for a large set of microbial ecology and diversity studies. The most common proxies currently used rely on the clustering of 16S rRNA gene sequences at some threshold of nucleotide identity, typically 97% or 98.5%. Here, we explore how well this strategy reflects the more accurate whole-genome-based proxies and determine the frequency with which the high conservation of 16S rRNA sequences masks substantial species-level diversity.",
-    "container-title": "Applied and Environmental Microbiology",
-    "DOI": "10.1128/aem.00014-18",
-    "ISSN": "0099-2240, 1098-5336",
-    "issue": "6",
-    "journalAbbreviation": "Appl Environ Microbiol",
-    "language": "en",
-    "page": "e00014-18",
-    "source": "DOI.org (Crossref)",
-    "title": "How Much Do rRNA Gene Surveys Underestimate Extant Bacterial Diversity?",
-    "URL": "https://doi.org/ghtrdq",
-    "volume": "84",
-    "author": [
-      {
-        "family": "Rodriguez-R",
-        "given": "Luis M."
-      },
-      {
-        "family": "Castro",
-        "given": "Juan C."
-      },
-      {
-        "family": "Kyrpides",
-        "given": "Nikos C."
-      },
-      {
-        "family": "Cole",
-        "given": "James R."
-      },
-      {
-        "family": "Tiedje",
-        "given": "James M."
-      },
-      {
-        "family": "Konstantinidis",
-        "given": "Konstantinos T."
-      }
-    ],
-    "editor": [
-      {
-        "family": "Löffler",
-        "given": "Frank E."
-      }
-    ],
-    "accessed": {
-      "date-parts": [
-        [
-          "2022",
-          2,
-          24
-        ]
-      ]
-    },
-    "issued": {
-      "date-parts": [
-        [
-          "2018",
-          3,
-          15
-        ]
-      ]
-    },
-    "PMCID": "PMC5835724",
-    "PMID": "29305502",
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1128/aem.00014-18"
   },
   {
     "id": "1FgetXOee",
@@ -980,7 +911,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1047,7 +978,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1110,7 +1041,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1156,7 +1087,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1221,7 +1152,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1274,7 +1205,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1341,7 +1272,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1388,7 +1319,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1447,7 +1378,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1504,7 +1435,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1546,7 +1477,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1644,7 +1575,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1690,7 +1621,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1795,7 +1726,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1824,30 +1755,11 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
     "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/KoslickiLab/mutation-rate-ci-calculator"
-  },
-  {
-    "id": "w83JJrdM",
-    "type": "webpage",
-    "abstract": "The idea of this PR is to estimate the cardinality of the original dataset using the scaled minhash as a proxy\n(the scaled minhash has a reduced resolution HLL equivalent to full resolution HLL fro...",
-    "container-title": "GitHub",
-    "language": "en",
-    "title": "[WIP] Ertl estimators for scaled minhash by luizirber · Pull Request #1270 · sourmash-bio/sourmash",
-    "URL": "https://github.com/sourmash-bio/sourmash/pull/1270",
-    "accessed": {
-      "date-parts": [
-        [
-          "2022",
-          2,
-          24
-        ]
-      ]
-    },
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/dib-lab/sourmash/pull/1270"
   },
   {
     "id": "auqG5mhy",
@@ -1863,7 +1775,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
@@ -1882,7 +1794,7 @@
         [
           "2022",
           2,
-          24
+          28
         ]
       ]
     },
