@@ -45,9 +45,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/8ceab06d2ca617285777c8c4077b46f756989953/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/8ceab06d2ca617285777c8c4077b46f756989953/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/8ceab06d2ca617285777c8c4077b46f756989953/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/01569f68c23f6d45d20b842018aee196a0223198/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/01569f68c23f6d45d20b842018aee196a0223198/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/01569f68c23f6d45d20b842018aee196a0223198/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/8ceab06d2ca617285777c8c4077b46f756989953/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/01569f68c23f6d45d20b842018aee196a0223198/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@8ceab06](https://github.com/bluegenes/2022-paper-protein-kmers/tree/8ceab06d2ca617285777c8c4077b46f756989953)
+from [bluegenes/2022-paper-protein-kmers@01569f6](https://github.com/bluegenes/2022-paper-protein-kmers/tree/01569f68c23f6d45d20b842018aee196a0223198)
 on March 1, 2022.
 </em></small>
 
@@ -261,8 +261,7 @@ As above, we utilize anchor containment for comparisons involving 6-frame transl
 
 To assess whether k-mer methods can be used to approximate AAI, we compared our results with alignment-based methods that leverage three different algorithms: _EzAAIb (BLAST)_, EzAAIm (MMSeqs2), and CompareM (DIAMOND). _As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values._ 
 
-
-![**FracMinHash AAI vs MMSeqs2 alignment-based AAI* Scaled 200](images/gtdb-rs202.evolpaths.AAIcompare-EzAAIm.k7.png)
+![**FracMinHash AAI vs MMSeqs2 alignment based AAI** Scaled 200](images/gtdb-rs202.evolpaths.AAIcompare-EzAAIm.k7.png)
 
 <!---
 {#fig:evolpathsAAIvsMMSeqs2 height=4in}

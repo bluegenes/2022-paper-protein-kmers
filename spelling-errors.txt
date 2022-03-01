@@ -5,7 +5,7 @@ Archaea
 archaeal
 Benchmarking
 bluegenes
-CompareM
+compareM
 compositional
 cov
 Cricuolo
@@ -39,7 +39,7 @@ iHMP
 indels
 Irber
 iteratively
-Jaccard
+jaccard
 kaa
 KMERS
 Koslicki
@@ -73,7 +73,7 @@ proteomes
 RO
 saltyscientist
 snakemake
-Sourmash
+sourmash
 subsample
 subsampling
 subsequences
