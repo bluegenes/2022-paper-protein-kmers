@@ -5,7 +5,7 @@ Archaea
 archaeal
 Benchmarking
 bluegenes
-compareM
+CompareM
 compositional
 cov
 Cricuolo
@@ -73,7 +73,7 @@ proteomes
 RO
 saltyscientist
 snakemake
-sourmash
+Sourmash
 subsample
 subsampling
 subsequences
