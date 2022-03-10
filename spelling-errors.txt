@@ -24,7 +24,7 @@ EzAAIb
 EzAAIm
 FastANI
 fastas
-FracMinhash
+FracMinHash
 Franzosa
 GBMF
 genbank

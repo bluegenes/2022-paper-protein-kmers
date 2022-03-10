@@ -45,9 +45,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/be7f225ce6cc08e71c5c361bfce746fb319ebe22/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/be7f225ce6cc08e71c5c361bfce746fb319ebe22/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/be7f225ce6cc08e71c5c361bfce746fb319ebe22/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/d086e2ced655ba5603a61bf366369d9d9291a41e/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d086e2ced655ba5603a61bf366369d9d9291a41e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d086e2ced655ba5603a61bf366369d9d9291a41e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/be7f225ce6cc08e71c5c361bfce746fb319ebe22/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/d086e2ced655ba5603a61bf366369d9d9291a41e/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@be7f225](https://github.com/bluegenes/2022-paper-protein-kmers/tree/be7f225ce6cc08e71c5c361bfce746fb319ebe22)
+from [bluegenes/2022-paper-protein-kmers@d086e2c](https://github.com/bluegenes/2022-paper-protein-kmers/tree/d086e2ced655ba5603a61bf366369d9d9291a41e)
 on March 10, 2022.
 </em></small>
 
@@ -489,11 +489,19 @@ Containment-based pairwise distance estimation via Scaled Minhash enables accura
 
 ## Methods
 
-### FracMinHash Sketching with Sourmash
+### Large-scale k-mer comparisons with FracMinHash sketches
 
 FracMinHash sketching, as implemented in sourmash [@doi:10.1101/2022.01.11.475838; @doi:10.12688/f1000research.19675.1; @doi:10.21105/joss.00027], is a MinHash variant that uses a scaling factor to subsample the unique k-mers in the dataset to the chosen fraction (1/`scaled`).
 As k-mers are randomized prior to systematic subsampling, FracMinHash sketches are representative subsets that can be used for comparisons across datasets sketched with consistent k-mer lengths and scaling factors. 
-FracMinHash sketches can be used to estimate both the Jaccard Index [@doi:10.1186/s13059-016-0997-x] and Containment Index [@doi:10.1016/j.amc.2019.02.018] between datasets.
+
+While FracMinHash sketches can be used to estimate both the Jaccard Index [@doi:10.1186/s13059-016-0997-x] and containment Index [@doi:10.1016/j.amc.2019.02.018], containment has been shown to permit more accurate estimation of genomic distance when genomes or datasets differ in size [@doi:10.1016/j.amc.2019.02.018;@doi:10.1186/s13059-019-1875-0; @doi:10.1093/bib/bbz083; @doi:10.1101/2022.01.14.476226].
+We focus here on the utility of containment comparisons for similarity estimation.
+Containment comparisons are directional: the containment of genome A in sample B is the interection of k-mers in A and B divided by the k-mers in genome A (and vice versa).
+Thus, two containment values can be estimated for a given pairwise comparison.
+The choice of which containment value to use (or whether to average the two values) depends on the particular comparison.
+
+FracMinHash containment has been shown to be an unbiased estimator of the true containment index, as long as the sketches contain sufficient k-mers for comparison or utilize a high-quality estimation of the true cardinality of the dataset [@doi:10.1101/2022.01.11.475838; @doi:10.1101/2022.01.11.475870].
+_As of `v4.x`, `sourmash` sketches store a Hyper-Log-Log estimate of dataset cardinality, calculated during sketching. Use of this estimate ensures that `sourmash` FracMinHash containment results will be unbiased estimates of the true containment, even for very small genomes (e.g. viruses) or large scaling factors (e.g. keep 1/1e6 k-mers)._
 
 Sourmash v4.x supports sketching from either nucleotide or protein input sequence.
 All genome sequences were sketched with sourmash v4.2.1 using the `sourmash sketch dna` command, k-mer sizes of 21,31,51, a scaling factor of 1000.
@@ -504,18 +512,7 @@ All proteome sequences were sketched with sourmash >=v4.2.1 using the `sourmash 
 In select cases, we also conduct comparisons using all available k-mers, rather than using FracMinHash sketch subsampling.
 While `sourmash` sketching is not optimized for this use case, we can generate these complete k-mer sketches using the same `sourmash` commands with a scaling factor of 1 (`scaled`=1).
 
-### FracMinHash sketch comparisons
-
-While FracMinHash sketches enable both Jaccard and containment comparisons, containment has been shown to permit more accurate estimation of genomic distance when genomes or datasets differ in size [@doi:10.1016/j.amc.2019.02.018;@doi:10.1186/s13059-019-1875-0; @doi:10.1093/bib/bbz083; @doi:10.1101/2022.01.14.476226].
-We focus here on the utility of containment comparisons for similarity estimation.
-Containment comparisons are directional: the containment of genome A in sample B is the interection of k-mers in A and B divided by the k-mers in genome A (and vice versa).
-Thus, two containment values can be estimated for a given pairwise comparison.
-The choice of which containment value to use (or whether to average the two values) depends on the particular comparison.
-
-FracMinHash containment has been shown to be an unbiased estimator of the true containment index, as long as the sketches contain sufficient k-mers for comparison or utilize a high-quality estimation of the true cardinality of the dataset [@doi:10.1101/2022.01.11.475838; @doi:10.1101/2022.01.11.475870].
-_As of `v4.x`, `sourmash` sketches store a Hyper-Log-Log estimate of dataset cardinality, calculated during sketching. Use of this estimate ensures that `sourmash` FracMinHash containment results will be unbiased estimates of the true containment, even for very small genomes (e.g. viruses) or large scaling factors (e.g. keep 1/1e6 k-mers)._
-
-### Average Amino Acid Identity from FracMinHash
+### Estimating Average Amino Acid Identity
 _discuss HLL / bias factor?_
 
 MinHash Sketch Jaccard has been shown to correlate well with ANI at high sequence identities (>=90% sequence identity) [@doi:10.1186/s13059-016-0997-x].
@@ -523,8 +520,8 @@ Recently, Blanca et al, 2021 [@doi:10.1101/2021.01.15.426881] presented a method
 Hera et al, 2022 [@doi:10.1101/2022.01.11.475870] extended this approach to estimate sequence identity from FracMinHash Containment estimates.
 Each of these methods assumes a simple mutational model, with equal substitution probability for each nucleotide, and then estimates sequence identity based on k-mer comparisons.
 Here, we note that there is nothing unique to nucleotide sequence included in these equations.
-If we instead generate amino acid k-mers from protein sequence, we can apply the same equations to estimate average Amino Acid Identity (AAI). 
-For this application, we still assume a simple mutational model of equal substitution probability at each position, but of any amino acid, rather than any nucleotide. The equation for sequence similarity estimation (ANI or AAI) from FracMinHash Containment is reproduced here for completeness (see @doi:10.1101/2022.01.11.475870 for  details).
+If we instead generate amino acid k-mer sketches, we can apply the same equations to estimate average Amino Acid Identity (AAI) between proteomes.
+For this application, we maintain the assumption of a simple mutational model of equal substitution probability at each position, but recognize that it now applies to any amino acid, rather than any nucleotide. The equation for sequence similarity estimation (ANI or AAI) from FracMinHash Containment is reproduced here for completeness (see @doi:10.1101/2022.01.11.475870 for details).
 
 **to do: ADD EQUATION**
 
