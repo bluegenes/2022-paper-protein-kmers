@@ -26,8 +26,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -70,8 +70,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -118,8 +118,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -167,8 +167,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -216,8 +216,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -273,8 +273,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -346,8 +346,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -407,8 +407,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -427,11 +427,12 @@
   {
     "id": "16RrZPOGJ",
     "type": "article-journal",
+    "abstract": "DNA-DNA hybridization (DDH) has been used for nearly 50 years as the gold standard for prokaryotic species circumscriptions at the genomic level. It has been the only taxonomic method that offered a numerical and relatively stable species boundary, and its use has had a paramount influence on how the current classification has been constructed. However, now, in the era of genomics, DDH appears to be an outdated method for classification that needs to be substituted. The average nucleotide identity (ANI) between two genomes seems the most promising method since it mirrors DDH closely. Here we examine the work package JSpecies as a user-friendly, biologist-oriented interface to calculate ANI and the correlation of the tetranucleotide signatures between pairwise genomic comparisons. The results agreed with the use of ANI to substitute DDH, with a narrowed boundary that could be set at ≈95–96%. In addition, the JSpecies package implemented the tetranucleotide signature correlation index, an alignment-free parameter that generally correlates with ANI and that can be of help in deciding when a given pair of organisms should be classified in the same species. Moreover, for taxonomic purposes, the analyses can be produced by simply randomly sequencing at least 20% of the genome of the query strains rather than obtaining their full sequence.",
     "container-title": "Proceedings of the National Academy of Sciences",
     "DOI": "10.1073/pnas.0906412106",
     "ISSN": "0027-8424, 1091-6490",
     "issue": "45",
-    "journalAbbreviation": "PNAS",
+    "journalAbbreviation": "Proc. Natl. Acad. Sci. U.S.A.",
     "language": "en",
     "page": "19126-19131",
     "source": "DOI.org (Crossref)",
@@ -452,8 +453,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -531,8 +532,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -589,8 +590,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -659,8 +660,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -706,8 +707,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -755,8 +756,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -816,8 +817,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -861,8 +862,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -876,6 +877,59 @@
       ]
     },
     "DOI": "10.1101/2022.01.11.475870"
+  },
+  {
+    "id": "PtQJ26jG",
+    "type": "report",
+    "abstract": "Abstract\r\n          \r\n            Motivation\r\n            Sketching is now widely used in bioinformatics to reduce data size and increase data processing speed. Sketching approaches entice with improved scalability but also carry the danger of decreased accuracy and added bias. In this paper, we investigate the minimizer sketch and its use to estimate the Jaccard similarity between two sequences.\r\n          \r\n          \r\n            Results\r\n            \r\n              We show that the minimizer Jaccard estimator is\r\n              biased\r\n              and\r\n              inconsistent\r\n              , which means that the expected difference (i.e., the bias) between the estimator and the true value is not zero, even in the limit as the lengths of the sequences grow. We derive an analytical formula for the bias as a function of how the shared\r\n              k\r\n              -mers are laid out along the sequences. We show both theoretically and empirically that there are families of sequences where the bias can be substantial (e.g. the true Jaccard can be more than double the estimate). Finally, we demonstrate that this bias affects the accuracy of the widely used mashmap read mapping tool.\r\n            \r\n          \r\n          \r\n            Availability\r\n            Scripts to reproduce our experiments are available on GitHub [26].\r\n          \r\n          \r\n            Contact\r\n            \r\n              pzm11@psu.edu",
+    "genre": "preprint",
+    "language": "en",
+    "note": "DOI: 10.1101/2022.01.14.476226\nThis CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1101/2022.01.14.476226",
+    "publisher": "Bioinformatics",
+    "source": "DOI.org (Crossref)",
+    "title": "The minimizer Jaccard estimator is biased and inconsistent*",
+    "URL": "https://doi.org/gpm78w",
+    "author": [
+      {
+        "family": "Belbasi",
+        "given": "Mahdi"
+      },
+      {
+        "family": "Blanca",
+        "given": "Antonio"
+      },
+      {
+        "family": "Harris",
+        "given": "Robert S."
+      },
+      {
+        "family": "Koslicki",
+        "given": "David"
+      },
+      {
+        "family": "Medvedev",
+        "given": "Paul"
+      }
+    ],
+    "accessed": {
+      "date-parts": [
+        [
+          "2022",
+          3,
+          10
+        ]
+      ]
+    },
+    "issued": {
+      "date-parts": [
+        [
+          "2022",
+          1,
+          17
+        ]
+      ]
+    },
+    "DOI": "10.1101/2022.01.14.476226"
   },
   {
     "id": "1FgetXOee",
@@ -910,8 +964,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -937,6 +991,7 @@
     "issue": "1",
     "journalAbbreviation": "mSystems",
     "language": "en",
+    "page": "e00731-19",
     "source": "DOI.org (Crossref)",
     "title": "Consistent Metagenome-Derived Metrics Verify and Delineate Bacterial Species Boundaries",
     "URL": "https://doi.org/ggwqh6",
@@ -977,8 +1032,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1040,8 +1095,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1086,8 +1141,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1151,8 +1206,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1204,8 +1259,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1271,8 +1326,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1318,8 +1373,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1377,8 +1432,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1434,8 +1489,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1476,8 +1531,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1574,8 +1629,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1620,8 +1675,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1725,8 +1780,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1742,26 +1797,6 @@
     "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://dib-lab.github.io/2020-paper-sourmash-gather"
   },
   {
-    "id": "wSmua5pQ",
-    "type": "webpage",
-    "abstract": "This software calculates a confidence interval for the mutation rate from a set of observed containment indices under a simple nucleotide mutation process. - GitHub - KoslickiLab/mutation-rate-ci-c...",
-    "container-title": "GitHub",
-    "language": "en",
-    "title": "GitHub - KoslickiLab/mutation-rate-ci-calculator: This software calculates a confidence interval for the mutation rate from a set of observed containment indices under a simple nucleotide mutation process.",
-    "title-short": "GitHub - KoslickiLab/mutation-rate-ci-calculator",
-    "URL": "https://github.com/KoslickiLab/mutation-rate-ci-calculator",
-    "accessed": {
-      "date-parts": [
-        [
-          "2022",
-          2,
-          28
-        ]
-      ]
-    },
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/KoslickiLab/mutation-rate-ci-calculator"
-  },
-  {
     "id": "auqG5mhy",
     "type": "webpage",
     "abstract": "A toolbox for comparative genomics. Contribute to dparks1134/CompareM development by creating an account on GitHub.",
@@ -1774,8 +1809,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
@@ -1793,8 +1828,8 @@
       "date-parts": [
         [
           "2022",
-          2,
-          28
+          3,
+          10
         ]
       ]
     },
