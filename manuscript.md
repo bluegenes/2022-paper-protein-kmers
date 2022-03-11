@@ -45,9 +45,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/eb8992b1daf82e3d286f7b5e4975c48a1e489913/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/eb8992b1daf82e3d286f7b5e4975c48a1e489913/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/eb8992b1daf82e3d286f7b5e4975c48a1e489913/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/eb8992b1daf82e3d286f7b5e4975c48a1e489913/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@3952b28](https://github.com/bluegenes/2022-paper-protein-kmers/tree/3952b2872a278ac8c24348e52a3912b5215e04b4)
+from [bluegenes/2022-paper-protein-kmers@eb8992b](https://github.com/bluegenes/2022-paper-protein-kmers/tree/eb8992b1daf82e3d286f7b5e4975c48a1e489913)
 on March 11, 2022.
 </em></small>
 
@@ -242,8 +242,9 @@ While DNA k-mers can provide resolution at the genus level, log-transformed cont
 Average containment estimated from proteome sequence is very similar to anchor containment estimated from 6-frame translation of genome sequence, suggesting that either value can be used for this type of comparison.
 We obtained similar results when comparing all available k-mers, suggesting that these results are not affected by FracMinHash scaling (_Supplemental Figure XX_).
 
-![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.jaccard.logscale.boxenplot.png)
 
+
+![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.boxenplot.png)
 **To do:**
 - Containment instead of Jaccard, so can easily compare protein sketches vs 6-frame translated sketches 
 
@@ -642,9 +643,13 @@ We have already shown the utility of Containment for metagenome classification [
 ## Supplemental
 
 ### Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances
+
+![**JACCARD: Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.jaccard.logscale.boxenplot.png)
+
 ![**Protein k-mers are shared at higher taxonomic ranks: ALL KMERS**](images/gtdb-rs202.evolpaths.alphacompare.scaled1.jaccard.logscale.boxenplot.png)
 
 ![**FracMinHash AAI vs CompareM** Scaled 1](images/gtdb-rs202.evolpaths.AAIcompare-compareM.scaled200.k7.png){#fig:evolpathsAAIvsCompareM height=2in}
+
 
 
 ## References {.page_break_before}

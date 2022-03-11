@@ -70,9 +70,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/eb8992b1daf82e3d286f7b5e4975c48a1e489913/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/eb8992b1daf82e3d286f7b5e4975c48a1e489913/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/eb8992b1daf82e3d286f7b5e4975c48a1e489913/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -86,9 +86,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/">permalink</a>)
+(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/eb8992b1daf82e3d286f7b5e4975c48a1e489913/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/3952b2872a278ac8c24348e52a3912b5215e04b4">bluegenes/2022-paper-protein-kmers@3952b28</a>
+from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/eb8992b1daf82e3d286f7b5e4975c48a1e489913">bluegenes/2022-paper-protein-kmers@eb8992b</a>
 on March 11, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -219,10 +219,8 @@ When plotted by the rank of the lowest common ancestor, the dynamic range of con
 While DNA k-mers can provide resolution at the genus level, log-transformed containment values for protein k-mers continue to decrease, providing resolution for comparisons even between genomes of different phyla.
 Average containment estimated from proteome sequence is very similar to anchor containment estimated from 6-frame translation of genome sequence, suggesting that either value can be used for this type of comparison.
 We obtained similar results when comparing all available k-mers, suggesting that these results are not affected by FracMinHash scaling (<em>Supplemental Figure XX</em>).</p>
-<figure>
-<img src="images/gtdb-rs202.evolpaths.alphacompare.jaccard.logscale.boxenplot.png" alt="Protein k-mers are shared at higher taxonomic ranks Default scaled values 1000, 200" /><figcaption aria-hidden="true"><strong>Protein k-mers are shared at higher taxonomic ranks</strong> Default scaled values 1000, 200</figcaption>
-</figure>
-<p><strong>To do:</strong>
+<p><img src="images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.boxenplot.png" alt="Protein k-mers are shared at higher taxonomic ranks Default scaled values 1000, 200" />
+<strong>To do:</strong>
 - Containment instead of Jaccard, so can easily compare protein sketches vs 6-frame translated sketches</p>
 <p><strong>Questions:</strong>
 - Also display jaccard for protein sketch comparisons?
@@ -549,6 +547,9 @@ We have already shown the utility of Containment for metagenome classification [
 --->
 <h2 id="supplemental">Supplemental</h2>
 <h3 id="protein-k-mers-facilitate-alignment-free-comparisons-at-increased-evolutionary-distances-1">Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances</h3>
+<figure>
+<img src="images/gtdb-rs202.evolpaths.alphacompare.jaccard.logscale.boxenplot.png" alt="JACCARD: Protein k-mers are shared at higher taxonomic ranks Default scaled values 1000, 200" /><figcaption aria-hidden="true"><strong>JACCARD: Protein k-mers are shared at higher taxonomic ranks</strong> Default scaled values 1000, 200</figcaption>
+</figure>
 <figure>
 <img src="images/gtdb-rs202.evolpaths.alphacompare.scaled1.jaccard.logscale.boxenplot.png" alt="Protein k-mers are shared at higher taxonomic ranks: ALL KMERS" /><figcaption aria-hidden="true"><strong>Protein k-mers are shared at higher taxonomic ranks: ALL KMERS</strong></figcaption>
 </figure>
