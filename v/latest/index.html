@@ -70,9 +70,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/bed7327e69990fddeadf0a1443f491ff5b93d007/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/bed7327e69990fddeadf0a1443f491ff5b93d007/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/bed7327e69990fddeadf0a1443f491ff5b93d007/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/34aa18a0fe180715048e2e9ca5109c1e3c46679c/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/34aa18a0fe180715048e2e9ca5109c1e3c46679c/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/34aa18a0fe180715048e2e9ca5109c1e3c46679c/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -86,9 +86,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/bed7327e69990fddeadf0a1443f491ff5b93d007/">permalink</a>)
+(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/34aa18a0fe180715048e2e9ca5109c1e3c46679c/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/bed7327e69990fddeadf0a1443f491ff5b93d007">bluegenes/2022-paper-protein-kmers@bed7327</a>
+from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/34aa18a0fe180715048e2e9ca5109c1e3c46679c">bluegenes/2022-paper-protein-kmers@34aa18a</a>
 on March 11, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -459,27 +459,26 @@ For this application, we maintain the assumption of a simple mutational model of
 <p>Sequence distance estimation (ANI, AAI) is implemented in <code>sourmash</code> as of <code>v4.4</code> (<span class="citation" data-cites="NTPW">[<a href="#ref-NTPW" role="doc-biblioref"><strong>NTPW?</strong></a>]</span>: check version). The distance estimation equations can be found in the <code>distance_utils.py</code> file.</p>
 <p><strong>NTP: working here</strong></p>
 <h3 id="fracminhash-amino-acid-identity-correlates-with-alignment-based-methods">FracMinHash Amino Acid Identity Correlates with Alignment-based Methods</h3>
-<p>FastANI v1.32 (<span class="citation" data-cites="12fAf7MKk">[<a href="#ref-12fAf7MKk" role="doc-biblioref">14</a>]</span>; run with default parameters) was used to obtain Average Nucleotide Identity between the anchor genome and each additional genome in its evolutionary path.
-FastANI is targeted at ANI values between 80%-100%, so only values in this range are considered “trusted” and used in **assessing the correlation between FracMinHash estimates and FastANI._(TBD)_**</p>
-<p>CompareM v0.1.2 (<span class="citation" data-cites="auqG5mhy">[<a href="#ref-auqG5mhy" role="doc-biblioref">29</a>]</span>; run with <code>--sensitive</code> parameter for DIAMOND mapping) was used to obtain Average Amino Acid Identity between the anchor proteome and each additional proteome in its evolutionary path.
+<p>To assess whether k-mer methods can be used to approximate AAI, we ran generated alignment AAI values for each pairwise comparison using methods that leverage different mapping algorithms: EzAAIb (BLASTp), EzAAIm (MMSeqs2), and CompareM (DIAMOND). As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values.</p>
+<p>EzAAI v1.12 <span class="citation" data-cites="doi">[<a href="#ref-doi" role="doc-biblioref"><strong>doi?</strong></a> 10.1007/s12275-021-1154-0]</span> was used to run BLAST-based and MMSeqs-based Amino Acid Identity. The EzAAI workflow begins with PRODIGAL-based translation of genome sequence <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span>, followed by reciprocal BLAST <span class="citation" data-cites="doi">[<a href="#ref-doi" role="doc-biblioref"><strong>doi?</strong></a> 10.1016/S0022-2836(05)80360-2]</span> or MMSeqs2 <span class="citation" data-cites="jj6qOofE">[<a href="#ref-jj6qOofE" role="doc-biblioref">29</a>]</span> alignment. For both, we utilized EzAAI default parameters: 40% coverage threshold, 40% sequence identity threshold.
+CompareM v0.1.2 (<span class="citation" data-cites="auqG5mhy">[<a href="#ref-auqG5mhy" role="doc-biblioref">30</a>]</span>; run with <code>--sensitive</code> parameter for DIAMOND mapping) was used to obtain Average Amino Acid Identity between the anchor proteome and each additional proteome in its evolutionary path.
 CompareM reports the mean and standard deviation of AAI, as well as the fraction of orthologous genes upon which this estimate is based.
 Briefly, CompareM calls genes for each genome or proteome using PRODIGAL <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span> and conducts reciprocal best-hit mapping via DIAMOND <span class="citation" data-cites="lX665mdh">[<a href="#ref-lX665mdh" role="doc-biblioref">21</a>]</span>.
 By default, CompareM requires at least 30% percent sequence identity and 70% percent alignment length to identify orthologous genes.
-As DIAMOND alignment-based homology identification may correlate less well with BLAST-based homology under 60% sequence identity <span class="citation" data-cites="18uVBOfA0">[<a href="#ref-18uVBOfA0" role="doc-biblioref">30</a>/]</span>, <strong>we also ran compareM with a percent sequence identity threshold of 60% to obtain a set of high-confidence orthologous genes for AAI estimation. We report correlation between FracMinHash AAI estimation and each of these compareM parameter sets in XX <em>(TBD)</em></strong>. <em>CompareM was also used to obtain AAI values directly from each genome, using PRODIGAL to translate sequences prior to gene calling. These results [were not significantly different from proteome-based AAI estimation??] (Supplemental XX).</em></p>
-<p>EzAAI …</p>
+As DIAMOND alignment-based homology identification may correlate less well with BLAST-based homology under 60% sequence identity <span class="citation" data-cites="18uVBOfA0">[<a href="#ref-18uVBOfA0" role="doc-biblioref">31</a>/]</span>, <strong>we also ran compareM with a percent sequence identity threshold of 60% to obtain a set of high-confidence orthologous genes for AAI estimation. We report correlation between FracMinHash AAI estimation and each of these compareM parameter sets in XX <em>(TBD)</em></strong>. <em>CompareM was also used to obtain AAI values directly from each genome, using PRODIGAL to translate sequences prior to gene calling. These results [were not significantly different from proteome-based AAI estimation??] (Supplemental XX).</em></p>
 <h3 id="taxonomic-classification-with-sourmash-gather-and-taxonomy">Taxonomic Classification with Sourmash <code>Gather</code> and <code>Taxonomy</code></h3>
-<p>To take advantage of the increased evolutionary distance comparisons offered by protein k-mers, we apply compositional analysis with sourmash gather <span class="citation" data-cites="XwgHsst">[<a href="#ref-XwgHsst" role="doc-biblioref">31</a>]</span> to protein sequences (amino acid input and 6-frame translation from nucleotides).
+<p>To take advantage of the increased evolutionary distance comparisons offered by protein k-mers, we apply compositional analysis with sourmash gather <span class="citation" data-cites="XwgHsst">[<a href="#ref-XwgHsst" role="doc-biblioref">32</a>]</span> to protein sequences (amino acid input and 6-frame translation from nucleotides).
 Sourmash gather is conducted in two parts:
 First (preselection), gather searches the query against all reference genomes, building all genomes with matches into a smaller, in-memory database for use in step 2.
 Second (decomposition), gather does iterative best-containment decomposition, where query k-mers are iteratively assigned to the reference genome with best containment match.
 In this way, gather reports the minimal list of reference genomes that contain all of the k-mers that matched any reference in the database.</p>
-<p>For reference matches with high sequence identity (ANI) to the query, we classify the query sequence as a member of the reference taxonomic group, as in <span class="citation" data-cites="XwgHsst">[<a href="#ref-XwgHsst" role="doc-biblioref">31</a>]</span>.
+<p>For reference matches with high sequence identity (ANI) to the query, we classify the query sequence as a member of the reference taxonomic group, as in <span class="citation" data-cites="XwgHsst">[<a href="#ref-XwgHsst" role="doc-biblioref">32</a>]</span>.
 <strong>However, when ANI between the query and the top reference match exceeds the taxonomic rank threshold (e.g. species default 95%), we use a least/lowest common ancestor (LCA) approach to report likely taxonomy at a higher taxonomic rank <em>(TBD)</em></strong>.
 Briefly, as gather reports non-overlapping genome matches, we can sum the k-mer matches for all genomes with shared taxonomies at the next higher taxonomic rank to report the best query containment at that rank.
-As this gather-LCA approach first uniquely assigns k-mers to their best reference genome, it bypasses the impact of increasing database size on taxonomic assignment observed for other LCA-based k-mer classification approaches <span class="citation" data-cites="j7nehrZT">[<a href="#ref-j7nehrZT" role="doc-biblioref">32</a>]</span>.</p>
+As this gather-LCA approach first uniquely assigns k-mers to their best reference genome, it bypasses the impact of increasing database size on taxonomic assignment observed for other LCA-based k-mer classification approaches <span class="citation" data-cites="j7nehrZT">[<a href="#ref-j7nehrZT" role="doc-biblioref">33</a>]</span>.</p>
 <p>Taxonomic utilities are implemented in the <code>sourmash taxonomy</code> module.</p>
 <h3 id="workflows-and-computing-resources">Workflows and Computing Resources</h3>
-<p>Reproducible workflows associated with this paper are available at XX (gh link + doi for release), with datasets available at OSF (XX). All workflows were executed using snakemake &gt;= 5.26 <span class="citation" data-cites="fVLvtRTc">[<a href="#ref-fVLvtRTc" role="doc-biblioref">33</a>)]</span> on the FARM cluster at UC Davis, using practices outlined in <span class="citation" data-cites="q9c75jWY">[<a href="#ref-q9c75jWY" role="doc-biblioref">34</a>]</span>.</p>
+<p>Reproducible workflows associated with this paper are available at XX (gh link + doi for release), with datasets available at OSF (XX). All workflows were executed using snakemake &gt;= 5.26 <span class="citation" data-cites="fVLvtRTc">[<a href="#ref-fVLvtRTc" role="doc-biblioref">34</a>)]</span> on the FARM cluster at UC Davis, using practices outlined in <span class="citation" data-cites="q9c75jWY">[<a href="#ref-q9c75jWY" role="doc-biblioref">35</a>]</span>.</p>
 <!---
 Unused
 
@@ -544,6 +543,9 @@ By definition, metagenomes contain k-mers from many organisms.
 We can take advantage of directional Containment by calculating the Containment Index of Reference genomes that share many k-mers with the Metagenome.
 We have already shown the utility of Containment for metagenome classification [@doi:10.1101/2022.01.11.475838], but now we can report estimated average sequence identity between the matching sequence regions and the reference genome.
 
+
+FastANI v1.32 ([@doi:10.1038/s41467-018-07641-9]; run with default parameters)  was used to obtain Average Nucleotide Identity between the anchor genome and each additional genome in its evolutionary path.
+FastANI is targeted at ANI values between 80%-100%, so only values in this range are considered "trusted" and used in **assessing the correlation between FracMinHash estimates and FastANI._(TBD)_**
 --->
 <h2 id="supplemental">Supplemental</h2>
 <h3 id="protein-k-mers-facilitate-alignment-free-comparisons-at-increased-evolutionary-distances-1">Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances</h3>
@@ -645,23 +647,26 @@ We have already shown the utility of Containment for metagenome classification [
 <div id="ref-PtQJ26jG" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">28. </div><div class="csl-right-inline"><strong>The minimizer Jaccard estimator is biased and inconsistent*</strong> <div class="csl-block">Mahdi Belbasi, Antonio Blanca, Robert S Harris, David Koslicki, Paul Medvedev</div> <em>Bioinformatics</em> (2022-01-17) <a href="https://doi.org/gpm78w">https://doi.org/gpm78w</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2022.01.14.476226">10.1101/2022.01.14.476226</a></div></div>
 </div>
+<div id="ref-jj6qOofE" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline"><strong>MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets</strong> <div class="csl-block">Martin Steinegger, Johannes Söding</div> <em>Nature Biotechnology</em> (2017-11) <a href="https://doi.org/ggctnw">https://doi.org/ggctnw</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/nbt.3988">10.1038/nbt.3988</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29035372">29035372</a></div></div>
+</div>
 <div id="ref-auqG5mhy" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">29. </div><div class="csl-right-inline"><strong>GitHub - dparks1134/CompareM: A toolbox for comparative genomics.</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/dparks1134/CompareM">https://github.com/dparks1134/CompareM</a></div>
+<div class="csl-left-margin">30. </div><div class="csl-right-inline"><strong>GitHub - dparks1134/CompareM: A toolbox for comparative genomics.</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/dparks1134/CompareM">https://github.com/dparks1134/CompareM</a></div>
 </div>
 <div id="ref-18uVBOfA0" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">30. </div><div class="csl-right-inline"><strong>AAI: BLAST vs Diamond</strong> <div class="csl-block">LM Rodriguez-R</div> <a href="https://rodriguez-r.com/blog/aai-blast-vs-diamond/">https://rodriguez-r.com/blog/aai-blast-vs-diamond/</a></div>
+<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>AAI: BLAST vs Diamond</strong> <div class="csl-block">LM Rodriguez-R</div> <a href="https://rodriguez-r.com/blog/aai-blast-vs-diamond/">https://rodriguez-r.com/blog/aai-blast-vs-diamond/</a></div>
 </div>
 <div id="ref-XwgHsst" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>Lightweight compositional analysis of metagenomes with FracMinHash and minimum metagenome covers</strong> <div class="csl-block">Luiz Irber, Phillip T Brooks, Taylor Reiter, NTessa Pierce-Ward, Mahmudur Rahman Hera, David Koslicki, CTitus Brown</div> <em>Manubot</em> (2022-01-17) <a href="https://dib-lab.github.io/2020-paper-sourmash-gather/">https://dib-lab.github.io/2020-paper-sourmash-gather/</a></div>
+<div class="csl-left-margin">32. </div><div class="csl-right-inline"><strong>Lightweight compositional analysis of metagenomes with FracMinHash and minimum metagenome covers</strong> <div class="csl-block">Luiz Irber, Phillip T Brooks, Taylor Reiter, NTessa Pierce-Ward, Mahmudur Rahman Hera, David Koslicki, CTitus Brown</div> <em>Manubot</em> (2022-01-17) <a href="https://dib-lab.github.io/2020-paper-sourmash-gather/">https://dib-lab.github.io/2020-paper-sourmash-gather/</a></div>
 </div>
 <div id="ref-j7nehrZT" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">32. </div><div class="csl-right-inline"><strong>RefSeq database growth influences the accuracy of k-mer-based lowest common ancestor species identification</strong> <div class="csl-block">Daniel J Nasko, Sergey Koren, Adam M Phillippy, Todd J Treangen</div> <em>Genome Biology</em> (2018-12) <a href="https://doi.org/ggc9db">https://doi.org/ggc9db</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-018-1554-6">10.1186/s13059-018-1554-6</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30373669">30373669</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6206640">PMC6206640</a></div></div>
+<div class="csl-left-margin">33. </div><div class="csl-right-inline"><strong>RefSeq database growth influences the accuracy of k-mer-based lowest common ancestor species identification</strong> <div class="csl-block">Daniel J Nasko, Sergey Koren, Adam M Phillippy, Todd J Treangen</div> <em>Genome Biology</em> (2018-12) <a href="https://doi.org/ggc9db">https://doi.org/ggc9db</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-018-1554-6">10.1186/s13059-018-1554-6</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30373669">30373669</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6206640">PMC6206640</a></div></div>
 </div>
 <div id="ref-fVLvtRTc" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">33. </div><div class="csl-right-inline"><strong>Sustainable data analysis with Snakemake</strong> <div class="csl-block">Felix Mölder, Kim Philipp Jablonski, Brice Letcher, Michael B Hall, Christopher H Tomkins-Tinch, Vanessa Sochat, Jan Forster, Soohyun Lee, Sven O Twardziok, Alexander Kanitz, … Johannes Köster</div> <em>F1000Research</em> (2021-01-18) <a href="https://doi.org/gjjkwv">https://doi.org/gjjkwv</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.29032.1">10.12688/f1000research.29032.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/34035898">34035898</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8114187">PMC8114187</a></div></div>
+<div class="csl-left-margin">34. </div><div class="csl-right-inline"><strong>Sustainable data analysis with Snakemake</strong> <div class="csl-block">Felix Mölder, Kim Philipp Jablonski, Brice Letcher, Michael B Hall, Christopher H Tomkins-Tinch, Vanessa Sochat, Jan Forster, Soohyun Lee, Sven O Twardziok, Alexander Kanitz, … Johannes Köster</div> <em>F1000Research</em> (2021-01-18) <a href="https://doi.org/gjjkwv">https://doi.org/gjjkwv</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.29032.1">10.12688/f1000research.29032.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/34035898">34035898</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8114187">PMC8114187</a></div></div>
 </div>
 <div id="ref-q9c75jWY" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">34. </div><div class="csl-right-inline"><strong>Streamlining data-intensive biology with workflow systems</strong> <div class="csl-block">Taylor Reiter, Phillip T Brooks†, Luiz Irber†, Shannon EK Joslin†, Charles M Reid†, Camille Scott†, CTitus Brown, NTessa Pierce-Ward</div> <em>GigaScience</em> (2021-01-13) <a href="https://doi.org/gjfk22">https://doi.org/gjfk22</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/gigascience/giaa140">10.1093/gigascience/giaa140</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/33438730">33438730</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8631065">PMC8631065</a></div></div>
+<div class="csl-left-margin">35. </div><div class="csl-right-inline"><strong>Streamlining data-intensive biology with workflow systems</strong> <div class="csl-block">Taylor Reiter, Phillip T Brooks†, Luiz Irber†, Shannon EK Joslin†, Charles M Reid†, Camille Scott†, CTitus Brown, NTessa Pierce-Ward</div> <em>GigaScience</em> (2021-01-13) <a href="https://doi.org/gjfk22">https://doi.org/gjfk22</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/gigascience/giaa140">10.1093/gigascience/giaa140</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/33438730">33438730</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8631065">PMC8631065</a></div></div>
 </div>
 </div>
 <!-- default theme -->
