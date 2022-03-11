@@ -45,9 +45,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/bed7327e69990fddeadf0a1443f491ff5b93d007/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/bed7327e69990fddeadf0a1443f491ff5b93d007/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/bed7327e69990fddeadf0a1443f491ff5b93d007/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/34aa18a0fe180715048e2e9ca5109c1e3c46679c/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/34aa18a0fe180715048e2e9ca5109c1e3c46679c/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/34aa18a0fe180715048e2e9ca5109c1e3c46679c/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -69,9 +69,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/bed7327e69990fddeadf0a1443f491ff5b93d007/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/34aa18a0fe180715048e2e9ca5109c1e3c46679c/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@bed7327](https://github.com/bluegenes/2022-paper-protein-kmers/tree/bed7327e69990fddeadf0a1443f491ff5b93d007)
+from [bluegenes/2022-paper-protein-kmers@34aa18a](https://github.com/bluegenes/2022-paper-protein-kmers/tree/34aa18a0fe180715048e2e9ca5109c1e3c46679c)
 on March 11, 2022.
 </em></small>
 
@@ -532,17 +532,15 @@ __NTP: working here__
 
 ### FracMinHash Amino Acid Identity Correlates with Alignment-based Methods
 
+To assess whether k-mer methods can be used to approximate AAI, we ran generated alignment AAI values for each pairwise comparison using methods that leverage different mapping algorithms: EzAAIb (BLASTp), EzAAIm (MMSeqs2), and CompareM (DIAMOND). As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values.
 
-FastANI v1.32 ([@doi:10.1038/s41467-018-07641-9]; run with default parameters)  was used to obtain Average Nucleotide Identity between the anchor genome and each additional genome in its evolutionary path.
-FastANI is targeted at ANI values between 80%-100%, so only values in this range are considered "trusted" and used in **assessing the correlation between FracMinHash estimates and FastANI._(TBD)_**
-
+EzAAI v1.12 [@doi: 10.1007/s12275-021-1154-0] was used to run BLAST-based and MMSeqs-based Amino Acid Identity. The EzAAI workflow begins with PRODIGAL-based translation of genome sequence [@doi:10.1038/nmeth.3176], followed by reciprocal BLAST [@doi: 10.1016/S0022-2836(05)80360-2] or MMSeqs2 [@doi:10.1038/nbt.3988] alignment. For both, we utilized EzAAI default parameters: 40% coverage threshold, 40% sequence identity threshold.
 CompareM v0.1.2 ([@url:https://github.com/dparks1134/CompareM]; run with `--sensitive` parameter for DIAMOND mapping) was used to obtain Average Amino Acid Identity between the anchor proteome and each additional proteome in its evolutionary path.
 CompareM reports the mean and standard deviation of AAI, as well as the fraction of orthologous genes upon which this estimate is based.
 Briefly, CompareM calls genes for each genome or proteome using PRODIGAL [@doi:10.1038/nmeth.3176] and conducts reciprocal best-hit mapping via DIAMOND [@doi:10.1186/1471-2105-11-119].
 By default, CompareM requires at least 30% percent sequence identity and 70% percent alignment length to identify orthologous genes.
 As DIAMOND alignment-based homology identification may correlate less well with BLAST-based homology under 60% sequence identity [@url:https://rodriguez-r.com/blog/aai-blast-vs-diamond/], **we also ran compareM with a percent sequence identity threshold of 60% to obtain a set of high-confidence orthologous genes for AAI estimation. We report correlation between FracMinHash AAI estimation and each of these compareM parameter sets in XX _(TBD)_**. _CompareM was also used to obtain AAI values directly from each genome, using PRODIGAL to translate sequences prior to gene calling. These results [were not significantly different from proteome-based AAI estimation??] (Supplemental XX)._
 
-EzAAI ... 
 
 
 ### Taxonomic Classification with Sourmash `Gather` and `Taxonomy`
@@ -632,6 +630,9 @@ By definition, metagenomes contain k-mers from many organisms.
 We can take advantage of directional Containment by calculating the Containment Index of Reference genomes that share many k-mers with the Metagenome.
 We have already shown the utility of Containment for metagenome classification [@doi:10.1101/2022.01.11.475838], but now we can report estimated average sequence identity between the matching sequence regions and the reference genome.
 
+
+FastANI v1.32 ([@doi:10.1038/s41467-018-07641-9]; run with default parameters)  was used to obtain Average Nucleotide Identity between the anchor genome and each additional genome in its evolutionary path.
+FastANI is targeted at ANI values between 80%-100%, so only values in this range are considered "trusted" and used in **assessing the correlation between FracMinHash estimates and FastANI._(TBD)_**
 --->
 
 
