@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="N. Tessa Pierce-Ward" />
   <meta name="author" content="C. Titus Brown" />
-  <meta name="dcterms.date" content="2022-03-10" />
+  <meta name="dcterms.date" content="2022-03-11" />
   <meta name="keywords" content="metagenomics, AAI, Alignment-free, Assembly-free, MinHash, FracMinHash, Containment" />
   <title>Protein k-mer analyses for assembly- and alignment-free sequence analysis</title>
   <style>
@@ -48,8 +48,8 @@
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-03-10" />
-  <meta name="citation_publication_date" content="2022-03-10" />
+  <meta name="dc.date" content="2022-03-11" />
+  <meta name="citation_publication_date" content="2022-03-11" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -70,9 +70,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/d086e2ced655ba5603a61bf366369d9d9291a41e/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d086e2ced655ba5603a61bf366369d9d9291a41e/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d086e2ced655ba5603a61bf366369d9d9291a41e/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -86,10 +86,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/d086e2ced655ba5603a61bf366369d9d9291a41e/">permalink</a>)
+(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/3952b2872a278ac8c24348e52a3912b5215e04b4/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/d086e2ced655ba5603a61bf366369d9d9291a41e">bluegenes/2022-paper-protein-kmers@d086e2c</a>
-on March 10, 2022.
+from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/3952b2872a278ac8c24348e52a3912b5215e04b4">bluegenes/2022-paper-protein-kmers@3952b28</a>
+on March 11, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -233,14 +233,14 @@ We obtained similar results when comparing all available k-mers, suggesting that
 These equations assume a simple mutational model and estimate distance solely based on k-mer statistics.
 Here we apply FracMinHash distance estimation to protein k-mer comparisons to obtain an alignment-free estimate of Amino Acid Identity <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">18</a>]</span>.
 As above, we utilize anchor containment for comparisons involving 6-frame translated sketches.</p>
-<p>To assess whether k-mer methods can be used to approximate AAI, we compared our results with alignment-based methods that leverage three different algorithms: EzAAIb (BLAST), EzAAIm (MMSeqs2), and CompareM(DIAMOND). As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values.</p>
+<p>To assess whether k-mer methods can be used to approximate AAI, we compared our results with alignment-based methods that leverage three different algorithms: EzAAIb (BLASTp), EzAAIm (MMSeqs2), and CompareM(DIAMOND). As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values.</p>
 <div id="fig:evolpathsAAIvsBLAST-AAI" class="fignos">
 <figure>
-<img src="images/gtdb-rs202.evolpaths.AAIcompare-EzAAIm.k7.png" style="height:4in" alt="Figure 1: FracMinHash AAI vs MMSeqs2 alignment based AAI" /><figcaption aria-hidden="true"><span>Figure 1:</span> FracMinHash AAI vs MMSeqs2 alignment based AAI</figcaption>
+<img src="images/gtdb-rs202.evolpaths.AAIcompare-EzAAIb.k7.png" style="height:4in" alt="Figure 1: FracMinHash AAI vs BLASTP alignment based AAI" /><figcaption aria-hidden="true"><span>Figure 1:</span> FracMinHash AAI vs BLASTP alignment based AAI</figcaption>
 </figure>
 </div>
 <p><strong>To do:</strong>
-- Finish BLAST-AAI and plot all relative to these results
+- Rerun BLAST-AAI with default thresholds (current was lower identity thresholds) and re-plot
 - finish and add results from 6-frame translated sketches (anchor containment): same plot? or adjacent plot if needed.</p>
 <h3 id="protein-k-mer-containment-and-aai-can-be-used-for-taxonomic-classification">Protein k-mer containment and AAI can be used for taxonomic classification</h3>
 <p>Given that protein k-mers facilitate similarity estimation across these larger evolutionary distances, we next assess the utility of protein k-mers for taxonomic assignment, both for metagenome breakdown/classification and for assembled genomes.</p>

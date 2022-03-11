@@ -3,6 +3,7 @@ ANI
 Archaea
 archaeal
 Benchmarking
+BLASTp
 bluegenes
 cardinality
 CompareM
@@ -74,7 +75,7 @@ proteomes
 RO
 saltyscientist
 snakemake
-sourmash
+Sourmash
 subsample
 subsampling
 subsequences

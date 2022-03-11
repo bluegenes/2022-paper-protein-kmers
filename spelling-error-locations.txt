@@ -202,6 +202,7 @@ content/03.results.md:89:mer
 content/03.results.md:92:AAI
 content/03.results.md:92:AAI
 content/03.results.md:92:AAI
+content/03.results.md:92:BLASTp
 content/03.results.md:92:CompareM
 content/03.results.md:92:EzAAIb
 content/03.results.md:92:EzAAIm
@@ -209,7 +210,8 @@ content/03.results.md:92:mer
 content/03.results.md:94:AAI
 content/03.results.md:94:AAI
 content/03.results.md:94:AAI
-content/03.results.md:94:EzAAIm
+content/03.results.md:94:BLASTP
+content/03.results.md:94:EzAAIb
 content/03.results.md:94:FracMinHash
 content/03.results.md:94:gtdb
 content/03.results.md:97:AAI
