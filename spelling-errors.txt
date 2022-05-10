@@ -3,16 +3,16 @@ ANI
 Archaea
 archaeal
 Benchmarking
-BLASTp
+BLASTP
 bluegenes
 cardinality
-compareM
+CompareM
 compositional
 cov
 Criscuolo
 ctb
 ctitusbrown
-dataset
+Dataset
 datasets
 Delmont
 derivates
@@ -23,7 +23,7 @@ EzAAI
 EzAAIb
 EzAAIm
 fastas
-FracMinHash
+FracMinhash
 Franzosa
 GBMF
 genbank
@@ -34,7 +34,7 @@ indels
 interection
 Irber
 iteratively
-JACCARD
+Jaccard
 Kaa
 KMERS
 Koslicki
