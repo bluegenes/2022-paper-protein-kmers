@@ -21,6 +21,17 @@ authors:
      - Department of Population Health and Reproduction, University of California, Davis
     funders: NSF 1711984, NSF 2018911
   -
+    github: taylorreiter
+    name: Taylor E. Reiter
+    initials: TER
+    orcid: 0000-0002-7388-421X
+    twitter: ReiterTaylor
+    email: tereiter@ucdavis.edu
+    affiliations:
+      - Department of Population Health and Reproduction, University of California, Davis
+    funders:
+      - Grant XXXXXXXX
+  -
     github: ctb
     name: C. Titus Brown
     initials: CTB
