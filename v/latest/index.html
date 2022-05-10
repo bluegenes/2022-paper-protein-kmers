@@ -75,9 +75,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/ed752a432000eebf4813f11989a2994ddbf96ca8/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/ed752a432000eebf4813f11989a2994ddbf96ca8/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/ed752a432000eebf4813f11989a2994ddbf96ca8/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b14b80a99844e8d384b58f94c4dbbaae34b2ee43/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b14b80a99844e8d384b58f94c4dbbaae34b2ee43/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b14b80a99844e8d384b58f94c4dbbaae34b2ee43/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -91,9 +91,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/ed752a432000eebf4813f11989a2994ddbf96ca8/">permalink</a>)
+(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b14b80a99844e8d384b58f94c4dbbaae34b2ee43/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/ed752a432000eebf4813f11989a2994ddbf96ca8">bluegenes/2022-paper-protein-kmers@ed752a4</a>
+from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/b14b80a99844e8d384b58f94c4dbbaae34b2ee43">bluegenes/2022-paper-protein-kmers@b14b80a</a>
 on May 10, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -185,7 +185,7 @@ As a result, exact matching of long nucleotide k-mers can be used for taxonomic 
 At larger evolutionary distances, accumulated nucleotide divergence limits the utility of exact nucleotide k-mer matching.
 Protein sequences, which are more conserved than their corresponding nucleotide sequences, are the gold standard for comparisons at larger evolutionary distances.
 Here, we evaluate the utility of amino acid k-mers for a wide range of genomic and metagenomic applications, including sequence distance estimation, taxonomic classification, and metagenome breakdown.</p>
-<h3 id="longer-amino-acid-k-mers-are-associated-with-specific-taxonomies">Longer Amino Acid k-mers are associated with specific taxonomies</h3>
+<h3 id="amino-acid-k-mers-can-be-used-to-discriminate-between-taxa">Amino Acid k-mers can be used to discriminate between taxa</h3>
 <p>The Genome Taxonomy Database (GTDB) provides a genome-based taxonomy for bacterial and archaeal genomes <span class="citation" data-cites="cN1LdTev">[<a href="#ref-cN1LdTev" role="doc-biblioref">20</a>]</span>.
 We begin by assessing the prevalance of nucleotide and amino acid k-mers of different k-mer lengths within assemblies selected for inclusion within GTDB.
 The most recent GTDB release, <code>rs202</code>, encompasses 258,407 genomes from 47,895 species.</p>
@@ -400,6 +400,9 @@ Below, we discuss amino acid k-mers and FracMinHash protein sketches for both as
 <h3 id="fracminhash-kaa-mer-sketches-support-proteome-analysis-at-scale">FracMinHash kaa-mer sketches support proteome analysis at scale</h3>
 <p>Our results show that amino acid k-mers can be used for global proteome analyses, including distance estimation (AAI) and taxonomic classification.
 For most microbial proteomes, systematic subsampling via FracMinHash maintains accuracy while enabling much faster comparisons.</p>
+<p>Shorter amino acid k-mers (kaa = 7) can be matched even across phyla, suggesting they may be most useful for comparisons at larger evolutionary distances.
+These k-mers also have the potential to work well for functional analyses.
+Longer amino acid k-mers (kaa=10+) are more discriminatory and may be best for taxonomic classification.</p>
 <h3 id="kaa-mer-amino-acid-identity-estimation">kaa-mer Amino Acid Identity estimation</h3>
 <p>Kaa-mer estimation of Amino Acid Identity (AAI) correlates well with mapping-based AAI approaches, while requiring far less memory and computation.
 Different mapping approaches vary slightly in the AAI reported for a given pair of genomes, suggesting that comparisons are best made between values produced by the same method.</p>
