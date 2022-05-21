@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-05-10'
+date-meta: '2022-05-21'
 author-meta:
 - N. Tessa Pierce-Ward
 - Taylor E. Reiter
@@ -24,8 +24,8 @@ header-includes: |-
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-05-10" />
-  <meta name="citation_publication_date" content="2022-05-10" />
+  <meta name="dc.date" content="2022-05-21" />
+  <meta name="citation_publication_date" content="2022-05-21" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b14b80a99844e8d384b58f94c4dbbaae34b2ee43/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b14b80a99844e8d384b58f94c4dbbaae34b2ee43/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b14b80a99844e8d384b58f94c4dbbaae34b2ee43/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/721555d12daba0073e6929095eb234c54c4e9f33/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/721555d12daba0073e6929095eb234c54c4e9f33/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/721555d12daba0073e6929095eb234c54c4e9f33/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,10 +74,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/b14b80a99844e8d384b58f94c4dbbaae34b2ee43/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/721555d12daba0073e6929095eb234c54c4e9f33/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@b14b80a](https://github.com/bluegenes/2022-paper-protein-kmers/tree/b14b80a99844e8d384b58f94c4dbbaae34b2ee43)
-on May 10, 2022.
+from [bluegenes/2022-paper-protein-kmers@721555d](https://github.com/bluegenes/2022-paper-protein-kmers/tree/721555d12daba0073e6929095eb234c54c4e9f33)
+on May 21, 2022.
 </em></small>
 
 ## Authors
@@ -418,9 +418,14 @@ Jaccard ...(number of k-mers shared between two samples divided by the total num
 
 ## Discussion
 
-<!--
+<!---
 Below, we discuss amino acid k-mers and FracMinHash protein sketches for both assembly-based and assembly-free metagenomic analyses.
--->
+--->
+
+__buyer beware: this is very much in notes/drafting form__
+
+Protein sequences are more conserved than their underlying DNA sequence, allowing protein k-mer comparisons to match across larger evolutionary distances.
+Protein sequence matching is also less impacted by sequencing errors due to codon degeneracy.
 
 ### FracMinHash kaa-mer sketches support proteome analysis at scale
 
@@ -437,18 +442,39 @@ Longer amino acid k-mers (kaa=10+) are more discriminatory and may be best for t
 Kaa-mer estimation of Amino Acid Identity (AAI) correlates well with mapping-based AAI approaches, while requiring far less memory and computation.
 Different mapping approaches vary slightly in the AAI reported for a given pair of genomes, suggesting that comparisons are best made between values produced by the same method.
 
+There is one other method that can function at large scale: MIGA webserver (paper has 11,000 pairwise comparisons) -- and this method uses hAAI (heuristic AAI), only doing complete AAI if/wehn the hAAI cannot be estimated or is >= 90% ("close to saturation"). MiGA "applies a hierarchical approach: hAAI, AAI, then ANI" to identify the best match genome/proteome.
+
+Here we could envision doing this with protein k-mers --> doing a quick high-scaled proteome search to find the right family, then doing a more detailed DNA/genome analysis.
+
 
 ### Containment enables assembly-free protein comparisons
 
 For protein k-mer comparisons to be useful, any DNA queries must be translated into protein sequence.
 This can limit amino acid comparisons to assembly-based workflows, as assemblies can be reliably translated into predicted Open Reading Frames (ORFs).
 By using only the k-mer containment estimate relative to reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence.
-This allows
-
+In this way, we can use the more permissive nature of protein analyes for assembly-free genome and metagenome assignment.
 
 
 ### Taxonomic Assignment is database-dependent
-(but min-set-cov helps)
+(but protein + min-set-cov helps)
+discuss in relation to: Kaiju, CAT/BAT, MMSeqs taxonomy (or maybe in intro?)
+
+K-mer based taxonomic assignment relies upon matching k-mers found in previously sequenced reference proteomes.
+While this approach will always be database-dependent and improved by presence of closely-related proteomes in the database, protein-based matching allows for classificaiton at larger evolutionary distances.
+While protein matching increases the sensitivity by matching across synonymous substitutions in the DNA sequence 
+
+classification LCA approaches often suffer from sensitivity/specificity trade-offs
+Here, the use of `sourmash gather` minimum set cover approach assigns each protein k-mer to its most likely/parsimonious match based on presence of other proteome k-mers present in the query genome/metagenome.
+
+
+Kaiju[@doi:10.1038/ncomms11257] first introduced protein-level metagenomic classification using 6-frame translation, though Kaiju uses a seed-extend approach to generate protein alignments (minimum match length 11aa), rather than a purely k-mer based approach.
+for Kaiju, a sensitivity/specificity tradeoff -- longer matches (minimum match length 11 instead of 12 for MEM yielded larger gains in sensitivity for a relatively small(er) loss in precision).
+
+
+**distinguishing features this vs kaiju:**
+- min-set-cov --> low false pos
+- fracminhash --> faster, smaller databases
+- 
 
 
 ### Limitations
