@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/721555d12daba0073e6929095eb234c54c4e9f33/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/721555d12daba0073e6929095eb234c54c4e9f33/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/721555d12daba0073e6929095eb234c54c4e9f33/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/16bb1fc2369ad957136f077d9bf0f36b6aa7d105/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/16bb1fc2369ad957136f077d9bf0f36b6aa7d105/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/16bb1fc2369ad957136f077d9bf0f36b6aa7d105/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +74,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/721555d12daba0073e6929095eb234c54c4e9f33/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/16bb1fc2369ad957136f077d9bf0f36b6aa7d105/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@721555d](https://github.com/bluegenes/2022-paper-protein-kmers/tree/721555d12daba0073e6929095eb234c54c4e9f33)
+from [bluegenes/2022-paper-protein-kmers@16bb1fc](https://github.com/bluegenes/2022-paper-protein-kmers/tree/16bb1fc2369ad957136f077d9bf0f36b6aa7d105)
 on May 21, 2022.
 </em></small>
 
@@ -138,9 +138,17 @@ Even well-studied environments such as human gut can produce significant unchara
 "For example, a reference-based approach failed to map 35% of reads in the iHMP study on inflammatory bowel disease (Supp. Data. of (Franzosa et al., 2019)), omitting them from any further analysis.
 These reads may belong to unknown microbes, phage or viruses, plasmids, or accessory elements of known microbes, all of which can
 play a role in disease.[from RO1]".
-
 To increase sensitivity of alignment-free methods, modified k-mer approaches have been introduced, including spaced seeds /split k-mers, which accommodate polymorphic sites in highly similar genomes [].
 For larger evolutionary distances, protein-based comparisons have long been the gold-standard approach for taxonomic and functional annotation, as protein sequence is more conserved than the underlying DNA sequence [@pubmed:2231712; @doi:10.1038/nmeth.3176]. 
+
+**Taxonomic Classification section**
+BLASTX-style classification --> proteins increase sensitivity.
+_notes:_
+- Kaiju[@doi:10.1038/ncomms11257] uses protein-level metagenomic classification using 6-frame translation, though Kaiju uses a seed-extend approach to generate protein alignments (minimum match length 11aa), rather than a purely k-mer based approach.
+- sensitivity/specificity tradeoff -- longer matches (minimum match length 11 instead of 12 for MEM yielded larger gains in sensitivity for a relatively small(er) loss in precision).
+- MEGAN-Prot (uses DIAMOND) [@doi:10.1002/cpz1.59] uses a BLASTX style approach
+- review incl. protein methods [@doi:10.1093/bib/bbx120]
+
 As microbial and viral genomes are gene-dense, [MinHash-based] alignment-free comparisons of translated protein sequence have already been shown to increase sensitivity for taxonomic classification and genome discovery [@doi:10.1038/ncomms11257; @doi:10.1186/s13059-019-1841-x].
 Here, we demonstrate the utility of protein k-mer comparisons for phylogenomic reconstruction and taxonomic classification at larger evolutionary distances.
 We use FracMinhash subsampling to facilitate conducting these comparisons at scale and increase accuracy relative to MinHash methods [@doi:10.1101/2022.01.11.475838].
@@ -157,6 +165,7 @@ Recent research appears to confirm 95% ANI species threshold for prokaryotic spe
 AAI thresholds have been proposed for higher taxonomic ranks, <45%, 45-65% and 65-95% for family, genus, and species [@doi:10.1016/j.mib.2007.08.006; @doi:10.1038/ismej.2017.113].
 While traditional alignment-based estimation of ANI and AAI are computationally intensive, sketching-based estimates and sketching-facilitated estimates have permitted ANI calculations at the scale of whole-databases [@doi:10.1186/s13059-016-0997-x; @doi:10.1186/s13059-019-1841-x; @doi:10.1038/s41467-018-07641-9].
 Hera et. al (2022) [@doi:10.1101/2022.01.11.475870] introduced accurate nucleotide sequence distance estimation from FracMinHash containment estimates, while accounting for the non-independence of mutated k-mers [@doi:10.1101/2021.01.15.426881].
+
 
 Here, we show that protein FracMinHash sketches can be used to find similarity across larger evolutionary distances than nucleotide k-mers. We demonstrate that FracMinHash Containment estimates can robustly estimate Average Amino Acid Identity across a range of evolutionary distances.
 We then use FracMinHash comparison methods to tackle two classification challenges: taxonomic classification of assembled genomes, and compositional analysis of metagenomes.
@@ -456,8 +465,8 @@ In this way, we can use the more permissive nature of protein analyes for assemb
 
 
 ### Taxonomic Assignment is database-dependent
-(but protein + min-set-cov helps)
-discuss in relation to: Kaiju, CAT/BAT, MMSeqs taxonomy (or maybe in intro?)
+(but protein helps with sensitivity + min-set-cov helps with specificity)
+discuss in relation to: Kaiju, CAT/BAT, MEGAN-prot, MMSeqs taxonomy (+ probably move some of this to intro)
 
 K-mer based taxonomic assignment relies upon matching k-mers found in previously sequenced reference proteomes.
 While this approach will always be database-dependent and improved by presence of closely-related proteomes in the database, protein-based matching allows for classificaiton at larger evolutionary distances.
@@ -467,13 +476,9 @@ classification LCA approaches often suffer from sensitivity/specificity trade-of
 Here, the use of `sourmash gather` minimum set cover approach assigns each protein k-mer to its most likely/parsimonious match based on presence of other proteome k-mers present in the query genome/metagenome.
 
 
-Kaiju[@doi:10.1038/ncomms11257] first introduced protein-level metagenomic classification using 6-frame translation, though Kaiju uses a seed-extend approach to generate protein alignments (minimum match length 11aa), rather than a purely k-mer based approach.
-for Kaiju, a sensitivity/specificity tradeoff -- longer matches (minimum match length 11 instead of 12 for MEM yielded larger gains in sensitivity for a relatively small(er) loss in precision).
-
-
 **distinguishing features this vs kaiju:**
 - min-set-cov --> low false pos
-- fracminhash --> faster, smaller databases
+- fracminhash --> faster, smaller databases (though might need to increase scaled value)
 - 
 
 
