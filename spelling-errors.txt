@@ -4,12 +4,12 @@ ANI
 Archaea
 archaeal
 Benchmarking
-BLASTP
+BLASTp
 bluegenes
 cardinality
 catbat
 classificaiton
-compareM
+CompareM
 compositional
 cov
 Criscuolo
@@ -26,7 +26,7 @@ EzAAI
 EzAAIb
 EzAAIm
 fastas
-fracminhash
+FracMinHash
 GBMF
 genbank
 genomic
@@ -79,7 +79,7 @@ ReiterTaylor
 saltyscientist
 scalable
 snakemake
-Sourmash
+sourmash
 subsample
 subsampling
 summarization
