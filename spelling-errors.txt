@@ -4,7 +4,7 @@ ANI
 Archaea
 archaeal
 Benchmarking
-BLASTp
+BLASTP
 bluegenes
 cardinality
 catbat
@@ -21,7 +21,6 @@ Delmont
 derivates
 Downsampling
 eukaryotic
-evolpaths
 EzAAI
 EzAAIb
 EzAAIm
@@ -36,7 +35,7 @@ indels
 interection
 Irber
 iteratively
-JACCARD
+Jaccard
 kaa
 kaiju
 KMERS
@@ -52,8 +51,8 @@ metagenomic
 metagenomics
 metalign
 MGNify
-MiGA
-Minhash
+MIGA
+MinHash
 MMSeqs
 NCBI
 noncoding

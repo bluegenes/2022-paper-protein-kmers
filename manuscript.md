@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-05-26'
+date-meta: '2022-06-02'
 author-meta:
 - N. Tessa Pierce-Ward
 - Taylor E. Reiter
@@ -24,8 +24,8 @@ header-includes: |-
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-05-26" />
-  <meta name="citation_publication_date" content="2022-05-26" />
+  <meta name="dc.date" content="2022-06-02" />
+  <meta name="citation_publication_date" content="2022-06-02" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/a938c2bce35468f005057e510f3019d00b519c5f/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/a938c2bce35468f005057e510f3019d00b519c5f/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/a938c2bce35468f005057e510f3019d00b519c5f/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,10 +74,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/a938c2bce35468f005057e510f3019d00b519c5f/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@a938c2b](https://github.com/bluegenes/2022-paper-protein-kmers/tree/a938c2bce35468f005057e510f3019d00b519c5f)
-on May 26, 2022.
+from [bluegenes/2022-paper-protein-kmers@b3b703b](https://github.com/bluegenes/2022-paper-protein-kmers/tree/b3b703b603638a907c46e2c277735f7595bc3266)
+on June 2, 2022.
 </em></small>
 
 ## Authors
@@ -130,7 +130,7 @@ on May 26, 2022.
 ## Background
 
 As the scale of genomic sequencing continues to grow, fast and low-memory methods for estimating sequence similarity have become critical for conducting tasks ranging from taxonomic classification to phylogenetic analysis on large-scale datasets [@mash; @kraken2].
-Alignment-free methods using k-mers, particularly when used with subsampling methods such as MinHash [@mash] and derivates such as FracMinHash [@sourmash_gather] can quickly compare and classify metagenomic datasets.
+Alignment-free methods using k-mers, short sequences of length k, can quickly compare and classify metagenomic datasets particularly when used with subsampling methods such as MinHash [@mash] and derivates such as FracMinHash [@sourmash_gather].
 However, nucleotide k-mer analyses can suffer from limited sensitivity when comparing highly polymorphic sequences or classifying organisms from groups that are not well represented in reference databases.
 Indeed, current classification methods often only categorize a small fraction of metagenomic data from understudied and diverse habitats such as soil, and even well-studied environments such as human gut can produce significant uncharacterized metagenome content (CITE).
 
@@ -150,7 +150,7 @@ Traditional ANI and AAI describe the sequence similarity of all orthologous gene
 Both have been shown to be robust measures of overall pairwise genome relatedness even for highly incomplete datasets, such as those comprised of only ~4% of the genome or 100 genes [@doi:10.1128/AEM.01398-06; @doi:10.1038/ismej.2017.113].
 While traditional alignment-based estimation of ANI is computationally intensive, sketching-based estimates and sketching-facilitated estimates have permitted ANI calculations at the scale of whole-databases [@doi:10.1186/s13059-016-0997-x; @doi:10.1186/s13059-019-1841-x; @doi:10.1038/s41467-018-07641-9].
 Containment estimates have also been shown to correlate with Mash Distance, a proxy for Average Nucleotide Identity (ANI) [@mash_screen].
-Recently, Hera et. al (2022) [@dk_fracminhash] introduced ANI estimation from FracMinHash containment estimates, while accounting for the non-independence of mutated k-mers [@blanca]. 
+Recently, Hera et. al (2022) [@dk_fracminhash] introduced ANI estimation from FracMinHash containment estimates, while accounting for the non-independence of mutated k-mers [@blanca].
 Here, we apply the same approach to protein k-mer containment to generate alignment-free AAI estimates.
 
 Here, we show that protein k-mer containment sketches can be used to find similarity across large evolutionary distances and robustly estimate Average Amino Acid Identity.
@@ -269,18 +269,9 @@ Average containment estimated from proteome sequence is very similar to anchor c
 We obtained similar results when comparing all available k-mers, suggesting that these results are not affected by FracMinHash scaling (_Supplemental Figure XX_).
 
 
-![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.boxenplot.png){#fig:evolpathsAAIvsCompareM height=3in}
+![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.ridgeplot.png){#fig:evolpathsAAIvsCompareM height=3in}
 **To do:**
 - add results from 6-frame translated sketches
-
-### Unique Amino acid k-mers correlate with proteome size
-
-The number of unique amino acid k-mers is consistently correlated with the number of genes per genome.
-(scaled 100, protein k10)
-![**The ratio of total distinct genes per genome to total distinct k-mers per genome is conserved across distantly related species.** Each point represents a single genome, and genomes are colored by species.](images/all_pw_fig.png){#fig:all_pw_fig height=3in}
-
-**to do**: 
-- re-do with evolpaths genomes; + make scaled=1 version?
 
 
 ### Distance estimation from FracMinHash sketch comparisons
@@ -424,6 +415,17 @@ Jaccard ...(number of k-mers shared between two samples divided by the total num
 - Also display jaccard for protein sketch comparisons?
 - Is there a better way to visualize this?
   - a pair of heatmaps?
+
+### Unique Amino acid k-mers correlate with proteome size
+
+The number of unique amino acid k-mers is consistently correlated with the number of genes per genome.
+(scaled 100, protein k10)
+![**The ratio of total distinct genes per genome to total distinct k-mers per genome is conserved across distantly related species.** Each point represents a single genome, and genomes are colored by species.](images/all_pw_fig.png){#fig:all_pw_fig height=3in}
+
+**to do**: 
+- re-do with evolpaths genomes; + make scaled=1 version?
+
+
 --->
 
 
@@ -793,6 +795,8 @@ FastANI is targeted at ANI values between 80%-100%, so only values in this range
 [@sourmash_f1000]: doi:10.12688/f1000research.19675.1
 
 [@cmash]: doi:10.1101/184150
+
+[@bussi]: doi:10.1371/journal.pone.0258693
 
 ## Supplemental
 
