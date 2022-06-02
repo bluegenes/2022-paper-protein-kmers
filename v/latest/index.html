@@ -7,7 +7,7 @@
   <meta name="author" content="N. Tessa Pierce-Ward" />
   <meta name="author" content="Taylor E. Reiter" />
   <meta name="author" content="C. Titus Brown" />
-  <meta name="dcterms.date" content="2022-05-26" />
+  <meta name="dcterms.date" content="2022-06-02" />
   <meta name="keywords" content="metagenomics, AAI, Alignment-free, Assembly-free, MinHash, FracMinHash, Containment" />
   <title>Protein k-mer analyses for assembly- and alignment-free sequence analysis</title>
   <style>
@@ -49,8 +49,8 @@
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-05-26" />
-  <meta name="citation_publication_date" content="2022-05-26" />
+  <meta name="dc.date" content="2022-06-02" />
+  <meta name="citation_publication_date" content="2022-06-02" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -75,9 +75,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ba56e810c1e70f1cc6286314bbb64a233d6b89/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ba56e810c1e70f1cc6286314bbb64a233d6b89/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ba56e810c1e70f1cc6286314bbb64a233d6b89/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -91,10 +91,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ba56e810c1e70f1cc6286314bbb64a233d6b89/">permalink</a>)
+(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/27ba56e810c1e70f1cc6286314bbb64a233d6b89">bluegenes/2022-paper-protein-kmers@27ba56e</a>
-on May 26, 2022.
+from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/b3b703b603638a907c46e2c277735f7595bc3266">bluegenes/2022-paper-protein-kmers@b3b703b</a>
+on June 2, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -135,7 +135,7 @@ Department of Population Health and Reproduction, University of California, Davi
 <h2 class="page_break_before" id="abstract">Abstract</h2>
 <h2 id="background">Background</h2>
 <p>As the scale of genomic sequencing continues to grow, fast and low-memory methods for estimating sequence similarity have become critical for conducting tasks ranging from taxonomic classification to phylogenetic analysis on large-scale datasets <span class="citation" data-cites="mH9pzoIn wfp4mBcT">[<a href="#ref-mH9pzoIn" role="doc-biblioref">1</a>,<a href="#ref-wfp4mBcT" role="doc-biblioref">2</a>]</span>.
-Alignment-free methods using k-mers, particularly when used with subsampling methods such as MinHash <span class="citation" data-cites="mH9pzoIn">[<a href="#ref-mH9pzoIn" role="doc-biblioref">1</a>]</span> and derivates such as FracMinHash <span class="citation" data-cites="IadOz4ol">[<a href="#ref-IadOz4ol" role="doc-biblioref">3</a>]</span> can quickly compare and classify metagenomic datasets.
+Alignment-free methods using k-mers, short sequences of length k, can quickly compare and classify metagenomic datasets particularly when used with subsampling methods such as MinHash <span class="citation" data-cites="mH9pzoIn">[<a href="#ref-mH9pzoIn" role="doc-biblioref">1</a>]</span> and derivates such as FracMinHash <span class="citation" data-cites="IadOz4ol">[<a href="#ref-IadOz4ol" role="doc-biblioref">3</a>]</span>.
 However, nucleotide k-mer analyses can suffer from limited sensitivity when comparing highly polymorphic sequences or classifying organisms from groups that are not well represented in reference databases.
 Indeed, current classification methods often only categorize a small fraction of metagenomic data from understudied and diverse habitats such as soil, and even well-studied environments such as human gut can produce significant uncharacterized metagenome content (CITE).</p>
 <p>As protein sequence is more conserved than the underlying DNA sequence, protein-based comparisons have long been the gold-standard approach across larger evolutionary distances <span class="citation" data-cites="jcOtxABy 4R96QRcV">[<a href="#ref-jcOtxABy" role="doc-biblioref">4</a>,<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span>.
@@ -247,15 +247,9 @@ When plotted by the rank of the lowest common ancestor, the dynamic range of con
 While DNA k-mers can provide resolution at the genus level, log-transformed containment values for protein k-mers continue to decrease, providing resolution for comparisons even between genomes of different phyla.
 Average containment estimated from proteome sequence is very similar to anchor containment estimated from 6-frame translation of genome sequence, suggesting that either value can be used for this type of comparison.
 We obtained similar results when comparing all available k-mers, suggesting that these results are not affected by FracMinHash scaling (<em>Supplemental Figure XX</em>).</p>
-<p><img src="images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.boxenplot.png" id="fig:evolpathsAAIvsCompareM" style="height:3in" alt="Protein k-mers are shared at higher taxonomic ranks Default scaled values 1000, 200" />
+<p><img src="images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.ridgeplot.png" id="fig:evolpathsAAIvsCompareM" style="height:3in" alt="Protein k-mers are shared at higher taxonomic ranks Default scaled values 1000, 200" />
 <strong>To do:</strong>
 - add results from 6-frame translated sketches</p>
-<h3 id="unique-amino-acid-k-mers-correlate-with-proteome-size">Unique Amino acid k-mers correlate with proteome size</h3>
-<p>The number of unique amino acid k-mers is consistently correlated with the number of genes per genome.
-(scaled 100, protein k10)
-<img src="images/all_pw_fig.png" id="fig:all_pw_fig" style="height:3in" alt="The ratio of total distinct genes per genome to total distinct k-mers per genome is conserved across distantly related species. Each point represents a single genome, and genomes are colored by species." /></p>
-<p><strong>to do</strong>:
-- re-do with evolpaths genomes; + make scaled=1 version?</p>
 <h3 id="distance-estimation-from-fracminhash-sketch-comparisons">Distance estimation from FracMinHash sketch comparisons</h3>
 <p>DNA k-mer Jaccard has previously been used to estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, Criscuolo?]. Recently, equations have been developed for FracMinHash Containment that estimate ANI while accounting for the nonindependence of mutated k-mers <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">19</a>]</span>.
 These equations assume a simple mutational model and estimate distance solely based on k-mer statistics.
@@ -404,6 +398,17 @@ Jaccard ...(number of k-mers shared between two samples divided by the total num
 - Also display jaccard for protein sketch comparisons?
 - Is there a better way to visualize this?
   - a pair of heatmaps?
+
+### Unique Amino acid k-mers correlate with proteome size
+
+The number of unique amino acid k-mers is consistently correlated with the number of genes per genome.
+(scaled 100, protein k10)
+![**The ratio of total distinct genes per genome to total distinct k-mers per genome is conserved across distantly related species.** Each point represents a single genome, and genomes are colored by species.](images/all_pw_fig.png){#fig:all_pw_fig height=3in}
+
+**to do**: 
+- re-do with evolpaths genomes; + make scaled=1 version?
+
+
 --->
 <h2 id="discussion">Discussion</h2>
 <!---
