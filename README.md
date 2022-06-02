@@ -1,5 +1,4 @@
-# Automated scholarly manuscripts on GitHub
-
+# Protein k-mer analysis for assembly and alignment-free metagenomics
 <!-- usage note: edit the H1 title above to personalize the manuscript -->
 
 [![HTML Manuscript](https://img.shields.io/badge/manuscript-HTML-blue.svg)](https://bluegenes.github.io/2022-paper-protein-kmers/)
@@ -9,9 +8,11 @@
 ## Manuscript description
 
 <!-- usage note: edit this section. -->
+NOTE: Beware! This is a draft and may go through several more awkward teenager growth and development stages.
+Constructive feedback is always welcome, of course :).
 
-This repository is a template manuscript (a.k.a. rootstock).
-Actual manuscript instances will clone this repository (see [`SETUP.md`](SETUP.md)) and replace this paragraph with a description of their manuscript.
+If you have questions or find this manuscript useful, please let us know by filing [an issue](https://github.com/bluegenes/2022-paper-protein-kmers/issues) or linking to https://github.com/bluegenes/2022-paper-protein-kmers.
+
 
 ## Manubot
 
