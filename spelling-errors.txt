@@ -3,7 +3,7 @@ analyes
 ANI
 Archaea
 archaeal
-BLASTP
+BLASTp
 bluegenes
 cardinality
 catbat
@@ -23,7 +23,7 @@ EzAAIb
 EzAAIm
 fastaai
 fastas
-FracMinhash
+FracMinHash
 GBMF
 genbank
 genomic
@@ -34,7 +34,7 @@ indels
 interection
 Irber
 iteratively
-JACCARD
+Jaccard
 joss
 kaa
 kaamer
@@ -45,14 +45,14 @@ LCA
 meganlr
 mer
 mers
-metagenome
+Metagenome
 metagenomes
 Metagenomic
 metagenomics
 MGNify
-MiGA
+MIGA
 Minhash
-MMSeqs
+mmseqs
 NCBI
 noncoding
 nucl
@@ -76,7 +76,7 @@ Reiter
 ReiterTaylor
 saltyscientist
 snakemake
-Sourmash
+sourmash
 subsample
 subsampling
 summarization

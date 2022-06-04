@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ab17a8addd268c340f1f89294b1f444f98d7d9/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ab17a8addd268c340f1f89294b1f444f98d7d9/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ab17a8addd268c340f1f89294b1f444f98d7d9/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/44e087e43fa023b41b6cfbe3851810b09390d793/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/44e087e43fa023b41b6cfbe3851810b09390d793/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/44e087e43fa023b41b6cfbe3851810b09390d793/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +74,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/27ab17a8addd268c340f1f89294b1f444f98d7d9/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/44e087e43fa023b41b6cfbe3851810b09390d793/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@27ab17a](https://github.com/bluegenes/2022-paper-protein-kmers/tree/27ab17a8addd268c340f1f89294b1f444f98d7d9)
+from [bluegenes/2022-paper-protein-kmers@44e087e](https://github.com/bluegenes/2022-paper-protein-kmers/tree/44e087e43fa023b41b6cfbe3851810b09390d793)
 on June 4, 2022.
 </em></small>
 
@@ -285,7 +285,7 @@ As described [@dk_fracminhash], using the Fractional Containment Index ${C_\text
 $ANI = {C_\text{frac}(A,B)}^{1/k}$
 
 Note that this method assumes a simple mutational model of random substitution and estimates sequence divergence solely using the fraction of shared and divergent k-mers between the two FracMinhash sketches.
-When FracMinhash sketches are instead generated with amino acid k~aa~-mers of length $k~aa~$, the same equation can be used to generate alignment-free AAI estimates.
+When FracMinhash sketches are instead generated with amino acid k~aa~-mers of length $k~aa~$, the corresponding equation can be used to generate alignment-free AAI estimates.
 
 $AAI = {C_\text{frac}(A,B)}^{1/k~aa~}$
 
