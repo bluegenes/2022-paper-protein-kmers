@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-06-02'
+date-meta: '2022-06-04'
 author-meta:
 - N. Tessa Pierce-Ward
 - Taylor E. Reiter
@@ -24,8 +24,8 @@ header-includes: |-
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-06-02" />
-  <meta name="citation_publication_date" content="2022-06-02" />
+  <meta name="dc.date" content="2022-06-04" />
+  <meta name="citation_publication_date" content="2022-06-04" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ab17a8addd268c340f1f89294b1f444f98d7d9/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ab17a8addd268c340f1f89294b1f444f98d7d9/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/27ab17a8addd268c340f1f89294b1f444f98d7d9/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,10 +74,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/b3b703b603638a907c46e2c277735f7595bc3266/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/27ab17a8addd268c340f1f89294b1f444f98d7d9/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@b3b703b](https://github.com/bluegenes/2022-paper-protein-kmers/tree/b3b703b603638a907c46e2c277735f7595bc3266)
-on June 2, 2022.
+from [bluegenes/2022-paper-protein-kmers@27ab17a](https://github.com/bluegenes/2022-paper-protein-kmers/tree/27ab17a8addd268c340f1f89294b1f444f98d7d9)
+on June 4, 2022.
 </em></small>
 
 ## Authors
@@ -129,37 +129,32 @@ on June 2, 2022.
 
 ## Background
 
+Advancements in sequencing over the past decades have made it feasible to investigate the vast global diversity of microbial organisms via direct sequencing of environmental samples (metagenomics). These techniques have expanded and reshaped our understanding of evolutionary relatedness across the tree of life and allowed us to move beyond organismal isolates to investigate the structure and function of microbial communities (CITE).
+
+Metagenomic analyses rely on our ability to make sense of bulk sequencing reads by assigning taxonomic and functional groupings.
+However, the methods and databases used for characterization can impact both the extent and accuracy of classification.
 As the scale of genomic sequencing continues to grow, fast and low-memory methods for estimating sequence similarity have become critical for conducting tasks ranging from taxonomic classification to phylogenetic analysis on large-scale datasets [@mash; @kraken2].
-Alignment-free methods using k-mers, short sequences of length k, can quickly compare and classify metagenomic datasets particularly when used with subsampling methods such as MinHash [@mash] and derivates such as FracMinHash [@sourmash_gather].
-However, nucleotide k-mer analyses can suffer from limited sensitivity when comparing highly polymorphic sequences or classifying organisms from groups that are not well represented in reference databases.
-Indeed, current classification methods often only categorize a small fraction of metagenomic data from understudied and diverse habitats such as soil, and even well-studied environments such as human gut can produce significant uncharacterized metagenome content (CITE).
+However, many of these methods struggle with classification specificity, with some methods reporting results with false positive rates as high as 25% on short read metagenomic datasets prior to thresholding [@portik_tax].
+At the same time, classification techniques often can suffer from limited sensitivity when comparing highly polymorphic sequences or classifying organisms from groups that are not well represented in reference databases.
+For understudied and diverse habitats such as soil, metagenomic classification methods often only categorize a small fraction of metagenomic data, and even well-studied environments such as human gut can produce significant uncharacterized metagenome content (CITE).
 
 As protein sequence is more conserved than the underlying DNA sequence, protein-based comparisons have long been the gold-standard approach across larger evolutionary distances [@blast; @diamond].
-Protein-based metagenomics taxonomic classification approaches show increased sensitivity, both using assembly-based fast-alignment approaches and alignment-free analysis using 6-frame translation of nucleotide sequence [@breit_classif; @mmseqs_tax; @catbat; @meganlr; @kaiju; @mash_screen].
-However, for fast and scalable alignment-free methods, increased classification sensitivity is often accompanied by a concomitant decrease in specificity, with some methods reporting results with false positive rates as high as 25% on short read metagenomic datasets prior to thresholding [@portik_tax].
-As databases continue to increase in size, there remains a need for fast and accurate alignment-free taxonomic classification with protein-level sensitivity.
+Protein-based metagenomics taxonomic classification approaches typically have increased sensitivity relative to nucleotide methods [@breit_classif; @mmseqs_tax; @catbat; @meganlr; @kaiju; @mash_screen].
+Whole-proteome relatedness indices such as Amino Acid Identity (AAI) can be used to determine whether uncharacterized sequences belong to known taxonomic groups or represent truly novel sequence.
+As we continue to sequence the biosphere, there remains a need for fast and accurate alignment-free sequence comparison tools with protein-level sensitivity.
 
-Here, we demonstrate the utility of protein k-mer comparisons for both assembly-based and assembly-free metagenomic analyses, including Average Amino Acid Identity (AAI) estimation and taxonomic classification.
-We use FracMinhash subsampling to facilitate conducting these comparisons at scale and increase accuracy relative to MinHash methods [@sourmash_gather].
-
-FracMinHash is a MinHash variant for selecting and hashing a set of representative k-mers from a sequence dataset [@sourmash_gather]. Unlike traditional MinHash, FracMinHash sketches scale with the size of the dataset, meaning each sketch is comprised of the chosen fraction of k-mers in the input dataset, rather than a chosen number of k-mers.
-Downsampling sequencing datasets in this way enables estimation of the Containment Index, which has been shown to facilitate genome discovery and permit more accurate estimation of genomic distance, particularly for genomes of very different lengths [@koslicki_containment; @dashing; @mash_screen; @metalign].
-
-Pairwise Overall Genome Relatedness indices (OGRI's) such as ANI and its protein counterpart, Average Amino Acid Identity (AAI) have shown lasting utility for genome relatedness and phylogenomic analysis.
-Traditional ANI and AAI describe the sequence similarity of all orthologous genes, either in nucleotide or protein space, respectively.
-Both have been shown to be robust measures of overall pairwise genome relatedness even for highly incomplete datasets, such as those comprised of only ~4% of the genome or 100 genes [@doi:10.1128/AEM.01398-06; @doi:10.1038/ismej.2017.113].
-While traditional alignment-based estimation of ANI is computationally intensive, sketching-based estimates and sketching-facilitated estimates have permitted ANI calculations at the scale of whole-databases [@doi:10.1186/s13059-016-0997-x; @doi:10.1186/s13059-019-1841-x; @doi:10.1038/s41467-018-07641-9].
-Containment estimates have also been shown to correlate with Mash Distance, a proxy for Average Nucleotide Identity (ANI) [@mash_screen].
-Recently, Hera et. al (2022) [@dk_fracminhash] introduced ANI estimation from FracMinHash containment estimates, while accounting for the non-independence of mutated k-mers [@blanca].
-Here, we apply the same approach to protein k-mer containment to generate alignment-free AAI estimates.
-
-Here, we show that protein k-mer containment sketches can be used to find similarity across large evolutionary distances and robustly estimate Average Amino Acid Identity.
-We demonstrate that FracMinHash Containment estimates can robustly estimate Average Amino Acid Identity across a range of evolutionary distances.
-We then use FracMinHash comparison methods to tackle two classification challenges: taxonomic classification of assembled genomes, and compositional analysis of metagenomes.
-Taken together, these results suggest that protein FracMinHash analyses can be used for metagenome sequence analysis, and may be particularly useful when sequenced organisms are more distantly related to organisms available in reference databases.
+Alignment-free methods using k-mers, short nucleotide sequences of length k, can quickly compare and classify metagenomic datasets particularly when used with subsampling methods such as MinHash [@mash] and derivates such as FracMinHash [@sourmash_gather].
+While the majority of k-mer methods utilize nucleotide k-mers, amino acid k-mers (k~aa~-mers) have shown some promise for functional screening and annotation [@mash_screen; @kaamer; @ob_orpheum].
+Here, we show that k~aa~-mer comparisons can be used to find similarity across large evolutionary distances and robustly estimate Average Amino Acid Identity, even while using FracMinHash k-mer subsampling methods.
+We then use FracMinHash k~aa~mer sketches to tackle two classification challenges: taxonomic classification of assembled genomes, and compositional analysis of metagenomes.
+Taken together, these results suggest that k~aa~mer sequence analysis can facilitate large-scale assembly-based and assembly-free metagenomic analyses, particularly when sequenced organisms are more distantly related to organisms available in reference databases.
 
 
 <!---
+We demonstrate that FracMinHash Containment estimates can robustly estimate Average Amino Acid Identity across a range of evolutionary distances.
+We use FracMinhash subsampling to facilitate conducting these comparisons at scale [@sourmash_gather].
+, including Average Amino Acid Identity (AAI) estimation and taxonomic classification.
+Metagenomic classification methods often only categorize a small fraction of metagenomic data from understudied and diverse habitats such as soil, and even well-studied environments such as human gut can produce significant uncharacterized metagenome content.
 **Taxonomic Classification -- current approaches + issues**
 Using these protein FracMinHashes with protein containment searches, we can conduct taxonomic classification on both assembled genomes and raw metagenome samples.
 Recently, [@sourmash_gather] leveraged containment analysis with a "minimum metagenome cover" approach to find the best set of reference genomes that cover the metagenome sequence.
@@ -172,8 +167,7 @@ BLASTX-style classification -- proteins increase sensitivity.
 - MEGAN-Prot (uses DIAMOND) [@doi:10.1002/cpz1.59] uses a BLASTX style approach
 - review incl. protein methods [@doi:10.1093/bib/bbx120]
 
-When conducting 
-In many cases, researchers don't need an 
+struggle on both fronts -- too much data, still many things that are far from reference sequences
 
 While many methods provide a annotations linked to individual sequencing reads, in many cases, researchers are 
 #### Notes
@@ -201,17 +195,16 @@ Here, we demonstrate that the utility of FracMinHash protein containment, both u
 K-mer analysis methods enable similarity detection as low as a single shared k-mer between divergent genomes.
 As a result, exact matching of long nucleotide k-mers can be used for taxonomic classification and similarity detection between closely related genomes, including strain-level, species-level, and genus-level comparisons (often using k-mer lengths 51, 31, and 21, respectively).
 At larger evolutionary distances, accumulated nucleotide divergence limits the utility of exact nucleotide k-mer matching.
-Protein sequences, which are more conserved than their corresponding nucleotide sequences, are the gold standard for comparisons at larger evolutionary distances.
-Here, we evaluate the utility of amino acid k-mers for a wide range of genomic and metagenomic applications, including sequence distance estimation, taxonomic classification, and metagenome breakdown.
-
+Amino acid k-mers (kaa-mers) retain the benefits of fast, alignment-free exact k-mer matching, but with increased tolerance for evolutionary divergence.
+Here, we evaluate the utility of amino acid k-mers for a wide range of genomic and metagenomic applications, including sequence distance estimation and taxonomic classification.
 
 ### Amino Acid k-mers can be used to discriminate between taxa
 
 The Genome Taxonomy Database (GTDB) provides a genome-based taxonomy for bacterial and archaeal genomes [@doi:10.1038/s41587-020-0501-8].
 We begin by assessing the prevalance of nucleotide and amino acid k-mers of different k-mer lengths within assemblies selected for inclusion within GTDB.
-The most recent GTDB release, `rs202`, encompasses 258,407 genomes from 47,895 species.
+GTDB release `rs202` encompasses 258,407 genomes from 47,895 species.
 
-To make analyses at this scale tractable, we built `sourmash` FracMinHash sketches, with a scaling factor of 1000 for nucleotide k-mers (keep \~1/1000 k-mers) and 200 for amino acid k-mers (keep \~1/200 protein k-mers) [@doi:10.1101/2022.01.11.475838].
+To make analyses at this scale tractable, we use FracMinHash sketching to randomly subsample all available k-mers, retaining approximately (\~1/1000 nucleotide k-mers) and \~1/200 amino acid k-mers) [@doi:10.1101/2022.01.11.475838].
 DNA FracMinHash sketches have been shown to accurately subsample genome datasets [@doi:10.1101/2022.01.11.475838].
 For most genomes, both genomic and protein fastas were available for download from NCBI.
 In remaining cases (n=36,632), genome fastas were translated into protein sequence via Prodigal [@doi:10.1186/1471-2105-11-119] prior to sketching.
@@ -231,11 +224,11 @@ We choose amino acid k-mer lengths 7 and 10 for our primary analyses, and have s
 
 <!---
 NOTE: worth looking at k=17 /51???.
-Also, go look at what ksizes are used in Mash Screen paper!!!
-k=7 used by that db lookup paper (find)
+k=9 Mash Screen translated screen
+k=7 used by KAA-mer
 --->
 
-### Abridged Benchmarking Dataset
+### Evolutionary Paths Dataset
 
 To rigorously assess the utility of protein k-mers for comparisons at an array of evolutionary distances, we selected a subset of GTDB genomes that would allow standardized comparisons across taxonomic ranks and overcome the database-inclusion limitations mentioned above.
 
@@ -249,46 +242,73 @@ These paths include genome comparisons across 40 phyla (36 Bacteria, 4 Archaea),
 While paths are limited to taxonomies with at least two GTDB representative genomes for each taxonomic rank, these paths provide a rich resource for comparisons at increasing evolutionary distances.
 
 For DNA comparisons, each genome was sketched from the available genome downloaded from genbank.
-For protein comparisons, we conducted two comparison workflows.
+For protein comparisons, we conducted both protein comparisons and translated comparisons.
 In both workflows, all anchor genomes were sketched from available proteomes (either downloaded or generated via Prodigal, as above).
-For the first workflow, comparison proteomes were also sketched from the available proteome.
+For the direct protein assessment, comparison proteomes were also sketched from the available proteome.
 For these sketches, k-mer containment results are equally valid in both directions, so we report the mean containment for the comparison alongside the Jaccard Index.
-For the second workflow, comparison genomes were 6-frame translated to build protein FracMinHash sketches.
+For the second workflow, comparison genomes were 6-frame translated to build protein kaa-mers.
 As 6-frame translation introduces erroneous k-mers, we report only the containment estimate relative to the anchor proteome.
 We term this "anchor containment", where the trusted genome is the "anchor" upon which we base the comparison.
-We conduct k-mer comparisons using FracMinHash sketches default fractional scaling: 1/1000 k-mers from DNA sketches and 1/200 k-mers for protein sketches (including 6-frame translated sketches).
-To verify results and estimate the impact of FracMinHash scaling, we also conduct comparisons using all available k-mers.
+We conduct k-mer comparisons using `sourmash` FracMinHash sketches default fractional scaling: 1/1000 k-mers from DNA sketches and 1/200 k-mers for protein sketches (including 6-frame translated sketches).
+For amino acid k-mers, we focus on k-mer lengths k=7 and k=10, which are closest to nucleotide k-mer lengths 21 and 31.
+To verify results and estimate the impact of FracMinHash scaling, we also conducted all comparisons using all available k-mers (no subsampling).
 
 
 ### Protein k-mers facilitate alignment-free comparisons at increased evolutionary distances
 
-We begin by assessing k-mer statistics across the 6 comparisons (each genome compared with the anchor genome) within each of 4095 evolutionary paths.
-When plotted by the rank of the lowest common ancestor, the dynamic range of containment values is much larger for protein k-mer comparisons.
+We begin by assessing k-mer containment across the 6 comparisons (each genome compared with the anchor genome) within each of 4095 evolutionary paths.
+When plotted by the rank of the lowest common ancestor, the dynamic range of containment values is much larger for kaa-mer comparisons.
 While DNA k-mers can provide resolution at the genus level, log-transformed containment values for protein k-mers continue to decrease, providing resolution for comparisons even between genomes of different phyla.
 Average containment estimated from proteome sequence is very similar to anchor containment estimated from 6-frame translation of genome sequence, suggesting that either value can be used for this type of comparison.
 We obtained similar results when comparing all available k-mers, suggesting that these results are not affected by FracMinHash scaling (_Supplemental Figure XX_).
 
+![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.ridgeplot.png){#fig:evolpathsAAIvsCompareM height=4in}
 
-![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.ridgeplot.png){#fig:evolpathsAAIvsCompareM height=3in}
+<!---
 **To do:**
-- add results from 6-frame translated sketches
+- add results from 6-frame translated sketches as dotted lines ridges with lighter fill?? (protein only)
+--->
 
+### FracMinHash kaa-mer containment accurately estimates sequence similarity
 
-### Distance estimation from FracMinHash sketch comparisons
+Pairwise Overall Genome Relatedness indices (OGRI's) such as Average Nucleotide Identity (ANI) and its protein counterpart, Average Amino Acid Identity (AAI) have shown lasting utility for genome relatedness and phylogenomic analysis.
+Traditional ANI and AAI describe the sequence similarity of all orthologous genes, either in nucleotide or protein space, respectively.
+Both have been shown to be robust measures of overall pairwise genome relatedness even for highly incomplete datasets, such as those comprised of only ~4% of the genome or 100 genes [@doi:10.1128/AEM.01398-06; @doi:10.1038/ismej.2017.113].
+These measures have utility for phylogenomic comparisons and taxonomic classification, but alignment-based analyses not tractable for large-scale comparisons.
 
-DNA k-mer Jaccard has previously been used to estimate of the Average Nucleotide identity between genomes [cite Ondov Mash, Koslicki k-mer paper, Criscuolo?]. Recently, equations have been developed for FracMinHash Containment that estimate ANI while accounting for the nonindependence of mutated k-mers [@doi:10.1101/2022.01.11.475870].
-These equations assume a simple mutational model and estimate distance solely based on k-mer statistics.
-Here we apply FracMinHash distance estimation to protein k-mer comparisons to obtain an alignment-free estimate of Amino Acid Identity [@doi:10.1101/2022.01.11.475870].
+As first noted by [@fan_AAF] and extended for MinHash [@mash], DNA k-mer comparisons can be used to estimate the sequence similarity between two genomes without alignment.
+These methods have primarily assumed a simple mutational model of random nucleotide substitution in order to estimate sequence identity from the Jaccard Index between the two samples.
+While this strategy permits ANI estimation at the scale of whole-databases, they work best with high quality genomes with high similarity (>90% ANI) [@doi:10.1186/s13059-016-0997-x; @doi:10.1186/s13059-019-1841-x; @doi:10.1038/s41467-018-07641-9].
+Compared with Jaccard, the Containment Index permits more accurate estimation of genomic distance, particularly for genomes of very different lengths [@koslicki_containment; @dashing; @mash_screen].
+As described [@dk_fracminhash], using the Fractional Containment Index ${C_\text{frac}(A,B)}$, estimated using a k-mer size of $k$, we can obtain a point estimate of sequence identity between two genomes as follows:
+
+$ANI = {C_\text{frac}(A,B)}^{1/k}$
+
+Note that this method assumes a simple mutational model of random substitution and estimates sequence divergence solely using the fraction of shared and divergent k-mers between the two FracMinhash sketches.
+When FracMinhash sketches are instead generated with amino acid k~aa~-mers of length $k~aa~$, the same equation can be used to generate alignment-free AAI estimates.
+
+$AAI = {C_\text{frac}(A,B)}^{1/k~aa~}$
+
+To account for the variance of FracMinHash subsampling, we also derive confidence intervals around this point estimate (see Methods for details).
+
+<!---
+The Jaccard Index from DNA k-mer comparisons is commonly used to estimate of the sequence similarity between genomes, often as transformed into
+Recently, equations have been developed for FracMinHash Containment that estimate sequence similarity while accounting for the nonindependence of mutated k-mers [@doi:10.1101/2022.01.11.475870].
+For two genomes, these equations assume a simple mutational model of random nucleotide substitution, and estimate nucleotide divergence solely using the fraction of shared and divergent k-mers between the two genomes.
+
+Here, we apply FracMinHash distance estimation to protein k-mers to obtain an alignment-free estimate of Amino Acid Identity.
+--->
+
+To assess the accuracy and utility of k~aa~-mer Amino Acid Identity estimation, we compared our results with alignment-based methods that leverage three different algorithms: EzAAIb (BLASTp), EzAAIm (MMSeqs2), and CompareM(DIAMOND). As BLAST-based alignment remains the gold-standard method, we compare all AAI values to the BLAST AAI values.
 As above, we utilize anchor containment for comparisons involving 6-frame translated sketches.
-
-To assess whether k-mer methods can be used to approximate AAI, we compared our results with alignment-based methods that leverage three different algorithms: EzAAIb (BLASTp), EzAAIm (MMSeqs2), and CompareM(DIAMOND). As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values.
 
 ![FracMinHash AAI vs BLASTP alignment based AAI](images/gtdb-rs202.evolpaths.AAIcompare-EzAAIb.k7.png){#fig:evolpathsAAIvsBLAST-AAI}
 
+<!---
 **To do:**
 - Rerun BLAST-AAI with default thresholds (current was lower identity thresholds) and re-plot
 - finish and add results from 6-frame translated sketches (anchor containment): same plot? or adjacent plot if needed.
-
+--->
 
 ### Protein k-mer containment and AAI can be used for taxonomic classification
 
@@ -328,7 +348,7 @@ to do:
 
 #### Robust taxonomic classification from protein k-mers
 
-We use a similar approach for taxonomic classification of assembled genomes from protein k-mer containment. 
+We use a similar approach for taxonomic classification of assembled genomes from protein k-mer containment.
 We apply the same minimum set cover approach to find the set of reference genomes that cover all known k-mers in our sample (in this case, a genome itself rather than a metagenome).
 If the most contained reference genome is sufficiently similar (passes default or user-defined threshold) to our query, we can annotate the query with taxonomic information from this reference genome.
 If not, we can use the genome-based lowest common ancestor approach to classify the query genome to the taxonomic rank where it contains sufficient similarity to matched reference genome sequence.
@@ -377,6 +397,7 @@ containent = % of a genome's k-mers that are shared
 
 <!---
 ### Lost Bits
+Protein sequences, which are more conserved than their corresponding nucleotide sequences, are the gold standard for comparisons at larger evolutionary distances.
 
 ** gtdb evolpaths (all k-mers)**
 As the number of genomes per taxon varies widely across GTDB, comparisons across the entire GTDB database may be impacted by the particular genomes included in the database.
@@ -435,12 +456,10 @@ The number of unique amino acid k-mers is consistently correlated with the numbe
 Below, we discuss amino acid k-mers and FracMinHash protein sketches for both assembly-based and assembly-free metagenomic analyses.
 --->
 
-__buyer beware: this is very much in notes/drafting form__
-
 Protein sequences are more conserved than their underlying DNA sequence, allowing protein k-mer comparisons to match across larger evolutionary distances.
 Protein sequence matching is also less impacted by sequencing errors due to codon degeneracy.
 
-### FracMinHash kaa-mer sketches support proteome analysis at scale
+### FracMinHash kaa-mer sketches support whole-proteome analysis at scale
 
 Our results show that amino acid k-mers can be used for global proteome analyses, including distance estimation (AAI) and taxonomic classification.
 For most microbial proteomes, systematic subsampling via FracMinHash maintains accuracy while enabling much faster comparisons.
@@ -456,6 +475,13 @@ Kaa-mer estimation of Amino Acid Identity (AAI) correlates well with mapping-bas
 Different mapping approaches vary slightly in the AAI reported for a given pair of genomes, suggesting that comparisons are best made between values produced by the same method.
 
 There is one other method that can function at large scale: MIGA webserver (paper has 11,000 pairwise comparisons) -- and this method uses hAAI (heuristic AAI), only doing complete AAI if/wehn the hAAI cannot be estimated or is >= 90% ("close to saturation"). MiGA "applies a hierarchical approach: hAAI, AAI, then ANI" to identify the best match genome/proteome.
+AAI thresholds have been proposed for higher taxonomic ranks, <45%, 45-65% and 65-95% for family, genus, and species [@doi:10.1016/j.mib.2007.08.006; @doi:10.1038/ismej.2017.113].
+
+
+diffs vs fastaai:
+- whole proteome
+- taxonomy-agnostic
+- 
 
 Here we could envision doing this with protein k-mers --> doing a quick high-scaled proteome search to find the right family, then doing a more detailed DNA/genome analysis.
 
@@ -519,8 +545,12 @@ We expect sourmash protein k-mer analyses to be especially useful for species wi
 
 For many mapping-based AAI approaches, it is important to report both the percent identity of matched regions and the fraction of the genomes that were mapped. This prevents believing artificially high similarity values when only small fractions of the genomes overlap. In contrast, containment-based AAI by necessity considers all of the sequence of at least one of the two genomes, as the containment measure is the matched k-mers divided by the total k-mers in the query genome. Since containment is directional, when both proteomes are equally trusted (e.g. neither set of protein k-mers is being 6-frame translated from genome sequence), then the average containment considers the entire set of protein sequence from both proteomes. While the AAI value is based on this measure, it may be useful to also consider/report the percent containment of each proteome alongside the AAI value, as this describes the percent of each proteome that matched.
 
+While several studies have proposed utilization of more complex evolutionary models, the simple mutational model accurately estimates nucleotide similarity when compared with mapping-based estimates [@dk_fracminhash].
+
 
 <!---
+For groups not well represented in reference databases, assessing protein similarity can lead to classification at higher taxonomic ranks, such as phylum or family-level annotation. .. much better than nothing.
+
 Protein k-mer containment analysis was demonstrated by Mash Screen [@doi:10.1186/s13059-019-1841-x]
 For both 6-frame translation applications,
  comparisons will be relative to a set of trusted reference proteomes.
@@ -596,7 +626,7 @@ While here we have focused on demonstrating utility of amino acid k-mers for glo
 FracMinHash sketching, as implemented in sourmash [@doi:10.1101/2022.01.11.475838; @doi:10.12688/f1000research.19675.1; @doi:10.21105/joss.00027], is a MinHash variant that uses a scaling factor to subsample the unique k-mers in the dataset to the chosen fraction (1/`scaled`).
 As k-mers are randomized prior to systematic subsampling, FracMinHash sketches are representative subsets that can be used for comparisons across datasets sketched with consistent k-mer lengths and scaling factors.
 
-While FracMinHash sketches can be used to estimate both the Jaccard Index [@doi:10.1186/s13059-016-0997-x] and containment Index [@doi:10.1016/j.amc.2019.02.018], containment has been shown to permit more accurate estimation of genomic distance when genomes or datasets differ in size [@doi:10.1016/j.amc.2019.02.018;@doi:10.1186/s13059-019-1875-0; @doi:10.1093/bib/bbz083; @doi:10.1101/2022.01.14.476226].
+While FracMinHash sketches can be used to estimate both the Jaccard Index [@doi:10.1186/s13059-016-0997-x] and Containment Index [@doi:10.1016/j.amc.2019.02.018], containment has been shown to permit more accurate estimation of genomic distance when genomes or datasets differ in size [@doi:10.1016/j.amc.2019.02.018;@doi:10.1186/s13059-019-1875-0; @doi:10.1093/bib/bbz083; @doi:10.1101/2022.01.14.476226].
 We focus here on the utility of containment comparisons for similarity estimation.
 Containment comparisons are directional: the containment of genome A in sample B is the interection of k-mers in A and B divided by the k-mers in genome A (and vice versa).
 Thus, two containment values can be estimated for a given pairwise comparison.
@@ -604,6 +634,9 @@ The choice of which containment value to use (or whether to average the two valu
 FracMinHash containment has been shown to be an unbiased estimator of the true containment index, as long as the sketches contain sufficient k-mers for comparison or utilize a high-quality estimation of the true cardinality of the dataset [@doi:10.1101/2022.01.11.475838; @doi:10.1101/2022.01.11.475870].
 
 <!---
+FracMinHash is a MinHash variant for selecting and hashing a set of representative k-mers from a sequence dataset [@sourmash_gather]. Unlike traditional MinHash, FracMinHash sketches scale with the size of the dataset, meaning each sketch is comprised of the chosen fraction of k-mers in the input dataset, rather than a chosen number of k-mers.
+Downsampling sequencing datasets in this way enables estimation of the Containment Index, which has been shown to facilitate genome discovery and permit more accurate estimation of genomic distance, particularly for genomes of very different lengths [@koslicki_containment; @dashing; @mash_screen; @metalign].
+
 _As of `v4.x`, `sourmash` sketches store a Hyper-Log-Log estimate of dataset cardinality, calculated during sketching. Use of this estimate ensures that `sourmash` FracMinHash containment results will be unbiased estimates of the true containment, even for very small genomes (e.g. viruses) or large scaling factors (e.g. keep 1/1e6 k-mers)._
 --->
 
@@ -639,11 +672,30 @@ Hera et al, 2022 [@doi:10.1101/2022.01.11.475870] extended this approach to esti
 Each of these methods assumes a simple mutational model, with equal substitution probability for each nucleotide, and then estimates sequence identity based on k-mer comparisons.
 Here, we note that there is nothing unique to nucleotide sequence included in these equations.
 By applying the same equations to comparisons between amino acid k-mer sketches, we can estimate average Amino Acid Identity (AAI) between proteomes.
-For this application, we maintain the assumption of a simple mutational model of equal substitution probability at each position, but recognize that it now applies to any amino acid, rather than any nucleotide. The equation for sequence similarity estimation (ANI or AAI) from FracMinHash Containment is reproduced here for completeness (see @doi:10.1101/2022.01.11.475870 for details).
+For this application, we maintain the assumption of a simple mutational model of equal substitution probability at each position, but recognize that it now applies to any amino acid, rather than any nucleotide.
+
+Using the Fractional Containment Index...
+
+```{=latex}
+\begin{equation}
+\scale := \frac{\vert \mathbf{FRAC}_s(A) \cap \mathbf{FRAC}_s(B)\vert }{\vert \mathbf{FRAC}_s(A)\vert \left(1-(1-s)^{\vert A\vert}\right)} \mathbbm{1}_{\vert \mathbf{FRAC}_s(A) \vert>0}
+\end{equation}
+```
+
 
 **to do: ADD EQUATION**
 
-Sequence distance estimation (ANI/AAI) is implemented in `sourmash` as of `v4.4`. The distance estimation equations can be found in the `distance_utils.py` file.
+The equation for sequence similarity estimation (ANI or AAI) from FracMinHash Containment is reproduced here for completeness (see @doi:10.1101/2022.01.11.475870 for details).
+
+See [@dk_fracminhash] for these and other analytical details.
+
+### Immplementation of ANI and AAI estimation
+
+We provide an implementation of Fractional Containment to average sequence identity (ANI/AAI) in the software package `sourmash`, which is implemented in Python and Rust and developed under the BSD license [@sourmash_f1000; @sourmash_joss].
+ANI and AAI values can be reported from sequence comparisons
+The distance estimation equations can be found in the `distance_utils.py` file and ANI/AAI values can be reported from a variety of `sourmash` comparison and search commands as of version `4.4`.
+sourmash is available at [github.com/sourmash-bio/sourmash](https://github.com/sourmash-bio/sourmash/).
+The results in this paper were generated with sourmash v4.4.1.
 
 ### FracMinHash Amino Acid Identity Correlates with Alignment-based Methods
 
@@ -797,6 +849,13 @@ FastANI is targeted at ANI values between 80%-100%, so only values in this range
 [@cmash]: doi:10.1101/184150
 
 [@bussi]: doi:10.1371/journal.pone.0258693
+
+[@fan_AAF]: doi:10.1186/s12864-015-1647-5
+
+[@kaamer]: doi:10.1101/2020.04.01.019984
+
+[@ob_orpheum]: doi:10.1101/2021.07.09.450799
+
 
 ## Supplemental
 
