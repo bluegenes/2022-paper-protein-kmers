@@ -19,7 +19,6 @@ content/02.introduction.md:14:AAI
 content/02.introduction.md:14:proteome
 content/02.introduction.md:14:uncharacterized
 content/02.introduction.md:17:datasets
-content/02.introduction.md:17:derivates
 content/02.introduction.md:17:FracMinHash
 content/02.introduction.md:17:mers
 content/02.introduction.md:17:metagenomic
@@ -80,6 +79,7 @@ content/03.results.md:3:mer
 content/03.results.md:3:mer
 content/03.results.md:4:mer
 content/03.results.md:4:mers
+content/03.results.md:4:metapalette
 content/03.results.md:5:mer
 content/03.results.md:6:kaa
 content/03.results.md:6:mer
@@ -92,10 +92,10 @@ content/03.results.md:9:mers
 content/03.results.md:11:archaeal
 content/03.results.md:11:GTDB
 content/03.results.md:12:GTDB
-content/03.results.md:12:mer
-content/03.results.md:12:mers
-content/03.results.md:12:prevalance
 content/03.results.md:13:GTDB
+content/03.results.md:13:mer
+content/03.results.md:13:mers
+content/03.results.md:13:prevalance
 content/03.results.md:15:FracMinHash
 content/03.results.md:15:mers
 content/03.results.md:15:mers
@@ -103,6 +103,7 @@ content/03.results.md:15:mers
 content/03.results.md:15:subsample
 content/03.results.md:16:datasets
 content/03.results.md:16:FracMinHash
+content/03.results.md:16:representatively
 content/03.results.md:16:subsample
 content/03.results.md:17:fastas
 content/03.results.md:17:genomic
@@ -137,6 +138,7 @@ content/03.results.md:29:mer
 content/03.results.md:29:mers
 content/03.results.md:29:mers
 content/03.results.md:29:mers
+content/03.results.md:30:CTB
 content/03.results.md:30:mer
 content/03.results.md:30:mer
 content/03.results.md:30:mers
@@ -166,6 +168,8 @@ content/03.results.md:56:Jaccard
 content/03.results.md:56:mer
 content/03.results.md:57:kaa
 content/03.results.md:57:mers
+content/03.results.md:58:CTB
+content/03.results.md:58:mers
 content/03.results.md:58:mers
 content/03.results.md:58:proteome
 content/03.results.md:60:FracMinHash
@@ -237,6 +241,7 @@ content/03.results.md:113:AAI
 content/03.results.md:113:AAI
 content/03.results.md:113:AAI
 content/03.results.md:113:BLASTP
+content/03.results.md:113:CTB
 content/03.results.md:113:EzAAIb
 content/03.results.md:113:FracMinHash
 content/03.results.md:113:gtdb
