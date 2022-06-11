@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-06-10'
+date-meta: '2022-06-11'
 author-meta:
 - N. Tessa Pierce-Ward
 - Taylor E. Reiter
@@ -24,8 +24,8 @@ header-includes: |-
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-06-10" />
-  <meta name="citation_publication_date" content="2022-06-10" />
+  <meta name="dc.date" content="2022-06-11" />
+  <meta name="citation_publication_date" content="2022-06-11" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/576c7bf24786dfb4591f956d93cc6f990aaf9443/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/576c7bf24786dfb4591f956d93cc6f990aaf9443/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/576c7bf24786dfb4591f956d93cc6f990aaf9443/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/5511fdbba5709ccd51440100991ae6e92115ad0c/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/5511fdbba5709ccd51440100991ae6e92115ad0c/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/5511fdbba5709ccd51440100991ae6e92115ad0c/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,10 +74,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/576c7bf24786dfb4591f956d93cc6f990aaf9443/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/5511fdbba5709ccd51440100991ae6e92115ad0c/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@576c7bf](https://github.com/bluegenes/2022-paper-protein-kmers/tree/576c7bf24786dfb4591f956d93cc6f990aaf9443)
-on June 10, 2022.
+from [bluegenes/2022-paper-protein-kmers@5511fdb](https://github.com/bluegenes/2022-paper-protein-kmers/tree/5511fdbba5709ccd51440100991ae6e92115ad0c)
+on June 11, 2022.
 </em></small>
 
 ## Authors
@@ -269,7 +269,7 @@ We obtained similar results when comparing all available k-mers, suggesting that
 - add results from 6-frame translated sketches as dotted lines ridges with lighter fill?? (protein only)
 --->
 
-### FracMinHash kaa-mer containment accurately estimates sequence similarity
+### FracMinHash k~aa~-mer containment accurately estimates sequence similarity
 
 Pairwise Overall Genome Relatedness indices (OGRI's) such as Average Nucleotide Identity (ANI) and its protein counterpart, Average Amino Acid Identity (AAI) have shown lasting utility for genome relatedness and phylogenomic analysis.
 Traditional ANI and AAI describe the sequence similarity of all orthologous genes, either in nucleotide or protein space, respectively.
@@ -284,7 +284,7 @@ As described in [@dk_fracminhash], using the Fractional Containment Index ${C_\t
 
 $ANI = {C_\text{frac}(A,B)}^{1/k}$
 
-Note that this method assumes a simple mutational model of random substitution and estimates sequence divergence solely using the fraction of shared and divergent k-mers between the two FracMinhash sketches.
+This method assumes a simple mutational model of random substitution and estimates sequence divergence solely using the fraction of shared and divergent k-mers between the two FracMinhash sketches.
 When FracMinhash sketches are instead generated with amino acid k~aa~-mers of length $k~aa~$, the corresponding equation can be used to generate alignment-free AAI estimates.
 
 $AAI = {C_\text{frac}(A,B)}^{1/k~aa~}$
@@ -304,6 +304,7 @@ As above, we utilize anchor containment for comparisons involving 6-frame transl
 
 ![FracMinHash AAI vs BLASTP alignment based AAI (CTB: suggest putting parameters in caption rather than in figure legend)](images/gtdb-rs202.evolpaths.AAIcompare-EzAAIb.k7.png){#fig:evolpathsAAIvsBLAST-AAI}
 
+Estimated Amino Acid Identity closely approximates mapping-based values across a range of scaling values, suggesting that accurate estimation can be obtained even while using a small fraction of available k~aa~-mers.
 <!---
 **To do:**
 - Rerun BLAST-AAI with default thresholds (current was lower identity thresholds) and re-plot
