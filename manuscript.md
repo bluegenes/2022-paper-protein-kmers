@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/d168b3ca5b2c9b0ef84543aa5e1a120afbab32ee/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d168b3ca5b2c9b0ef84543aa5e1a120afbab32ee/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d168b3ca5b2c9b0ef84543aa5e1a120afbab32ee/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/5b3d56daeab2475d052cc747227747b728e72e4b/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/5b3d56daeab2475d052cc747227747b728e72e4b/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/5b3d56daeab2475d052cc747227747b728e72e4b/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +74,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/d168b3ca5b2c9b0ef84543aa5e1a120afbab32ee/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/5b3d56daeab2475d052cc747227747b728e72e4b/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@d168b3c](https://github.com/bluegenes/2022-paper-protein-kmers/tree/d168b3ca5b2c9b0ef84543aa5e1a120afbab32ee)
+from [bluegenes/2022-paper-protein-kmers@5b3d56d](https://github.com/bluegenes/2022-paper-protein-kmers/tree/5b3d56daeab2475d052cc747227747b728e72e4b)
 on June 22, 2022.
 </em></small>
 
@@ -526,14 +526,14 @@ Different mapping approaches vary slightly in the AAI reported for a given pair 
 There is one other method that can function at large scale: MIGA webserver (paper has 11,000 pairwise comparisons) -- and this method uses hAAI (heuristic AAI), only doing complete AAI if/wehn the hAAI cannot be estimated or is >= 90% ("close to saturation"). MiGA "applies a hierarchical approach: hAAI, AAI, then ANI" to identify the best match genome/proteome.
 AAI thresholds have been proposed for higher taxonomic ranks, <45%, 45-65% and 65-95% for family, genus, and species [@doi:10.1016/j.mib.2007.08.006; @doi:10.1038/ismej.2017.113].
 
-
+<!---
 diffs vs fastaai:
 - whole proteome
 - taxonomy-agnostic
 - 
 
 Here we could envision doing this with protein k-mers --> doing a quick high-scaled proteome search to find the right family, then doing a more detailed DNA/genome analysis.
-
+--->
 
 ### Containment enables assembly-free protein comparisons
 

@@ -318,7 +318,6 @@ content/03.results.md:148:mers
 content/03.results.md:150:AAI
 content/03.results.md:150:phylogenomic
 content/03.results.md:151:AAI
-content/03.results.md:151:fastaai
 content/03.results.md:152:AAI
 content/03.results.md:152:FracMinHash
 content/03.results.md:152:mers
@@ -523,7 +522,6 @@ content/04.discussion.md:25:proteome
 content/04.discussion.md:25:webserver
 content/04.discussion.md:25:wehn
 content/04.discussion.md:26:AAI
-content/04.discussion.md:29:fastaai
 content/04.discussion.md:30:proteome
 content/04.discussion.md:34:mers
 content/04.discussion.md:34:proteome
@@ -865,7 +863,6 @@ content/06.methods.md:175:TBD
 content/07.references.md:5:meganlr
 content/07.references.md:13:kaiju
 content/07.references.md:15:catbat
-content/07.references.md:35:fastaai
 content/07.references.md:41:joss
 content/07.references.md:51:kaamer
 content/80.supplemental.md:3:mers
