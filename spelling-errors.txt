@@ -5,12 +5,12 @@ analyes
 ANI
 Archaea
 archaeal
-BLASTp
+BLASTP
 bluegenes
 cardinality
 catbat
 classificaiton
-CompareM
+compareM
 compositional
 cov
 ctb
@@ -40,7 +40,7 @@ JACCARD
 joss
 kaa
 kaamer
-kaiju
+Kaiju
 KMERS
 kraken
 LCA
@@ -54,8 +54,8 @@ metagenomics
 metapalette
 MGNify
 MiGA
-MinHash
-MMSeqs
+Minhash
+mmseqs
 NCBI
 noncoding
 nucl
