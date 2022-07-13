@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-06-22'
+date-meta: '2022-07-13'
 author-meta:
 - N. Tessa Pierce-Ward
 - Taylor E. Reiter
@@ -24,8 +24,8 @@ header-includes: |-
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-06-22" />
-  <meta name="citation_publication_date" content="2022-06-22" />
+  <meta name="dc.date" content="2022-07-13" />
+  <meta name="citation_publication_date" content="2022-07-13" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/5b3d56daeab2475d052cc747227747b728e72e4b/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/5b3d56daeab2475d052cc747227747b728e72e4b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/5b3d56daeab2475d052cc747227747b728e72e4b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/83d8802e1ce4efbba9564214b13aeb3f091a2dea/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/83d8802e1ce4efbba9564214b13aeb3f091a2dea/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/83d8802e1ce4efbba9564214b13aeb3f091a2dea/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,10 +74,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/5b3d56daeab2475d052cc747227747b728e72e4b/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/83d8802e1ce4efbba9564214b13aeb3f091a2dea/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@5b3d56d](https://github.com/bluegenes/2022-paper-protein-kmers/tree/5b3d56daeab2475d052cc747227747b728e72e4b)
-on June 22, 2022.
+from [bluegenes/2022-paper-protein-kmers@83d8802](https://github.com/bluegenes/2022-paper-protein-kmers/tree/83d8802e1ce4efbba9564214b13aeb3f091a2dea)
+on July 13, 2022.
 </em></small>
 
 ## Authors
@@ -282,31 +282,31 @@ When FracMinhash sketches are instead generated with k~aa~-mers, we can use a si
 Traditional AAI represents the average amino acid identity of all genes shared between two proteomes, and has shown lasting utility for phylogenomic comparisons and taxonomic classification [@doi:10.1128/AEM.01398-06; @doi:10.1038/ismej.2017.113].
 However, alignment-based AAI analyses not tractable for large-scale comparisons.
 
-Under a simple mutational model assuming equal and random _amino acid_ substitution at any position across a proteome, we can use the Fractional Containment Index ${C_\text{frac}(A,B)}$ (estimated at k~aa~-mer length $k~aa~$) to obtain a containment-based estimate of Amino Acid Identity ($AAIc$).
+Under a simple mutational model assuming equal and random _amino acid_ substitution at any position across a proteome, we can use the Fractional Containment Index ${C_\text{frac}(A,B)}$ (estimated at k~aa~-mer length $k~aa~$) to obtain a containment-based estimate of Amino Acid Identity ($cAAI$).
 As with nucleotide k-mer comparisons, we also derive confidence intervals around this point estimate to account for the variance of FracMinHash subsampling (see Methods and [@dk_fracminhash] for details).
 
-$AAIc = {C_\text{frac}(A,B)}^{1/k~aa~}$
+$cAAI = {C_\text{frac}(A,B)}^{1/k~aa~}$
 
-To assess the utility of $AAIc$ for phylogenetic comparisons, we tranform the k~aa~mer containment values of the "Evolutionary Paths" dataset (above) to $AAIc$ values.
+To assess the utility of $cAAI$ for phylogenetic comparisons, we tranform the k~aa~mer containment values of the "Evolutionary Paths" dataset (above) to $cAAI$ values.
 For each pairwise comparison, we then also estimate AAI with programs leveraging three different alignment algorithms: EzAAIb (BLASTp), EzAAIm (MMSeqs2), and CompareM (DIAMOND).
-As BLAST-based alignment remains the gold-standard method, we compare each AAI and $AAIc$ value to the AAI values generated with EzAAIb's BLASTp approach.  
+As BLAST-based alignment remains the gold-standard method, we compare each AAI and $cAAI$ value to the AAI values generated with EzAAIb's BLASTp approach.  
 
-![FracMinHash AAIc vs BLASTp alignment-based AAI ](images/gtdb-rs202.evolpaths.AAI-x-blastp-x-coverage.k7.k10.labeled.png){#fig:evolpathsAAI}
+![FracMinHash cAAI vs BLASTp alignment-based AAI ](images/gtdb-rs202.evolpaths.AAI-x-blastp-x-coverage.k7.k10.labeled.png){#fig:evolpathsAAI}
 
-When compared with alignment-based AAI (Figure 3A), $AAIc$ is more sensitive, finding increased similarity across the entire range of comparisons.
-Across much of the AAI range, k~aa~7 $AAIc$ is closer to AAI thank k~aa~10, but k~aa~7 $AAIc$ values become unreliable at the low end of AAI range, with a spike in $AAIc$ values observed below 50% AAI.
+When compared with alignment-based AAI (Figure 3A), $cAAI$ is more sensitive, finding increased similarity across the entire range of comparisons.
+Across much of the AAI range, k~aa~7 $cAAI$ is closer to AAI thank k~aa~10, but k~aa~7 $cAAI$ values become unreliable at the low end of AAI range, with a spike in $cAAI$ values observed below 50% AAI.
 This suggests that k~aa~7 containment does not provide sufficient resolution to distinguish protomes in the 40-60% AAI range.
-In contrast, despite their difference from AAI, k~aa~10 $AAIc values provide resolution across the full range of pairwise comparisons.
+In contrast, despite their difference from AAI, k~aa~10 $cAAI values provide resolution across the full range of pairwise comparisons.
 The three alignment-based methods are highly correlated, though DIAMOND-based AAI estimates consistently underestimate proteome similarity, particularly at the lower end of the range.
 
-Unlike traditional AAI methods, $AAIc$ makes no attempt to identify the best reciprocal matches between genes found in each proteome.
-$AAIc$ is based entirely on containment, the fraction of k-mers found in each proteome that is shared with the comparison proteome.
-When we instead compare AAI and $AAIc$ values to the BLASTp-reported alignment fraction, we see that $AAIc$ k~aa~10 is best correlated with alignment fraction (R^2^=0.94).
+Unlike traditional AAI methods, $cAAI$ makes no attempt to identify the best reciprocal matches between genes found in each proteome.
+$cAAI$ is based entirely on containment, the fraction of k-mers found in each proteome that is shared with the comparison proteome.
+When we instead compare AAI and $cAAI$ values to the BLASTp-reported alignment fraction, we see that $cAAI$ k~aa~10 is best correlated with alignment fraction (R^2^=0.94).
 Again, k~aa~7 loses resolution for highly divergent proteomes.
 For alignment-based methods, we observe a slightly lower correlation between alignment fraction and AAI (R^2^: 0.92 BLASTp, 0.86 MMSeqs2, 0.89 DIAMOND).
 This can be both a strength and shortcoming of AAI as a method, as AAI values only consider the alignable fractions of the two proteomes.
 
-Given these propeties, containment-based $AAIc$ is closest to an alignment-adjusted version amino acid identity.
+Given these propeties, containment-based $cAAI$ is closest to an alignment-adjusted version amino acid identity.
 While it does not exactly mimic alignment-based AAI estimates, it is able to represent both alignment fraction and identity information in a single value.
 
 AAI has been shown to be a robust measure of overall pairwise relatedness even for highly incomplete datasets, such as those comprised of only ~4% of the genome or 100 genes [@doi:10.1128/AEM.01398-06; @doi:10.1038/ismej.2017.113].
@@ -315,7 +315,7 @@ AAI is most useful when nucleotide comparisons are not longer robust, typically 
 
 <!---
 These measures have utility for phylogenomic comparisons and taxonomic classification, but alignment-based AAI analyses not tractable for large-scale comparisons.
-AAIc using k~aa~-10 is consistently more sensitive than alignment-based values below 90% AAI (above which ANI is typically more useful for sequence comparisons).
+cAAI using k~aa~-10 is consistently more sensitive than alignment-based values below 90% AAI (above which ANI is typically more useful for sequence comparisons).
 However, these containment-based AAI estimates remain broadly useful for assessing similarity across the entire range of comparisons, and are linearly related proteome coverage (as reported with EzAAIb; R^2^ = 0.937), which is typically reported alongside alignment-based AAI values.
  to obtain a point estimate of sequence identity between two genomes. 
 
@@ -517,22 +517,26 @@ Shorter amino acid k-mers (kaa = 7) can be matched even across phyla, suggesting
 These k-mers also have the potential to work well for functional analyses.
 Longer amino acid k-mers (kaa=10+) are more discriminatory and may be best for taxonomic classification.
 
-
 ### kaa-mer Amino Acid Identity estimation
 
 Kaa-mer estimation of Amino Acid Identity (AAI) correlates well with mapping-based AAI approaches, while requiring far less memory and computation.
 Different mapping approaches vary slightly in the AAI reported for a given pair of genomes, suggesting that comparisons are best made between values produced by the same method.
 
+For many mapping-based AAI approaches, it is important to report both the percent identity of matched regions and the fraction of the genomes that were mapped. This prevents believing artificially high similarity values when only small fractions of the genomes overlap. In contrast, containment-based AAI by necessity considers all of the sequence of at least one of the two genomes, as the containment measure is the matched k-mers divided by the total k-mers in the query genome. Since containment is directional, when both proteomes are equally trusted (e.g. neither set of protein k-mers is being 6-frame translated from genome sequence), then the average containment considers the entire set of protein sequence from both proteomes. While the AAI value is based on this measure, it may be useful to also consider/report the percent containment of each proteome alongside the AAI value, as this describes the percent of each proteome that matched.
+
+While several studies have proposed utilization of more complex evolutionary models, the simple mutational model accurately estimates nucleotide similarity when compared with mapping-based estimates [@dk_fracminhash].
+
+<!---
 There is one other method that can function at large scale: MIGA webserver (paper has 11,000 pairwise comparisons) -- and this method uses hAAI (heuristic AAI), only doing complete AAI if/wehn the hAAI cannot be estimated or is >= 90% ("close to saturation"). MiGA "applies a hierarchical approach: hAAI, AAI, then ANI" to identify the best match genome/proteome.
 AAI thresholds have been proposed for higher taxonomic ranks, <45%, 45-65% and 65-95% for family, genus, and species [@doi:10.1016/j.mib.2007.08.006; @doi:10.1038/ismej.2017.113].
+--->
 
 <!---
 diffs vs fastaai:
 - whole proteome
 - taxonomy-agnostic
 - 
-
-Here we could envision doing this with protein k-mers --> doing a quick high-scaled proteome search to find the right family, then doing a more detailed DNA/genome analysis.
+Here we could envision doing this with protein k-mers doing a quick high-scaled proteome search to find the right family, then doing a more detailed DNA/genome analysis.
 --->
 
 ### Containment enables assembly-free protein comparisons
@@ -544,34 +548,36 @@ In this way, we can use the more permissive nature of protein analyes for assemb
 
 
 ### Taxonomic Assignment is database-dependent
-(but protein helps with sensitivity + min-set-cov helps with specificity)
+
+_(but protein helps with sensitivity + min-set-cov helps with specificity)_
+
+<!---
 discuss in relation to: Kaiju, CAT/BAT, MEGAN-prot, MMSeqs taxonomy (+ probably move some of this to intro)
+--->
 
 K-mer based taxonomic assignment relies upon matching k-mers found in previously sequenced reference proteomes.
-While this approach will always be database-dependent and improved by presence of closely-related proteomes in the database, protein-based matching allows for classificaiton at larger evolutionary distances.
-While protein matching increases the sensitivity by matching across synonymous substitutions in the DNA sequence 
-
-
-classification LCA approaches often suffer from sensitivity/specificity trade-offs
+While this approach will always be database-dependent and improved by presence of closely-related proteomes in the database, protein-based matching allows for classification at larger evolutionary distances.
+While protein matching increases the sensitivity by matching across synonymous substitutions in the DNA sequence, classification LCA approaches often suffer from sensitivity/specificity trade-offs.
 Here, the use of `sourmash gather` minimum set cover approach assigns each protein k-mer to its most likely/parsimonious match based on presence of other proteome k-mers present in the query genome/metagenome.
 
-
+<!---
 **distinguishing features this vs kaiju:**
-- min-set-cov --> low false pos
-- fracminhash --> faster, smaller databases (though might need to increase scaled value)
-- 
-
+min-set-cov - low false pos
+fracminhash - faster, smaller databases (though might need to increase scaled value)
+--->
 
 ### Limitations
-- Note that comparing two 6-frame translated datasets is not recommended, as there is no mechanism to exclude erroneous k-mers introduced during translation.
+
+- Comparing two 6-frame translated datasets is not recommended, as there is no mechanism to exclude erroneous k-mers introduced during translation.
 - by using proteins, we're only looking at coding regions/ignoring noncoding (same as with all protein analyses)
 
 
 ### Future directions and utility
-- functional comparisons/all the k-mers
-- abundance comparisons with cosine, f_unique_weighted, etc
+
+- functional comparisons
+- abundance comparisons with cosine, f_unique_weighted
 - clustering at protein level
-- While eukaryotic datasets are out of scope of this paper, these methods should work fine (except repeats/indels) -- discuss a bit and/or do some analyses?
+- While eukaryotic datasets are out of scope of this paper, these methods should work well 
 
 
 
@@ -581,21 +587,16 @@ across phyla and demonstrate taxonomic classification using sketch containment.
 Protein search has long been used for comparisons conducted at increased evolutionary distances.
 By using amino acid FracMinHash sketches, we can make global protein similarity assessment tractable for the current scale of sequencing.
 
-
+<!--
 Main points:
 - Protein k-mers approximate proteomes
 - FracMinHash sketches can be used for global proteome comparisons
 - Longer protein k-mers can be used for taxonomic classification and metagenome breakdown
 - maximum containment enables these things directly from DNA sequence
-- 
+
 For many classification methods, an increase in sensitivity is accompanied by a concomitant decrease in specificity, yielding large number of false positives, often even on mock communities [@doi:10.3389/fmicb.2021.643682; @doi:10.1101/2022.01.31.478527].
-
+-->
 We expect sourmash protein k-mer analyses to be especially useful for species with few representatives in published databases.
-
-For many mapping-based AAI approaches, it is important to report both the percent identity of matched regions and the fraction of the genomes that were mapped. This prevents believing artificially high similarity values when only small fractions of the genomes overlap. In contrast, containment-based AAI by necessity considers all of the sequence of at least one of the two genomes, as the containment measure is the matched k-mers divided by the total k-mers in the query genome. Since containment is directional, when both proteomes are equally trusted (e.g. neither set of protein k-mers is being 6-frame translated from genome sequence), then the average containment considers the entire set of protein sequence from both proteomes. While the AAI value is based on this measure, it may be useful to also consider/report the percent containment of each proteome alongside the AAI value, as this describes the percent of each proteome that matched.
-
-While several studies have proposed utilization of more complex evolutionary models, the simple mutational model accurately estimates nucleotide similarity when compared with mapping-based estimates [@dk_fracminhash].
-
 
 <!---
 For groups not well represented in reference databases, assessing protein similarity can lead to classification at higher taxonomic ranks, such as phylum or family-level annotation. .. much better than nothing.
