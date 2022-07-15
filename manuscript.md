@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-07-13'
+date-meta: '2022-07-15'
 author-meta:
 - N. Tessa Pierce-Ward
 - Taylor E. Reiter
@@ -24,8 +24,8 @@ header-includes: |-
   <meta name="citation_title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Protein k-mer analyses for assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-07-13" />
-  <meta name="citation_publication_date" content="2022-07-13" />
+  <meta name="dc.date" content="2022-07-15" />
+  <meta name="citation_publication_date" content="2022-07-15" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/83d8802e1ce4efbba9564214b13aeb3f091a2dea/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/83d8802e1ce4efbba9564214b13aeb3f091a2dea/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/83d8802e1ce4efbba9564214b13aeb3f091a2dea/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b972ab61cb0dca52f4771e84f925386fe4e0f8ce/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b972ab61cb0dca52f4771e84f925386fe4e0f8ce/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b972ab61cb0dca52f4771e84f925386fe4e0f8ce/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,10 +74,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/83d8802e1ce4efbba9564214b13aeb3f091a2dea/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/b972ab61cb0dca52f4771e84f925386fe4e0f8ce/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@83d8802](https://github.com/bluegenes/2022-paper-protein-kmers/tree/83d8802e1ce4efbba9564214b13aeb3f091a2dea)
-on July 13, 2022.
+from [bluegenes/2022-paper-protein-kmers@b972ab6](https://github.com/bluegenes/2022-paper-protein-kmers/tree/b972ab61cb0dca52f4771e84f925386fe4e0f8ce)
+on July 15, 2022.
 </em></small>
 
 ## Authors
@@ -501,21 +501,37 @@ While k-mer containment can be used directly for many analyses, it can also be u
 
 ## Discussion
 
+Protein sequences are more conserved than their underlying DNA sequence, allowing protein k-mer comparisons to match across larger evolutionary distances.
+Protein sequence matching is also less impacted by sequencing errors due to codon degeneracy.
+Our results show that amino acid k-mers can be used for global proteome analyses, including sequence similarity estimation (AAI) and taxonomic classification of proteomes or directly from unassembled read datasets.
+
 <!---
 Below, we discuss amino acid k-mers and FracMinHash protein sketches for both assembly-based and assembly-free metagenomic analyses.
 --->
+### k~aa~mer Containment enables alignment-free and assembly-free protein comparisons
 
-Protein sequences are more conserved than their underlying DNA sequence, allowing protein k-mer comparisons to match across larger evolutionary distances.
-Protein sequence matching is also less impacted by sequencing errors due to codon degeneracy.
+As the majority of genome and proteome data is sequenced at the nucleotide level, comparisons of amino acid sequence are typically limited to assembly-based workflows, where a genome assembly has been translated into predicted Open Reading Frames (ORFs).
+As amino acid k~aa~mers do not utilize any additional assembly information, we can also conduct comparisons directly from read datasets, bypassing assembly altogether.
+In many cases, we are interested in comparing a novel sequencing dataset to one or more reference proteomes.
+In this case, 6-frame translation of read sequences is sufficient for accurate comparisons to a k~aa~mer database generated from reference (assembled) proteome data.
+This method relies on the biological properties of k~aa~mers: not all potential k~aa~mers are represented in biological databases, particularly at longer k~aa~mer lengths such as k~aa7~ and k~aa10~ (info theory paper).
+Containment comparisons allow us to focus only on the translated read k~aa~mers that match to the reference database, ignoring the 5/6ths of k~aa~mers that will originate from incorrect reading frames.
+When using assembled genomes as a test case, our results show that this 6-frame translation method performs equally well when compared with generating k~aa~mers from the corresponding Prodigal-translated or RefSeq-downloaded proteomes.
+By using only the k-mer containment estimate relative to reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence.
+In this way, we can use the more permissive nature of protein analyes for assembly-free genome and metagenome assignment and comparisons.
 
-### FracMinHash kaa-mer sketches support whole-proteome analysis at scale
-
-Our results show that amino acid k-mers can be used for global proteome analyses, including distance estimation (AAI) and taxonomic classification.
-For most microbial proteomes, systematic subsampling via FracMinHash maintains accuracy while enabling much faster comparisons.
-
-Shorter amino acid k-mers (kaa = 7) can be matched even across phyla, suggesting they may be most useful for comparisons at larger evolutionary distances.
-These k-mers also have the potential to work well for functional analyses.
-Longer amino acid k-mers (kaa=10+) are more discriminatory and may be best for taxonomic classification.
+However, this method should not be used for comparisons between two 6-frame translated datasets.
+In this case, there is no way to distinguish between true biological k~aa~mers and noisy k~aa~mers introduced by translation into all potential open reading frames.
+AAI is often most useful when comparing to known or assembled genomes, and does not have a direct application for comparisons between metagenomic datasets.
+If desired, it is possible to use the same strategy to select the most likely translation frame for each read, which can be used for downstream analyses.
+If instead, k~aa~mers are generated for each translation frame of each read separately, Containment comparisons can again be used to find the fraction of these k~aa~mers that can be matched to the k~aa~mers in the reference database. 
+The translation frame with the highest percent of matched k~aa~mers is most likely to be the coding frame for that read.
+These strategy can also be used to predict non-coding reads, where few, if any, tranlated k~aa~mers match to reference database k~aa~mers.
+This method works best for longer reads (which contain more information) and when there are closely related organisms present in the reference database (@sencha; @pankaamers).
+<!---
+AAI doesn't really make sense for read <--> read datasets.
+Although some data may be lost during the frame selection step, k~aa~mer Amino Acid Identity estimation may be feasible for comparisons between read datasets translated in this manner.
+--->
 
 ### kaa-mer Amino Acid Identity estimation
 
@@ -539,12 +555,22 @@ diffs vs fastaai:
 Here we could envision doing this with protein k-mers doing a quick high-scaled proteome search to find the right family, then doing a more detailed DNA/genome analysis.
 --->
 
-### Containment enables assembly-free protein comparisons
 
-For protein k-mer comparisons to be useful, any DNA queries must be translated into protein sequence.
-This can limit amino acid comparisons to assembly-based workflows, as assemblies can be reliably translated into predicted Open Reading Frames (ORFs).
-By using only the k-mer containment estimate relative to reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence.
-In this way, we can use the more permissive nature of protein analyes for assembly-free genome and metagenome assignment.
+
+### FracMinHash k~aa~-mer sketches support whole-proteome analysis at scale
+
+Sketching techniques such as FracMinHash can be used to systematically subsample proteome k~aa~mer sequences.
+Selection of k~aa~mer size is critical for the utility of these comparisons.
+Longer k~aa~mer lengths (k~aa~=10) provide sufficient resolution for comparisons across taxonomic groups, enabling 
+In contrast, shorter k~aa~mer lengths (k~aa~=7) are more likely to be shared across taxonomic groups, with the majority of unique k~aa7~mers shared across phyla within GTDB.
+These k-mers lose resolution at wider evolutionary distances (<62% AAI), where insufficient k~aa~mers are unique to each taxonomic group to allow for taxonomic classification and robust distant estimation via k~aa~mer containment and AAI.
+However, this property can be advantages for functional similarity estimation, where k~aa7~mers may provide the ability to match gene sequence even across wider evolutionary distances.
+Indeed, this functionality has already begun to be explored, with k~aa7-mer functional annotation webservice [@kaamer].
+
+For most microbial proteomes, systematic subsampling via FracMinHash maintains accuracy of k~aa~mer comparisons while reducing runtime and memory for analysis.
+
+
+
 
 
 ### Taxonomic Assignment is database-dependent
