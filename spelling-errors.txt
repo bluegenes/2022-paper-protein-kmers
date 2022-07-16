@@ -8,13 +8,13 @@ BLASTp
 bluegenes
 cAAI
 cardinality
-compareM
+CompareM
 compositional
 contig
 cov
 ctb
 ctitusbrown
-dataset
+Dataset
 datasets
 Delmont
 eukaryotic
@@ -23,7 +23,7 @@ EzAAIb
 EzAAIb’s
 EzAAIm
 fastas
-FracMinhash
+FracMinHash
 GBMF
 genbank
 genomic
@@ -32,7 +32,7 @@ Immplementation
 interection
 Irber
 iteratively
-Jaccard
+JACCARD
 kaa
 KMERS
 LCA
@@ -40,7 +40,7 @@ mer
 mers
 metagenome
 metagenomes
-metagenomic
+Metagenomic
 metagenomics
 metapalette
 metapangenome

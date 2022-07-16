@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/e4dcf18ae79d6fe0c6d1a3e6fbd823355cd27de8/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/e4dcf18ae79d6fe0c6d1a3e6fbd823355cd27de8/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/e4dcf18ae79d6fe0c6d1a3e6fbd823355cd27de8/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +74,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/e4dcf18ae79d6fe0c6d1a3e6fbd823355cd27de8/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@e4dcf18](https://github.com/bluegenes/2022-paper-protein-kmers/tree/e4dcf18ae79d6fe0c6d1a3e6fbd823355cd27de8)
+from [bluegenes/2022-paper-protein-kmers@c5dbc9b](https://github.com/bluegenes/2022-paper-protein-kmers/tree/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d)
 on July 16, 2022.
 </em></small>
 
@@ -128,8 +128,8 @@ Alignment-free methods for estimating sequence similarity have become critical f
 The majority of these methods rely upon exact matching of DNA k-mers: nucleotide subsequences of length k that can be counted and compared across datasets.
 However,as k-mer based methods rely on exact sequence matches, DNA k-mer comparisons can suffer from limited sensitivity when comparing highly polymorphic sequences or classifying organisms from groups not well represented in reference databases.
 Protein-based comparisons have long been the gold-standard approach for taxonomic and functional annotation at larger evolutionary distances.
-Here, we demonstrate the utility of amino acid k-mers (k~aa~mer) for sequence comparisons across larger evolutionary distances, including alignment-free estimation of Average Amino Acid Identity (cAAI) and taxonomic classification using sourmash gather.
-These new k~aa~mer methods can be used with and without sketching methods such as FracMinHash, and will facilitate comparison and classification of a larger fraction of sequenced metagenome data, particularly from understudied and diverse environments.
+Here, we demonstrate the utility of amino acid k-mers (k~aa~mers) for sequence comparisons across larger evolutionary distances, including alignment-free estimation of Average Amino Acid Identity (cAAI) and taxonomic classification using sourmash gather.
+K~aa~mer comparisons can be used with and without sketching methods such as FracMinHash, and will facilitate comparison and classification of a larger fraction of sequenced metagenome data, particularly from understudied and diverse environments.
 
 
 ## Background
