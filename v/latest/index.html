@@ -75,9 +75,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/259d0cafb432a7ef51b5b634ff25df2391008f36/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/259d0cafb432a7ef51b5b634ff25df2391008f36/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/259d0cafb432a7ef51b5b634ff25df2391008f36/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/d4e19a713525561b32795c9b982aeec3a4d16b13/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d4e19a713525561b32795c9b982aeec3a4d16b13/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d4e19a713525561b32795c9b982aeec3a4d16b13/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -91,9 +91,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/259d0cafb432a7ef51b5b634ff25df2391008f36/">permalink</a>)
+(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/d4e19a713525561b32795c9b982aeec3a4d16b13/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/259d0cafb432a7ef51b5b634ff25df2391008f36">bluegenes/2022-paper-protein-kmers@259d0ca</a>
+from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/d4e19a713525561b32795c9b982aeec3a4d16b13">bluegenes/2022-paper-protein-kmers@d4e19a7</a>
 on July 16, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -479,10 +479,7 @@ While k-mer containment can be used directly for many analyses, it can also be u
 <p>Protein sequences are more conserved than their underlying DNA sequence, allowing amino acid k-mer comparisons to match across larger evolutionary distances.
 Protein sequence matching is also less impacted by sequencing errors due to codon degeneracy.
 Our results show that amino acid k-mers can be used for global proteome comparisons, including estimation of sequence similarity (AAI) and taxonomic classification from either unassembled read datasets or assembled proteomes.</p>
-<!---
-Below, we discuss amino acid k-mers and FracMinHash protein sketches for both assembly-based and assembly-free metagenomic analyses.
---->
-<h3 id="kaamer-containment-enables-alignment-free-and-assembly-free-protein-comparisons">k<sub>aa</sub>mer Containment enables alignment-free and assembly-free protein comparisons</h3>
+<h3 id="kaamer-containment-comparisons-enable-alignment-free-and-assembly-free-protein-comparisons">k<sub>aa</sub>mer Containment comparisons enable alignment-free and assembly-free protein comparisons</h3>
 <p>As the majority of genome and proteome data is sequenced at the nucleotide level, comparisons of amino acid sequence are typically limited to assembly-based workflows, where a genome assembly has been translated into predicted Open Reading Frames (ORFs).
 As amino acid k<sub>aa</sub>mers do not utilize any additional assembly information, we can also conduct comparisons directly from read datasets, bypassing assembly altogether.
 In many cases, we are interested in comparing a novel sequencing dataset to one or more reference proteomes.
@@ -491,19 +488,8 @@ This method relies on the biological properties of k<sub>aa</sub>mers: not all p
 Containment comparisons allow us to focus only on the translated read k<sub>aa</sub>mers that match to the reference database, ignoring the 5/6ths of k<sub>aa</sub>mers that will originate from incorrect reading frames.
 When using assembled genomes as a test case, our results show that this 6-frame translation method performs equally well when compared with generating k<sub>aa</sub>mers from the corresponding Prodigal-translated or RefSeq-downloaded proteomes.
 By using only the k-mer containment estimate relative to reference proteomes, we can obtain accurate Amino Acid Identity estimates directly from DNA sequence.
-In this way, we can use the more permissive nature of protein analyes for assembly-free genome and metagenome assignment and comparisons.</p>
-<p>However, this method should not be used for comparisons between two 6-frame translated datasets.
-In this case, there is no way to distinguish between true biological k<sub>aa</sub>mers and noisy k<sub>aa</sub>mers introduced by translation into all potential open reading frames.
-AAI is often most useful when comparing to known or assembled genomes, and does not have a direct application for comparisons between metagenomic datasets.
-If desired, it is possible to use the same strategy to select the most likely translation frame for each read, which can be used for downstream analyses.
-If instead, k<sub>aa</sub>mers are generated for each translation frame of each read separately, Containment comparisons can again be used to find the fraction of these k<sub>aa</sub>mers that can be matched to the k<sub>aa</sub>mers in the reference database.
-The translation frame with the highest percent of matched k<sub>aa</sub>mers is most likely to be the coding frame for that read.
-These strategy can also be used to predict non-coding reads, where few, if any, tranlated k<sub>aa</sub>mers match to reference database k<sub>aa</sub>mers.
-This method works best for longer reads (which contain more information) and when there are closely related organisms present in the reference database (<span class="citation" data-cites="TO2yVgRA">[<a href="#ref-TO2yVgRA" role="doc-biblioref">25</a>]</span>; <span class="citation" data-cites="T2ylGIH0">[<a href="#ref-T2ylGIH0" role="doc-biblioref">26</a>]</span>).</p>
-<!---
-AAI doesn't really make sense for read <> read datasets.
-Although some data may be lost during the frame selection step, k~aa~mer Amino Acid Identity estimation may be feasible for comparisons between read datasets translated in this manner.
---->
+In this way, we can use the more permissive nature of protein analyes for assembly-free genome and metagenome assignment and comparisons.
+Of course, when both samples are proteomes that are equally trusted (e.g. neither set of protein k-mers is being 6-frame translated from genome sequence), then the average containment considers the entire set of protein sequence from both proteomes.</p>
 <h3 id="kaa10-enables-whole-proteome-comparisons-out-to-domain-level">k<sub>aa10</sub> enables whole-proteome comparisons out to domain-level</h3>
 <p>Selection of k<sub>aa</sub>mer size is critical for the utility of these comparisons.
 Longer k<sub>aa</sub>mer lengths (k<sub>aa</sub>=10) provide sufficient resolution for comparisons across taxonomic groups, including out to comparisons between genomes in different domains.
@@ -511,28 +497,52 @@ In contrast, shorter k<sub>aa</sub>mer lengths (k<sub>aa</sub>=7) are more likel
 These k-mers lose resolution at wider evolutionary distances (&lt;62% AAI), where insufficient k<sub>aa</sub>mers are unique to each taxonomic group to allow for taxonomic classification and robust similarity estimation via k<sub>aa</sub>mer containment.
 However, this property can be advantageous for functional similarity estimation, where k<sub>aa7</sub>mers may provide the ability to match gene sequence even across wider evolutionary distances.
 Indeed, this functionality has already begun to be explored, with k~aa7-mer functional annotation server <span class="citation" data-cites="1312j6vxL">[<a href="#ref-1312j6vxL" role="doc-biblioref">13</a>]</span>.</p>
-<h3 id="assembly-and-alignment-free-amino-acid-identity-estimation">Assembly and Alignment-free Amino Acid Identity estimation</h3>
+<h3 id="fracminhash-kaa-mer-sketches-support-whole-proteome-analysis-at-scale">FracMinHash k<sub>aa</sub>-mer sketches support whole-proteome analysis at scale</h3>
+<p>All of the k<sub>aa</sub>mer methods described here function with all dataset k<sub>aa</sub>mers.
+However, our results show that leveraging sketching methods such as FracMinHash and that retain as few as 5% of microbial proteome k-mers (<span class="math inline">\(scaled=200\)</span>) maintains accuracy of k<sub>aa</sub>mer containment comparisons while reducing runtime, memory, and storage requirements.
+Smaller proteomes such as viral proteomes and read-level or contig-level analysis may require different fractional scaling or different approach to ensure sufficient k<sub>aa</sub>mers for accurate comparisons.
+While we have focused on FracMinHash sketching, these k<sub>aa</sub>mer comparisons can be used with any sketch that enables containment estimation.
+Comparisons between sets of similar sizes or without 6-frame translation of protein k-mers can also use Jaccard to estimate <span class="math inline">\(cAAI\)</span>, though Containment comparisons will always be as or more accurate than Jaccard comparisons <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">20</a>]</span>.</p>
+<h3 id="caai-estimates-amino-acid-identity-and-alignment-fraction"><span class="math inline">\(cAAI\)</span> estimates Amino Acid Identity and Alignment Fraction</h3>
 <p>Amino Acid Identity (AAI) is a measure of average protein similarity between the homologous regions of two proteomes.
 Traditional AAI methods use BLAST or BLAST-like alternatives to identify homologous fragments for comparison.
-K-mer containment, which is the fraction of k-mers shared with the comparison dataset, can be used to obtain an alignment-free estimate of similarity<span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">20</a>]</span>.
-Applying this method to amino acid k<sub>aa</sub>mers yields <span class="math inline">\(cAAI\)</span> values that strongly correlate with alignment-based AAI values.
-Furthermore, <span class="math inline">\(cAAI\)</span> is also strongly correlated with the alignment fraction reported by BLASTp AAI (as executed by EzAAI), suggesting that <span class="math inline">\(cAAI\)</span> produces an aggregated similarity measure that represents both protome similarity and the fraction of shared sequence.
-<span class="math inline">\(k~aa7~ cAAI\)</span> is more closely related to BLASTp values, but saturates at distances greater than ~65% similarity.
-<span class="math inline">\(k~aa10~ cAAI\)</span>, while differing more from BLASTP reference remains widely useful for even comparisons between organisms in different domains (e.g. Bacteria vs Archaea).</p>
+K-mer Jaccard and containment have been used for estimating average nucleotide identity between genomes <span class="citation" data-cites="JkctHcv5 mH9pzoIn fCWtHkDP">[<a href="#ref-mH9pzoIn" role="doc-biblioref">1</a>,<a href="#ref-JkctHcv5" role="doc-biblioref">16</a>,<a href="#ref-fCWtHkDP" role="doc-biblioref">20</a>]</span>.
+While several studies have proposed utilization of more complex evolutionary models, the simple mutational model seems to closely approximate alignment-based estimtates of Average Nucleotide Identity (ANI) <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">20</a>]</span>.
+Applying this same simple mutational model to amino acid k<sub>aa</sub>mer containment yields <span class="math inline">\(cAAI\)</span> values that strongly correlate with alignment-based AAI values.</p>
+<p>For many alignment-based AAI approaches, it is important to report both the percent identity of matched regions and the fraction of the genomes that were mapped.
+This prevents believing artificially high similarity values when only small fractions of the genomes overlap.
+While alignment <span class="math inline">\(AAI\)</span> measure sequence similarity, $k<sub>aa</sub>mer containment, the fraction of shared dataset $k<sub>aa</sub>mers, is closer to a proxy for the fraction of shared proteome.
+Indeed, <span class="math inline">\(cAAI\)</span> is strongly correlated with the alignment fraction reported by BLASTp AAI (as executed by EzAAI <span class="citation" data-cites="RBej4r7Y">[<a href="#ref-RBej4r7Y" role="doc-biblioref">25</a>]</span>), suggesting that <span class="math inline">\(cAAI\)</span> represents an aggregated similarity measure that encompasses both amino acid similarity and the fraction of shared protein sequence.
+$K<sub>aa</sub>mer length selection remains critical, as discussed for direct k<sub>aa</sub>mer Containment comparisons.
+while <span class="math inline">\(k~aa7~ cAAI\)</span> is more closely related to BLASTp values, k<sub>aa</sub>mer similarity saturates at distances greater than ~65% AAI.
+While <span class="math inline">\(cAAI~kaa10~\)</span> are slightly offset from traditional <span class="math inline">\(AAI\)</span> values, k<sub>aa10</sub> comparisons enable consistent whole-proteome similarity estimation even out to the widest evolutionary distances.
+As with Average Nucleotide Identity comparisons, different AAI approaches vary slightly in the AAI reported for a given pair of proteomes, suggesting that comparisons are best made between values produced by the same method <span class="citation" data-cites="dSGphCw7">[<a href="#ref-dSGphCw7" role="doc-biblioref">26</a>]</span>.</p>
+<p>The majority of AAI estimation software has focused been alignment-based comparisons, which has limited comparisons at scale.
+Larger-scale comparisons have leveraged similarity estimation across single-copy universally conserved genes <span class="citation" data-cites="8ySYk9WQ">[<a href="#ref-8ySYk9WQ" role="doc-biblioref">27</a>]</span>.
+A recent extension of this concept introduced <span class="math inline">\(\widehat{AAI}\)</span> which can use tetramer frequency of universal single-copy proteins to obtain an estimate of AAI.
+Recent introduction of AAI proxy estimation via single-copy protein tetramers (<span class="math inline">\(FastAAI)\)</span> provides a promising alternative that enables AAI estimation for hundreds of thousands of comparisons <span class="citation" data-cites="eIV0sg3w">[<a href="#ref-eIV0sg3w" role="doc-biblioref">28</a>]</span>.
+FracMinHash k<sub>aa</sub>mer subsampling allows <span class="math inline">\(cAAI\)</span> to operate at a similar scale while encompassing information from across the whole proteome and allowing estimation directly from read datasets.
+Whole proteome k<sub>aa</sub>mer comparisons average information across fast and slow-evolving genes, do not require prior selection of appropriate universal protein sets, and have the advantage of being assembly-agnostic.
+However, speed of these comparisons depends on the FracMinHash k<sub>aa</sub>mer subsampling rate.</p>
+<p><em>For GTDB-wide comparisons, FracMinHash subsampling of XX% of k<sub>aa</sub>mers per proteome allowed XXX,XXX pairwise comparisons in XX time.</em>
+<!--
+(to do: find maximal scaled value that maintains accuracy. Note that we may not want to use this scaled for fragmented/incomplete proteomes or for read datasets --test independently)
+---></p>
 <!---
-As with Average Nucleotide Identity comparisons, different AAI approaches vary slightly in the AAI reported for a given pair of proteomes, suggesting that comparisons are best made between values produced by the same method (cite: Palmer 2020, AAI comparison paper?).
+(cite: also cite AAI comparison paper? Rodriguez?).
 --->
-<p>Kaa-mer estimation of Amino Acid Identity (AAI) correlates well with mapping-based AAI approaches, while requiring far less memory and computation.</p>
-<p>For many alignment-based AAI approaches, it is important to report both the percent identity of matched regions and the fraction of the genomes that were mapped. This prevents believing artificially high similarity values when only small fractions of the genomes overlap. In contrast, containment-based AAI by necessity considers all of the sequence of at least one of the two genomes, as the containment measure is the matched k-mers divided by the total k-mers in the query genome. Since containment is directional, when both proteomes are equally trusted (e.g. neither set of protein k-mers is being 6-frame translated from genome sequence), then the average containment considers the entire set of protein sequence from both proteomes. While the AAI value is based on this measure, it may be useful to also consider/report the percent containment of each proteome alongside the AAI value, as this describes the percent of each proteome that matched.</p>
 <!---
-While several studies have proposed utilization of more complex evolutionary models, the simple mutational model accurately estimates nucleotide similarity when compared with mapping-based estimates [@dk_fracminhash].
-
-
 Now, compare with FastAAI -- whole proteome vs core genes
 compare aith MiGa
 
 There is one other method that can function at large scale: MIGA webserver (paper has 11,000 pairwise comparisons) -- and this method uses hAAI (heuristic AAI), only doing complete AAI if/wehn the hAAI cannot be estimated or is >= 90% ("close to saturation"). MiGA "applies a hierarchical approach: hAAI, AAI, then ANI" to identify the best match genome/proteome.
 AAI thresholds have been proposed for higher taxonomic ranks, <45%, 45-65% and 65-95% for family, genus, and species [@doi:10.1016/j.mib.2007.08.006; @doi:10.1038/ismej.2017.113].
+
+MiGA estimates AAI in pairs of genomes with hAAI below 90% as:
+AAI_%≈100-e^(2.435076+0.4275193∙ln⁡(100-hAAI_%))
+
+Differences between AAI values estimated via $\widehat{AAI}$ and $cAAI$ may reflect the differing information they compare -- universal gene similarity vs whole proteome k~aa~mer containment, and both may be useful for conducting proteome analyses at scale.
+
 --->
 <!---
 diffs vs fastaai:
@@ -541,13 +551,7 @@ diffs vs fastaai:
 - 
 Here we could envision doing this with protein k-mers doing a quick high-scaled proteome search to find the right family, then doing a more detailed DNA/genome analysis.
 --->
-<h3 id="fracminhash-kaa-mer-sketches-support-whole-proteome-analysis-at-scale">FracMinHash k<sub>aa</sub>-mer sketches support whole-proteome analysis at scale</h3>
-<p>All of the k<sub>aa</sub>mer methods described here function with all dataset k<sub>aa</sub>mers.
-However, our results show that leveraging sketching methods such as FracMinHash and that retain as few as 5% of microbial proteome k-mers (<span class="math inline">\(scaled=200\)</span>) maintains accuracy of k<sub>aa</sub>mer containment comparisons while reducing runtime, memory, and storage requirements.
-Smaller proteomes such as viral proteomes and read-level or contig-level analysis may require different fractional scaling or different approach to ensure sufficient k<sub>aa</sub>mers for accurate comparisons.
-While we have focused on FracMinHash sketching, these k<sub>aa</sub>mer comparisons can be used with any sketch that enables containment estimation.
-Comparisons between sets of similar sizes or without 6-frame translation of protein k-mers can also use Jaccard to estimate <span class="math inline">\(cAAI\)</span>, though Containment comparisons will always be as or more accurate than Jaccard comparisons <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">20</a> ??]</span>.</p>
-<h3 id="taxonomic-assignment-is-database-dependent">Taxonomic Assignment is database-dependent</h3>
+<h3 id="kaamer-taxonomic-assignment-is-database-dependent">k<sub>aa</sub>mer Taxonomic Assignment is database-dependent</h3>
 <p><em>(but protein helps with sensitivity + min-set-cov helps with specificity)</em></p>
 <!---
 discuss in relation to: Kaiju, CAT/BAT, MEGAN-prot, MMSeqs taxonomy (+ probably move some of this to intro)
@@ -566,10 +570,14 @@ min-set-cov - low false pos
 fracminhash - faster, smaller databases (though might need to increase scaled value)
 --->
 <h3 id="limitations">Limitations</h3>
-<ul>
-<li>Comparing two 6-frame translated datasets is not recommended, as there is no mechanism to exclude erroneous k-mers introduced during translation.</li>
-<li>by using proteins, we’re only looking at coding regions/ignoring noncoding (same as with all protein analyses)</li>
-</ul>
+<p>While k<sub>aa</sub>mer containment allows protein analysis directly from DNA reads, it cannot be used for comparisons between two 6-frame translated datasets.
+In this case, there is no way to distinguish between true biological k<sub>aa</sub>mers and noisy k<sub>aa</sub>mers introduced by translation into all potential open reading frames.
+AAI is often most useful when comparing to known or assembled genomes, and does not have a direct application for comparisons between two unassembled metagenomic datasets.
+If desired, it is possible to use a k<sub>aa</sub>mer Containment strategy to select the most likely translation frame for each read, which can be used for downstream analyses.
+If instead, k<sub>aa</sub>mers are generated for each translation frame of each read separately, Containment comparisons can again be used to find the fraction of these k<sub>aa</sub>mers that can be matched to the k<sub>aa</sub>mers in the reference database.
+The translation frame with the highest percent of matched k<sub>aa</sub>mers is most likely to be the coding frame for that read.
+These strategy can also be used to predict non-coding reads, where few, if any, translated k<sub>aa</sub>mers match to reference database k<sub>aa</sub>mers.
+This method works best when there are closely related organisms present in the reference database (<span class="citation" data-cites="TO2yVgRA">[<a href="#ref-TO2yVgRA" role="doc-biblioref">29</a>]</span>; <span class="citation" data-cites="T2ylGIH0">[<a href="#ref-T2ylGIH0" role="doc-biblioref">30</a>]</span>).</p>
 <h3 id="future-directions-and-utility">Future directions and utility</h3>
 <ul>
 <li>functional comparisons</li>
@@ -636,7 +644,6 @@ FracMinHash systematically subsamples amino acid k-mers, facilitating large-scal
 For most microbes, fractional subsampling of 1/200 k-mers is sufficient for accurate distance estimation and taxonomic classification.
 
 
-
 evolpath containment values --driven by the k-mer frequency patterns observed in gtdb db...
 --->
 <!---
@@ -651,6 +658,23 @@ After finding the best match, all matched k-mers are removed for the query in or
 FracMinHash sketches enable estimation of the Containment Index in addition to the more commonly used Jaccard Index. Unlike Jaccard comparisons, which estimate the similarity between sets, containment estimates are relative to each individual set. When both proteomes are equally trusted, the directional containment can be averaged, as done for BLAST-based AAI's(CITE?), which can differ depending on the direction of alignment. In contrast, when one set is highly trusted, such as a reference genome or proteome, the containment relative to that set may be most informative. 
 
 --->
+<!---
+Below, we discuss amino acid k-mers and FracMinHash protein sketches for both assembly-based and assembly-free metagenomic analyses.
+
+
+re: orpheum:  Although some data may be lost during the frame selection step, k~aa~mer Amino Acid Identity estimation may be feasible for comparisons between read datasets translated in this manner.
+--->
+<!---
+AAI doesn't really make sense for read <> read datasets.
+--->
+<!---
+it provides a useful alignment-free and assembly-free method for assessing
+In contrast, $k~aa10~ cAAI$ remains widely useful for even comparisons between organisms in different domains (e.g. Bacteria vs Archaea).
+--->
+<!---
+FracMinHash $cAAI$ enables fast and low-memory AAI estimation, allowing whole-proteome comparisons across entire databases, including hundreds of thousands of comparisons.
+
+--->
 <h2 id="conclusions">Conclusions</h2>
 <p>Protein search has long been used for comparisons conducted at increased evolutionary distances.
 Using genomes from the Genome Taxonomy Database (GTDB) we showcase the utility of amino acid k<sub>aa</sub>-mer comparisons for alignment-free and assembly-free proteome similarity estimation and taxonomic classification.
@@ -658,12 +682,13 @@ Subsampling k<sub>aa</sub>mers using FracMinHash sketching makes global protein 
 <!--
 Containment-based pairwise distance estimation via FracMinhash enables accurate alignment-free and assembly-free phylogenomic reconstruction and taxonomic classification across a wide range of evolutionary distances.
 While here we have focused on demonstrating utility of amino acid k-mers for global proteome similarity, the correlation of unique amino acid 10-mers with genes should enable gene-level analyses, if sketching with sufficient k-mers.
+FracMinHash $cAAI$ enables fast and low-memory AAI estimation, allowing whole-proteome comparisons across entire databases, including hundreds of thousands of comparisons.
 --->
 <h2 id="methods">Methods</h2>
 <h3 id="large-scale-k-mer-comparisons-with-fracminhash-sketches">Large-scale k-mer comparisons with FracMinHash sketches</h3>
-<p>FracMinHash sketching, as implemented in sourmash <span class="citation" data-cites="IadOz4ol ART4gJKs ExvjTLL3">[<a href="#ref-IadOz4ol" role="doc-biblioref">12</a>,<a href="#ref-ART4gJKs" role="doc-biblioref">27</a>,<a href="#ref-ExvjTLL3" role="doc-biblioref">28</a>]</span>, is a MinHash variant that uses a scaling factor to subsample the unique k-mers in the dataset to the chosen fraction (1/<code>scaled</code>).
+<p>FracMinHash sketching, as implemented in sourmash <span class="citation" data-cites="IadOz4ol ART4gJKs ExvjTLL3">[<a href="#ref-IadOz4ol" role="doc-biblioref">12</a>,<a href="#ref-ART4gJKs" role="doc-biblioref">31</a>,<a href="#ref-ExvjTLL3" role="doc-biblioref">32</a>]</span>, is a MinHash variant that uses a scaling factor to subsample the unique k-mers in the dataset to the chosen fraction (1/<code>scaled</code>).
 As k-mers are randomized prior to systematic subsampling, FracMinHash sketches are representative subsets that can be used for comparisons across datasets sketched with consistent k-mer lengths and scaling factors.</p>
-<p>While FracMinHash sketches can be used to estimate both the Jaccard Index <span class="citation" data-cites="mH9pzoIn">[<a href="#ref-mH9pzoIn" role="doc-biblioref">1</a>]</span> and Containment Index <span class="citation" data-cites="s8orJ7KE">[<a href="#ref-s8orJ7KE" role="doc-biblioref">18</a>]</span>, containment has been shown to permit more accurate estimation of genomic distance when genomes or datasets differ in size <span class="citation" data-cites="s8orJ7KE 10ppWuOJ6 1Drcez76Y PtQJ26jG">[<a href="#ref-s8orJ7KE" role="doc-biblioref">18</a>,<a href="#ref-10ppWuOJ6" role="doc-biblioref">19</a>,<a href="#ref-1Drcez76Y" role="doc-biblioref">29</a>,<a href="#ref-PtQJ26jG" role="doc-biblioref">30</a>]</span>.
+<p>While FracMinHash sketches can be used to estimate both the Jaccard Index <span class="citation" data-cites="mH9pzoIn">[<a href="#ref-mH9pzoIn" role="doc-biblioref">1</a>]</span> and Containment Index <span class="citation" data-cites="s8orJ7KE">[<a href="#ref-s8orJ7KE" role="doc-biblioref">18</a>]</span>, containment has been shown to permit more accurate estimation of genomic distance when genomes or datasets differ in size <span class="citation" data-cites="s8orJ7KE 10ppWuOJ6 1Drcez76Y PtQJ26jG">[<a href="#ref-s8orJ7KE" role="doc-biblioref">18</a>,<a href="#ref-10ppWuOJ6" role="doc-biblioref">19</a>,<a href="#ref-1Drcez76Y" role="doc-biblioref">33</a>,<a href="#ref-PtQJ26jG" role="doc-biblioref">34</a>]</span>.
 We focus here on the utility of containment comparisons for similarity estimation.
 Containment comparisons are directional: the containment of genome A in sample B is the interection of k-mers in A and B divided by the k-mers in genome A (and vice versa).
 Thus, two containment values can be estimated for a given pairwise comparison.
@@ -696,7 +721,7 @@ Since 6-frame translation should always yield excess k-mers relative to genomes 
 Note that comparing two 6-frame translated datasets is not recommended, as there is no mechanism to exclude erroneous k-mers introduced during translation.</p>
 <h3 id="estimating-average-amino-acid-identity">Estimating Average Amino Acid Identity</h3>
 <p>MinHash Sketch Jaccard has been shown to correlate well with ANI at high sequence identities (&gt;=90% sequence identity) <span class="citation" data-cites="mH9pzoIn">[<a href="#ref-mH9pzoIn" role="doc-biblioref">1</a>]</span>.
-Recently, Blanca et al, 2021 <span class="citation" data-cites="cMPL2ulo">[<a href="#ref-cMPL2ulo" role="doc-biblioref">31</a>]</span> presented a method to increase the accuracy of sequence similarity estimation from MinHash Jaccard by recognizing that k-mers generated from mutated sequence are not independent.
+Recently, Blanca et al, 2021 <span class="citation" data-cites="cMPL2ulo">[<a href="#ref-cMPL2ulo" role="doc-biblioref">35</a>]</span> presented a method to increase the accuracy of sequence similarity estimation from MinHash Jaccard by recognizing that k-mers generated from mutated sequence are not independent.
 Hera et al, 2022 <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">20</a>]</span> extended this approach to estimate sequence identity from FracMinHash Containment estimates.
 Each of these methods assumes a simple mutational model, with equal substitution probability for each nucleotide, and then estimates sequence identity based on k-mer comparisons.
 Here, we note that there is nothing unique to nucleotide sequence included in these equations.
@@ -709,19 +734,19 @@ For this application, we maintain the assumption of a simple mutational model of
 <p>The equation for sequence similarity estimation (ANI or AAI) from FracMinHash Containment is reproduced here for completeness (see <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">20</a>]</span> for details).</p>
 <p>See <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">20</a>]</span> for these and other analytical details.</p>
 <h3 id="immplementation-of-ani-and-aai-estimation">Immplementation of ANI and AAI estimation</h3>
-<p>We provide an implementation of Fractional Containment to average sequence identity (ANI/AAI) in the software package <code>sourmash</code>, which is implemented in Python and Rust and developed under the BSD license <span class="citation" data-cites="ART4gJKs ExvjTLL3">[<a href="#ref-ART4gJKs" role="doc-biblioref">27</a>,<a href="#ref-ExvjTLL3" role="doc-biblioref">28</a>]</span>.
+<p>We provide an implementation of Fractional Containment to average sequence identity (ANI/AAI) in the software package <code>sourmash</code>, which is implemented in Python and Rust and developed under the BSD license <span class="citation" data-cites="ART4gJKs ExvjTLL3">[<a href="#ref-ART4gJKs" role="doc-biblioref">31</a>,<a href="#ref-ExvjTLL3" role="doc-biblioref">32</a>]</span>.
 ANI and AAI values can be reported from sequence comparisons
 The distance estimation equations can be found in the <code>distance_utils.py</code> file and ANI/AAI values can be reported from a variety of <code>sourmash</code> comparison and search commands as of version <code>4.4</code>.
 sourmash is available at <a href="https://github.com/sourmash-bio/sourmash/">github.com/sourmash-bio/sourmash</a>.
 The results in this paper were generated with sourmash v4.4.1.</p>
 <h3 id="fracminhash-amino-acid-identity-correlates-with-alignment-based-methods">FracMinHash Amino Acid Identity Correlates with Alignment-based Methods</h3>
 <p>To assess whether k-mer methods can be used to approximate AAI, we ran generated alignment AAI values for each pairwise comparison using methods that leverage different mapping algorithms: EzAAIb (BLASTp), EzAAIm (MMSeqs2), and CompareM (DIAMOND). As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values.</p>
-<p>EzAAI v1.12 <span class="citation" data-cites="doi">[<a href="#ref-doi" role="doc-biblioref"><strong>doi?</strong></a> 10.1007/s12275-021-1154-0]</span> was used to run BLAST-based and MMSeqs-based Amino Acid Identity. The EzAAI workflow begins with PRODIGAL-based translation of genome sequence <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span>, followed by reciprocal BLAST <span class="citation" data-cites="doi">[<a href="#ref-doi" role="doc-biblioref"><strong>doi?</strong></a> 10.1016/S0022-2836(05)80360-2]</span> or MMSeqs2 <span class="citation" data-cites="jj6qOofE">[<a href="#ref-jj6qOofE" role="doc-biblioref">32</a>]</span> alignment. For both, we utilized EzAAI default parameters: 40% coverage threshold, 40% sequence identity threshold.
-CompareM v0.1.2 (<span class="citation" data-cites="auqG5mhy">[<a href="#ref-auqG5mhy" role="doc-biblioref">33</a>]</span>; run with <code>--sensitive</code> parameter for DIAMOND mapping) was used to obtain Average Amino Acid Identity between the anchor proteome and each additional proteome in its evolutionary path.
+<p>EzAAI v1.12 <span class="citation" data-cites="doi">[<a href="#ref-doi" role="doc-biblioref"><strong>doi?</strong></a> 10.1007/s12275-021-1154-0]</span> was used to run BLAST-based and MMSeqs-based Amino Acid Identity. The EzAAI workflow begins with PRODIGAL-based translation of genome sequence <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span>, followed by reciprocal BLAST <span class="citation" data-cites="doi">[<a href="#ref-doi" role="doc-biblioref"><strong>doi?</strong></a> 10.1016/S0022-2836(05)80360-2]</span> or MMSeqs2 <span class="citation" data-cites="jj6qOofE">[<a href="#ref-jj6qOofE" role="doc-biblioref">36</a>]</span> alignment. For both, we utilized EzAAI default parameters: 40% coverage threshold, 40% sequence identity threshold.
+CompareM v0.1.2 (<span class="citation" data-cites="auqG5mhy">[<a href="#ref-auqG5mhy" role="doc-biblioref">37</a>]</span>; run with <code>--sensitive</code> parameter for DIAMOND mapping) was used to obtain Average Amino Acid Identity between the anchor proteome and each additional proteome in its evolutionary path.
 CompareM reports the mean and standard deviation of AAI, as well as the fraction of orthologous genes upon which this estimate is based.
 Briefly, CompareM calls genes for each genome or proteome using PRODIGAL <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span> and conducts reciprocal best-hit mapping via DIAMOND <span class="citation" data-cites="lX665mdh">[<a href="#ref-lX665mdh" role="doc-biblioref">15</a>]</span>.
 By default, CompareM requires at least 30% percent sequence identity and 70% percent alignment length to identify orthologous genes.
-As DIAMOND alignment-based homology identification may correlate less well with BLAST-based homology under 60% sequence identity <span class="citation" data-cites="18uVBOfA0">[<a href="#ref-18uVBOfA0" role="doc-biblioref">34</a>/]</span>, <strong>we also ran compareM with a percent sequence identity threshold of 60% to obtain a set of high-confidence orthologous genes for AAI estimation. We report correlation between FracMinHash AAI estimation and each of these compareM parameter sets in XX <em>(TBD)</em></strong>. <em>CompareM was also used to obtain AAI values directly from each genome, using PRODIGAL to translate sequences prior to gene calling. These results [were not significantly different from proteome-based AAI estimation??] (Supplemental XX).</em></p>
+As DIAMOND alignment-based homology identification may correlate less well with BLAST-based homology under 60% sequence identity <span class="citation" data-cites="18uVBOfA0">[<a href="#ref-18uVBOfA0" role="doc-biblioref">38</a>/]</span>, <strong>we also ran compareM with a percent sequence identity threshold of 60% to obtain a set of high-confidence orthologous genes for AAI estimation. We report correlation between FracMinHash AAI estimation and each of these compareM parameter sets in XX <em>(TBD)</em></strong>. <em>CompareM was also used to obtain AAI values directly from each genome, using PRODIGAL to translate sequences prior to gene calling. These results [were not significantly different from proteome-based AAI estimation??] (Supplemental XX).</em></p>
 <h3 id="taxonomic-classification-with-sourmash-gather-and-taxonomy">Taxonomic Classification with Sourmash <code>Gather</code> and <code>Taxonomy</code></h3>
 <p>To take advantage of the increased evolutionary distance comparisons offered by protein k-mers, we apply compositional analysis with sourmash gather <span class="citation" data-cites="IadOz4ol">[<a href="#ref-IadOz4ol" role="doc-biblioref">12</a>]</span> to protein sequences (amino acid input and 6-frame translation from nucleotides).
 Sourmash gather is conducted in two parts: first (preselection), gather searches the query against all reference genomes, building all genomes with matches into a smaller, in-memory database for use in step 2.
@@ -730,10 +755,10 @@ In this way, gather reports the minimal list of reference genomes that contain a
 For queries with high sequence identity (ANI) to reference matches, we classify the query sequence as a member of the reference taxonomic group, as in <span class="citation" data-cites="IadOz4ol">[<a href="#ref-IadOz4ol" role="doc-biblioref">12</a>]</span>.
 However, when ANI between the query and the top reference match exceeds the taxonomic rank threshold (e.g. species default 95%), we use a least/lowest common ancestor (LCA) approach to report likely taxonomy at a higher taxonomic rank.
 Briefly, as gather reports non-overlapping genome matches, we can sum the k-mer matches for all genomes with shared taxonomies at the next higher taxonomic rank to report the best query containment at that rank.
-As this gather-LCA approach first uniquely assigns k-mers to their best reference genome, it bypasses the impact of increasing database size on taxonomic assignment observed for other LCA-based k-mer classification approaches <span class="citation" data-cites="j7nehrZT">[<a href="#ref-j7nehrZT" role="doc-biblioref">35</a>]</span>.</p>
+As this gather-LCA approach first uniquely assigns k-mers to their best reference genome, it bypasses the impact of increasing database size on taxonomic assignment observed for other LCA-based k-mer classification approaches <span class="citation" data-cites="j7nehrZT">[<a href="#ref-j7nehrZT" role="doc-biblioref">39</a>]</span>.</p>
 <p>These taxonomic utilities are implemented in the <code>sourmash taxonomy</code> module, and classifications were run on gather output via <code>sourmash tax genome</code>.</p>
 <h3 id="workflows-and-computing-resources">Workflows and Computing Resources</h3>
-<p>Reproducible workflows associated with this paper are available at https://github.com/bluegenes/2022-protein-kmers-workflow (ADD DOI for release), with datasets available at OSF (XX). All workflows were executed using snakemake &gt;= 5.26 <span class="citation" data-cites="fVLvtRTc">[<a href="#ref-fVLvtRTc" role="doc-biblioref">36</a>)]</span> on the FARM cluster at UC Davis, using practices outlined in <span class="citation" data-cites="q9c75jWY">[<a href="#ref-q9c75jWY" role="doc-biblioref">37</a>]</span>.</p>
+<p>Reproducible workflows associated with this paper are available at https://github.com/bluegenes/2022-protein-kmers-workflow (ADD DOI for release), with datasets available at OSF (XX). All workflows were executed using snakemake &gt;= 5.26 <span class="citation" data-cites="fVLvtRTc">[<a href="#ref-fVLvtRTc" role="doc-biblioref">40</a>)]</span> on the FARM cluster at UC Davis, using practices outlined in <span class="citation" data-cites="q9c75jWY">[<a href="#ref-q9c75jWY" role="doc-biblioref">41</a>]</span>.</p>
 <!---
 Unused
 
@@ -890,44 +915,56 @@ FastANI is targeted at ANI values between 80%-100%, so only values in this range
 <div id="ref-13saJolbd" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">24. </div><div class="csl-right-inline"><strong>GTDB-Tk: a toolkit to classify genomes with the Genome Taxonomy Database</strong> <div class="csl-block">Pierre-Alain Chaumeil, Aaron J Mussig, Philip Hugenholtz, Donovan H Parks</div> <em>Bioinformatics</em> (2019-11-15) <a href="https://doi.org/ggc9dd">https://doi.org/ggc9dd</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/bioinformatics/btz848">10.1093/bioinformatics/btz848</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31730192">31730192</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7703759">PMC7703759</a></div></div>
 </div>
+<div id="ref-RBej4r7Y" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline"><strong>Introducing EzAAI: a pipeline for high throughput calculations of prokaryotic average amino acid identity</strong> <div class="csl-block">Dongwook Kim, Sein Park, Jongsik Chun</div> <em>Journal of Microbiology</em> (2021-05) <a href="https://doi.org/gqhr2f">https://doi.org/gqhr2f</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1007/s12275-021-1154-0">10.1007/s12275-021-1154-0</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/33907973">33907973</a></div></div>
+</div>
+<div id="ref-dSGphCw7" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline"><strong>All ANIs are not created equal: implications for prokaryotic species boundaries and integration of ANIs into polyphasic taxonomy</strong> <div class="csl-block">Marike Palmer, Emma T Steenkamp, Jochen Blom, Brian P Hedlund, Stephanus N Venter</div> <em>International Journal of Systematic and Evolutionary Microbiology</em> (2020-04-01) <a href="https://doi.org/gqhr2g">https://doi.org/gqhr2g</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1099/ijsem.0.004124">10.1099/ijsem.0.004124</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/32242793">32242793</a></div></div>
+</div>
+<div id="ref-8ySYk9WQ" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline"><strong>The Microbial Genomes Atlas (MiGA) webserver: taxonomic and gene diversity analysis of Archaea and Bacteria at the whole genome level</strong> <div class="csl-block">Luis M Rodriguez-R, Santosh Gunturu, William T Harvey, Ramon Rosselló-Mora, James M Tiedje, James R Cole, Konstantinos T Konstantinidis</div> <em>Nucleic Acids Research</em> (2018-07-02) <a href="https://doi.org/ghjn7m">https://doi.org/ghjn7m</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/nar/gky467">10.1093/nar/gky467</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29905870">29905870</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6031002">PMC6031002</a></div></div>
+</div>
+<div id="ref-eIV0sg3w" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline"><strong>FastAAI: Efficient Estimation of Genome Average Amino Acid Identity and Phylum-level relationships using Tetramers of Universal Proteins</strong> <div class="csl-block">Konstantinos Konstantinidis, Carlos Ruiz-Perez, Kenji Gerhardt, Luis Rodriguez-R, Chirag Jain, James Tiedje, James Cole</div> <em>In Review</em> (2022-03-23) <a href="https://doi.org/gqhr2h">https://doi.org/gqhr2h</a> <div class="csl-block">DOI: <a href="https://doi.org/10.21203/rs.3.rs-1459378/v1">10.21203/rs.3.rs-1459378/v1</a></div></div>
+</div>
 <div id="ref-TO2yVgRA" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">25. </div><div class="csl-right-inline"><strong>Single-cell transcriptomics for the 99.9% of species without reference genomes</strong> <div class="csl-block">Olga Borisovna Botvinnik, Venkata Naga Pranathi Vemuri, NTessa Pierce, Phoenix Aja Logan, Saba Nafees, Lekha Karanam, Kyle Joseph Travaglini, Camille Sophie Ezran, Lili Ren, Yanyi Juang, … CTitus Brown</div> <em>Bioinformatics</em> (2021-07-10) <a href="https://doi.org/gns4sg">https://doi.org/gns4sg</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2021.07.09.450799">10.1101/2021.07.09.450799</a></div></div>
+<div class="csl-left-margin">29. </div><div class="csl-right-inline"><strong>Single-cell transcriptomics for the 99.9% of species without reference genomes</strong> <div class="csl-block">Olga Borisovna Botvinnik, Venkata Naga Pranathi Vemuri, NTessa Pierce, Phoenix Aja Logan, Saba Nafees, Lekha Karanam, Kyle Joseph Travaglini, Camille Sophie Ezran, Lili Ren, Yanyi Juang, … CTitus Brown</div> <em>Bioinformatics</em> (2021-07-10) <a href="https://doi.org/gns4sg">https://doi.org/gns4sg</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2021.07.09.450799">10.1101/2021.07.09.450799</a></div></div>
 </div>
 <div id="ref-T2ylGIH0" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">26. </div><div class="csl-right-inline"><strong>Protein k-mers enable assembly-free microbial metapangenomics</strong> <div class="csl-block">Taylor E Reiter, NTessa Pierce-Ward, Luiz Irber, Olga Borisovna Botvinnik, CTitus Brown</div> <em>Bioinformatics</em> (2022-06-27) <a href="https://doi.org/gqfjbh">https://doi.org/gqfjbh</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2022.06.27.497795">10.1101/2022.06.27.497795</a></div></div>
+<div class="csl-left-margin">30. </div><div class="csl-right-inline"><strong>Protein k-mers enable assembly-free microbial metapangenomics</strong> <div class="csl-block">Taylor E Reiter, NTessa Pierce-Ward, Luiz Irber, Olga Borisovna Botvinnik, CTitus Brown</div> <em>Bioinformatics</em> (2022-06-27) <a href="https://doi.org/gqfjbh">https://doi.org/gqfjbh</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2022.06.27.497795">10.1101/2022.06.27.497795</a></div></div>
 </div>
 <div id="ref-ART4gJKs" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">27. </div><div class="csl-right-inline"><strong>Large-scale sequence comparisons with sourmash</strong> <div class="csl-block">NTessa Pierce, Luiz Irber, Taylor Reiter, Phillip Brooks, CTitus Brown</div> <em>F1000Research</em> (2019-07-04) <a href="https://doi.org/gf9v84">https://doi.org/gf9v84</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.19675.1">10.12688/f1000research.19675.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31508216">31508216</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6720031">PMC6720031</a></div></div>
+<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>Large-scale sequence comparisons with sourmash</strong> <div class="csl-block">NTessa Pierce, Luiz Irber, Taylor Reiter, Phillip Brooks, CTitus Brown</div> <em>F1000Research</em> (2019-07-04) <a href="https://doi.org/gf9v84">https://doi.org/gf9v84</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.19675.1">10.12688/f1000research.19675.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31508216">31508216</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6720031">PMC6720031</a></div></div>
 </div>
 <div id="ref-ExvjTLL3" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">28. </div><div class="csl-right-inline"><strong>sourmash: a library for MinHash sketching of DNA</strong> <div class="csl-block">C Titus Brown, Luiz Irber</div> <em>The Journal of Open Source Software</em> (2016-09-14) <a href="https://doi.org/ghdrk5">https://doi.org/ghdrk5</a> <div class="csl-block">DOI: <a href="https://doi.org/10.21105/joss.00027">10.21105/joss.00027</a></div></div>
+<div class="csl-left-margin">32. </div><div class="csl-right-inline"><strong>sourmash: a library for MinHash sketching of DNA</strong> <div class="csl-block">C Titus Brown, Luiz Irber</div> <em>The Journal of Open Source Software</em> (2016-09-14) <a href="https://doi.org/ghdrk5">https://doi.org/ghdrk5</a> <div class="csl-block">DOI: <a href="https://doi.org/10.21105/joss.00027">10.21105/joss.00027</a></div></div>
 </div>
 <div id="ref-1Drcez76Y" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">29. </div><div class="csl-right-inline"><strong>Beware the Jaccard: the choice of &lt;b&gt;similarity measure&lt;/b&gt; is important and non-trivial in genomic colocalisation analysis</strong> <div class="csl-block">Stefania Salvatore, Knut Dagestad Rand, Ivar Grytten, Egil Ferkingstad, Diana Domanska, Lars Holden, Marius Gheorghe, Anthony Mathelier, Ingrid Glad, Geir Kjetil Sandve</div> <em>Briefings in Bioinformatics</em> (2020-09-25) <a href="https://doi.org/gjnvx4">https://doi.org/gjnvx4</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/bib/bbz083">10.1093/bib/bbz083</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31624847">31624847</a></div></div>
+<div class="csl-left-margin">33. </div><div class="csl-right-inline"><strong>Beware the Jaccard: the choice of &lt;b&gt;similarity measure&lt;/b&gt; is important and non-trivial in genomic colocalisation analysis</strong> <div class="csl-block">Stefania Salvatore, Knut Dagestad Rand, Ivar Grytten, Egil Ferkingstad, Diana Domanska, Lars Holden, Marius Gheorghe, Anthony Mathelier, Ingrid Glad, Geir Kjetil Sandve</div> <em>Briefings in Bioinformatics</em> (2020-09-25) <a href="https://doi.org/gjnvx4">https://doi.org/gjnvx4</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/bib/bbz083">10.1093/bib/bbz083</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/31624847">31624847</a></div></div>
 </div>
 <div id="ref-PtQJ26jG" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">30. </div><div class="csl-right-inline"><strong>The minimizer Jaccard estimator is biased and inconsistent*</strong> <div class="csl-block">Mahdi Belbasi, Antonio Blanca, Robert S Harris, David Koslicki, Paul Medvedev</div> <em>Bioinformatics</em> (2022-01-17) <a href="https://doi.org/gpm78w">https://doi.org/gpm78w</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2022.01.14.476226">10.1101/2022.01.14.476226</a></div></div>
+<div class="csl-left-margin">34. </div><div class="csl-right-inline"><strong>The minimizer Jaccard estimator is biased and inconsistent*</strong> <div class="csl-block">Mahdi Belbasi, Antonio Blanca, Robert S Harris, David Koslicki, Paul Medvedev</div> <em>Bioinformatics</em> (2022-01-17) <a href="https://doi.org/gpm78w">https://doi.org/gpm78w</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2022.01.14.476226">10.1101/2022.01.14.476226</a></div></div>
 </div>
 <div id="ref-cMPL2ulo" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">31. </div><div class="csl-right-inline"><strong>The statistics of &lt;i&gt;k&lt;/i&gt; -mers from a sequence undergoing a simple mutation process without spurious matches</strong> <div class="csl-block">Antonio Blanca, Robert S Harris, David Koslicki, Paul Medvedev</div> <em>Bioinformatics</em> (2021-01-17) <a href="https://doi.org/fq3g">https://doi.org/fq3g</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2021.01.15.426881">10.1101/2021.01.15.426881</a></div></div>
+<div class="csl-left-margin">35. </div><div class="csl-right-inline"><strong>The statistics of &lt;i&gt;k&lt;/i&gt; -mers from a sequence undergoing a simple mutation process without spurious matches</strong> <div class="csl-block">Antonio Blanca, Robert S Harris, David Koslicki, Paul Medvedev</div> <em>Bioinformatics</em> (2021-01-17) <a href="https://doi.org/fq3g">https://doi.org/fq3g</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1101/2021.01.15.426881">10.1101/2021.01.15.426881</a></div></div>
 </div>
 <div id="ref-jj6qOofE" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">32. </div><div class="csl-right-inline"><strong>MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets</strong> <div class="csl-block">Martin Steinegger, Johannes Söding</div> <em>Nature Biotechnology</em> (2017-11) <a href="https://doi.org/ggctnw">https://doi.org/ggctnw</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/nbt.3988">10.1038/nbt.3988</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29035372">29035372</a></div></div>
+<div class="csl-left-margin">36. </div><div class="csl-right-inline"><strong>MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets</strong> <div class="csl-block">Martin Steinegger, Johannes Söding</div> <em>Nature Biotechnology</em> (2017-11) <a href="https://doi.org/ggctnw">https://doi.org/ggctnw</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1038/nbt.3988">10.1038/nbt.3988</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/29035372">29035372</a></div></div>
 </div>
 <div id="ref-auqG5mhy" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">33. </div><div class="csl-right-inline"><strong>GitHub - dparks1134/CompareM: A toolbox for comparative genomics.</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/dparks1134/CompareM">https://github.com/dparks1134/CompareM</a></div>
+<div class="csl-left-margin">37. </div><div class="csl-right-inline"><strong>GitHub - dparks1134/CompareM: A toolbox for comparative genomics.</strong> <div class="csl-block">GitHub</div> <a href="https://github.com/dparks1134/CompareM">https://github.com/dparks1134/CompareM</a></div>
 </div>
 <div id="ref-18uVBOfA0" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">34. </div><div class="csl-right-inline"><strong>AAI: BLAST vs Diamond</strong> <div class="csl-block">LM Rodriguez-R</div> <a href="https://rodriguez-r.com/blog/aai-blast-vs-diamond/">https://rodriguez-r.com/blog/aai-blast-vs-diamond/</a></div>
+<div class="csl-left-margin">38. </div><div class="csl-right-inline"><strong>AAI: BLAST vs Diamond</strong> <div class="csl-block">LM Rodriguez-R</div> <a href="https://rodriguez-r.com/blog/aai-blast-vs-diamond/">https://rodriguez-r.com/blog/aai-blast-vs-diamond/</a></div>
 </div>
 <div id="ref-j7nehrZT" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">35. </div><div class="csl-right-inline"><strong>RefSeq database growth influences the accuracy of k-mer-based lowest common ancestor species identification</strong> <div class="csl-block">Daniel J Nasko, Sergey Koren, Adam M Phillippy, Todd J Treangen</div> <em>Genome Biology</em> (2018-12) <a href="https://doi.org/ggc9db">https://doi.org/ggc9db</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-018-1554-6">10.1186/s13059-018-1554-6</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30373669">30373669</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6206640">PMC6206640</a></div></div>
+<div class="csl-left-margin">39. </div><div class="csl-right-inline"><strong>RefSeq database growth influences the accuracy of k-mer-based lowest common ancestor species identification</strong> <div class="csl-block">Daniel J Nasko, Sergey Koren, Adam M Phillippy, Todd J Treangen</div> <em>Genome Biology</em> (2018-12) <a href="https://doi.org/ggc9db">https://doi.org/ggc9db</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1186/s13059-018-1554-6">10.1186/s13059-018-1554-6</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/30373669">30373669</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6206640">PMC6206640</a></div></div>
 </div>
 <div id="ref-fVLvtRTc" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">36. </div><div class="csl-right-inline"><strong>Sustainable data analysis with Snakemake</strong> <div class="csl-block">Felix Mölder, Kim Philipp Jablonski, Brice Letcher, Michael B Hall, Christopher H Tomkins-Tinch, Vanessa Sochat, Jan Forster, Soohyun Lee, Sven O Twardziok, Alexander Kanitz, … Johannes Köster</div> <em>F1000Research</em> (2021-01-18) <a href="https://doi.org/gjjkwv">https://doi.org/gjjkwv</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.29032.1">10.12688/f1000research.29032.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/34035898">34035898</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8114187">PMC8114187</a></div></div>
+<div class="csl-left-margin">40. </div><div class="csl-right-inline"><strong>Sustainable data analysis with Snakemake</strong> <div class="csl-block">Felix Mölder, Kim Philipp Jablonski, Brice Letcher, Michael B Hall, Christopher H Tomkins-Tinch, Vanessa Sochat, Jan Forster, Soohyun Lee, Sven O Twardziok, Alexander Kanitz, … Johannes Köster</div> <em>F1000Research</em> (2021-01-18) <a href="https://doi.org/gjjkwv">https://doi.org/gjjkwv</a> <div class="csl-block">DOI: <a href="https://doi.org/10.12688/f1000research.29032.1">10.12688/f1000research.29032.1</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/34035898">34035898</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8114187">PMC8114187</a></div></div>
 </div>
 <div id="ref-q9c75jWY" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">37. </div><div class="csl-right-inline"><strong>Streamlining data-intensive biology with workflow systems</strong> <div class="csl-block">Taylor Reiter, Phillip T Brooks†, Luiz Irber†, Shannon EK Joslin†, Charles M Reid†, Camille Scott†, CTitus Brown, NTessa Pierce-Ward</div> <em>GigaScience</em> (2021-01-13) <a href="https://doi.org/gjfk22">https://doi.org/gjfk22</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/gigascience/giaa140">10.1093/gigascience/giaa140</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/33438730">33438730</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8631065">PMC8631065</a></div></div>
+<div class="csl-left-margin">41. </div><div class="csl-right-inline"><strong>Streamlining data-intensive biology with workflow systems</strong> <div class="csl-block">Taylor Reiter, Phillip T Brooks†, Luiz Irber†, Shannon EK Joslin†, Charles M Reid†, Camille Scott†, CTitus Brown, NTessa Pierce-Ward</div> <em>GigaScience</em> (2021-01-13) <a href="https://doi.org/gjfk22">https://doi.org/gjfk22</a> <div class="csl-block">DOI: <a href="https://doi.org/10.1093/gigascience/giaa140">10.1093/gigascience/giaa140</a> · PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/33438730">33438730</a> · PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8631065">PMC8631065</a></div></div>
 </div>
 </div>
 <!-- default theme -->
