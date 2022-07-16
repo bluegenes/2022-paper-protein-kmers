@@ -12,7 +12,7 @@ CompareM
 compositional
 contig
 cov
-ctb
+CTB
 ctitusbrown
 Dataset
 datasets
@@ -32,7 +32,7 @@ Immplementation
 interection
 Irber
 iteratively
-JACCARD
+Jaccard
 kaa
 KMERS
 LCA
@@ -40,7 +40,7 @@ mer
 mers
 metagenome
 metagenomes
-Metagenomic
+metagenomic
 metagenomics
 metapalette
 metapangenome

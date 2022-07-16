@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +74,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@c5dbc9b](https://github.com/bluegenes/2022-paper-protein-kmers/tree/c5dbc9b0f6afc030df5d26ebd8fc3ef3f0f0c64d)
+from [bluegenes/2022-paper-protein-kmers@02d0e69](https://github.com/bluegenes/2022-paper-protein-kmers/tree/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7)
 on July 16, 2022.
 </em></small>
 
@@ -942,6 +942,8 @@ FastANI is targeted at ANI values between 80%-100%, so only values in this range
 [@breit_classif]: doi:10.1093/bib/bbx120
 
 [@koslicki_containment]: doi:10.1016/j.amc.2019.02.018
+
+[@metapalette]: doi:10.1128/mSystems.00020-16
 
 [@dashing]: doi:10.1186/s13059-019-1875-0
 

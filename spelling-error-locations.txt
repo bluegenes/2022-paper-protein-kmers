@@ -987,7 +987,8 @@ content/06.methods.md:169:metagenome
 content/06.methods.md:173:ANI
 content/06.methods.md:173:FracMinHash
 content/06.methods.md:173:TBD
-content/07.references.md:57:ezaai
+content/07.references.md:23:metapalette
+content/07.references.md:59:ezaai
 content/80.supplemental.md:3:mers
 content/80.supplemental.md:5:gtdb
 content/80.supplemental.md:5:jaccard
