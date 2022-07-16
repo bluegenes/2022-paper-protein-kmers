@@ -8,8 +8,15 @@
 ## Manuscript description
 
 <!-- usage note: edit this section. -->
-NOTE: Beware! This is a draft and may go through several more awkward teenager growth and development stages.
-Constructive feedback is always welcome, of course :).
+Alignment-free methods for estimating sequence similarity have become critical for scaling sequence comparisons such as taxonomic classification and phylogenetic analysis to large-scale datasets.
+The majority of these methods rely upon exact matching of DNA k-mers: nucleotide subsequences of length k that can be counted and compared across datasets.
+However,as k-mer based methods rely on exact sequence matches, DNA k-mer comparisons can suffer from limited sensitivity when comparing highly polymorphic sequences or classifying organisms from groups not well represented in reference databases.
+Protein-based comparisons have long been the gold-standard approach for taxonomic and functional annotation at larger evolutionary distances.
+Here, we demonstrate the utility of amino acid k-mers (k~aa~mers) for sequence comparisons across larger evolutionary distances, including alignment-free estimation of Average Amino Acid Identity (cAAI) and taxonomic classification using sourmash gather.
+K~aa~mer comparisons can be used with and without sketching methods such as FracMinHash, and will facilitate comparison and classification of a larger fraction of sequenced metagenome data, particularly from understudied and diverse environments.
+
+**NOTE: Beware! This is a working draft and may go through several more awkward teenager growth and development stages.
+Constructive feedback is very welcome, of course!**
 
 If you have questions or find this manuscript useful, please let us know by filing [an issue](https://github.com/bluegenes/2022-paper-protein-kmers/issues) or linking to https://github.com/bluegenes/2022-paper-protein-kmers.
 
