@@ -12,9 +12,9 @@ compareM
 compositional
 contig
 cov
-CTB
+ctb
 ctitusbrown
-Dataset
+dataset
 datasets
 Delmont
 eukaryotic
@@ -23,7 +23,7 @@ EzAAIb
 EzAAIb’s
 EzAAIm
 fastas
-FracMinHash
+FracMinhash
 GBMF
 genbank
 genomic
@@ -32,7 +32,7 @@ Immplementation
 interection
 Irber
 iteratively
-JACCARD
+Jaccard
 kaa
 KMERS
 LCA
@@ -75,6 +75,7 @@ snakemake
 sourmash
 subsample
 subsampling
+subsequences
 summarization
 superkingdom
 superkingdoms
