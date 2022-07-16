@@ -8,6 +8,7 @@ BLASTp
 bluegenes
 cAAI
 cardinality
+classif
 CompareM
 compositional
 contig

@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +74,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@02d0e69](https://github.com/bluegenes/2022-paper-protein-kmers/tree/02d0e69cfa9ec48d93922ae16e2a6d316bc998b7)
+from [bluegenes/2022-paper-protein-kmers@6cdfcbf](https://github.com/bluegenes/2022-paper-protein-kmers/tree/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b)
 on July 16, 2022.
 </em></small>
 
@@ -418,14 +418,8 @@ To assess the utility of protein k-mers for genome classification, we conduct th
 | MGNify-1000| 95.7% | 4.3%   | N/A  | N/A |
 | Delmont-885    | 73.5% | 26.5%  | 1 (0.1%) | 15 (1.7%) |
 
-to do:
-- discuss/utilize AAI threshold at all?
+_discuss/utilize/assess AAI threshold for tax classif?_
 
-
-### Notes
-
-Include Jaccard --> AAI results anywhere? 
-- FracMinHash AAI values produced by Jaccard and Containment (here, average containment) methods are very similar.
 
 <!---
 to do:
@@ -437,6 +431,9 @@ to do:
 --->
 
 <!---
+### Notes
+Include Jaccard to AAI results anywhere? 
+FracMinHash AAI values produced by Jaccard and Containment (here, average containment) methods are very similar.
 For , e.g. Pseudomonas, XX% of k-mers are 	shared within the chosen/published genomes within species. For all published genomes within the genus, a median of xx% of k-mers are shared between genomes of one species and genomes of the a different species in the same genus.
 
 == median or mean containment at rank?
@@ -744,15 +741,15 @@ FracMinHash $cAAI$ enables fast and low-memory AAI estimation, allowing whole-pr
 
 ### Large-scale k-mer comparisons with FracMinHash sketches
 
-FracMinHash sketching, as implemented in sourmash [@doi:10.1101/2022.01.11.475838; @doi:10.12688/f1000research.19675.1; @doi:10.21105/joss.00027], is a MinHash variant that uses a scaling factor to subsample the unique k-mers in the dataset to the chosen fraction (1/`scaled`).
+FracMinHash sketching, as implemented in sourmash [@doi:10.1101/2022.01.11.475838;@doi:10.12688/f1000research.19675.1;@doi:10.21105/joss.00027], is a MinHash variant that uses a scaling factor to subsample the unique k-mers in the dataset to the chosen fraction (1/`scaled`).
 As k-mers are randomized prior to systematic subsampling, FracMinHash sketches are representative subsets that can be used for comparisons across datasets sketched with consistent k-mer lengths and scaling factors.
 
-While FracMinHash sketches can be used to estimate both the Jaccard Index [@doi:10.1186/s13059-016-0997-x] and Containment Index [@doi:10.1016/j.amc.2019.02.018], containment has been shown to permit more accurate estimation of genomic distance when genomes or datasets differ in size [@doi:10.1016/j.amc.2019.02.018;@doi:10.1186/s13059-019-1875-0; @doi:10.1093/bib/bbz083; @doi:10.1101/2022.01.14.476226].
+While FracMinHash sketches can be used to estimate both the Jaccard Index [@doi:10.1186/s13059-016-0997-x] and Containment Index [@doi:10.1016/j.amc.2019.02.018], containment has been shown to permit more accurate estimation of genomic distance when genomes or datasets differ in size [@doi:10.1016/j.amc.2019.02.018;@doi:10.1186/s13059-019-1875-0;@doi:10.1093/bib/bbz083;@doi:10.1101/2022.01.14.476226].
 We focus here on the utility of containment comparisons for similarity estimation.
 Containment comparisons are directional: the containment of genome A in sample B is the interection of k-mers in A and B divided by the k-mers in genome A (and vice versa).
 Thus, two containment values can be estimated for a given pairwise comparison.
 The choice of which containment value to use (or whether to average the two values) depends on the particular comparison.
-FracMinHash containment has been shown to be an unbiased estimator of the true containment index, as long as the sketches contain sufficient k-mers for comparison or utilize a high-quality estimation of the true cardinality of the dataset [@doi:10.1101/2022.01.11.475838; @doi:10.1101/2022.01.11.475870].
+FracMinHash containment has been shown to be an unbiased estimator of the true containment index, as long as the sketches contain sufficient k-mers for comparison or utilize a high-quality estimation of the true cardinality of the dataset [@doi:10.1101/2022.01.11.475838;@doi:10.1101/2022.01.11.475870].
 
 <!---
 FracMinHash is a MinHash variant for selecting and hashing a set of representative k-mers from a sequence dataset [@sourmash_gather]. Unlike traditional MinHash, FracMinHash sketches scale with the size of the dataset, meaning each sketch is comprised of the chosen fraction of k-mers in the input dataset, rather than a chosen number of k-mers.
