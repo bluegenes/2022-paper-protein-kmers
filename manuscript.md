@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/af33b191c1fe6e233a60b4c33092e75428d7d3ed/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/af33b191c1fe6e233a60b4c33092e75428d7d3ed/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/af33b191c1fe6e233a60b4c33092e75428d7d3ed/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/6c2670a2d183c5a603d2f91aea398e28017d4dc4/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6c2670a2d183c5a603d2f91aea398e28017d4dc4/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6c2670a2d183c5a603d2f91aea398e28017d4dc4/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +74,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/af33b191c1fe6e233a60b4c33092e75428d7d3ed/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/6c2670a2d183c5a603d2f91aea398e28017d4dc4/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@af33b19](https://github.com/bluegenes/2022-paper-protein-kmers/tree/af33b191c1fe6e233a60b4c33092e75428d7d3ed)
+from [bluegenes/2022-paper-protein-kmers@6c2670a](https://github.com/bluegenes/2022-paper-protein-kmers/tree/6c2670a2d183c5a603d2f91aea398e28017d4dc4)
 on July 16, 2022.
 </em></small>
 
@@ -133,18 +133,18 @@ Advancements in sequencing over the past decades have made it feasible to invest
 
 Metagenomic analyses rely on our ability to make sense of bulk sequencing reads by assigning taxonomic and functional groupings.
 However, the methods and databases used for characterization impact both the extent and accuracy of classification.
-As the scale of genomic sequencing continues to grow, fast and low-memory methods for estimating sequence similarity have become critical for conducting tasks ranging from taxonomic classification to phylogenetic analysis on large-scale datasets [@mash; @kraken2].
+As the scale of genomic sequencing continues to grow, fast and low-memory methods for estimating sequence similarity have become critical for conducting tasks ranging from taxonomic classification to phylogenetic analysis on large-scale datasets [@mash;@kraken2].
 However, many of these methods struggle with classification specificity, with some methods reporting false positive rates as high as 25% on short read metagenomic datasets prior to thresholding [@portik_tax].
 At the same time, classification techniques often can suffer from limited sensitivity when comparing highly polymorphic sequences or classifying organisms from groups underrepresented in reference databases.
 For understudied and diverse habitats such as soil, metagenomic classification methods often only categorize a small fraction of metagenomic data, and even well-studied environments such as the human gut can produce significant uncharacterized metagenome content (CITE).
 
-As protein sequence is more conserved than the underlying DNA sequence, protein-based comparisons have long been the gold-standard approach across larger evolutionary distances [@blast; @diamond].
-Protein-based metagenomics taxonomic classification approaches typically have increased sensitivity relative to nucleotide methods [@breit_classif; @mmseqs_tax; @catbat; @meganlr; @kaiju; @mash_screen].
+As protein sequence is more conserved than the underlying DNA sequence, protein-based comparisons have long been the gold-standard approach across larger evolutionary distances [@blast;@diamond].
+Protein-based metagenomics taxonomic classification approaches typically have increased sensitivity relative to nucleotide methods [@breit_classif;@mmseqs_tax;@catbat;@meganlr;@kaiju;@mash_screen].
 Whole-proteome relatedness indices such as Amino Acid Identity (AAI) can be used to determine whether uncharacterized sequences belong to known taxonomic groups or represent truly novel sequence.
 As we continue to sequence more of the biosphere, there remains a need for fast and accurate alignment-free sequence comparison tools with protein-level sensitivity.
 
 Alignment-free methods using k-mers, short sequences of length k, can quickly compare and classify metagenomic datasets particularly when used with subsampling methods such as MinHash [@mash] and FracMinHash [@sourmash_gather].
-While the majority of k-mer methods utilize nucleotide k-mers, amino acid k-mers (k~aa~-mers) have shown some promise for functional screening and annotation [@mash_screen; @kaamer; @ob_orpheum].
+While the majority of k-mer methods utilize nucleotide k-mers, amino acid k-mers (k~aa~-mers) have shown some promise for functional screening and annotation [@mash_screen;@kaamer;@orpheum].
 Here, we show that k~aa~-mer comparisons robustly estimate Average Amino Acid Identity across large evolutionary distances, even while using FracMinHash k-mer subsampling methods.
 We then use FracMinHash k~aa~mer sketches to tackle two classification challenges: taxonomic classification of assembled genomes, and compositional analysis of metagenomes.
 Our results suggest that k~aa~mer sequence analysis can facilitate large-scale assembly-based and assembly-free metagenomic analyses, even when sequenced organisms are only distantly related to organisms available in reference databases.
@@ -271,15 +271,15 @@ We obtained similar results when comparing all available k-mers, suggesting that
 
 ### FracMinHash k~aa~-mer containment estimates average proteome identity and coverage
 
-The Jaccard estimate from MinHash k-mer comparisons has been commonly transformed into "Mash Distance," which estimates the rate of sequence mutation under a simple evolutionary model assuming equal and random nucleotide substitution at any position across a genomic sequence [@fan_AAF; @mash].
-Despite potential issues with assuming such a simple mutational model, Mash Distance estimates have been shown to be reliable for high quality genomes with high similarity (>90% ANI), and have permitted sequence distance estimation at much larger scales than is tractable for traditional alignment-based sequence identity estimation [@doi:10.1186/s13059-016-0997-x; @doi:10.1186/s13059-019-1841-x; @doi:10.1038/s41467-018-07641-9]..
+The Jaccard estimate from MinHash k-mer comparisons has been commonly transformed into "Mash Distance," which estimates the rate of sequence mutation under a simple evolutionary model assuming equal and random nucleotide substitution at any position across a genomic sequence [@fan_AAF;@mash].
+Despite potential issues with assuming such a simple mutational model, Mash Distance estimates have been shown to be reliable for high quality genomes with high similarity (>90% ANI), and have permitted sequence distance estimation at much larger scales than is tractable for traditional alignment-based sequence identity estimation [@doi:10.1186/s13059-016-0997-x;@doi:10.1186/s13059-019-1841-x;@doi:10.1038/s41467-018-07641-9]..
 
-Compared with Jaccard, the Containment Index permits more accurate estimation of genomic distance, particularly for genomes of very different lengths [@koslicki_containment; @dashing; @mash_screen].
+Compared with Jaccard, the Containment Index permits more accurate estimation of genomic distance, particularly for genomes of very different lengths [@koslicki_containment;@dashing;@mash_screen].
 As we recently described ([@dk_fracminhash]), we can use the same simple mutational model to obtain a point estimate of sequence identity between two genomes.
 This estimate is highly correlated with mapping-based Average Nucleotide Identity (ANI) estimates even when using only a small fraction of k-mers (e.g. fractional scaling = 1/1000) [@dk_fracminhash].
 
 When FracMinhash sketches are instead generated with k~aa~-mers, we can use a similar approach to estimate average amino acid identity (AAI) between two proteomes.
-Traditional AAI represents the average amino acid identity of all genes shared between two proteomes, and has shown lasting utility for phylogenomic comparisons and taxonomic classification [@doi:10.1128/AEM.01398-06; @doi:10.1038/ismej.2017.113].
+Traditional AAI represents the average amino acid identity of all genes shared between two proteomes, and has shown lasting utility for phylogenomic comparisons and taxonomic classification [@doi:10.1128/AEM.01398-06;@doi:10.1038/ismej.2017.113].
 However, alignment-based AAI analyses not tractable for large-scale comparisons.
 
 Under a simple mutational model assuming equal and random _amino acid_ substitution at any position across a proteome, we can use the Fractional Containment Index ${C_\text{frac}(A,B)}$ (estimated at k~aa~-mer length $k~aa~$) to obtain a containment-based estimate of Amino Acid Identity ($cAAI$).
@@ -309,7 +309,7 @@ This can be both a strength and shortcoming of AAI as a method, as AAI values on
 Given these propeties, containment-based $cAAI$ is closest to an alignment-adjusted version amino acid identity.
 While it does not exactly mimic alignment-based AAI estimates, it is able to represent both alignment fraction and identity information in a single value.
 
-AAI has been shown to be a robust measure of overall pairwise relatedness even for highly incomplete datasets, such as those comprised of only ~4% of the genome or 100 genes [@doi:10.1128/AEM.01398-06; @doi:10.1038/ismej.2017.113].
+AAI has been shown to be a robust measure of overall pairwise relatedness even for highly incomplete datasets, such as those comprised of only ~4% of the genome or 100 genes [@doi:10.1128/AEM.01398-06;@doi:10.1038/ismej.2017.113].
 AAI is most useful when nucleotide comparisons are not longer robust, typically less than ~80% nucleotide identity.
 
 
@@ -325,7 +325,7 @@ $ANIc = {C_\text{frac}(A,B)}^{1/k}$
 
 This k-mer based containment ANI estimate ($ANIc) assumes a simple mutational model of random substitution and estimates sequence divergence solely using the fraction of shared and divergent k-mers between the two FracMinhash s
 
-Estimates using this simple model have permitted ANI estimation at the scale of whole-databases, MinHash-based estimates have only been shown to be reliable for high quality genomes with high similarity (>90% ANI) [@doi:10.1186/s13059-016-0997-x; @doi:10.1186/s13059-019-1841-x; @doi:10.1038/s41467-018-07641-9].
+Estimates using this simple model have permitted ANI estimation at the scale of whole-databases, MinHash-based estimates have only been shown to be reliable for high quality genomes with high similarity (>90% ANI) [@doi:10.1186/s13059-016-0997-x;@doi:10.1186/s13059-019-1841-x;@doi:10.1038/s41467-018-07641-9].
 
 Containment represents the fraction of sequence shared between two samples divided by the total unique sequence (k-mers) in one of the two samples.
 
@@ -539,7 +539,7 @@ Comparisons between sets of similar sizes or without 6-frame translation of prot
 
 Amino Acid Identity (AAI) is a measure of average protein similarity between the homologous regions of two proteomes.
 Traditional AAI methods use BLAST or BLAST-like alternatives to identify homologous fragments for comparison.
-K-mer Jaccard and containment have been used for estimating average nucleotide identity between genomes [ @fan_AAF; @mash; @dk_fracminhash].
+K-mer Jaccard and containment have been used for estimating average nucleotide identity between genomes [@fan_AAF;@mash;@dk_fracminhash].
 While several studies have proposed utilization of more complex evolutionary models [@doi:10.12688/f1000research.26930.1], an m-dependent model taking into account the non-independence of mutated k-mers is able to closely approximate alignment-based estimates of Average Nucleotide Identity (ANI) [@blanca;@dk_fracminhash].
 Applying this same simple mutational model to amino acid k~aa~mer containment yields $cAAI$ values that strongly correlate with alignment-based AAI values.
 
@@ -598,7 +598,7 @@ If desired, it is possible to use a k~aa~mer Containment strategy to select the 
 If instead, k~aa~mers are generated for each translation frame of each read separately, Containment comparisons can again be used to find the fraction of these k~aa~mers that can be matched to the k~aa~mers in the reference database.
 The translation frame with the highest percent of matched k~aa~mers is most likely to be the coding frame for that read.
 These strategy can also be used to predict non-coding reads, where few, if any, translated k~aa~mers match to reference database k~aa~mers.
-This method works best when there are closely related organisms present in the reference database (@orpheum; @kaa_metapan).
+This method works best when there are closely related organisms present in the reference database [@orpheum;@kaa_metapan].
 
 ### Future directions and utility
 
@@ -800,13 +800,12 @@ Using the Fractional Containment Index...
 
 
 
-The equation for sequence similarity estimation (ANI or AAI) from FracMinHash Containment is reproduced here for completeness (see @doi:10.1101/2022.01.11.475870 for details).
-
+The equation for sequence similarity estimation (ANI or AAI) from FracMinHash Containment is reproduced here for completeness.
 See [@dk_fracminhash] for these and other analytical details.
 
 ### Immplementation of ANI and AAI estimation
 
-We provide an implementation of Fractional Containment to average sequence identity (ANI/AAI) in the software package `sourmash`, which is implemented in Python and Rust and developed under the BSD license [@sourmash_f1000; @sourmash_joss].
+We provide an implementation of Fractional Containment to average sequence identity (ANI/AAI) in the software package `sourmash`, which is implemented in Python and Rust and developed under the BSD license [@sourmash_f1000;@sourmash_joss].
 ANI and AAI values can be reported from sequence comparisons
 The distance estimation equations can be found in the `distance_utils.py` file and ANI/AAI values can be reported from a variety of `sourmash` comparison and search commands as of version `4.4`.
 sourmash is available at [github.com/sourmash-bio/sourmash](https://github.com/sourmash-bio/sourmash/).
@@ -816,7 +815,7 @@ The results in this paper were generated with sourmash v4.4.1.
 
 To assess whether k-mer methods can be used to approximate AAI, we ran generated alignment AAI values for each pairwise comparison using methods that leverage different mapping algorithms: EzAAIb (BLASTp), EzAAIm (MMSeqs2), and CompareM (DIAMOND). As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values.
 
-EzAAI v1.12 [@doi: 10.1007/s12275-021-1154-0] was used to run BLAST-based and MMSeqs-based Amino Acid Identity. The EzAAI workflow begins with PRODIGAL-based translation of genome sequence [@doi:10.1038/nmeth.3176], followed by reciprocal BLAST [@doi: 10.1016/S0022-2836(05)80360-2] or MMSeqs2 [@doi:10.1038/nbt.3988] alignment. For both, we utilized EzAAI default parameters: 40% coverage threshold, 40% sequence identity threshold.
+EzAAI v1.12 [@doi:10.1007/s12275-021-1154-0] was used to run BLAST-based and MMSeqs-based Amino Acid Identity. The EzAAI workflow begins with PRODIGAL-based translation of genome sequence [@doi:10.1038/nmeth.3176], followed by reciprocal BLAST [@doi:10.1016/S0022-2836(05)80360-2] or MMSeqs2 [@doi:10.1038/nbt.3988] alignment. For both, we utilized EzAAI default parameters: 40% coverage threshold, 40% sequence identity threshold.
 CompareM v0.1.2 ([@url:https://github.com/dparks1134/CompareM]; run with `--sensitive` parameter for DIAMOND mapping) was used to obtain Average Amino Acid Identity between the anchor proteome and each additional proteome in its evolutionary path.
 CompareM reports the mean and standard deviation of AAI, as well as the fraction of orthologous genes upon which this estimate is based.
 Briefly, CompareM calls genes for each genome or proteome using PRODIGAL [@doi:10.1038/nmeth.3176] and conducts reciprocal best-hit mapping via DIAMOND [@doi:10.1186/1471-2105-11-119].

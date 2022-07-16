@@ -12,7 +12,7 @@ kaiju	doi:10.1038/ncomms11257	doi:10.1038/ncomms11257	P2zJQDwU
 mash_screen	doi:10.1186/s13059-019-1841-x	doi:10.1186/s13059-019-1841-x	19AP1jyqE
 sourmash_gather	doi:10.1101/2022.01.11.475838	doi:10.1101/2022.01.11.475838	IadOz4ol
 kaamer	doi:10.1038/s41598-022-12843-9	doi:10.1038/s41598-022-12843-9	mGSj8o8w
-ob_orpheum	ob_orpheum	ob_orpheum	YFTNhIXW
+orpheum	doi:10.1101/2021.07.09.450799	doi:10.1101/2021.07.09.450799	TO2yVgRA
 metapalette	metapalette	metapalette	O21XWYj4
 doi:10.1038/s41587-020-0501-8	doi:10.1038/s41587-020-0501-8	doi:10.1038/s41587-020-0501-8	cN1LdTev
 doi:10.1101/2022.01.11.475838	doi:10.1101/2022.01.11.475838	doi:10.1101/2022.01.11.475838	IadOz4ol
@@ -34,7 +34,6 @@ ezaai	doi:10.1007/s12275-021-1154-0	doi:10.1007/s12275-021-1154-0	RBej4r7Y
 palmer_ani	doi:10.1099/ijsem.0.004124	doi:10.1099/ijsem.0.004124	dSGphCw7
 miga	doi:10.1093/nar/gky467	doi:10.1093/nar/gky467	8ySYk9WQ
 fastaai	doi:10.21203/rs.3.rs-1459378/v1	doi:10.21203/rs.3.rs-1459378/v1	eIV0sg3w
-orpheum	doi:10.1101/2021.07.09.450799	doi:10.1101/2021.07.09.450799	TO2yVgRA
 kaa_metapan	doi:10.1101/2022.06.27.497795	doi:10.1101/2022.06.27.497795	T2ylGIH0
 snekmer	url:https://github.com/PNNL-CompBio/Snekmer	url:https://github.com/PNNL-CompBio/Snekmer	2fzeqjbP
 doi:10.12688/f1000research.19675.1	doi:10.12688/f1000research.19675.1	doi:10.12688/f1000research.19675.1	ART4gJKs
@@ -47,8 +46,9 @@ doi:10.1101/2022.01.11.475870	doi:10.1101/2022.01.11.475870	doi:10.1101/2022.01.
 doi:10.1101/2021.01.15.426881	doi:10.1101/2021.01.15.426881	doi:10.1101/2021.01.15.426881	cMPL2ulo
 sourmash_f1000	doi:10.12688/f1000research.19675.1	doi:10.12688/f1000research.19675.1	ART4gJKs
 sourmash_joss	doi:10.21105/joss.00027	doi:10.21105/joss.00027	ExvjTLL3
-doi	doi	doi	FSDqKxd0
+doi:10.1007/s12275-021-1154-0	doi:10.1007/s12275-021-1154-0	doi:10.1007/s12275-021-1154-0	RBej4r7Y
 doi:10.1038/nmeth.3176	doi:10.1038/nmeth.3176	doi:10.1038/nmeth.3176	4R96QRcV
+doi:10.1016/S0022-2836	doi:10.1016/S0022-2836	doi:10.1016/s0022-2836	1DwGXrhur
 doi:10.1038/nbt.3988	doi:10.1038/nbt.3988	doi:10.1038/nbt.3988	jj6qOofE
 url:https://github.com/dparks1134/CompareM	url:https://github.com/dparks1134/CompareM	url:https://github.com/dparks1134/CompareM	auqG5mhy
 url:https://rodriguez-r.com/blog/aai-blast-vs-diamond	url:https://rodriguez-r.com/blog/aai-blast-vs-diamond	url:https://rodriguez-r.com/blog/aai-blast-vs-diamond	18uVBOfA0

@@ -1,4 +1,3 @@
-AAF
 AAI
 alignable
 analyes
@@ -9,17 +8,15 @@ BLASTp
 bluegenes
 cAAI
 cardinality
-catbat
 compareM
 compositional
 contig
 cov
-ctb
+CTB
 ctitusbrown
-dataset
+Dataset
 datasets
 Delmont
-dk
 eukaryotic
 EzAAI
 EzAAIb
@@ -36,14 +33,9 @@ interection
 Irber
 iteratively
 JACCARD
-joss
 kaa
-kaamer
-kaiju
 KMERS
-kraken
 LCA
-meganlr
 mer
 mers
 metagenome
@@ -51,7 +43,6 @@ metagenomes
 metagenomic
 metagenomics
 metapalette
-metapan
 metapangenome
 metapangenomics
 MGNify
@@ -62,7 +53,6 @@ nucl
 nucleotides
 ORFs
 organismal
-orpheum
 orthologous
 OSF
 phylogenetic
@@ -82,7 +72,7 @@ representatively
 runtime
 saltyscientist
 snakemake
-Sourmash
+sourmash
 subsample
 subsampling
 summarization
