@@ -9,7 +9,7 @@ bluegenes
 cAAI
 cardinality
 catbat
-compareM
+CompareM
 compositional
 contig
 cov
@@ -24,7 +24,7 @@ EzAAIb
 EzAAIb’s
 EzAAIm
 fastas
-FracMinhash
+FracMinHash
 GBMF
 genbank
 genomic
@@ -33,7 +33,7 @@ Immplementation
 interection
 Irber
 iteratively
-Jaccard
+JACCARD
 joss
 kaa
 kaamer
@@ -44,11 +44,12 @@ LCA
 meganlr
 mer
 mers
-Metagenome
+metagenome
 metagenomes
-metagenomic
+Metagenomic
 metagenomics
 metapalette
+metapan
 MGNify
 MinHash
 MMSeqs
@@ -61,7 +62,6 @@ organismal
 orpheum
 orthologous
 OSF
-pankaamers
 phylogenetic
 phylogenomic
 preselection
@@ -78,7 +78,6 @@ ReiterTaylor
 representatively
 runtime
 saltyscientist
-sencha
 snakemake
 sourmash
 subsample
@@ -98,4 +97,3 @@ UC
 unassembled
 uncharacterized
 XXXXXXXX
-Zenodo

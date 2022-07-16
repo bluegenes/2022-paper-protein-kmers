@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-07-15'
+date-meta: '2022-07-16'
 author-meta:
 - N. Tessa Pierce-Ward
 - Taylor E. Reiter
@@ -24,8 +24,8 @@ header-includes: |-
   <meta name="citation_title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-07-15" />
-  <meta name="citation_publication_date" content="2022-07-15" />
+  <meta name="dc.date" content="2022-07-16" />
+  <meta name="citation_publication_date" content="2022-07-16" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/ac3fea5d4545636970296ea387cebbb91ac47b3f/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/ac3fea5d4545636970296ea387cebbb91ac47b3f/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/ac3fea5d4545636970296ea387cebbb91ac47b3f/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/56cd8a95752fe8293b3e7fe6d83cfe8639097cdf/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/56cd8a95752fe8293b3e7fe6d83cfe8639097cdf/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/56cd8a95752fe8293b3e7fe6d83cfe8639097cdf/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,10 +74,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/ac3fea5d4545636970296ea387cebbb91ac47b3f/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/56cd8a95752fe8293b3e7fe6d83cfe8639097cdf/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@ac3fea5](https://github.com/bluegenes/2022-paper-protein-kmers/tree/ac3fea5d4545636970296ea387cebbb91ac47b3f)
-on July 15, 2022.
+from [bluegenes/2022-paper-protein-kmers@56cd8a9](https://github.com/bluegenes/2022-paper-protein-kmers/tree/56cd8a95752fe8293b3e7fe6d83cfe8639097cdf)
+on July 16, 2022.
 </em></small>
 
 ## Authors
@@ -208,7 +208,7 @@ To make analyses at this scale tractable, we use FracMinHash sketching to random
 DNA FracMinHash sketches have been shown to representatively subsample genome datasets [@doi:10.1101/2022.01.11.475838].
 For most genomes, both genomic and protein fastas were available for download from NCBI.
 In remaining cases (n=36,632), genome fastas were translated into protein sequence via Prodigal [@doi:10.1186/1471-2105-11-119] prior to sketching.
-We indexed these sketches into `sourmash` databases, which we have made available as part of the `Prepared Databases` section of the `sourmash` documentation, and archived on OSF [https://osf.io/t3fqa/] /Zenodo???.
+We indexed these sketches into `sourmash` databases, which we have made available as part of the `Prepared Databases` section of the `sourmash` documentation, and archived on OSF [https://osf.io/t3fqa/].
 
 For a range of nucleotide and amino acid k-mers lengths, we assessed the fraction of k-mers specific to each taxonomic rank.
 For nucleotide k-mers, we used lengths of 21, 31, and 51, which are commonly used for analyses at the genus, species, and strain level, respectively. For amino acid k-mers, we focused on k-mer lengths ranging between k=7 and k=11, which roughly correspond to nucleotide k-mer lengths 21-31.
@@ -501,9 +501,9 @@ While k-mer containment can be used directly for many analyses, it can also be u
 
 ## Discussion
 
-Protein sequences are more conserved than their underlying DNA sequence, allowing protein k-mer comparisons to match across larger evolutionary distances.
+Protein sequences are more conserved than their underlying DNA sequence, allowing amino acid k-mer comparisons to match across larger evolutionary distances.
 Protein sequence matching is also less impacted by sequencing errors due to codon degeneracy.
-Our results show that amino acid k-mers can be used for global proteome analyses, including sequence similarity estimation (AAI) and taxonomic classification of proteomes or directly from unassembled read datasets.
+Our results show that amino acid k-mers can be used for global proteome comparisons, including estimation of sequence similarity (AAI) and taxonomic classification from either unassembled read datasets or assembled proteomes.
 
 <!---
 Below, we discuss amino acid k-mers and FracMinHash protein sketches for both assembly-based and assembly-free metagenomic analyses.
@@ -527,7 +527,7 @@ If desired, it is possible to use the same strategy to select the most likely tr
 If instead, k~aa~mers are generated for each translation frame of each read separately, Containment comparisons can again be used to find the fraction of these k~aa~mers that can be matched to the k~aa~mers in the reference database. 
 The translation frame with the highest percent of matched k~aa~mers is most likely to be the coding frame for that read.
 These strategy can also be used to predict non-coding reads, where few, if any, tranlated k~aa~mers match to reference database k~aa~mers.
-This method works best for longer reads (which contain more information) and when there are closely related organisms present in the reference database (@sencha; @pankaamers).
+This method works best for longer reads (which contain more information) and when there are closely related organisms present in the reference database (@orpheum; @kaa_metapan).
 
 <!---
 AAI doesn't really make sense for read <> read datasets.
@@ -588,11 +588,10 @@ Here we could envision doing this with protein k-mers doing a quick high-scaled 
 ### FracMinHash k~aa~-mer sketches support whole-proteome analysis at scale
 
 All of the k~aa~mer methods described here function with all dataset k~aa~mers.
-However, our results show that using sketching methods such as FracMinHash and keeping as few as 5% of microbial proteome k-mers ($scaled=200$) maintains accuracy of k~aa~mer containment comparisons while reducing runtime, memory, and storage requirements.
-Smaller proteomes such as viral proteomes and read-level or contig-level analysis will require a larger fractional scaling or different approach to ensure sufficient k~aa~mers for accurate comparisons.
+However, our results show that leveraging sketching methods such as FracMinHash and that retain as few as 5% of microbial proteome k-mers ($scaled=200$) maintains accuracy of k~aa~mer containment comparisons while reducing runtime, memory, and storage requirements.
+Smaller proteomes such as viral proteomes and read-level or contig-level analysis may require different fractional scaling or different approach to ensure sufficient k~aa~mers for accurate comparisons.
 While we have focused on FracMinHash sketching, these k~aa~mer comparisons can be used with any sketch that enables containment estimation.
 Comparisons between sets of similar sizes or without 6-frame translation of protein k-mers can also use Jaccard to estimate $cAAI$, though Containment comparisons will always be as or more accurate than Jaccard comparisons [@dk_fracminhash ??].
-
 
 
 ### Taxonomic Assignment is database-dependent
@@ -607,7 +606,6 @@ K-mer based taxonomic assignment relies upon matching k-mers found in previously
 While this approach will always be database-dependent and improved by presence of closely-related proteomes in the database, protein-based matching allows for classification at larger evolutionary distances.
 While protein matching increases the sensitivity by matching across synonymous substitutions in the DNA sequence, classification LCA approaches often suffer from sensitivity/specificity trade-offs.
 Here, the use of `sourmash gather` minimum set cover approach assigns each protein k-mer to its most likely/parsimonious match based on presence of other proteome k-mers present in the query genome/metagenome.
-
 
 We expect classification at the amino acid level to be most useful for organisms not well represented in reference databases.
 In these cases, the increased sensitivity of k~aa~mers can find any available similarity in the database.
