@@ -7,7 +7,7 @@
   <meta name="author" content="N. Tessa Pierce-Ward" />
   <meta name="author" content="Taylor E. Reiter" />
   <meta name="author" content="C. Titus Brown" />
-  <meta name="dcterms.date" content="2022-07-16" />
+  <meta name="dcterms.date" content="2022-07-17" />
   <meta name="keywords" content="metagenomics, AAI, Alignment-free, Assembly-free, MinHash, FracMinHash, Containment" />
   <title>Amino Acid k-mers enable assembly- and alignment-free sequence analysis</title>
   <style>
@@ -49,8 +49,8 @@
   <meta name="citation_title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-07-16" />
-  <meta name="citation_publication_date" content="2022-07-16" />
+  <meta name="dc.date" content="2022-07-17" />
+  <meta name="citation_publication_date" content="2022-07-17" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -75,9 +75,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -91,10 +91,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/">permalink</a>)
+(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b">bluegenes/2022-paper-protein-kmers@6cdfcbf</a>
-on July 16, 2022.
+from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/cadcd977a02a0c48b60aaa708faca667e2192453">bluegenes/2022-paper-protein-kmers@cadcd97</a>
+on July 17, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -729,7 +729,7 @@ By applying the same equations to comparisons between amino acid k-mer sketches,
 For this application, we maintain the assumption of a simple mutational model of equal substitution probability at each position, but recognize that it now applies to any amino acid, rather than any nucleotide.</p>
 <p>Using the Fractional Containment Index…</p>
 <span class="math display">\[\begin{equation}
-\scale := \frac{\vert \mathbf{FRAC}_s(A) \cap \mathbf{FRAC}_s(B)\vert }{\vert \mathbf{FRAC}_s(A)\vert \left(1-(1-s)^{\vert A\vert}\right)} \mathbbm{1}_{\vert \mathbf{FRAC}_s(A) \vert&gt;0}
+{C_\text{frac}(A,B)}= \frac{\vert \mathbf{FRAC}_s(A) \cap \mathbf{FRAC}_s(B)\vert }{\vert \mathbf{FRAC}_s(A)\vert \left(1-(1-s)^{\vert A\vert}\right)} \mathbbm{1}_{\vert \mathbf{FRAC}_s(A) \vert&gt;0}
 \end{equation}\]</span>
 <p>The equation for sequence similarity estimation (ANI or AAI) from FracMinHash Containment is reproduced here for completeness.
 See <span class="citation" data-cites="fCWtHkDP">[<a href="#ref-fCWtHkDP" role="doc-biblioref">22</a>]</span> for these and other analytical details.</p>
