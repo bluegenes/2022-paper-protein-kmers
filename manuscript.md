@@ -12,7 +12,9 @@ lang: en-US
 date-meta: '2022-07-17'
 author-meta:
 - N. Tessa Pierce-Ward
+- Olga Borisovna Botvinnik
 - Taylor E. Reiter
+- Luiz Irber
 - C. Titus Brown
 header-includes: |-
   <!--
@@ -36,10 +38,18 @@ header-includes: |-
   <meta name="citation_author_institution" content="Department of Population Health and Reproduction, University of California, Davis" />
   <meta name="citation_author_orcid" content="0000-0002-2942-5331" />
   <meta name="twitter:creator" content="@saltyscientist" />
+  <meta name="citation_author" content="Olga Borisovna Botvinnik" />
+  <meta name="citation_author_orcid" content="0000-0003-4412-7970" />
+  <meta name="twitter:creator" content="@olgabot" />
   <meta name="citation_author" content="Taylor E. Reiter" />
   <meta name="citation_author_institution" content="Department of Population Health and Reproduction, University of California, Davis" />
   <meta name="citation_author_orcid" content="0000-0002-7388-421X" />
   <meta name="twitter:creator" content="@ReiterTaylor" />
+  <meta name="citation_author" content="Luiz Irber" />
+  <meta name="citation_author_institution" content="Graduate Group in Computer Science, UC Davis" />
+  <meta name="citation_author_institution" content="Department of Population Health and Reproduction, University of California, Davis" />
+  <meta name="citation_author_orcid" content="0000-0003-4371-9659" />
+  <meta name="twitter:creator" content="@luizirber" />
   <meta name="citation_author" content="C. Titus Brown" />
   <meta name="citation_author_institution" content="Department of Population Health and Reproduction, University of California, Davis" />
   <meta name="citation_author_orcid" content="0000-0001-6001-2677" />
@@ -50,9 +60,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/704e82a358c34c949cebfdfbc40ef76e7328aa31/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/704e82a358c34c949cebfdfbc40ef76e7328aa31/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/704e82a358c34c949cebfdfbc40ef76e7328aa31/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/6a6978dc3c79acbb028e44dd147f6af073be3b78/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6a6978dc3c79acbb028e44dd147f6af073be3b78/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6a6978dc3c79acbb028e44dd147f6af073be3b78/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +84,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/704e82a358c34c949cebfdfbc40ef76e7328aa31/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/6a6978dc3c79acbb028e44dd147f6af073be3b78/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@704e82a](https://github.com/bluegenes/2022-paper-protein-kmers/tree/704e82a358c34c949cebfdfbc40ef76e7328aa31)
+from [bluegenes/2022-paper-protein-kmers@6a6978d](https://github.com/bluegenes/2022-paper-protein-kmers/tree/6a6978dc3c79acbb028e44dd147f6af073be3b78)
 on July 17, 2022.
 </em></small>
 
@@ -93,7 +103,17 @@ on July 17, 2022.
     [saltyscientist](https://twitter.com/saltyscientist)<br>
   <small>
      Department of Population Health and Reproduction, University of California, Davis
-     · Funded by NSF 1711984, NSF 2018911
+     · Funded by NSF 1711984; NSF 2018911
+  </small>
+
++ **Olga Borisovna Botvinnik**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0000-0003-4412-7970](https://orcid.org/0000-0003-4412-7970)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [olgabot](https://github.com/olgabot)
+    · ![Twitter icon](images/twitter.svg){.inline_icon width=16 height=16}
+    [olgabot](https://twitter.com/olgabot)<br>
+  <small>
   </small>
 
 + **Taylor E. Reiter**<br>
@@ -105,7 +125,19 @@ on July 17, 2022.
     [ReiterTaylor](https://twitter.com/ReiterTaylor)<br>
   <small>
      Department of Population Health and Reproduction, University of California, Davis
-     · Funded by Grant XXXXXXXX
+     · Funded by Grant GBMF4551 from the Gordon and Betty Moore Foundation; Grant R03OD030596 from the NIH Common Fund
+  </small>
+
++ **Luiz Irber**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon width=16 height=16}
+    [0000-0003-4371-9659](https://orcid.org/0000-0003-4371-9659)
+    · ![GitHub icon](images/github.svg){.inline_icon width=16 height=16}
+    [luizirber](https://github.com/luizirber)
+    · ![Twitter icon](images/twitter.svg){.inline_icon width=16 height=16}
+    [luizirber](https://twitter.com/luizirber)<br>
+  <small>
+     Graduate Group in Computer Science, UC Davis; Department of Population Health and Reproduction, University of California, Davis
+     · Funded by Grant GBMF4551 from the Gordon and Betty Moore Foundation; Grant R01HG007513 from the NIH NHGRI
   </small>
 
 + **C. Titus Brown**<br>
@@ -117,7 +149,7 @@ on July 17, 2022.
     [ctitusbrown](https://twitter.com/ctitusbrown)<br>
   <small>
      Department of Population Health and Reproduction, University of California, Davis
-     · Funded by Moore Foundation GBMF4551
+     · Funded by Grant GBMF4551 from the Gordon and Betty Moore Foundation; Grant R01HG007513 from the NIH NHGRI; Grant 2018911 from the NSF; Grant R03OD030596 from the NIH Common Fund
   </small>
 
 

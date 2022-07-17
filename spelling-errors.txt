@@ -6,6 +6,8 @@ Archaea
 archaeal
 BLASTp
 bluegenes
+Borisovna
+Botvinnik
 cAAI
 cardinality
 classif
@@ -13,7 +15,7 @@ compareM
 compositional
 contig
 cov
-CTB
+ctb
 ctitusbrown
 Dataset
 datasets
@@ -37,6 +39,8 @@ Jaccard
 kaa
 KMERS
 LCA
+Luiz
+luizirber
 mer
 mers
 metagenome
@@ -50,8 +54,10 @@ MGNify
 MinHash
 MMSeqs
 NCBI
+NHGRI
 nucl
 nucleotides
+olgabot
 ORFs
 organismal
 orthologous
@@ -73,9 +79,9 @@ representatively
 runtime
 saltyscientist
 snakemake
-sourmash
+Sourmash
 subsample
-Subsampling
+subsampling
 subsequences
 summarization
 superkingdom
@@ -93,4 +99,3 @@ transcriptomics
 UC
 unassembled
 uncharacterized
-XXXXXXXX
