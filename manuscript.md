@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/704e82a358c34c949cebfdfbc40ef76e7328aa31/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/704e82a358c34c949cebfdfbc40ef76e7328aa31/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/704e82a358c34c949cebfdfbc40ef76e7328aa31/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +74,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/704e82a358c34c949cebfdfbc40ef76e7328aa31/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@cadcd97](https://github.com/bluegenes/2022-paper-protein-kmers/tree/cadcd977a02a0c48b60aaa708faca667e2192453)
+from [bluegenes/2022-paper-protein-kmers@704e82a](https://github.com/bluegenes/2022-paper-protein-kmers/tree/704e82a358c34c949cebfdfbc40ef76e7328aa31)
 on July 17, 2022.
 </em></small>
 
@@ -507,7 +507,7 @@ Protein sequences are more conserved than their underlying DNA sequence, allowin
 Protein sequence matching is also less impacted by sequencing errors due to codon degeneracy.
 Our results show that amino acid k-mers can be used for global proteome comparisons, including estimation of sequence similarity (AAI) and taxonomic classification from either unassembled read datasets or assembled proteomes.
 
-### k~aa~mer Containment comparisons enable alignment-free and assembly-free protein comparisons
+### k~aa~mer Containment comparisons for alignment-free and assembly-free protein analyses
 
 As the majority of genome and proteome data is sequenced at the nucleotide level, comparisons of amino acid sequence are typically limited to assembly-based workflows, where a genome assembly has been translated into predicted Open Reading Frames (ORFs).
 As amino acid k~aa~mers do not utilize any additional assembly information, we can also conduct comparisons directly from read datasets, bypassing assembly altogether.

@@ -15,7 +15,7 @@ contig
 cov
 CTB
 ctitusbrown
-dataset
+Dataset
 datasets
 Delmont
 eukaryotic
@@ -41,7 +41,7 @@ mer
 mers
 metagenome
 metagenomes
-Metagenomic
+metagenomic
 metagenomics
 metapalette
 metapangenome
@@ -75,7 +75,7 @@ saltyscientist
 snakemake
 sourmash
 subsample
-subsampling
+Subsampling
 subsequences
 summarization
 superkingdom
