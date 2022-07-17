@@ -19,8 +19,19 @@ authors:
     email: ntpierce@ucdavis.edu
     affiliations:
      - Department of Population Health and Reproduction, University of California, Davis
-    funders: NSF 1711984, NSF 2018911
-  -
+    funders: 
+      - NSF 1711984
+      - NSF 2018911
+  - 
+    github: olgabot
+    name: Olga Borisovna Botvinnik
+    initials: OBB
+    orcid: 0000-0003-4412-7970
+    twitter: olgabot
+#    email: olga.botvinnik@czbiohub.org
+#    affiliations:
+#    funders:
+  - 
     github: taylorreiter
     name: Taylor E. Reiter
     initials: TER
@@ -30,8 +41,22 @@ authors:
     affiliations:
       - Department of Population Health and Reproduction, University of California, Davis
     funders:
-      - Grant XXXXXXXX
-  -
+      - Grant GBMF4551 from the Gordon and Betty Moore Foundation
+      - Grant R03OD030596 from the NIH Common Fund
+  - 
+    github: luizirber
+    name: Luiz Irber
+    initials: LI
+    orcid: 0000-0003-4371-9659
+    twitter: luizirber
+    email: lcirberjr@ucdavis.edu
+    affiliations:
+      - Graduate Group in Computer Science, UC Davis
+      - Department of Population Health and Reproduction, University of California, Davis
+    funders:
+      - Grant GBMF4551 from the Gordon and Betty Moore Foundation
+      - Grant R01HG007513 from the NIH NHGRI
+  - 
     github: ctb
     name: C. Titus Brown
     initials: CTB
@@ -40,4 +65,8 @@ authors:
     email: ctbrown@ucdavis.edu
     affiliations:
       - Department of Population Health and Reproduction, University of California, Davis
-    funders: Moore Foundation GBMF4551
+    funders:
+      - Grant GBMF4551 from the Gordon and Betty Moore Foundation
+      - Grant R01HG007513 from the NIH NHGRI
+      - Grant 2018911 from the NSF
+      - Grant R03OD030596 from the NIH Common Fund
