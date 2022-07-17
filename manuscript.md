@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-07-16'
+date-meta: '2022-07-17'
 author-meta:
 - N. Tessa Pierce-Ward
 - Taylor E. Reiter
@@ -24,8 +24,8 @@ header-includes: |-
   <meta name="citation_title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-07-16" />
-  <meta name="citation_publication_date" content="2022-07-16" />
+  <meta name="dc.date" content="2022-07-17" />
+  <meta name="citation_publication_date" content="2022-07-17" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -50,9 +50,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,10 +74,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/cadcd977a02a0c48b60aaa708faca667e2192453/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@6cdfcbf](https://github.com/bluegenes/2022-paper-protein-kmers/tree/6cdfcbfe0758d4d1ec675243bada1f8edc22af9b)
-on July 16, 2022.
+from [bluegenes/2022-paper-protein-kmers@cadcd97](https://github.com/bluegenes/2022-paper-protein-kmers/tree/cadcd977a02a0c48b60aaa708faca667e2192453)
+on July 17, 2022.
 </em></small>
 
 ## Authors
@@ -796,7 +796,7 @@ Using the Fractional Containment Index...
 
 ```{=latex}
 \begin{equation}
-\scale := \frac{\vert \mathbf{FRAC}_s(A) \cap \mathbf{FRAC}_s(B)\vert }{\vert \mathbf{FRAC}_s(A)\vert \left(1-(1-s)^{\vert A\vert}\right)} \mathbbm{1}_{\vert \mathbf{FRAC}_s(A) \vert>0}
+{C_\text{frac}(A,B)}= \frac{\vert \mathbf{FRAC}_s(A) \cap \mathbf{FRAC}_s(B)\vert }{\vert \mathbf{FRAC}_s(A)\vert \left(1-(1-s)^{\vert A\vert}\right)} \mathbbm{1}_{\vert \mathbf{FRAC}_s(A) \vert>0}
 \end{equation}
 ```
 

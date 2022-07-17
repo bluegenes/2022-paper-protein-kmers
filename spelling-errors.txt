@@ -9,13 +9,13 @@ bluegenes
 cAAI
 cardinality
 classif
-CompareM
+compareM
 compositional
 contig
 cov
 CTB
 ctitusbrown
-Dataset
+dataset
 datasets
 Delmont
 eukaryotic
@@ -24,7 +24,7 @@ EzAAIb
 EzAAIb’s
 EzAAIm
 fastas
-FracMinHash
+FracMinhash
 GBMF
 genbank
 genomic
@@ -41,7 +41,7 @@ mer
 mers
 metagenome
 metagenomes
-metagenomic
+Metagenomic
 metagenomics
 metapalette
 metapangenome
