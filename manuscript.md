@@ -60,9 +60,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/f717af9c30bc8f1c03df0705fe7333aee4fd49b8/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/f717af9c30bc8f1c03df0705fe7333aee4fd49b8/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/f717af9c30bc8f1c03df0705fe7333aee4fd49b8/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/22bf0ee5661852734620d1af8bdbee2f1426fe81/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/22bf0ee5661852734620d1af8bdbee2f1426fe81/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/22bf0ee5661852734620d1af8bdbee2f1426fe81/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -84,9 +84,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/f717af9c30bc8f1c03df0705fe7333aee4fd49b8/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/22bf0ee5661852734620d1af8bdbee2f1426fe81/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@f717af9](https://github.com/bluegenes/2022-paper-protein-kmers/tree/f717af9c30bc8f1c03df0705fe7333aee4fd49b8)
+from [bluegenes/2022-paper-protein-kmers@22bf0ee](https://github.com/bluegenes/2022-paper-protein-kmers/tree/22bf0ee5661852734620d1af8bdbee2f1426fe81)
 on July 18, 2022.
 </em></small>
 
@@ -236,6 +236,7 @@ Amino acid k-mers (kaa-mers) retain the benefits of fast, alignment-free exact k
 Here, we evaluate the utility of amino acid k-mers for a wide range of genomic and metagenomic applications, including sequence distance estimation and taxonomic classification.
 
 ### Amino Acid  k~aa10~mers can be used to discriminate between taxa
+or: _Amino Acid k~aa~mer distribution across taxa informs length selection_
 
 The Genome Taxonomy Database (GTDB) provides a genome-similarity-based taxonomy for bacterial and archaeal genomes [@doi:10.1038/s41587-020-0501-8].
 GTDB release `rs202` encompasses 258,407 genomes from 47,895 species.

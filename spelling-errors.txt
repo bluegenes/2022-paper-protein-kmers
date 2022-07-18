@@ -11,13 +11,13 @@ Botvinnik
 cAAI
 cardinality
 classif
-compareM
+CompareM
 compositional
 contig
 cov
-ctb
+CTB
 ctitusbrown
-Dataset
+dataset
 datasets
 Delmont
 eukaryotic
@@ -35,7 +35,7 @@ Immplementation
 interection
 Irber
 iteratively
-Jaccard
+JACCARD
 kaa
 KMERS
 LCA
@@ -43,7 +43,7 @@ Luiz
 luizirber
 mer
 mers
-metagenome
+Metagenome
 metagenomes
 Metagenomic
 metagenomics
