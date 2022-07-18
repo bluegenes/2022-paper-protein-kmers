@@ -85,9 +85,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b98b4a481119c016da8e42796eef7bc31a4e0adb/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b98b4a481119c016da8e42796eef7bc31a4e0adb/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b98b4a481119c016da8e42796eef7bc31a4e0adb/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/08bfa81de375c966e98a417a795e48f3b181a262/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/08bfa81de375c966e98a417a795e48f3b181a262/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/08bfa81de375c966e98a417a795e48f3b181a262/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -101,9 +101,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b98b4a481119c016da8e42796eef7bc31a4e0adb/">permalink</a>)
+(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/08bfa81de375c966e98a417a795e48f3b181a262/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/b98b4a481119c016da8e42796eef7bc31a4e0adb">bluegenes/2022-paper-protein-kmers@b98b4a4</a>
+from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/08bfa81de375c966e98a417a795e48f3b181a262">bluegenes/2022-paper-protein-kmers@08bfa81</a>
 on July 18, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -770,7 +770,7 @@ sourmash is available at <a href="https://github.com/sourmash-bio/sourmash/">git
 The results in this paper were generated with sourmash v4.4.1.</p>
 <h3 id="fracminhash-amino-acid-identity-correlates-with-alignment-based-methods">FracMinHash Amino Acid Identity Correlates with Alignment-based Methods</h3>
 <p>To assess whether k-mer methods can be used to approximate AAI, we ran generated alignment AAI values for each pairwise comparison using methods that leverage different mapping algorithms: EzAAIb (BLASTp), EzAAIm (MMSeqs2), and CompareM (DIAMOND). As BLAST-based alignment remains the gold-standard method, we compare all AAI values the BLAST AAI values.</p>
-<p>EzAAI v1.12 <span class="citation" data-cites="RBej4r7Y">[<a href="#ref-RBej4r7Y" role="doc-biblioref">29</a>]</span> was used to run BLAST-based and MMSeqs-based Amino Acid Identity. The EzAAI workflow begins with PRODIGAL-based translation of genome sequence <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span>, followed by reciprocal BLAST <span class="citation" data-cites="doi:10.1016/S0022-2836">[<a href="#ref-doi:10.1016/S0022-2836" role="doc-biblioref"><strong>doi:10.1016/S0022-2836?</strong></a>]</span> or MMSeqs2 <span class="citation" data-cites="jj6qOofE">[<a href="#ref-jj6qOofE" role="doc-biblioref">40</a>]</span> alignment. For both, we utilized EzAAI default parameters: 40% coverage threshold, 40% sequence identity threshold.
+<p>EzAAI v1.12 <span class="citation" data-cites="RBej4r7Y">[<a href="#ref-RBej4r7Y" role="doc-biblioref">29</a>]</span> was used to run BLAST-based and MMSeqs-based Amino Acid Identity. The EzAAI workflow begins with PRODIGAL-based translation of genome sequence <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span>, followed by reciprocal BLAST <span class="citation" data-cites="jcOtxABy">[<a href="#ref-jcOtxABy" role="doc-biblioref">4</a>]</span> or MMSeqs2 <span class="citation" data-cites="jj6qOofE">[<a href="#ref-jj6qOofE" role="doc-biblioref">40</a>]</span> alignment. For both, we utilized EzAAI default parameters: 40% coverage threshold, 40% sequence identity threshold.
 CompareM v0.1.2 (<span class="citation" data-cites="auqG5mhy">[<a href="#ref-auqG5mhy" role="doc-biblioref">41</a>]</span>; run with <code>--sensitive</code> parameter for DIAMOND mapping) was used to obtain Average Amino Acid Identity between the anchor proteome and each additional proteome in its evolutionary path.
 CompareM reports the mean and standard deviation of AAI, as well as the fraction of orthologous genes upon which this estimate is based.
 Briefly, CompareM calls genes for each genome or proteome using PRODIGAL <span class="citation" data-cites="4R96QRcV">[<a href="#ref-4R96QRcV" role="doc-biblioref">5</a>]</span> and conducts reciprocal best-hit mapping via DIAMOND <span class="citation" data-cites="lX665mdh">[<a href="#ref-lX665mdh" role="doc-biblioref">17</a>]</span>.
