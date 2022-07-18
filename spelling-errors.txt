@@ -11,13 +11,13 @@ Botvinnik
 cAAI
 cardinality
 classif
-CompareM
+compareM
 compositional
 contig
 cov
 CTB
 ctitusbrown
-dataset
+Dataset
 datasets
 Delmont
 eukaryotic
@@ -42,9 +42,9 @@ Luiz
 luizirber
 mer
 mers
-metagenome
+Metagenome
 metagenomes
-Metagenomic
+metagenomic
 metagenomics
 metapalette
 metapangenome

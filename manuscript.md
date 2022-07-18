@@ -60,9 +60,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/1f7fc70c3462644192fe43952246466ac8611f96/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/1f7fc70c3462644192fe43952246466ac8611f96/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/1f7fc70c3462644192fe43952246466ac8611f96/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -84,9 +84,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/1f7fc70c3462644192fe43952246466ac8611f96/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@1f7fc70](https://github.com/bluegenes/2022-paper-protein-kmers/tree/1f7fc70c3462644192fe43952246466ac8611f96)
+from [bluegenes/2022-paper-protein-kmers@97cf580](https://github.com/bluegenes/2022-paper-protein-kmers/tree/97cf5803af9b71faffb33a6c45a9038fecf16333)
 on July 18, 2022.
 </em></small>
 
@@ -178,6 +178,8 @@ For understudied and diverse habitats such as soil, metagenomic classification m
 As protein sequence is more conserved than the underlying DNA sequence, protein-based comparisons have long been the gold-standard approach across larger evolutionary distances [@blast;@diamond].
 Protein-based metagenomics taxonomic classification approaches typically have increased sensitivity relative to nucleotide methods [@breit_classif;@mmseqs_tax;@catbat;@meganlr;@kaiju;@mash_screen].
 Whole-proteome relatedness indices such as Amino Acid Identity (AAI) can be used to determine whether uncharacterized sequences belong to known taxonomic groups or represent truly novel sequence.
+AAI has been shown to be a robust measure of overall pairwise relatedness even for highly incomplete datasets, such as those comprised of only ~4% of the genome or 100 genes [@doi:10.1128/AEM.01398-06;@doi:10.1038/ismej.2017.113].
+AAI is most useful when nucleotide comparisons are not longer robust, typically less than ~80% nucleotide identity.
 As we continue to sequence more of the biosphere, there remains a need for fast and accurate alignment-free sequence comparison tools with protein-level sensitivity.
 
 Alignment-free methods using k-mers, short sequences of length k, can quickly compare and classify metagenomic datasets particularly when used with subsampling methods such as MinHash [@mash] and FracMinHash [@sourmash_gather].
@@ -252,7 +254,7 @@ For a range of nucleotide and amino acid k-mers lengths, we assessed the fractio
 For nucleotide k-mers, we used lengths of 21, 31, and 51, which are commonly used for analyses at the genus, species, and strain level, respectively. For amino acid k-mers, we focused on k-mer lengths ranging between k=7 and k=11, which roughly correspond to nucleotide k-mer lengths 21-31.
 K-mers specific to a genome were only present in a single genome in the database; k-mers specific to a species were found in at least two genomes of the same species, etc. K-mers specific to a superkingdom were found in genomes/proteomes from at least two phyla.
 
-![**Fraction of k-mers specific to taxonomic rank**](images/gtdb-rs202.lca_f_aggregated_kmers.png)
+![**Fraction of k-mers specific to taxonomic rank**](images/gtdb-rs202.lca_f_aggregated_kmers.png){#fig:gtdb-kdist height=4in}
 
 For the GTDB-RS202 database, the majority of nucleotide k-mers are specific to (unique at) a specific genome, species, or genus. Few k-mers are shared across superkingdoms, though these do exist at a k-mer length of 21.
 In contrast, all protein k-mer sizes contain a portion of k-mers that are shared across genera and above.
@@ -300,7 +302,7 @@ While DNA k-mers can provide resolution at the genus level, log-transformed cont
 Average containment estimated from proteome sequence is very similar to anchor containment estimated from 6-frame translation of genome sequence, suggesting that either value can be used for this type of comparison.
 We obtained similar results when comparing all available k-mers, suggesting that these results are not affected by FracMinHash scaling (_Supplemental Figure XX_).
 
-![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.ridgeplot.png){#fig:evolpathsAAIvsCompareM height=4in}
+![**Protein k-mers are shared at higher taxonomic ranks** Default scaled values 1000, 200](images/gtdb-rs202.evolpaths.alphacompare.avgContain.logscale.ridgeplot.png){#fig:evolpaths-lca-containment height=4in}
 
 <!---
 **To do:**
@@ -347,8 +349,6 @@ This can be both a strength and shortcoming of AAI as a method, as AAI values on
 Given these propeties, containment-based $cAAI$ is closest to an alignment-adjusted version amino acid identity.
 While it does not exactly mimic alignment-based AAI estimates, it is able to represent both alignment fraction and identity information in a single value.
 
-AAI has been shown to be a robust measure of overall pairwise relatedness even for highly incomplete datasets, such as those comprised of only ~4% of the genome or 100 genes [@doi:10.1128/AEM.01398-06;@doi:10.1038/ismej.2017.113].
-AAI is most useful when nucleotide comparisons are not longer robust, typically less than ~80% nucleotide identity.
 
 
 <!---
