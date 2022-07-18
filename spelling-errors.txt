@@ -11,7 +11,7 @@ Botvinnik
 cAAI
 cardinality
 classif
-compareM
+CompareM
 compositional
 contig
 cov
@@ -37,7 +37,6 @@ Irber
 iteratively
 Jaccard
 kaa
-KMERS
 LCA
 Luiz
 luizirber
@@ -45,7 +44,7 @@ mer
 mers
 metagenome
 metagenomes
-metagenomic
+Metagenomic
 metagenomics
 metapalette
 metapangenome
