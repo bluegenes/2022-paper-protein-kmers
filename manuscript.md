@@ -60,9 +60,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/22bf0ee5661852734620d1af8bdbee2f1426fe81/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/22bf0ee5661852734620d1af8bdbee2f1426fe81/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/22bf0ee5661852734620d1af8bdbee2f1426fe81/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/b98b4a481119c016da8e42796eef7bc31a4e0adb/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b98b4a481119c016da8e42796eef7bc31a4e0adb/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/b98b4a481119c016da8e42796eef7bc31a4e0adb/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -84,9 +84,9 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/22bf0ee5661852734620d1af8bdbee2f1426fe81/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/b98b4a481119c016da8e42796eef7bc31a4e0adb/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@22bf0ee](https://github.com/bluegenes/2022-paper-protein-kmers/tree/22bf0ee5661852734620d1af8bdbee2f1426fe81)
+from [bluegenes/2022-paper-protein-kmers@b98b4a4](https://github.com/bluegenes/2022-paper-protein-kmers/tree/b98b4a481119c016da8e42796eef7bc31a4e0adb)
 on July 18, 2022.
 </em></small>
 
@@ -589,12 +589,9 @@ As with Average Nucleotide Identity comparisons, different AAI approaches vary s
 
 The majority of AAI estimation software has focused been alignment-based comparisons, which has limited comparisons at scale.
 Larger-scale comparisons have leveraged similarity estimation across single-copy universally conserved genes [@miga].
-A recent extension of this concept introduced $\widehat{AAI}$ which can use tetramer frequency of universal single-copy proteins to obtain an estimate of AAI.
-Recent introduction of AAI proxy estimation via single-copy protein tetramers ($FastAAI)$ provides a promising alternative that enables AAI estimation for hundreds of thousands of comparisons [@fastaai].
-FracMinHash k~aa~mer subsampling allows $cAAI$ to operate at a similar scale while encompassing information from across the whole proteome and allowing estimation directly from read datasets.
-Whole proteome k~aa~mer comparisons average information across fast and slow-evolving genes, do not require prior selection of appropriate universal protein sets, and have the advantage of being assembly-agnostic.
-However, speed of these comparisons depends on the FracMinHash k~aa~mer subsampling rate.
-
+A recent extension of this concept introduced $\widehat{AAI}$ which uses tetramer frequency of universal single-copy proteins to estimate AAI, enabling AAI estimation for hundreds of thousands of comparisons [@fastaai].
+While FracMinHash k~aa~mer subsampling allows $cAAI$ to operate at a similar scale, $cAAI$ encompasses information from across the whole proteome, which averages similarity across fast and slow-evolving genes, does not require prior selection of appropriate universal protein sets, and allows AAI estimation directly from read datasets.
+However, speed of $cAAI$ comparisons depends on the FracMinHash k~aa~mer subsampling rate and can be impacted by the quality of the reference proteomes used for comparison.
 _For GTDB-wide comparisons, FracMinHash subsampling of XX% of k~aa~mers per proteome allowed XXX,XXX pairwise comparisons in XX time._
 <!--
 (to do: find maximal scaled value that maintains accuracy. Note that we may not want to use this scaled for fragmented/incomplete proteomes or for read datasets --test independently)

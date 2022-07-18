@@ -11,13 +11,13 @@ Botvinnik
 cAAI
 cardinality
 classif
-CompareM
+compareM
 compositional
 contig
 cov
 CTB
 ctitusbrown
-dataset
+Dataset
 datasets
 Delmont
 eukaryotic
@@ -26,7 +26,7 @@ EzAAIb
 EzAAIb’s
 EzAAIm
 fastas
-FracMinHash
+FracMinhash
 GBMF
 genbank
 genomic
@@ -35,7 +35,7 @@ Immplementation
 interection
 Irber
 iteratively
-JACCARD
+Jaccard
 kaa
 KMERS
 LCA
@@ -43,7 +43,7 @@ Luiz
 luizirber
 mer
 mers
-Metagenome
+metagenome
 metagenomes
 Metagenomic
 metagenomics
@@ -81,7 +81,7 @@ saltyscientist
 snakemake
 sourmash
 subsample
-subsampling
+Subsampling
 subsequences
 summarization
 superkingdom
@@ -90,7 +90,6 @@ taxnonomic
 taylorreiter
 TBD
 tetramer
-tetramers
 thresholding
 ths
 Tk
