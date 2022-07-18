@@ -26,7 +26,7 @@ EzAAIb
 EzAAIb’s
 EzAAIm
 fastas
-FracMinhash
+FracMinHash
 GBMF
 genbank
 genomic
@@ -45,7 +45,7 @@ mer
 mers
 metagenome
 metagenomes
-metagenomic
+Metagenomic
 metagenomics
 metapalette
 metapangenome
@@ -79,7 +79,7 @@ representatively
 runtime
 saltyscientist
 snakemake
-Sourmash
+sourmash
 subsample
 subsampling
 subsequences

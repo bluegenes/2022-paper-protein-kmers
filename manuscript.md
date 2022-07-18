@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-07-17'
+date-meta: '2022-07-18'
 author-meta:
 - N. Tessa Pierce-Ward
 - Olga Borisovna Botvinnik
@@ -26,8 +26,8 @@ header-includes: |-
   <meta name="citation_title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-07-17" />
-  <meta name="citation_publication_date" content="2022-07-17" />
+  <meta name="dc.date" content="2022-07-18" />
+  <meta name="citation_publication_date" content="2022-07-18" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -60,9 +60,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/6a6978dc3c79acbb028e44dd147f6af073be3b78/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6a6978dc3c79acbb028e44dd147f6af073be3b78/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/6a6978dc3c79acbb028e44dd147f6af073be3b78/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/f717af9c30bc8f1c03df0705fe7333aee4fd49b8/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/f717af9c30bc8f1c03df0705fe7333aee4fd49b8/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/f717af9c30bc8f1c03df0705fe7333aee4fd49b8/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -84,10 +84,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/6a6978dc3c79acbb028e44dd147f6af073be3b78/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/f717af9c30bc8f1c03df0705fe7333aee4fd49b8/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@6a6978d](https://github.com/bluegenes/2022-paper-protein-kmers/tree/6a6978dc3c79acbb028e44dd147f6af073be3b78)
-on July 17, 2022.
+from [bluegenes/2022-paper-protein-kmers@f717af9](https://github.com/bluegenes/2022-paper-protein-kmers/tree/f717af9c30bc8f1c03df0705fe7333aee4fd49b8)
+on July 18, 2022.
 </em></small>
 
 ## Authors
@@ -235,7 +235,7 @@ At larger evolutionary distances, accumulated nucleotide divergence limits the u
 Amino acid k-mers (kaa-mers) retain the benefits of fast, alignment-free exact k-mer matching, but with increased tolerance for evolutionary divergence.
 Here, we evaluate the utility of amino acid k-mers for a wide range of genomic and metagenomic applications, including sequence distance estimation and taxonomic classification.
 
-### Amino Acid k-mers can be used to discriminate between taxa
+### Amino Acid  k~aa10~mers can be used to discriminate between taxa
 
 The Genome Taxonomy Database (GTDB) provides a genome-similarity-based taxonomy for bacterial and archaeal genomes [@doi:10.1038/s41587-020-0501-8].
 GTDB release `rs202` encompasses 258,407 genomes from 47,895 species.
