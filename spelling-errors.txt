@@ -17,8 +17,9 @@ contig
 cov
 CTB
 ctitusbrown
-Dataset
+dataset
 datasets
+debiased
 Delmont
 eukaryotic
 EzAAI
@@ -42,9 +43,9 @@ Luiz
 luizirber
 mer
 mers
-Metagenome
+metagenome
 metagenomes
-metagenomic
+Metagenomic
 metagenomics
 metapalette
 metapangenome

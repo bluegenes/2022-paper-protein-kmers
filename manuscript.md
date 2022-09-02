@@ -9,7 +9,7 @@ keywords:
 - FracMinHash
 - Containment
 lang: en-US
-date-meta: '2022-07-18'
+date-meta: '2022-09-02'
 author-meta:
 - N. Tessa Pierce-Ward
 - Olga Borisovna Botvinnik
@@ -26,8 +26,8 @@ header-includes: |-
   <meta name="citation_title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-07-18" />
-  <meta name="citation_publication_date" content="2022-07-18" />
+  <meta name="dc.date" content="2022-09-02" />
+  <meta name="citation_publication_date" content="2022-09-02" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -60,9 +60,9 @@ header-includes: |-
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -84,10 +84,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/))
+([permalink](https://bluegenes.github.io/2022-paper-protein-kmers/v/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e/))
 was automatically generated
-from [bluegenes/2022-paper-protein-kmers@97cf580](https://github.com/bluegenes/2022-paper-protein-kmers/tree/97cf5803af9b71faffb33a6c45a9038fecf16333)
-on July 18, 2022.
+from [bluegenes/2022-paper-protein-kmers@d282c00](https://github.com/bluegenes/2022-paper-protein-kmers/tree/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e)
+on September 2, 2022.
 </em></small>
 
 ## Authors
@@ -252,9 +252,9 @@ We indexed these sketches into `sourmash` databases, which we have made availabl
 
 For a range of nucleotide and amino acid k-mers lengths, we assessed the fraction of k-mers specific to each taxonomic rank.
 For nucleotide k-mers, we used lengths of 21, 31, and 51, which are commonly used for analyses at the genus, species, and strain level, respectively. For amino acid k-mers, we focused on k-mer lengths ranging between k=7 and k=11, which roughly correspond to nucleotide k-mer lengths 21-31.
-K-mers specific to a genome were only present in a single genome in the database; k-mers specific to a species were found in at least two genomes of the same species, etc. K-mers specific to a superkingdom were found in genomes/proteomes from at least two phyla.
+K-mers specific to a species were only present in a single species in the database; k-mers specific to a genus were found in at least two genomes of the same genus, etc. K-mers specific to a superkingdom were found in genomes/proteomes from at least two phyla.
 
-![**Fraction of k-mers specific to taxonomic rank**](images/gtdb-rs202.lca_f_aggregated_kmers.png){#fig:gtdb-kdist height=4in}
+![**Fraction of k-mers specific to taxonomic rank**](images/gtdb-rs202.lca_f_unique_kmers.v2.png){#fig:gtdb-kdist height=4in}
 
 For the GTDB-RS202 database, the majority of nucleotide k-mers are specific to (unique at) a specific genome, species, or genus. Few k-mers are shared across superkingdoms, though these do exist at a k-mer length of 21.
 In contrast, all protein k-mer sizes contain a portion of k-mers that are shared across genera and above.
@@ -822,7 +822,8 @@ Here, we note that there is nothing unique to nucleotide sequence included in th
 By applying the same equations to comparisons between amino acid k-mer sketches, we can estimate average Amino Acid Identity (AAI) between proteomes.
 For this application, we maintain the assumption of a simple mutational model of equal substitution probability at each position, but recognize that it now applies to any amino acid, rather than any nucleotide.
 
-Using the Fractional Containment Index...
+The debiased Fractional Containment Index is an unbiased estimator of the true containment index $C(A,B)$.
+
 
 ```{=latex}
 \begin{equation}
