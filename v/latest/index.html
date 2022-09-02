@@ -9,7 +9,7 @@
   <meta name="author" content="Taylor E. Reiter" />
   <meta name="author" content="Luiz Irber" />
   <meta name="author" content="C. Titus Brown" />
-  <meta name="dcterms.date" content="2022-07-18" />
+  <meta name="dcterms.date" content="2022-09-02" />
   <meta name="keywords" content="metagenomics, AAI, Alignment-free, Assembly-free, MinHash, FracMinHash, Containment" />
   <title>Amino Acid k-mers enable assembly- and alignment-free sequence analysis</title>
   <style>
@@ -51,8 +51,8 @@
   <meta name="citation_title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="og:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
   <meta property="twitter:title" content="Amino Acid k-mers enable assembly- and alignment-free sequence analysis" />
-  <meta name="dc.date" content="2022-07-18" />
-  <meta name="citation_publication_date" content="2022-07-18" />
+  <meta name="dc.date" content="2022-09-02" />
+  <meta name="citation_publication_date" content="2022-09-02" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -85,9 +85,9 @@
   <meta name="citation_fulltext_html_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/" />
   <meta name="citation_pdf_url" content="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://bluegenes.github.io/2022-paper-protein-kmers/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/" />
-  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/" />
-  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://bluegenes.github.io/2022-paper-protein-kmers/v/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e/" />
+  <meta name="manubot_html_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://bluegenes.github.io/2022-paper-protein-kmers/v/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -101,10 +101,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/97cf5803af9b71faffb33a6c45a9038fecf16333/">permalink</a>)
+(<a href="https://bluegenes.github.io/2022-paper-protein-kmers/v/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/97cf5803af9b71faffb33a6c45a9038fecf16333">bluegenes/2022-paper-protein-kmers@97cf580</a>
-on July 18, 2022.
+from <a href="https://github.com/bluegenes/2022-paper-protein-kmers/tree/d282c00364dc57bfe3a354f0cb1ebb3a239ab01e">bluegenes/2022-paper-protein-kmers@d282c00</a>
+on September 2, 2022.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -243,10 +243,10 @@ In remaining cases (n=36,632), genome fastas were translated into protein sequen
 We indexed these sketches into <code>sourmash</code> databases, which we have made available as part of the <code>Prepared Databases</code> section of the <code>sourmash</code> documentation, and archived on OSF [https://osf.io/t3fqa/].</p>
 <p>For a range of nucleotide and amino acid k-mers lengths, we assessed the fraction of k-mers specific to each taxonomic rank.
 For nucleotide k-mers, we used lengths of 21, 31, and 51, which are commonly used for analyses at the genus, species, and strain level, respectively. For amino acid k-mers, we focused on k-mer lengths ranging between k=7 and k=11, which roughly correspond to nucleotide k-mer lengths 21-31.
-K-mers specific to a genome were only present in a single genome in the database; k-mers specific to a species were found in at least two genomes of the same species, etc. K-mers specific to a superkingdom were found in genomes/proteomes from at least two phyla.</p>
+K-mers specific to a species were only present in a single species in the database; k-mers specific to a genus were found in at least two genomes of the same genus, etc. K-mers specific to a superkingdom were found in genomes/proteomes from at least two phyla.</p>
 <div id="fig:gtdb-kdist" class="fignos">
 <figure>
-<img src="images/gtdb-rs202.lca_f_aggregated_kmers.png" style="height:4in" alt="Figure 1: Fraction of k-mers specific to taxonomic rank" /><figcaption aria-hidden="true"><span>Figure 1:</span> <strong>Fraction of k-mers specific to taxonomic rank</strong></figcaption>
+<img src="images/gtdb-rs202.lca_f_unique_kmers.v2.png" style="height:4in" alt="Figure 1: Fraction of k-mers specific to taxonomic rank" /><figcaption aria-hidden="true"><span>Figure 1:</span> <strong>Fraction of k-mers specific to taxonomic rank</strong></figcaption>
 </figure>
 </div>
 <p>For the GTDB-RS202 database, the majority of nucleotide k-mers are specific to (unique at) a specific genome, species, or genus. Few k-mers are shared across superkingdoms, though these do exist at a k-mer length of 21.
@@ -758,7 +758,7 @@ Each of these methods assumes a simple mutational model, with equal substitution
 Here, we note that there is nothing unique to nucleotide sequence included in these equations.
 By applying the same equations to comparisons between amino acid k-mer sketches, we can estimate average Amino Acid Identity (AAI) between proteomes.
 For this application, we maintain the assumption of a simple mutational model of equal substitution probability at each position, but recognize that it now applies to any amino acid, rather than any nucleotide.</p>
-<p>Using the Fractional Containment Index…</p>
+<p>The debiased Fractional Containment Index is an unbiased estimator of the true containment index <span class="math inline">\(C(A,B)\)</span>.</p>
 <span class="math display">\[\begin{equation}
 {C_\text{frac}(A,B)}= \frac{\vert \mathbf{FRAC}_s(A) \cap \mathbf{FRAC}_s(B)\vert }{\vert \mathbf{FRAC}_s(A)\vert \left(1-(1-s)^{\vert A\vert}\right)} \mathbbm{1}_{\vert \mathbf{FRAC}_s(A) \vert&gt;0}
 \end{equation}\]</span>
