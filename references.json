@@ -32,8 +32,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -75,8 +75,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -122,8 +122,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -167,8 +167,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -215,8 +215,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -264,8 +264,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -321,8 +321,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -394,8 +394,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -455,8 +455,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -513,8 +513,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -566,8 +566,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -615,8 +615,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -694,8 +694,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -757,8 +757,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -816,8 +816,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -886,8 +886,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -952,8 +952,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1011,8 +1011,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1061,8 +1061,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1146,8 +1146,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1207,8 +1207,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1252,8 +1252,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1305,8 +1305,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1324,13 +1324,13 @@
   {
     "id": "z9iHAA1E",
     "type": "report",
-    "abstract": "A\r\n            bstract\r\n          \r\n          Long-read shotgun metagenomic sequencing is gaining in popularity and offers many advantages over short-read sequencing. The higher information content in long reads is useful for a variety of metagenomics analyses, including taxonomic profiling. The development of long-read specific tools for taxonomic profiling is accelerating, yet there is a lack of consensus regarding their relative performance. Here, we perform a critical benchmarking study using five long-read methods and four popular short-read methods. We applied these tools to several mock community datasets generated using Pacific Biosciences (PacBio) HiFi or Oxford Nanopore Technology (ONT) sequencing, and evaluated their performance based on read utilization, detection metrics, and relative abundance estimates. Our results show that long-read methods generally outperformed short-read methods. Short-read methods (including Kraken2, Bracken, Centrifuge, and MetaPhlAn3) produced many false positives (particularly at lower abundances), required heavy filtering to achieve acceptable precision (at the cost of reduced recall), and produced inaccurate abundance estimates. By contrast, several long-read methods displayed very high precision and acceptable recall without any filtering required, including BugSeq, MEGAN-LR using translation alignments (DIAMOND to NCBI nr) or nucleotide alignments (minimap2 to NCBI nt). Furthermore, in the PacBio HiFi datasets these long-read methods detected all species down to the 0.1% abundance level with high precision. Other long-read methods, such as MetaMaps and MMseqs2, required moderate filtering to reduce false positives to achieve a suitable balance between precision and recall. We found read quality affected performance for methods relying on protein prediction or exact kmer matching, and these methods performed better with PacBio HiFi datasets. We also found that long-read datasets with a large proportion of shorter reads (<2kb length) resulted in lower precision and worse abundance estimates, relative to length-filtered datasets. Finally, for a given mock community we found that the long-read datasets produced significantly better results than short-read datasets, demonstrating clear advantages for long-read metagenomic sequencing. Our critical assessment of available methods provides recommendations for current research using long reads and establishes a baseline for future benchmarking studies.",
+    "abstract": "ABSTRACT\r\n          \r\n            Background\r\n            Long-read shotgun metagenomic sequencing is gaining in popularity and offers many advantages over short-read sequencing. The higher information content in long reads is useful for a variety of metagenomics analyses, including taxonomic classification and profiling. The development of long-read specific tools for taxonomic classification is accelerating, yet there is a lack of information regarding their relative performance. Here, we perform a critical benchmarking study using 11 methods, including five methods designed specifically for long reads. We applied these tools to several mock community datasets generated using Pacific Biosciences (PacBio) HiFi or Oxford Nanopore Technology (ONT) sequencing, and evaluated their performance based on read utilization, detection metrics, and relative abundance estimates.\r\n          \r\n          \r\n            Results\r\n            Our results show that long-read classifiers generally performed best. Several short-read classification and profiling methods produced many false positives (particularly at lower abundances), required heavy filtering to achieve acceptable precision (at the cost of reduced recall), and produced inaccurate abundance estimates. By contrast, two long-read methods (BugSeq, MEGAN-LR & DIAMOND) and one generalized method (sourmash) displayed high precision and recall without any filtering required. Furthermore, in the PacBio HiFi datasets these methods detected all species down to the 0.1% abundance level with high precision. Some long-read methods, such as MetaMaps and MMseqs2, required moderate filtering to reduce false positives to resemble the precision and recall of the top-performing methods. We found read quality affected performance for methods relying on protein prediction or exact k-mer matching, and these methods performed better with PacBio HiFi datasets. We also found that long-read datasets with a large proportion of shorter reads (<2kb length) resulted in lower precision and worse abundance estimates, relative to length-filtered datasets. Finally, for classification methods, we found that the long-read datasets produced significantly better results than short-read datasets, demonstrating clear advantages for long-read metagenomic sequencing.\r\n          \r\n          \r\n            Conclusions\r\n            Our critical assessment of available methods provides best-practice recommendations for current research using long reads and establishes a baseline for future benchmarking studies.",
     "genre": "preprint",
     "language": "en",
     "note": "DOI: 10.1101/2022.01.31.478527\nThis CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: doi:10.1101/2022.01.31.478527",
     "publisher": "Bioinformatics",
     "source": "DOI.org (Crossref)",
-    "title": "Evaluation of taxonomic profiling methods for long-read shotgun metagenomic sequencing datasets",
+    "title": "Evaluation of taxonomic classification and profiling methods for long-read shotgun metagenomic sequencing datasets",
     "URL": "https://doi.org/hhqs",
     "author": [
       {
@@ -1350,8 +1350,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1403,8 +1403,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1452,8 +1452,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1505,8 +1505,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1568,8 +1568,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1621,8 +1621,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1687,8 +1687,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1740,8 +1740,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1799,8 +1799,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1866,8 +1866,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1913,8 +1913,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1963,8 +1963,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -1972,7 +1972,8 @@
       "date-parts": [
         [
           "2019",
-          12
+          11,
+          28
         ]
       ]
     },
@@ -2029,8 +2030,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -2086,8 +2087,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -2128,8 +2129,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -2226,8 +2227,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -2272,8 +2273,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -2333,8 +2334,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
@@ -2350,91 +2351,68 @@
     "DOI": "10.21203/rs.3.rs-1459378/v1"
   },
   {
-    "title": "Basic local alignment search tool.",
-    "volume": "215",
-    "issue": "3",
-    "page": "403-10",
-    "container-title": "Journal of molecular biology",
-    "container-title-short": "J Mol Biol",
-    "ISSN": "0022-2836",
-    "issued": {
-      "date-parts": [
-        [
-          1990,
-          10,
-          5
-        ]
-      ]
-    },
-    "author": [
-      {
-        "given": "S F",
-        "family": "Altschul"
-      },
-      {
-        "given": "W",
-        "family": "Gish"
-      },
-      {
-        "given": "W",
-        "family": "Miller"
-      },
-      {
-        "given": "E W",
-        "family": "Myers"
-      },
-      {
-        "given": "D J",
-        "family": "Lipman"
-      }
-    ],
-    "PMID": "2231712",
-    "DOI": "10.1016/s0022-2836(05)80360-2",
-    "abstract": "A new approach to rapid sequence comparison, basic local alignment search tool (BLAST), directly approximates alignments that optimize a measure of local similarity, the maximal segment pair (MSP) score. Recent mathematical results on the stochastic properties of MSP scores allow an analysis of the performance of this method as well as the statistical significance of alignments it generates. The basic algorithm is simple and robust; it can be implemented in a number of ways and applied in a variety of contexts including straightforward DNA and protein sequence database searches, motif searches, gene identification searches, and in the analysis of multiple regions of similarity in long DNA sequences. In addition to its flexibility and tractability to mathematical analysis, BLAST is an order of magnitude faster than existing sequence comparison tools of comparable sensitivity.",
-    "URL": "https://www.ncbi.nlm.nih.gov/pubmed/2231712",
-    "type": "article-journal",
-    "id": "jcOtxABy",
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: pubmed:2231712"
-  },
-  {
     "id": "2fzeqjbP",
-    "type": "webpage",
-    "abstract": "Pipeline to apply encoded Kmer analysis to protein sequences - GitHub - PNNL-CompBio/Snekmer: Pipeline to apply encoded Kmer analysis to protein sequences",
-    "container-title": "GitHub",
-    "language": "en",
-    "title": "GitHub - PNNL-CompBio/Snekmer: Pipeline to apply encoded Kmer analysis to protein sequences",
-    "title-short": "GitHub - PNNL-CompBio/Snekmer",
+    "type": "book",
+    "abstract": "Pipeline to apply encoded Kmer analysis to protein sequences",
+    "genre": "Python",
+    "note": "original-date: 2020-11-16T21:20:56Z\nThis CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/PNNL-CompBio/Snekmer",
+    "publisher": "Computational Biology @Pacific Northwest National Laboratory",
+    "source": "GitHub",
+    "title": "Snekmer: A scalable pipeline for protein sequence fingerprinting using amino acid recoding (AAR)",
+    "title-short": "Snekmer",
     "URL": "https://github.com/PNNL-CompBio/Snekmer",
     "accessed": {
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/PNNL-CompBio/Snekmer"
+    "issued": {
+      "date-parts": [
+        [
+          "2022",
+          10,
+          17
+        ]
+      ]
+    }
   },
   {
     "id": "auqG5mhy",
-    "type": "webpage",
-    "abstract": "A toolbox for comparative genomics. Contribute to dparks1134/CompareM development by creating an account on GitHub.",
-    "container-title": "GitHub",
-    "language": "en",
-    "title": "GitHub - dparks1134/CompareM: A toolbox for comparative genomics.",
-    "title-short": "GitHub - dparks1134/CompareM",
+    "type": "book",
+    "abstract": "A toolbox for comparative genomics.",
+    "genre": "Python",
+    "note": "original-date: 2014-11-18T10:32:15Z\nThis CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/dparks1134/CompareM",
+    "source": "GitHub",
+    "title": "CompareM",
     "URL": "https://github.com/dparks1134/CompareM",
+    "author": [
+      {
+        "family": "Parks",
+        "given": "Donovan"
+      }
+    ],
     "accessed": {
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },
-    "note": "This CSL Item was generated by Manubot v0.5.1 from its persistent identifier (standard_id).\nstandard_id: url:https://github.com/dparks1134/CompareM"
+    "issued": {
+      "date-parts": [
+        [
+          "2022",
+          7,
+          26
+        ]
+      ]
+    }
   },
   {
     "id": "18uVBOfA0",
@@ -2448,8 +2426,8 @@
       "date-parts": [
         [
           "2022",
-          9,
-          2
+          11,
+          22
         ]
       ]
     },

@@ -15,9 +15,9 @@ compareM
 compositional
 contig
 cov
-CTB
+ctb
 ctitusbrown
-dataset
+Dataset
 datasets
 debiased
 Delmont
@@ -27,7 +27,7 @@ EzAAIb
 EzAAIb’s
 EzAAIm
 fastas
-FracMinHash
+FracMinhash
 GBMF
 genbank
 genomic
@@ -45,7 +45,7 @@ mer
 mers
 metagenome
 metagenomes
-Metagenomic
+metagenomic
 metagenomics
 metapalette
 metapangenome
@@ -79,7 +79,7 @@ representatively
 runtime
 saltyscientist
 snakemake
-sourmash
+Sourmash
 subsample
 subsampling
 subsequences
